@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
+@theme {
+  --color-orange: #f18021;
+  --color-teal: #008e96;
+  --color-light-orange: #f9f1ea;
+  --color-light-teal: #d6f6f7;
+  --color-lighter-teal: #effbfc;
+
+  --color-alpha: #666666;
+  --color-beta: #f3f3f3;
+  --color-lambda: #d7d7d7;
+  --color-gamma: #dedede;
+
+  --font-poppins: var(--font-poppins);
+  --font-reddit-sans: var(--font-reddit-sans);
+}
+
+@layer base {
+  html {
+    @apply scroll-pt-[200px] scroll-smooth;
+  }
+
+  body {
+    @apply font-reddit-sans;
+  }
+
+  body.no-scroll {
+    @apply overflow-hidden lg:mr-[8px];
+  }
+
+  body::-webkit-scrollbar {
+    @apply w-[8px];
+  }
+
+  body::-webkit-scrollbar-track {
+    @apply shadow-none;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    @apply bg-teal;
+  }
+
+  p,
+  li {
+    @apply text-alpha;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-transition-delay: 9999s;
+    transition-delay: 9999s;
+  }
+}
+
+@layer components {
+
+  ul.list-arrow,
+  ul.list-check {
+    @apply pl-6;
+  }
+
+  ul.list-arrow li {
+    @apply relative mb-2 before:absolute before:top-[4px] before:-left-7 before:h-5 before:w-5 before:bg-[url(/icon/right.svg)] before:bg-contain before:bg-no-repeat before:text-teal-500 before:content-[''];
+  }
+
+  ul.list-check li {
+    @apply relative mb-2 before:absolute before:top-[4px] before:-left-7 before:h-5 before:w-5 before:bg-[url(/icon/tick.svg)] before:bg-contain before:bg-no-repeat before:text-teal-500 before:content-[''];
+  }
+
+  .list-check {
+    @apply [&_ul>li]:relative [&_ul]:pl-6 [&_ul]:mb-2 [&_ul>li]:before:absolute [&_ul>li]:before:top-[4px] [&_ul>li]:before:-left-7 [&_ul>li]:before:h-5 [&_ul>li]:before:w-5 [&_ul>li]:before:bg-[url(/icon/tick.svg)] [&_ul>li]:before:bg-contain [&_ul>li]:before:bg-no-repeat [&_ul>li]:before:text-teal-500 [&_ul>li]:before:content-[''];
+  }
+
+  .features-content ul {
+    @apply mt-2 pl-6;
+  }
+
+  .features-content ul li {
+    @apply relative mb-2 before:absolute before:top-[4px] before:-left-7 before:h-5 before:w-5 before:bg-[url(/icon/right.svg)] before:bg-contain before:bg-no-repeat before:text-teal-500 before:content-[''];
+  }
+
+  .scroll::-webkit-scrollbar {
+    @apply w-[6px];
+  }
+
+  .scroll::-webkit-scrollbar-track {
+    @apply shadow-none;
+  }
+
+  .scroll::-webkit-scrollbar-thumb {
+    @apply bg-teal;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .swiper-wrapper {
+    @apply items-stretch!;
+  }
+
+  .swiper-button-disabled {
+    @apply pointer-events-none opacity-50;
+  }
+
+  .swiper-navigation-icon {
+    @apply hidden;
+  }
+
+  .testimonial-slider .swiper-wrapper .swiper-slide-active .testimonial-card {
+    @apply bg-[linear-gradient(#008e96_100%)]! opacity-100!;
+  }
+
+  .testimonial-slider .swiper-wrapper .swiper-slide-active .testimonial-card h6 {
+    @apply text-white!;
+  }
+
+  .testimonial-slider .swiper-wrapper .swiper-slide-active .testimonial-card p {
+    @apply text-white;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto max-w-full px-2 sm:max-w-screen-sm sm:px-6 md:max-w-3xl lg:max-w-7xl lg:px-14;
+  }
+}

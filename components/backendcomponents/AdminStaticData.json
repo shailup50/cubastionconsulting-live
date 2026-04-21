@@ -1,0 +1,134 @@
+{
+    "Menu": {
+        "items": [
+            {
+                "PageID": 1,
+                "title": "Home",
+                "icon": "<svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' d='M20.42 10.18L12.71 2.3a1 1 0 0 0-1.42 0l-7.71 7.89A2 2 0 0 0 3 11.62V20a2 2 0 0 0 1.89 2h14.22A2 2 0 0 0 21 20v-8.38a2.07 2.07 0 0 0-.58-1.44M10 20v-6h4v6Zm9 0h-3v-7a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H5v-8.42l7-7.15l7 7.19Z'/></svg>",
+                "url": "/cubastion-admin/dashboard",
+                "addurl": "",
+                "Show": "1"
+            },
+            {
+                "PageID": 61,
+                "title": "Manage Category",
+                "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' d='M12 2l-5.5 9h11L12 2zm0 3.84L14.6 10h-5.2L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5S15.01 22 17.5 22s4.5-2.01 4.5-4.5S19.99 13 17.5 13zm0 7a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5zM3 21.5h8v-8H3v8zm2-6h4v4H5v-4z'/></svg>",
+                "url": "/cubastion-admin/manage-category",
+                "addurl": "/cubastion-admin/add-category",
+                "Show": "1"
+            },
+            {
+                "PageID": 62,
+                "title": "Manage Service",
+                "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12c5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93C9.33 17.79 7 14.5 7 11V7.18L12 5z'/></svg>",
+                "url": "/cubastion-admin/manage-services",
+                "addurl": "/cubastion-admin/add-service",
+                "Show": "1"
+            },
+            {
+                "PageID": 63,
+                "title": "Manage Industries",
+                "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' d='M5 3H3v18h18V3H5zm14 16H5V5h14v14zM11 7H9v2h2V7zm4 0h-2v2h2V7zm-4 4H9v2h2v-2zm4 0h-2v2h2v-2zm-4 4H9v2h2v-2zm4 0h-2v2h2v-2z'/></svg>",
+                "url": "/cubastion-admin/manage-industries",
+                "addurl": "/cubastion-admin/add-industries",
+                "Show": "1"
+            },
+            {
+                "PageID": 64,
+                "title": "Manage Portfolio",
+                "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' d='M20 6h-2.18c.07-.44.18-.86.18-1a3 3 0 0 0-6 0c0 .14.11.56.18 1H10C8.9 6 8 6.9 8 8v12c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-1a1 1 0 0 1 1 1c0 .14-.06.43-.18.76l-.09.24h-1.46l-.09-.24A2.9 2.9 0 0 1 13 6a1 1 0 0 1 1-1zm6 15H10V8h2v2h4V8h2v12zM4 8H2v12a2 2 0 0 0 2 2h12v-2H4V8z'/></svg>",
+                "url": "/cubastion-admin/manage-portfolio",
+                "addurl": "/cubastion-admin/add-portfolio",
+                "Show": "1"
+            },
+            {
+                "PageID": 65,
+                "title": "Manage Logo",
+                "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5-7l-3 3.72L9 13l-3 4h12l-4-4z'/></svg>",
+                "url": "/cubastion-admin/manage-logo",
+                "addurl": "/cubastion-admin/add-logo",
+                "Show": "1"
+            },
+            {
+                "PageID": 105,
+                "title": "Manage Careers",
+                "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' d='M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm10 16H4V8h16v12z'/></svg>",
+                "url": "#",
+                "addurl": "",
+                "Show": "1",
+                "MoreItem": [
+                    {
+                        "PageID": 1051,
+                        "title": "Job Vacancies",
+                        "url": "/cubastion-admin/manage-careers",
+                        "addurl": "/cubastion-admin/add-careers",
+                        "Show": "1"
+                    },
+                    {
+                        "PageID": 106,
+                        "title": "Career Applications",
+                        "url": "/cubastion-admin/career-applications",
+                        "addurl": "",
+                        "Show": "1"
+                    }
+                ]
+            },
+            {
+                "PageID": 66,
+                "title": "Manage Testimonial",
+                "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' d='M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m0 14H5.17L4 17.17V4h16v12Z'/></svg>",
+                "url": "/cubastion-admin/manage-testimonials",
+                "addurl": "/cubastion-admin/add-testimonials",
+                "Show": "1"
+            },
+            {
+                "PageID": 70,
+                "title": "Manage Team",
+                "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' d='M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5S5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05c1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z'/></svg>",
+                "url": "/cubastion-admin/manage-team",
+                "addurl": "/cubastion-admin/add-team",
+                "Show": "1"
+            },
+            {
+                "PageID": 71,
+                "title": "Manage Authors",
+                "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' d='M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4S7.2 4.5 7.2 7.2S9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z'/></svg>",
+                "url": "/cubastion-admin/manage-authors",
+                "addurl": "/cubastion-admin/add-author",
+                "Show": "1"
+            },
+            {
+                "PageID": 72,
+                "title": "Manage Milestones",
+                "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z'/></svg>",
+                "url": "/cubastion-admin/manage-milestones",
+                "addurl": "/cubastion-admin/add-milestones",
+                "Show": "1"
+            },
+            {
+                "PageID": 67,
+                "title": "Manage Leads",
+                "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' d='M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5S5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05c1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z'/></svg>",
+                "url": "/cubastion-admin/manage-leads",
+                "addurl": "",
+                "Show": "1"
+            },
+            {
+                "PageID": 68,
+                "title": "Change Password",
+                "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' d='M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z'/></svg>",
+                "url": "/cubastion-admin/change-password",
+                "addurl": "",
+                "Show": "0"
+            },
+            {
+                "PageID": 102,
+                "title": "Manage Pages",
+                "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' d='M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z'/></svg>",
+                "url": "/cubastion-admin/manage-pages",
+                "addurl": "/cubastion-admin/add-pages",
+                "Show": "1"
+            }
+        ]
+    }
+}

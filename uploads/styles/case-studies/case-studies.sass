@@ -1,0 +1,833 @@
+@import '../_var'
+
+.lastest_case_sec
+    background: #F5F7FA
+    .container
+        @include media(540)
+            padding-right: 0
+    .upper_sec
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 40px
+        @include media(540)
+            margin-bottom: 30px
+        .heading
+            h1
+                font-size: 24px
+    .main_wrapper
+        .case_slider 
+            height: 441px
+            @include media(540)
+                height: 341px
+            .swiper-slide
+                transition: all .6s ease
+                &.swiper-slide-active
+                    width: 620px !important
+                    @include media(991)
+                        width: 520px !important
+                    @include media(768)
+                        width: 420px !important
+                    @include media(540)
+                        width: 280px !important
+                    .latest_case_col
+                        figcaption
+                            display: block
+            .latest_case_col
+                height: 100%
+                &::before
+                    background: linear-gradient(#0000 50%, #000 100%)
+                    border-radius: 10px
+                figure
+                    border-radius: 10px
+                    img, video 
+                        border-radius: 10px
+                figcaption
+                    padding: 0 25px 25px
+                    display: none
+                    @include media(768) 
+                        padding: 0 20px 20px
+                    @include media(540)
+                        display: block
+                        padding: 0 15px 20px
+                    h6
+                        font-size: 18px
+                        font-weight: 600
+                        color: $white
+                        line-height: 1.2
+                        @include media(768)
+                            font-size: 16px
+                        @include media(540)
+                            font-size: 14px
+                            font-weight: 500
+                    .case_pro_wrap
+                        display: flex
+                        flex-wrap: wrap
+                        align-items: center
+                        justify-content: space-between
+                        margin-top: 15px
+                        gap: 20px
+                        @include media(540)
+                            gap: 10px
+                            margin-top: 10px
+                        .profile_wrap
+                            flex: 1
+                            display: flex
+                            flex-wrap: wrap
+                            align-items: center
+                            gap: 15px
+                            @include media(540)
+                                flex: 0 1 100%
+                                gap: 10px
+                            .user
+                                flex: 0 1 auto 
+                                width: 37px
+                                height: 37px
+                                @include media(540)
+                                    width: 30px
+                                    height: 30px
+                                img
+                                    border-radius: 50%
+                            .info
+                                flex: 1
+                                .name
+                                    font-size: 14px
+                                    color: $white
+                                .desgn
+                                    color: #FFFFFFB2
+                                    font-size: 14px
+                                    @include media(540)
+                                        font-size: 12px
+                        .white-border
+                            flex: 0 1 auto
+                            --padding: 12px
+                .case_tag
+                    position: absolute
+                    left: 13px
+                    top: 15px
+                    background: $white
+                    font-size: 14px
+                    padding: 6px 20px
+                    border-radius: 25px
+                    line-height: 1.2
+                    @include media(540)
+                        font-size: 12px
+                        padding: 5px 12px
+
+.case_results_sec
+    padding: 30px 0 50px
+    .results_nav
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        gap: 40px
+        margin-bottom: 40px
+        @include media(991)
+            gap: 30px
+        @include media(768)
+            gap: 20px
+            margin-bottom: 30px
+        @include media(540)
+            margin-bottom: 25px
+        .results_found
+            flex: 0 1 40%
+            @include media(991)
+                flex: 0 1 27%
+            @include media(768)
+                flex: 0 1 100%
+        .filter_wrap
+            flex: 1
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            gap: 20px
+            @include media(991)
+                gap: 15px
+            .search_wrapper
+                flex: 1
+                display: flex
+                align-items: center
+                gap: 15px
+                padding: 9px 30px
+                border-radius: 10px
+                background: #F4F4F4
+                height: 43px
+                @include media(991)
+                    padding: 9px 20px
+                    flex: 0 1 auto
+                @include media(768)
+                    flex: 1
+                @include media(540)
+                    padding: 6px 15px
+                    border-radius: 5px
+                    gap: 10px
+                input
+                    background: transparent
+                    border: none
+                    outline: none
+                    &::placeholder
+                        color: #0000004D
+                        @include media(540)
+                            font-size: 14px
+            .industries_filter
+                flex: 0 1 30%
+                border-radius: 10px
+                background: #F4F4F4
+                --selectheight: 43px
+                --inputsize: 43px
+                @include media(540)
+                    flex: 1
+                    border-radius: 5px
+                    font-size: 14px
+                label
+                    display: none
+                .custom-select
+                    --paddingleftright: 20px
+                    --labelbefore: #0000004D
+                    @include media(991)
+                        --paddingleftright: 15px
+    .selected_wrapper
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        gap: 15px
+        .selected_case
+            display: flex
+            align-items: center
+            gap: 8px
+            padding: 8px 18px
+            background: #F4F4F4
+            color: $text
+            font-weight: 400
+            border-radius: 25px
+            font-size: 14px
+            line-height: 1.2
+            @include media(768)
+                padding: 6px 15px
+            .close
+                flex: 0 1 auto
+                width: 20px
+                height: 20px
+                cursor: pointer
+                svg
+                    width: 100%
+                    height: 100%
+        .clearAll
+            color: #EE5858
+            line-height: 1
+            @include media(540)
+                width: 100%
+                display: flex
+                justify-content: end
+
+    .case_results_wrapper
+        margin-top: 40px
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: 50px 20px
+        @include media(1170)
+            grid-gap: 30px 15px
+        @include media(768)
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 20px 15px
+        @include media(540)
+            grid-template-columns: repeat(1, 1fr)
+            grid-gap: 15px
+
+// Case Study Details
+
+.case_details_banner.banner
+    &::before
+        background: linear-gradient(270deg, #0000 65%, #000c 100%)
+    .bg
+        @include media(768)
+            height: 500px
+        @include media(540)
+            height: 400px
+        .banner-wrapper
+            .heading
+                max-width: 600px
+                margin: 40px 0
+                @include media(991)
+                    margin: 30px 0
+                @include media(540)
+                    margin: 0 0 20px 0 
+                h1
+                    color: $white
+                    @include media(540)
+                        font-size: 20px
+            .profile_wrap
+                display: flex
+                flex-wrap: wrap
+                align-items: center
+                max-width: max-content
+                gap: 15px
+                @include media(540)
+                    gap: 10px
+                .user
+                    flex: 0 1 auto 
+                    width: 37px
+                    height: 37px
+                    @include media(540)
+                        width: 32px
+                        height: 32px
+                    img
+                        border-radius: 50%
+                .info
+                    flex: 1
+                    .name
+                        font-size: 14px
+                        color: $white
+                    .desgn
+                        color: #FFFFFFB2
+                        font-size: 14px
+                        @include media(540)
+                            font-size: 12px
+            .case_tag
+                margin-top: 50px
+                width: max-content
+                background: #FFFFFF33
+                padding: 8px 20px
+                text-align: center
+                font-size: 14px
+                color: $white
+                border-radius: 25px
+                line-height: 1.5
+                @include media(1170)
+                    margin-top: 40px
+                @include media(768) 
+                    margin-top: 30px
+                @include media(540)
+                    margin-top: 25px
+                    padding: 6px 15px
+                    font-size: 12px
+                    font-weight: 400
+
+.case_highlights_sec
+    background: #F5F7FA
+    .main_wrapper
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        .colA
+            flex: 0 1 40%
+            max-width: 40%
+            width: 100%
+            padding: 110px 70px
+            @include media(1170)
+                padding: 70px 50px
+            @include media(991)
+                padding: 60px 50px
+            @include media(768)
+                flex: 0 1 100%
+                max-width: 100%
+                padding: 40px 0 20px
+            @include media(540)
+                padding: 30px 0 20px
+            .heading
+                height: 100%
+                display: flex
+                flex-direction: column
+                align-items: start
+                justify-content: center
+                @include media(768)
+                    flex-direction: row
+                    justify-content: space-between
+                    align-items: center
+                .btn
+                    margin-top: 40px
+                    @include media(991)
+                        margin-top: 30px
+                    @include media(768)
+                        margin-top: 0
+        .colB
+            flex: 1
+            max-width: 55%
+            width: 100%
+            border-left: 1px solid $primary
+            padding: 110px 70px
+            padding-left: 0
+            @include media(1170)
+                padding: 70px
+                padding-left: 0
+                max-width: 60%
+            @include media(991)
+                padding: 60px 
+                padding-left: 0
+            @include media(768)
+                padding: 30px 0 40px 0
+                max-width: 100% 
+            @include media(540)
+                padding: 25px 0 30px 0
+            ul
+                height: 100%
+                margin-left: -9px
+                li
+                    position: relative
+                    padding-left: 70px
+                    color: #000000B2
+                    @include media(991)
+                        padding-left: 60px
+                    @include media(768)
+                        padding-left: 40px
+                    @include media(540)
+                        padding-left: 30px
+                        font-size: 14px
+                        line-height: 1.4
+                    &:not(:last-child)
+                        margin-bottom: 25px
+                    &::before
+                        content: ""
+                        position: absolute
+                        top: 20%
+                        left: 0
+                        transform: translate(0, -20%)
+                        width: 18px
+                        height: 18px
+                        background: #FAFAFA
+                        border: 1px solid $primary
+                        border-radius: 50%
+                        @include media(991)
+                            top: 11%
+                        @include media(768)
+                            width: 15px
+                            height: 15px
+                            left: 1px
+                        @include media(540)
+                            width: 13px
+                            height: 13px
+                            left: 2px
+
+.case_navigation
+    .scroll_wrap
+        --container: 810px
+        .main_wrapper
+            h6
+                font-size: 14px
+                text-transform: uppercase
+            nav
+                margin-top: 35px
+                display: grid
+                grid-template-columns: repeat(2, 1fr)
+                grid-gap: 40px 60px
+                @include media(991)
+                    margin-top: 30px
+                    grid-gap: 40px 50px
+                @include media(768)
+                    grid-gap: 30px
+                @include media(540)
+                    grid-gap: 15px
+                .nav_item
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    gap: 20px
+                    border-bottom: 1px solid #00000033
+                    padding-bottom: 30px
+                    cursor: pointer
+                    @include media(991)
+                        padding-bottom: 25px
+                    @include media(768)
+                        padding-bottom: 20px
+                    @include media(540)
+                        gap: 10px
+                        padding-bottom: 10px
+                    &:hover
+                        p
+                            color: $primary
+                        button
+                            border-color: $primary
+                            background: $primary
+                            transform: translateY(7px)
+                            svg
+                                path
+                                    fill: $white
+                    p
+                        font-size: 32px
+                        color: #00000066
+                        font-weight: 500
+                        transition: .5s ease
+                        @include media(768)
+                            font-size: 22px
+                            line-height: 1.2
+                        @include media(540)
+                            font-size: 16px
+                    button
+                        width: 40px
+                        height: 40px
+                        border-radius: 50%
+                        border: 1px solid #00000066
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        transition: .5s ease
+                        @include media(768)
+                            width: 35px
+                            height: 35px
+                        @include media(540)
+                            width: 25px
+                            height: 25px
+                        svg
+                            transition: .3s ease
+                            @include media(540)
+                                width: 15px
+                                height: 15px
+    .case_nav
+        margin: 80px 0 
+        border-top: 1px solid #00000033
+        border-bottom: 1px solid #00000033
+        position: sticky
+        top: calc( var(--headerfixed) - 2px )
+        z-index: 2
+        background: #fffc
+        backdrop-filter: blur(15px)
+        @include media(1170)
+            margin: 70px 0
+        @include media(991)
+            margin: 60px 0
+        @include media(768)
+            margin: 50px 0
+        @include media(540)
+            margin: 40px 0
+        .nav_wrapper
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            justify-content: space-between
+            @include media(768)
+                flex-wrap: nowrap
+                overflow-x: auto
+                gap: 50px
+                @include scrollbar($width: 0)
+            >ul
+                display: flex
+                flex-wrap: wrap
+                align-items: center
+                gap: 45px
+                @include media(991)
+                    gap: 25px
+                @include media(768)
+                    flex-wrap: nowrap
+                    gap: 20px
+                li
+                    position: relative
+                    padding: 20px 0
+                    font-size: 18px
+                    font-weight: 500
+                    color: #00000066
+                    line-height: 1.2
+                    cursor: pointer
+                    transition: .5s ease
+                    @include media(991)
+                        padding: 15px 0
+                        font-size: 16px
+                    @include media(768)
+                        white-space: nowrap
+                    @include media(540)
+                        font-size: 14px
+                        padding: 10px 0
+                    &.active
+                        color: $primary
+                        &::before
+                            width: 100%
+                    &::before
+                        content: ""
+                        position: absolute
+                        left: 0
+                        bottom: 0
+                        background: $primary
+                        height: 2px
+                        width: 0
+                        transition: .5s ease
+            .cta_wrap
+                display: flex
+                flex-wrap: wrap
+                align-items: center
+                gap: 40px
+                --btnsize: 40px
+                @include media(991)
+                    gap: 20px
+                    --btnsize: 38px
+                @include media(768)
+                    flex-wrap: nowrap
+                    --btnsize: 30px
+                .share_wrap
+                    position: relative
+                    .shareBtn
+                        width: var(--btnsize)
+                        height: var(--btnsize)
+                        svg
+                            width: 100%
+                            height: 100%
+                    .share_options
+                        transform-origin: top
+                        gap: 20px
+                        margin-right: 10px
+                        transition: all .2s cubic-bezier(.5, 0, 0, 1.25), opacity .15s ease-out
+                        display: flex
+                        position: absolute
+                        top: 50%
+                        right: 100%
+                        transform: scale(.75) translate(0%, -50%)
+                        opacity: 0
+                        user-select: none
+                        pointer-events: none
+                        @include media(991)
+                            background: $white
+                        &.open
+                            opacity: 1
+                            transform: scale(1) translate(0%, -50%)
+                            user-select: all
+                            pointer-events: all
+                        li
+                            a
+                                display: block
+                                &:hover
+                                    svg
+                                        path 
+                                            fill: $primary
+                .back_to_top
+                    width: var(--btnsize)
+                    height: var(--btnsize)
+                    border: 1px solid #00000066
+                    border-radius: 50%
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    transition: .5s ease
+                    &:hover
+                        background: $primary
+                        border-color: $primary
+                        svg
+                            path
+                                stroke: $white
+    .section_wrap
+        --container: 810px
+        section
+            &:not(:last-child)
+                margin-bottom: 60px
+                @include media(991)
+                    margin-bottom: 50px
+                @include media(768)
+                    margin-bottom: 40px
+            .heading
+                margin-bottom: 20px
+                @include media(768)
+                    margin-bottom: 15px
+                h2
+                    font-size: 14px
+                    font-weight: 400
+                    text-transform: uppercase
+                    margin-bottom: 10px
+                h6
+                    font-size: 32px
+                    line-height: 1.2
+                    @include media(768)
+                        font-size: 28px
+                    @include media(540)
+                        font-size: 22px
+            .content
+                h1, h2, h3, h4, h5, h6
+                    color: $black
+                    line-height: 1.21
+                h1
+                    font-size: 36px
+                    @include media(991)
+                        font-size: 34px
+                    @include media(768)
+                        font-size: 28px
+                    @include media(540)
+                        font-size: 24px
+                h2
+                    font-size: 34px
+                    margin-bottom: 20px
+                    @include media(991)
+                        font-size: 30px
+                    @include media(768)
+                        font-size: 26px
+                    @include media(540)
+                        font-size: 24px
+                h3
+                    font-size: 32px
+                    @include media(991)
+                        font-size: 28px
+                    @include media(768)
+                        font-size: 24px
+                    @include media(540)
+                        font-size: 22px
+                h4
+                    font-size: 30px
+                    @include media(991)
+                        font-size: 26px
+                    @include media(768)
+                        font-size: 24px
+                    @include media(540)
+                        font-size: 20px
+                h5
+                    font-size: 28px
+                    @include media(991)
+                        font-size: 26px
+                    @include media(768)
+                        font-size: 24px
+                    @include media(540)
+                        font-size: 20px
+                h6
+                    font-size: 26px
+                    @include media(991)
+                        font-size: 24px
+                    @include media(768)
+                        font-size: 20px
+                    @include media(540)
+                        font-size: 18px
+                h1, h2,h3,h4
+                    margin: 30px 0 20px
+                    @include media(768)
+                        margin: 20px 0 10px
+                h5,h6
+                    margin: 20px 0 15px
+                    @include media(768)
+                        margin: 15px 0 10px
+                strong
+                    font-weight: 600
+                p,li,span
+                    color: $text
+                    font-weight: 300
+                    b
+                        font-weight: 500
+                a
+                    color: $black
+                    &:hover
+                        text-decoration: underline
+                ul
+                    padding-left: 18px
+                    margin-bottom: 20px
+                    @include media(675)
+                        padding-left: 10px
+                    li
+                        position: relative
+                        padding-left: 28px
+                        @include media(675)
+                            padding-left: 20px
+                        &:not(:last-child)
+                            margin-bottom: 6px
+                        &::before
+                            content: ''
+                            position: absolute
+                            top: 8px
+                            left: 0
+                            width: 9px
+                            aspect-ratio: 1
+                            border-radius: 50%
+                            background: $primary
+                            @include media(675)
+                                width: 7px
+                p
+                    line-height: 1.5
+                    &:not(:last-child)
+                        margin-bottom: 10px
+
+.related_sec
+    background: #F5F7FA
+    .container
+        @include media(768)
+            padding-right: 0
+    .upper_sec
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 40px
+        @include media(768)
+            padding-right: 15px
+        @include media(540)
+            margin-bottom: 30px
+    .main_wrapper
+        .related_slider 
+            padding: 12px
+            @include media(1170)
+                padding: 10px
+            .swiper-slide
+                height: auto
+            .case_result_col
+                box-shadow: 0px 5px 10px #64646f33
+
+
+.case_result_col
+    width: 100%
+    height: 100%
+    box-shadow: 0 7px 29px 0 #64646F33
+    border-radius: 10px
+    background: $white
+    &:hover
+        figure
+            img
+                transform: scale(1.1)
+    figure
+        height: 254px
+        border-top-left-radius: 10px
+        border-top-right-radius: 10px
+        line-height: 0
+        overflow: hidden
+        @include media(991)
+            height: 180px
+        @include shine()
+        img
+            border-top-left-radius: 10px
+            border-top-right-radius: 10px
+            transition: .8s ease
+    figcaption
+        padding: 23px 25px 
+        @include media(991)
+            padding: 15px 
+        h6
+            font-size: 16px
+            line-height: 1.4
+            margin-bottom: 25px
+            @include media(991)
+                margin-bottom: 20px
+            @include media(540)
+                margin-bottom: 15px
+        .profile_wrap
+            flex: 1
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            gap: 15px
+            padding-bottom: 25px
+            border-bottom: 1px solid #0000001A
+            @include media(991)
+                gap: 12px
+                padding-bottom: 20px
+            @include media(540)
+                padding-bottom: 15px
+            .user
+                flex: 0 1 auto 
+                width: 37px
+                height: 37px
+                img
+                    border-radius: 50%
+            .info
+                flex: 1
+                .name
+                    font-size: 14px
+                    color: $black
+                    font-weight: 500
+                .desgn
+                    color: $text
+                    font-size: 14px
+        .case_tag
+            width: max-content
+            margin-top: 18px
+            background: #F4F4F4
+            padding: 8px 20px
+            text-align: center
+            font-size: 14px
+            color: $text
+            border-radius: 25px
+            @include media(991)
+                margin-top: 15px
+                padding: 6px 15px
+            @include media(540)
+                padding: 4px 15px
+                font-size: 12px

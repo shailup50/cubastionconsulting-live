@@ -1,0 +1,30 @@
+{
+    "Service" : {
+        "ProcessData": [
+            {
+              "title": "Requirement Analysis",
+              "description": "meet with the client to discuss their business challenges and project requirements."
+            },
+            {
+              "title": "Requirement Analysis",
+              "description": "meet with the client to discuss their business challenges and project requirements."
+            },
+            {
+              "title": "Requirement Analysis",
+              "description": "meet with the client to discuss their business challenges and project requirements."
+            },
+            {
+              "title": "Requirement Analysis",
+              "description": "meet with the client to discuss their business challenges and project requirements."
+            },
+            {
+              "title": "Requirement Analysis",
+              "description": "meet with the client to discuss their business challenges and project requirements."
+            },
+            {
+              "title": "Requirement Analysis",
+              "description": "meet with the client to discuss their business challenges and project requirements."
+            }
+          ]
+    }
+}

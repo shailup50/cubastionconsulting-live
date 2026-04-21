@@ -1,0 +1,81 @@
+import { Metadata } from "next";
+import CaseStudyDetailsPage from "@/components/frontendcomponents/pages/case-study-details";
+
+const CANONICAL_BASE = process.env.NEXT_PUBLIC_CANONICAL_URL ?? 'https://cubastionapi.cyralix.com';
+
+async function fetchPortfolioData(slug: string) {
+    try {
+        const res = await fetch(`https://cubastionapi.cyralix.com/api/v1/portfolios/url/${slug}`, {
+            next: { revalidate: 3600 }
+        });
+        if (!res.ok) return null;
+        const data = await res.json();
+        return data?.status ? data.data : null;
+    } catch (err) {
+        return null;
+    }
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    try {
+        const data = await fetchPortfolioData(slug);
+        if (!data) {
+            return { title: "Case Study Details", description: "" };
+        }
+        const title = data.MetaTitle || data.PortfolioName || "Case Study Details";
+        const description = data.MetaDescriptions || "";
+        const keywords = data.MetaKeywords || "";
+        const imageUrl = data.PortfolioBannerImage
+            ? `https://cubastionapi.cyralix.com/uploads/onlineImages/PortfolioImages/${data.PortfolioBannerImage}`
+            : "/OGImage/stbg.jpg";
+
+        return {
+            title,
+            description,
+            keywords,
+            openGraph: {
+                type: "article",
+                url: `${CANONICAL_BASE}/case-studies/${slug}`,
+                title,
+                description,
+                images: [
+                    {
+                        url: imageUrl,
+                        width: 1200,
+                        height: 630,
+                        alt: title,
+                    },
+                ],
+            },
+            twitter: {
+                card: "summary_large_image",
+                site: "@STBG",
+                title,
+                description,
+                images: [imageUrl],
+            },
+            alternates: {
+                canonical: `${CANONICAL_BASE}/case-studies/${slug}`,
+            },
+            icons: {
+                icon: "/assets/icon/favicon/favicon-96x96.png",
+            },
+        };
+    } catch (err) {
+        return { title: "Case Study Details" };
+    }
+}
+
+const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
+    const { slug } = await params;
+    const portfolioData = await fetchPortfolioData(slug);
+
+    if (!portfolioData) {
+        return <div>Portfolio Not Found</div>;
+    }
+
+    return <CaseStudyDetailsPage slug={slug} initialData={portfolioData} />;
+};
+
+export default page;
