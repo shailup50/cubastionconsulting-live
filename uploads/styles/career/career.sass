@@ -1,0 +1,629 @@
+@import '../_var'
+
+.career-banner.banner
+    &::before
+        background: linear-gradient(0deg, hsl(0deg 0% 100% / 60%) 0%, #fff 100%)
+    .bg
+        @include media(768)
+            height: 500px
+        @include media(540)
+            height: 450px
+    .banner-wrapper
+        .heading
+            width: 100%
+            max-width: 680px
+            margin: 0 auto 30px
+            @include media(991)
+                max-width: 480px
+            h1
+                font-size: 48px
+                text-align: center
+                @include media(1170)
+                    font-size: 40px
+                @include media(991)
+                    font-size: 32px
+                @include media(768)
+                    font-size: 28px
+                @include media(540)
+                    font-size: 24px
+        .search-wrapper
+            .form
+                position: relative
+                display: flex
+                gap: 20px
+                align-items: center
+                width: 100%
+                max-width: 540px
+                margin: 0 auto
+                @include media(540)
+                    flex-direction: column
+                    gap: 15px
+                .form-group
+                    padding: 10px 10px 10px 60px
+                    border-radius: 10px
+                    background: var(--white)
+                    position: relative
+                    @include media(1170)
+                        padding: 10px 10px 10px 50px
+                    @include media(991)
+                        --inputsize: 36px
+                    &::before
+                        background: none
+                    &::after
+                        position: absolute
+                        left: 20px
+                        top: 55%
+                        transform: translateY(-50%)
+                        background: url("/assets/icon/search.svg")
+                        width: 30px
+                        display: block
+                        height: 30px
+                        background-size: 20px
+                        background-repeat: no-repeat
+                        @include media(540)
+                            width: 20px
+                            height: 20px
+                            left: 15px
+                .dropdown-menu
+                    position: absolute
+                    background: $white
+                    top: 100%
+                    width: 100%
+                    height: 200px
+                    border-radius: 10px
+                    border-top-left-radius: 0
+                    border-top-right-radius: 0
+                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px
+                    left: 50%
+                    transform: translate(-50%, 30px)
+                    transform-origin: top
+                    transition: .4s ease
+                    pointer-events: none
+                    --triangle: 10px
+                    z-index: 2
+                    opacity: 0
+                    @include media(540)
+                        height: 160px
+                    &.active
+                        transform: translate(-50%, 0px)
+                        opacity: 1
+                        pointer-events: all
+                        @include media(540)
+                            transform: translate(-50%, -50px)
+                    .menu-wrap
+                        height: 100%
+                        line-height: 1.3
+                        ul
+                            height: 100%
+                            padding: 15px 0 
+                            overflow-y: auto
+                            @include scrollbar($width: 2px)
+                            @include media(540)
+                                padding: 10px 0
+                            li
+                                a
+                                    display: block
+                                    padding: 7px 15px
+                                    font-weight: 400
+                                    @include media(540)
+                                        font-size: 14px
+                                        padding: 5px 14px
+                                    &:hover
+                                        background: var(--bglight)
+                .sbt
+                    padding: 15px 34px
+                    background: var(--secondary)
+                    color: var(--white)
+                    border-radius: 50px
+                    @include media(1170)
+                        border-radius: 25px
+                        padding: 15px 30px
+                    @include media(768)
+                        padding: 12px 25px
+                    @include media(540)
+                        padding: 8px 25px
+
+    .role_wrapper
+        margin-top: 120px
+        @include media(1170)
+            margin-top: 100px
+        @include media(991)
+            margin-top: 80px
+        @include media(768)
+            margin-top: 60px
+        @include media(540)
+            margin-top: 50px
+        .role_slider
+            .swiper-wrapper
+                transition-timing-function: linear
+            .role_col
+                display: flex
+                align-items: center
+                gap: 20px
+                @include media(768)
+                    gap: 15px
+                img
+                    width: 88px
+                    height: 88px
+                    border-radius: 5px
+                    @include media(991)
+                        width: 70px
+                        height: 70px
+                    @include media(768)
+                        width: 60px
+                        height: 60px
+                p
+                    font-size: 20px
+                    font-weight: 400
+                    color: var(--black)
+                    @include media(1170)
+                        font-size: 18px
+                        line-height: 1.2
+                    @include media(991)
+                        font-size: 16px
+                    @include media(540)
+                        font-size: 14px
+
+.client_sec
+    overflow: hidden
+    @include before-blur
+    &::before
+        background: #00328E1A
+        filter: blur(70px)
+        width: 375px
+        height: 375px
+        right: 10%
+        top: 0
+        transform: translate(10%, 0)
+        @include media(1170)
+            width: 350px
+            height: 350px
+        @include media(991)
+            width: 300px
+            height: 300px
+        @include media(768)
+            width: 250px
+            height: 250px
+        @include media(540)
+            width: 150px
+            height: 150px
+    .heading
+        max-width: 550px
+        margin: 0 auto 40px
+        text-align: center
+        @include media(768)
+            max-width: 470px
+        @include media(540)
+            margin: 0 auto 30px
+    .media
+        width: 100%
+        max-width: 853px
+        margin: 0 auto
+        position: relative
+        @include media(1170)
+            max-width: 800px
+        video
+            border-radius: 10px
+        .play
+            width: 110px
+            height: 70px
+            background: var(--white)
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50% , -50%)
+            @include media(1170)
+                width: 100px
+                height: 60px
+            @include media(768)
+                width: 80px
+                height: 50px
+            @include media(540)
+                height: 40px
+            svg
+                @include media(540)
+                    width: 20px
+                    height: 20px
+                path
+                    fill: var(--primary)
+
+.workplace_sec
+    background: var(--bglight)
+    height: 100vh
+    @include media(768)
+        height: 100%
+    .container
+        height: 100%
+    .workplace_wrapper
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        --gap: 80px
+        gap: var(--gap)
+        height: 100%
+        @include media(1170)
+            --gap: 60px
+        @include media(991)
+            --gap: 50px
+        @include media(768)
+            --gap: 40px
+        figure
+            flex: 1
+            max-width: 50%
+            width: 100%
+            height: 450px
+            overflow: hidden
+            position: relative
+            @include media(1170)
+                height: 400px
+            @include media(991)
+                height: 350px
+            @include media(768)
+                height: 100%
+            img, video
+                border-radius: 10px
+                &:not(.active)
+                    opacity: 0
+                    transform: translateY(80px)
+                    @include media(768)
+                        opacity: 1
+                        transform: translateY(0)
+                    position: absolute
+                    top: 50%
+                    left: 0
+                    transform: translate(0, -50%)
+                    transition: transform 1s ease
+                    border-radius: 10px
+                @include media(768)
+                    position: static
+                    transform: none
+                    &:not(:last-child)
+                        margin-bottom: 20px
+        figcaption
+            flex: 1
+            max-width: 50%
+            width: 100%
+            height: 100%
+            overflow: hidden
+            position: relative
+            @include media(768)
+                max-width: 100%
+            .flex
+                &:not(:last-child)
+                    margin-bottom: 30px
+                img
+                    border-radius: 10px
+            .heading
+                max-width: 465px
+                position: absolute
+                top: 50%
+                left: 0
+                transform: translate(0, -50%)
+                transition: transform 1s ease
+                &:not(.active)
+                    opacity: 0
+                    transform: translateY(150px)
+                    @include media(768)
+                        opacity: 1
+                        transform: translateY(0)
+                @include media(768)
+                    position: static
+                    transform: none
+                    max-width: 100%
+                    margin-top: 25px
+                @include media(540)
+                    margin-top: 20px
+                p
+                    margin-top: 15px
+                    color: #000000B2
+                    line-height: 1.4
+                    @include media(1170)
+                        margin-top: 10px
+
+.opportunity_sec
+    .heading
+        display: flex
+        justify-content: space-between
+        margin-bottom: 40px
+        @include media(991)
+            flex-wrap: wrap
+            gap: 15px
+            margin-bottom: 30px
+        @include media(540)
+            margin-bottom: 20px
+    .btn-group
+        display: flex
+        align-items: center
+        gap: 30px
+        margin-top: 40px
+        .swiper-progress
+            flex: 1
+            height: 2px
+            background: #00000026
+            position: relative
+            overflow: hidden
+            .swiper-pagination-progressbar-fill
+                background: $primary
+
+    .opportunities_wrapper
+        .career_slider
+            padding: 20px 0
+            @include media(1170)
+                padding: 15px 0
+            @include media(991)
+                padding: 10px 0
+            .swiper-wrapper
+                .career_card
+                    box-shadow: -1px 1px 4px #64646f33
+                    background: var(--white)
+                    border-radius: 10px
+                    padding: 30px 35px 40px
+                    @include media(1170)
+                        padding: 25px 20px 30px
+                    @include media(768)
+                        padding: 20px 15px 25px
+                    span
+                        font-size: 14px
+                        color: var(--text)
+                        font-weight: 400
+                    p
+                        color: var(--black)
+                        font-weight: 500
+                        margin: 8px 0 0
+                        @include media(1170)
+                            margin: 6px 0 0
+                    ul
+                        margin: 15px 0 20px
+                        @include media(1170)
+                            margin: 15px 0 20px
+                        @include media(768)
+                            margin: 10px 0 15px
+                        li
+                            display: flex
+                            align-items: center
+                            gap: 12px
+                            &:not(:last-child)
+                                margin-bottom: 12px
+                            img
+                                width: 24px
+                                height: 24px
+                                display: block
+                            >p
+                                color: $text
+                                font-size: 14px
+                                font-weight: 400
+                    .btn
+                        @include media(1170)
+                            --height: 36px
+                        @include media(540)
+                            --height: 30px
+
+.stats_sec
+    background: var(--bglight)
+    padding-bottom: 140px
+    &.sre_section
+        background: $white
+        .stats_wrapper
+            .stas_col
+                figcaption
+                    .count
+                        font-size: 24px
+                        line-height: 1.2
+                        @include media(991)
+                            font-size: 22px
+                        @include media(768)
+                            font-size: 20px
+                        @include media(540)
+                            font-size: 16px
+    @include media(540)
+        padding-bottom: 90px
+    .heading
+        text-align: center
+        max-width: 360px
+        margin: 0 auto 60px
+        @include media(1170)
+            margin: 0 auto 50px
+        @include media(991)
+            margin: 0 auto 40px
+        @include media(540)
+            margin: 0 auto 30px
+    .stats_wrapper
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-gap: 20px
+        @include media(768)
+            grid-template-columns: repeat(2, 1fr)
+        @include media(540)
+            grid-gap: 15px
+        .stas_col
+            display: flex
+            flex-direction: column
+            gap: 20px
+            @include media(991)
+                gap: 15px
+            @include media(540)
+                gap: 10px
+            &:nth-child(even)
+                transform: translateY(60px)
+                figure
+                    order: -1
+            &:hover
+                figure
+                    img, video
+                        transform: scale(1.1)
+            figcaption
+                background: $white
+                border-radius: 10px
+                padding: 35px 40px
+                box-shadow: 0 8px 24px 0 #959DA533
+                @include media(1170)
+                    padding: 30px
+                @include media(991)
+                    padding: 20px
+                @include media(540)
+                    padding: 15px
+                    border-radius: 5px
+                .count
+                    font-size: 40px
+                    font-weight: 400
+                    @include media(991)
+                        font-size: 32px
+                    @include media(768)
+                        font-size: 28px
+                p
+                    color: #000000B2
+                    @include media(991)
+                        line-height: 1.2
+            figure
+                border-radius: 10px
+                overflow: hidden
+                @include shine()
+                @include media(540)
+                    border-radius: 5px
+                img, video
+                    border-radius: 10px
+                    transition: .5s ease
+                    @include media(540)
+                        border-radius: 5px
+
+.social_banner
+    &.banner
+        &::before
+            background: linear-gradient(270deg, #00000000 0%, hsl(0deg 0% 0% / 81%) 100%)
+        .bg
+            @include media(991)
+                height: 500px
+            @include media(768)
+                height: 450px
+            @include media(540)
+                height: 400px
+        .banner-wrapper
+            margin-left: 170px
+            max-width: 500px
+            @include media(1170)
+                margin-left: 50px
+            @include media(991)
+                margin-left: 0
+            h2
+                margin-bottom: 16px
+                color: $white
+                @include media(540)
+                    font-size: 24px
+                    margin-bottom: 10px
+            p
+                color: #FFFFFFB2
+                line-height: 1.4
+            .btn
+                margin-top: 40px
+                @include media(991)
+                    margin-top: 30px
+                @include media(540)
+                    margin-top: 20px
+
+.engineering_sec
+    .heading
+        display: flex
+        flex-wrap: wrap
+        text-align: center
+        justify-content: center
+        margin-bottom: 60px
+        @include media(1170)
+            margin-bottom: 50px
+        @include media(768)
+            margin-bottom: 40px
+        @include media(540)
+            margin-bottom: 30px
+        h2
+            flex: 1
+            text-align: center
+            @include media(1170)
+                text-align: left
+        .btn
+            flex: 0 1 auto
+    .main_wrapper
+        display: flex
+        flex-wrap: wrap
+        .engineer_col
+            position: relative
+            flex: 0 1 200px
+            width: 100%
+            padding: 10px 20px
+            transition: .5s ease
+            &:not(:last-child)
+                border-right: 1px solid #0000001A
+            @include media(1170)
+                flex: 0 1 33.33%
+                padding: 20px
+                &:nth-child(3)
+                    border-right: none
+            @include media(768)
+                padding: 15px
+            @include media(768)
+                flex: 0 1 50%
+                &:nth-child(even)
+                    border-right: none
+                &:nth-child(odd)
+                    border-right: 1px solid #0000001A
+                    @include media(540)
+                        border-right: none
+            @include media(540)
+                flex: 0 1 100%
+                border-bottom: 1px solid #0000001A
+                padding: 20px 0
+                &:first-child
+                    padding-top: 0
+
+            &.active
+                flex: 1
+                .desc
+                    opacity: 1
+                    visibility: visible
+                    transform: scale(1)
+                .toggleBtn
+                    display: none
+            .count
+                width: 46px
+                height: 46px
+                display: flex
+                align-items: center
+                justify-content: center
+                font-size: 24px
+                background: $white
+                border: 1px solid #C8D0E5
+                border-radius: 5px
+                @include media(768)
+                    width: 40px
+                    height: 40px
+                    font-size: 20px
+            h6
+                margin: 20px 0 15px
+                font-size: 16px
+                @include media(768)
+                    margin: 15px 0 10px
+                @include media(768)
+                    margin: 10px 0
+            .desc
+                transition: .5s ease
+                opacity: 0
+                visibility: hidden
+                transform: scale(0.5)
+                @include media(1170)
+                    opacity: 1
+                    visibility: visible
+                    transform: scale(1)
+                @include media(768)
+                    font-size: 14px
+            .toggleBtn
+                width: 36px
+                height: 36px
+                background: #DFE5F1
+                border-radius: 5px
+                display: flex
+                align-items: center
+                justify-content: center
+                opacity: 1
+                position: absolute
+                left: 25px
+                bottom: 10px
+                @include media(1170)
+                    display: none
