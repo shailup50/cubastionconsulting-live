@@ -10,12 +10,6 @@
 !.yarn/releases
 !.yarn/versions
 
-# large files (IMPORTANT)
-*.zip
-*.mp4
-*.mov
-*.avi
-
 # testing
 /coverage
 
