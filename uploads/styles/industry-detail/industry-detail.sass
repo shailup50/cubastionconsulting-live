@@ -1,0 +1,486 @@
+@import '../_var'
+
+.industry-banner
+    margin-top: calc(var(--headerheight) + 20px)
+    height: 620px
+    @media (max-width: 1400px) and (max-height: 650px)
+        height: 600px
+    // @include media(1170)
+    //     height: 580px
+    // @include media(991)
+    //     height: 450px
+    @include media(768)
+        height: 500px
+        padding-bottom: 50px
+    @include media(540)
+        height: 475px
+        padding-bottom: 30px
+    .container, container-fluid
+        height: 100%
+    .grid
+        position: relative
+        height: 100%
+        .item-content
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 2
+            width: 100%
+            height: 100%
+            --padding: 60px
+            padding: var(--padding)
+            max-width: 700px
+            @include media(1170)
+                --padding: 40px
+            @include media(991)
+                max-width: 420px
+                --padding: 20px
+            @include media(768)
+                height: auto 
+                max-width: 100%
+                text-align: center
+                top: unset
+                bottom: 0
+            .name
+                margin-top: 0
+                font-size: 14px
+                font-weight: 500
+                color: $black
+                position: relative
+                padding-left: 30px
+                @include media(768)
+                    display: none
+                &::before
+                    content: ""
+                    position: absolute
+                    top: 50%
+                    left: 0
+                    transform: translateY(-50%)
+                    width: 12px
+                    height: 12px
+                    border: 1px solid var(--black)
+                    border-radius: 50%
+            h1
+                color: var(--black)
+                margin: 100px 0 20px
+                @include media(1170)
+                    margin: 100px 0 20px
+                @include media(991)
+                    margin: 40px 0 20px
+                    font-size: 30px
+                @include media(768)
+                    margin: 0px 0 15px
+                    font-size: 26px
+                @include media(540)
+                    margin: 20px 0 10px
+                    font-size: 20px
+            p:not(.name)
+                color: $text
+                width: 100%
+                max-width: 415px
+                line-height: 1.5
+                font-weight: 400
+                @include media(1170)
+                    margin-top: 0
+                @include media(991)
+                    line-height: 1.4
+                @include media(768)
+                    margin: 0 auto
+                    font-size: 14px
+            .btn
+                margin-top: 70px
+                @include media(1170)
+                    margin-top: 35px
+                @include media(991)
+                    margin-top: 30px
+                @include media(768)
+                    margin-top: 20px
+                @include media(540)
+                    margin-top: 15px
+        .item-media
+            border-radius: 10px
+            height: 100%
+            line-height: 0
+            overflow: hidden
+            background: #f5f5f5
+            display: flex
+            figure
+                height: 100%
+
+.client_sec.industry_clients
+    padding-bottom: 0
+
+.automation_sec ,
+.business_sec
+    .heading
+        text-align: center
+        width: 100%
+        max-width: 650px
+        margin: 0 auto 50px
+        @include media(991)
+            margin: 0 auto 40px
+        @include media(540)
+            margin: 0 auto 30px
+            max-width: 260px
+
+    .grid
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        gap: 40px
+        @include media(1170)
+            grid-gap: 20px 15px
+        @include media(991)
+            grid-template-columns: repeat(3, 1fr)
+        @include media(768)
+            grid-template-columns: repeat(2, 1fr)
+        @include media(540)
+            grid-template-columns: repeat(1, 1fr)
+            grid-gap: 15px
+
+.business_sec
+    .heading
+        @include media(991)
+            max-width: 460px
+    .grid
+        @include media(1170)
+            grid-gap: 30px
+        @include media(991)
+            grid-template-columns: repeat(4, 1fr)
+            grid-gap: 20px
+        @include media(768)
+            grid-template-columns: repeat(2, 1fr)
+        .card
+            padding: 28px 20px
+            @include media(1170)
+                padding: 25px 20px
+            @include media(991)
+                padding: 20px 0
+            @include media(540)
+                padding: 15px 0
+            &:not(:last-child)
+                border-top: 1px solid rgba(240, 142, 29, 1)
+                border-bottom: 1px solid rgba(240, 142, 29, 1)
+            p
+                margin: 8px 0 12px
+                color: var(--black)
+                @include media(991)
+                    margin: 5px 0 7px
+            span
+                display: block
+                font-size: 14px
+                font-weight: 400
+                color: $text
+                line-height: 1.4
+                @include media(540)
+                    font-size: 12px
+            &:last-child
+                background: var(--gradient-a)
+                padding: 30px 35px
+                border-radius: 10px
+                @include media(1170)
+                    padding: 25px 20px
+                @include media(991)
+                    padding: 20px 15px
+                @include media(540)
+                    padding: 15px
+                h2,p
+                    color: var(--white)
+                span
+                    color: var(--para)
+                    font-size: 14px
+                    font-weight: 400
+                    @include media(540)
+                        font-size: 12px
+
+.case_sec
+    .container-fluid
+        padding: 0
+        .upper-sec
+            @include media(1170)
+                margin-bottom: 2.5rem
+            @include media(768)
+                margin-bottom: 2rem
+            @include media(540)
+                margin-bottom: 1rem
+            .heading
+                p
+                    @include media(540)
+                        margin-top: 0
+    .case_slider
+        padding: 30px 15px
+        @include media(1170)
+            padding: 15px
+
+.related_blog
+    .container
+        @include media(991)
+            padding-right: 0
+    .upper-sec
+        @include media(1170)
+            margin-bottom: 2.5rem
+        @include media(768)
+            margin-bottom: 2rem
+        @include media(540)
+            margin-bottom: 1rem
+    .related_slider
+        padding: 15px 0
+        @include media(768)
+            padding: 10px 0
+
+.faq_sec
+  .grid
+    background: var(--bglight)
+    display: grid
+    grid-template-columns: 427px 1fr
+    align-items: start
+    border-radius: 10px
+    padding: 60px 50px
+    @include media(1170) 
+        padding: 50px 40px
+    @include media(991)
+        padding: 40px 30px
+        grid-template-columns: repeat(1, 1fr)
+        grid-gap: 40px
+    @include media(768) 
+        padding: 35px 30px
+    @include media(540)
+        padding: 25px 15px
+        grid-gap: 30px
+    .heading
+      position: sticky
+      top: calc( var(--headerheight) + 20px)
+      @include media(991)
+        position: static
+      .btn
+        margin-top: 30px
+        @include media(991)
+            margin-top: 20px
+        @include media(540)
+            margin-top: 15px
+    .item-content
+      display: flex
+      flex-direction: column
+      gap: 16px
+      .faq_item
+        background: var(--white)
+        border-radius: 10px
+        overflow: hidden
+        transition: background 0.35s
+        &.active
+          background: var(--gradient-c)
+          border-color: transparent
+
+          .faq_item_question
+            color: #fff
+
+          .faq_item_icon
+            .circle
+                .icon
+                    --bgcolor: var(--white)
+                    &::after
+                        transform: scaleY(0)
+
+          .faq_item_answer
+            color: rgba(255, 255, 255, 0.80)
+
+        &_question
+          width: 100%
+          display: flex
+          justify-content: space-between
+          align-items: center
+          gap: 20px
+          padding: 20px 22px
+          background: none
+          cursor: pointer
+          color: rgba(0, 0, 0, 0.4)
+          transition: color 0.35s
+          @include media(1170) 
+            padding: 20px
+          @include media(991)
+            padding: 15px 20px
+          @include media(768) 
+            font-size: 16px
+            padding: 15px
+
+        &_text
+          font-size: 18px
+          font-weight: 500
+          line-height: 1.2
+          text-align: left
+          @include media(540)
+            font-size: 16px
+
+        &_icon
+          flex: 0 1 auto
+          font-size: 1.4rem
+          .circle
+            flex: 0 1 43px
+            width: 43px
+            height: 43px
+            transition: .5s ease
+            position: relative
+            cursor: pointer
+            .icon
+                --bgcolor: #00000066
+                --size: 20px
+                --border: 2px
+                height: var(--size)
+                width: var(--size)
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                @include media(768) 
+                    --size: 18px
+                @include before(var(--bgcolor))
+                @include after(var(--bgcolor))
+                &::before,&::after
+                    transition: .5s ease
+                &::before
+                    top: calc(var(--size) / 2 - var(--border) / 2)
+                    bottom: auto
+                    height: var(--border)
+                    width: 100%
+                &::after
+                    left: calc(var(--size) / 2)
+                    translate: -50% 0 
+                    right: auto
+                    width: var(--border)
+                    height: 100%
+
+        &_body
+          display: grid
+          grid-template-rows: 0fr
+          padding: 0 22px 0
+          transition: .5s ease
+          @include media(1170) 
+            padding: 0 20px 0
+          @include media(768) 
+            padding: 0 15px
+          &.active
+            padding: 0 22px 22px
+            grid-template-rows: 1fr
+            @include media(1170) 
+                padding: 0 20px 22px
+            @include media(768) 
+                padding: 0 15px 20px
+
+        &_answer
+          font-size: 16px
+          color: rgba(15, 27, 53, 0.65)
+          overflow: hidden
+          @include media(540)
+            font-size: 14px
+
+.speak_sec
+    .grid
+        background: var(--bglight)
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        gap: 10rem
+        align-items: center
+        border-radius: 10px
+        padding: 45px
+        @include media(1170) 
+            padding: 40px
+            gap: 3rem
+        @include media(991) 
+            grid-template-columns: repeat(1, 1fr)
+            padding: 40px 30px
+            gap: 2.5rem
+        @include media(768) 
+            padding: 35px 30px
+        @include media(540)
+            padding: 25px 15px
+            gap: 2rem
+        .heading
+            p:not( .card-profile figcaption > p)
+                margin: 20px 0 45px
+                line-height: 1.5
+                @include media(1170) 
+                    margin: 20px 0 40px
+                @include media(991) 
+                    margin: 20px 0 30px
+                @include media(768) 
+                    margin: 15px 0 20px
+                @include media(540)
+                    margin: 10px 0 15px
+            .card-profile
+                display: flex
+                flex-wrap: wrap
+                align-items: center
+                gap: 18px
+                max-width: max-content
+                @include media(768) 
+                    gap: 15px
+                @include media(540)
+                    gap: 10px
+                figure
+                    flex: 0 1 auto
+                    width: 52px
+                    height: 52px
+                    @include media(540)
+                        width: 45px
+                        height: 45px
+                figcaption
+                    flex: 1
+                    line-height: 1.2
+                    h6
+                        font-size: 14px
+                    p
+                        color: #000000B2
+                        font-size: 14px
+
+        .form
+            background: var(--gradient-a)
+            padding: 45px 40px
+            border-radius: 10px
+            @include media(1170) 
+                padding: 40px 35px
+            @include media(768) 
+                padding: 35px 30px
+            @include media(540)
+                padding: 20px 15px
+            .form-grid
+                --item: 2
+                --gaptb: 0
+                @include media(540)
+                    --item: 1
+                .submit-grp:not(.text-left)
+                    margin-top: 0
+                .check_term
+                    @include media(540)
+                        margin: 0
+
+.industry-banner
+    @media (min-width: 768px)
+        .grid
+            .item-media
+                figure
+                    height: 80%
+                    width: 50%
+                    margin: auto 0 auto auto
+                    &.automotive, &.public
+                        width: 70%
+                    
+    @include media(768)
+        .grid
+            .item-media
+                figure
+                    width: 140px
+                    height: 140px
+                    margin: 30px auto 0
+                    @include media(540) 
+                        margin: 20px auto 0
+                    &.automotive
+                        width: 200px
+                        height: 200px
+                        margin: 30px auto 0 24%
+                        @include media(540) 
+                            margin: 20px auto 0 6%
+                    &.public
+                        width: 300px
+                        height: 170px
+                        margin: 30px auto 0 15%
+                        @include media(540)
+                            width: 160px
+                            height: 120px
