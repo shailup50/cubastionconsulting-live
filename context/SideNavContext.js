@@ -2,7 +2,6 @@
 import { createContext, useContext, useState } from "react"
 
 const SideNavContext = createContext()
-
 export function SideNavProvider({ children }) {
     const [sections, setSections] = useState([])
     return (
