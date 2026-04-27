@@ -1,12 +1,10 @@
-import type { NextConfig } from "next";
-
 const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: process.env.NEXT_PUBLIC_IMAGE_DOMAIN || 'localhost',
-        pathname: '/BackEndImage/**',
+        protocol: "https",
+        hostname: process.env.NEXT_PUBLIC_IMAGE_DOMAIN || "localhost",
+        pathname: "/BackEndImage/**",
       },
     ],
     unoptimized: true,
@@ -24,7 +22,7 @@ const nextConfig = {
       {
         source: "/api/:path*",
         destination: "https://cubastionapi.cyralix.com/api/v1/:path*",
-      }
+      },
     ];
   },
   typescript: {

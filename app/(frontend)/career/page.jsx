@@ -1,15 +1,14 @@
-export const dynamic = 'force-dynamic';
-import { Metadata } from "next";
+export const dynamic = "force-dynamic";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 const username = process.env.NEXT_PUBLIC_BASIC_AUTH_USER;
 const password = process.env.NEXT_PUBLIC_BASIC_AUTH_PASS;
 const authHeader = "Basic " + btoa(`${username}:${password}`);
-const CANONICAL_BASE = process.env.NEXT_PUBLIC_CANONICAL_URL ?? 'https://localhost:7093';
+const CANONICAL_BASE = process.env.NEXT_PUBLIC_CANONICAL_URL ?? "https://localhost:7093";
 
-import AboutUsPage from "../../../components/frontendcomponents/pages/about-us/index.jsx";
+import CareerPage from "../../../components/frontendcomponents/pages/career";
 
-const fetchPagesMeta = async (id: string) => {
+const fetchPagesMeta = async (id) => {
   try {
     const url = `${apiUrl}/pages-meta/${id}`;
     if (url.includes("localhost") || url.includes("127.0.0.1")) {
@@ -21,51 +20,46 @@ const fetchPagesMeta = async (id: string) => {
         Authorization: authHeader,
         Accept: "application/json",
       },
-      next: { revalidate: 0 }
+      next: { revalidate: 0 },
     });
     if (!response.ok) return null;
     const json = await response.json();
     return json?.data || json || {};
-  } catch (error: any) {
+  } catch (error) {
     return null;
   }
 };
 
-export async function generateMetadata(): Promise<Metadata> {
-  const id = "2"; // 2 for About Us
+export async function generateMetadata() {
+  const id = "3";
   const data = await fetchPagesMeta(id);
-
   if (!data || Object.keys(data).length === 0) {
-    return { title: "About Us", description: "" };
+    return { title: "Careers", description: "" };
   }
 
   return {
-    title: data?.MetaTitle || "About Us",
+    title: data?.MetaTitle || "Careers",
     description: data?.MetaDescriptions || "",
     keywords: data?.MetaKeywords || "",
     openGraph: {
       type: "website",
-      url: `${CANONICAL_BASE}/about-us`,
-      title: data?.MetaTitle || "About Us",
+      url: `${CANONICAL_BASE}/career`,
+      title: data?.MetaTitle || "Careers",
       description: data?.MetaDescriptions || "",
-      images: [
-        { url: "/OGImage/cubastion.jpg", width: 1200, height: 630, alt: "About Us" },
-      ],
+      images: [{ url: "/OGImage/cubastion.jpg", width: 1200, height: 630, alt: "Careers" }],
     },
     twitter: {
       card: "summary_large_image",
       site: "@Cubastion",
-      title: data?.MetaTitle || "About Us",
+      title: data?.MetaTitle || "Careers",
       description: data?.MetaDescriptions || "",
       images: ["/OGImage/cubastion.jpg"],
     },
-    alternates: { canonical: `${CANONICAL_BASE}/about-us` },
+    alternates: { canonical: `${CANONICAL_BASE}/career` },
     icons: { icon: "/assets/icon/favicon/favicon-96x96.png" },
   };
 }
 
-export default async function AboutUs() {
-  return (
-    <AboutUsPage />
-  );
+export default async function Careers() {
+  return <CareerPage />;
 }

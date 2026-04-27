@@ -1,13 +1,12 @@
-export const dynamic = 'force-dynamic';
-import { Metadata } from "next";
+export const dynamic = "force-dynamic";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 const username = process.env.NEXT_PUBLIC_BASIC_AUTH_USER;
 const password = process.env.NEXT_PUBLIC_BASIC_AUTH_PASS;
 const authHeader = "Basic " + btoa(`${username}:${password}`);
-const CANONICAL_BASE = process.env.NEXT_PUBLIC_CANONICAL_URL ?? 'https://localhost:7093';
+const CANONICAL_BASE = process.env.NEXT_PUBLIC_CANONICAL_URL ?? "https://localhost:7093";
 
-const fetchPagesMeta = async (id: string) => {
+const fetchPagesMeta = async (id) => {
   try {
     const url = `${apiUrl}/pages-meta/${id}`;
     if (url.includes("localhost") || url.includes("127.0.0.1")) {
@@ -16,27 +15,27 @@ const fetchPagesMeta = async (id: string) => {
     const response = await fetch(url, {
       method: "GET",
       headers: {
-        "Authorization": authHeader,
-        "Accept": "application/json",
+        Authorization: authHeader,
+        Accept: "application/json",
       },
-      next: { revalidate: 0 }
+      next: { revalidate: 0 },
     });
     if (!response.ok) return null;
     const json = await response.json();
     return json?.data || json || {};
-  } catch (error: any) {
+  } catch (error) {
     return null;
   }
 };
 
-const fetchStaticData = async (id: string) => {
+const fetchStaticData = async (id) => {
   try {
     const url = `${apiUrl}/Static/GetStaticByID/${id}`;
     const response = await fetch(url, {
       method: "GET",
       headers: {
-        "Authorization": authHeader,
-        "Accept": "application/json",
+        Authorization: authHeader,
+        Accept: "application/json",
       },
     });
     if (!response.ok) return null;
@@ -44,14 +43,13 @@ const fetchStaticData = async (id: string) => {
     let result = json?.result || json?.data || json;
     if (Array.isArray(result)) return result[0] || {};
     return result || {};
-  } catch (error: any) {
+  } catch (error) {
     return null;
   }
 };
 
-export async function generateMetadata(): Promise<Metadata> {
-  const id = "7"; // Mapping Privacy Policy to 7 in pages-meta
-  const data = await fetchPagesMeta(id);
+export async function generateMetadata() {
+  const data = await fetchPagesMeta("7");
 
   if (!data || Object.keys(data).length === 0) {
     return { title: "Privacy Policy", description: "" };
@@ -66,9 +64,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: `${CANONICAL_BASE}/privacy-policy`,
       title: data?.MetaTitle || "Privacy Policy",
       description: data?.MetaDescriptions || "",
-      images: [
-        { url: "/OGImage/cubastion.jpg", width: 1200, height: 630, alt: "Privacy Policy" },
-      ],
+      images: [{ url: "/OGImage/cubastion.jpg", width: 1200, height: 630, alt: "Privacy Policy" }],
     },
     twitter: {
       card: "summary_large_image",
@@ -77,19 +73,13 @@ export async function generateMetadata(): Promise<Metadata> {
       description: data?.MetaDescriptions || "",
       images: ["/OGImage/cubastion.jpg"],
     },
-    alternates: {
-      canonical: `${CANONICAL_BASE}/privacy-policy`,
-    },
-    icons: {
-      icon: "/assets/icon/favicon/favicon-96x96.png",
-    },
+    alternates: { canonical: `${CANONICAL_BASE}/privacy-policy` },
+    icons: { icon: "/assets/icon/favicon/favicon-96x96.png" },
   };
 }
 
 export default async function Privacy() {
-  const id = "6"; // Content fetch
-  const details = await fetchStaticData(id);
-
+  const details = await fetchStaticData("6");
   return (
     <div className="container mx-auto py-10 px-4">
       <h1 className="text-3xl font-bold mb-6">{details?.StaticName || "Privacy Policy"}</h1>

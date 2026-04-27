@@ -1,15 +1,14 @@
-export const dynamic = 'force-dynamic';
-import { Metadata } from "next";
+export const dynamic = "force-dynamic";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 const username = process.env.NEXT_PUBLIC_BASIC_AUTH_USER;
 const password = process.env.NEXT_PUBLIC_BASIC_AUTH_PASS;
 const authHeader = "Basic " + btoa(`${username}:${password}`);
-const CANONICAL_BASE = process.env.NEXT_PUBLIC_CANONICAL_URL ?? 'https://localhost:7093';
+const CANONICAL_BASE = process.env.NEXT_PUBLIC_CANONICAL_URL ?? "https://localhost:7093";
 
 import CaseStudiesPage from "../../../components/frontendcomponents/pages/case-studies/index";
 
-const fetchPagesMeta = async (id: string) => {
+const fetchPagesMeta = async (id) => {
   try {
     const url = `${apiUrl}/pages-meta/${id}`;
     if (url.includes("localhost") || url.includes("127.0.0.1")) {
@@ -21,18 +20,18 @@ const fetchPagesMeta = async (id: string) => {
         Authorization: authHeader,
         Accept: "application/json",
       },
-      next: { revalidate: 0 }
+      next: { revalidate: 0 },
     });
     if (!response.ok) return null;
     const json = await response.json();
     return json?.data || json || {};
-  } catch (error: any) {
+  } catch (error) {
     return null;
   }
 };
 
-export async function generateMetadata(): Promise<Metadata> {
-  const id = "4"; // 4 for Case Studies
+export async function generateMetadata() {
+  const id = "4";
   const data = await fetchPagesMeta(id);
 
   if (!data || Object.keys(data).length === 0) {
@@ -48,9 +47,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: `${CANONICAL_BASE}/case-studies`,
       title: data?.MetaTitle || "Case Studies",
       description: data?.MetaDescriptions || "",
-      images: [
-        { url: "/OGImage/cubastion.jpg", width: 1200, height: 630, alt: "Case Studies" },
-      ],
+      images: [{ url: "/OGImage/cubastion.jpg", width: 1200, height: 630, alt: "Case Studies" }],
     },
     twitter: {
       card: "summary_large_image",
@@ -65,7 +62,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function CaseStudies() {
-  return (
-    <CaseStudiesPage />
-  );
+  return <CaseStudiesPage />;
 }

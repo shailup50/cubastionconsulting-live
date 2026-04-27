@@ -1,11 +1,11 @@
-import { Suspense } from 'react';
-import Head from 'next/head';
+import { Suspense } from "react";
+import Head from "next/head";
 import "../../../public/admin-assets/styles/style.css";
 import MainHeaderFooter from "@/components/backendcomponents/MainHeaderFooter";
 import NextTopLoader from "nextjs-toploader";
 import Loader from "@/app/loading";
-import '../../../public/admin-assets/fonts/font.css';
-import { Toaster } from 'react-hot-toast';
+import "../../../public/admin-assets/fonts/font.css";
+import { Toaster } from "react-hot-toast";
 import ReduxProvider from "../../../store/ReduxProvider";
 import AuthWrapper from "@/components/backendcomponents/AuthWrapper";
 
@@ -14,7 +14,7 @@ export const metadata = {
   description: "Cubastion Admin Panel",
 };
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+export default function AdminLayout({ children }) {
   return (
     <html lang="en">
       <ReduxProvider>
@@ -26,9 +26,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <body cz-shortcut-listen="true">
             <Loader />
             <MainHeaderFooter />
-            <Suspense fallback={<Loader />}>
-              {children}
-            </Suspense>
+            <Suspense fallback={<Loader />}>{children}</Suspense>
             <Toaster
               position="top-center"
               reverseOrder={true}
@@ -71,4 +69,3 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     </html>
   );
 }
-
