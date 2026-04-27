@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import Head from "next/head";
+import "../../globals.css";
 import "../../../public/admin-assets/styles/style.css";
 import MainHeaderFooter from "@/components/backendcomponents/MainHeaderFooter";
 import NextTopLoader from "nextjs-toploader";

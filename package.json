@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "node server.mjs",
-    "build": "NEXT_DISABLE_TURBOPACK=1 next build",
-    "start": "NODE_ENV=production NEXT_DISABLE_TURBOPACK=1 node server.mjs",
+    "build": "node scripts/next-without-turbo.mjs build",
+    "start": "node scripts/next-without-turbo.mjs start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -31,7 +31,6 @@
     "sass": "^1.97.3",
     "suneditor-react": "^3.6.1",
     "swiper": "^12.1.2",
-    "tailwindcss": "^4.2.1",
     "three": "^0.183.2",
     "zustand": "^5.0.11"
   },
@@ -42,12 +41,14 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.5.0",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^10.1.0",
     "eslint-config-next": "^0.2.4",
+    "postcss": "^8.5.12",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "tailwindcss": "^4",
+    "tailwindcss": "^4.2.4",
     "typescript": "^5"
   }
 }

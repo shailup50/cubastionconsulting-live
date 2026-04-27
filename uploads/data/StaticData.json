@@ -355,7 +355,7 @@
           "btnText": "Read More"
         }
       ]
-    }, 
+    },
     "Section9": {
       "heading": "Awards and Recognition",
       "awardsData": [
@@ -390,7 +390,6 @@
       ]
     }
   },
-
   "AboutUs": {
     "Section1": {
       "heading": "About Us",
@@ -629,7 +628,6 @@
       ]
     }
   },
-
   "ContactUs": {
     "Section1": {
       "bgmedia": "/assets/images/contact/contact_banner.jpg",
@@ -675,13 +673,11 @@
       }
     ]
   },
-
   "IndustryDetails": {
     "Section1": {
       "name": "Automobile Industry",
       "heading": "Driving the Future of Automotive Innovation",
       "subheading": "We provide intelligent automation solutions for the automotive industry, helping manufacturers improve efficiency, enhance quality, and accelerate innovation in a rapidly evolving market.",
-
       "bgmedia": "/assets/images/industry-details/industry-hero.png",
       "ceodetails": {
         "imgsrc": "/assets/images/about-us/ceo_image.png",
@@ -689,7 +685,6 @@
         "desgn": "Chief Executive Officer"
       }
     },
-
     "Section2": [
       {
         "id": 1,
@@ -728,7 +723,6 @@
         "imgSrc": "/assets/images/others/client2.png"
       }
     ],
-
     "Section3": {
       "heading": "Cubastion’s Automotive Solutions",
       "subheading": "End-to-End Automotive Solutions",
@@ -763,7 +757,6 @@
           "subheading": "Real-time insights from conversations and transactions.",
           "bgmedia": "/assets/images/industry-details/card5.png"
         },
-
         {
           "id": "6",
           "heading": "Powering Efficiencies",
@@ -784,7 +777,6 @@
         }
       ]
     },
-
     "Section4": {
       "heading": "We Make a Measurable Impact on Your Business",
       "ImpactCard": [
@@ -814,7 +806,6 @@
         }
       ]
     },
-
     "Section5": {
       "heading": "Case Studies",
       "subheading": "End-to-End Automotive Solutions",
@@ -887,7 +878,6 @@
         }
       ]
     },
-
     "Section6": {
       "awardsData": [
         {
@@ -920,7 +910,6 @@
         }
       ]
     },
-
     "Section7": {
       "heading": "Related Blogs",
       "blogCards": [
@@ -984,7 +973,6 @@
         }
       ]
     },
-
     "Section8": {
       "heading": "Frequently Asked Questions",
       "subheading": "Frequently Asked Questions",
@@ -1011,7 +999,6 @@
         }
       ]
     },
-
     "Section9": {
       "heading": "Speak to Our Experts",
       "subheading": "Our global leadership team represents an entirely new blend of business intelligence and tech expertise. Each member is dedicated to catalyzing change, delivering results and partnering with you to solve your complex business issues and help transform your business through digital technologies.",
@@ -1023,7 +1010,6 @@
       }
     }
   },
-
   "Career": {
     "Section1": {
       "heading": "We recognize that our people are our future success",
@@ -1050,9 +1036,7 @@
       "heading": "Dedication to every client's success. Dedication to self.",
       "subheading": "We are committed to every client’s success, while continuously strengthening our own capabilities and standards",
       "bgmedia": "/assets/video/career.mp4"
-      
     },
-
     "Section3": [
       {
         "id": 1,
@@ -1073,137 +1057,130 @@
         "bgmedia": "/assets/images/career/workplace3.jpg"
       }
     ],
-     "Section4": {
+    "Section4": {
       "heading": "Opportunities That Help You Grow",
       "locationCards": [
         {
           "id": "1",
           "heading": "Software Engineering",
           "role": "Junior Java  Developer",
-          "locations":[
+          "locations": [
             {
-              "id":"1",
+              "id": "1",
               "locate": "Junior",
               "icon": "/assets/icon/locate.svg"
             },
             {
-              "id":"2",
+              "id": "2",
               "locate": "Ukraine",
               "icon": "/assets/icon/prfile.svg"
             }
-
           ]
         },
         {
           "id": "2",
           "heading": "Software Engineering",
           "role": "Junior Java  Developer",
-          "locations":[
+          "locations": [
             {
-              "id":"1",
+              "id": "1",
               "locate": "Junior",
               "icon": "/assets/icon/locate.svg"
             },
             {
-              "id":"2",
+              "id": "2",
               "locate": "Ukraine",
               "icon": "/assets/icon/prfile.svg"
             }
-
           ]
         },
         {
           "id": "3",
           "heading": "Software Engineering",
           "role": "Junior Java  Developer",
-          "locations":[
+          "locations": [
             {
-              "id":"1",
+              "id": "1",
               "locate": "Junior",
               "icon": "/assets/icon/locate.svg"
             },
             {
-              "id":"2",
+              "id": "2",
               "locate": "Ukraine",
               "icon": "/assets/icon/prfile.svg"
             }
-
           ]
         },
         {
           "id": "4",
           "heading": "Software Engineering",
           "role": "Junior Java  Developer",
-          "locations":[
+          "locations": [
             {
-              "id":"1",
+              "id": "1",
               "locate": "Junior",
               "icon": "/assets/icon/locate.svg"
             },
             {
-              "id":"2",
+              "id": "2",
               "locate": "Ukraine",
               "icon": "/assets/icon/prfile.svg"
             }
-
           ]
         },
         {
           "id": "5",
           "heading": "Software Engineering",
           "role": "Junior Java  Developer",
-          "locations":[
+          "locations": [
             {
-              "id":"1",
+              "id": "1",
               "locate": "Junior",
               "icon": "/assets/icon/locate.svg"
             },
             {
-              "id":"2",
+              "id": "2",
               "locate": "Ukraine",
               "icon": "/assets/icon/prfile.svg"
             }
-
           ]
         },
         {
           "id": "6",
           "heading": "Software Engineering",
           "role": "Junior Java  Developer",
-          "locations":[
+          "locations": [
             {
-              "id":"1",
+              "id": "1",
               "locate": "Junior",
               "icon": "/assets/icon/locate.svg"
             },
             {
-              "id":"2",
+              "id": "2",
               "locate": "Ukraine",
               "icon": "/assets/icon/prfile.svg"
             }
-
           ]
         },
         {
           "id": "7",
           "heading": "Software Engineering",
           "role": "Junior Java  Developer",
-          "locations":[
+          "locations": [
             {
-              "id":"1",
+              "id": "1",
               "locate": "Junior",
               "icon": "/assets/icon/locate.svg"
             },
             {
-              "id":"2",
+              "id": "2",
               "locate": "Ukraine",
               "icon": "/assets/icon/prfile.svg"
             }
-
           ]
         }
       ]
-    }, 
+    },
     "Section5": {
       "heading": "Numbers speak for themselves",
       "statsWrapper": [
@@ -1304,7 +1281,6 @@
       ]
     }
   },
-
   "JobDetails": {
     "Section1": {
       "heading": "Junior  Java Developer",
@@ -1317,126 +1293,119 @@
           "id": "1",
           "heading": "Software Engineering",
           "role": "Junior Java  Developer",
-          "locations":[
+          "locations": [
             {
-              "id":"1",
+              "id": "1",
               "locate": "Junior",
               "icon": "/assets/icon/locate.svg"
             },
             {
-              "id":"2",
+              "id": "2",
               "locate": "Ukraine",
               "icon": "/assets/icon/prfile.svg"
             }
-
           ]
         },
         {
           "id": "2",
           "heading": "Software Engineering",
           "role": "Junior Java  Developer",
-          "locations":[
+          "locations": [
             {
-              "id":"1",
+              "id": "1",
               "locate": "Junior",
               "icon": "/assets/icon/locate.svg"
             },
             {
-              "id":"2",
+              "id": "2",
               "locate": "Ukraine",
               "icon": "/assets/icon/prfile.svg"
             }
-
           ]
         },
         {
           "id": "3",
           "heading": "Software Engineering",
           "role": "Junior Java  Developer",
-          "locations":[
+          "locations": [
             {
-              "id":"1",
+              "id": "1",
               "locate": "Junior",
               "icon": "/assets/icon/locate.svg"
             },
             {
-              "id":"2",
+              "id": "2",
               "locate": "Ukraine",
               "icon": "/assets/icon/prfile.svg"
             }
-
           ]
         },
         {
           "id": "4",
           "heading": "Software Engineering",
           "role": "Junior Java  Developer",
-          "locations":[
+          "locations": [
             {
-              "id":"1",
+              "id": "1",
               "locate": "Junior",
               "icon": "/assets/icon/locate.svg"
             },
             {
-              "id":"2",
+              "id": "2",
               "locate": "Ukraine",
               "icon": "/assets/icon/prfile.svg"
             }
-
           ]
         },
         {
           "id": "5",
           "heading": "Software Engineering",
           "role": "Junior Java  Developer",
-          "locations":[
+          "locations": [
             {
-              "id":"1",
+              "id": "1",
               "locate": "Junior",
               "icon": "/assets/icon/locate.svg"
             },
             {
-              "id":"2",
+              "id": "2",
               "locate": "Ukraine",
               "icon": "/assets/icon/prfile.svg"
             }
-
           ]
         },
         {
           "id": "6",
           "heading": "Software Engineering",
           "role": "Junior Java  Developer",
-          "locations":[
+          "locations": [
             {
-              "id":"1",
+              "id": "1",
               "locate": "Junior",
               "icon": "/assets/icon/locate.svg"
             },
             {
-              "id":"2",
+              "id": "2",
               "locate": "Ukraine",
               "icon": "/assets/icon/prfile.svg"
             }
-
           ]
         },
         {
           "id": "7",
           "heading": "Software Engineering",
           "role": "Junior Java  Developer",
-          "locations":[
+          "locations": [
             {
-              "id":"1",
+              "id": "1",
               "locate": "Junior",
               "icon": "/assets/icon/locate.svg"
             },
             {
-              "id":"2",
+              "id": "2",
               "locate": "Ukraine",
               "icon": "/assets/icon/prfile.svg"
             }
-
           ]
         }
       ]
@@ -1447,8 +1416,7 @@
       "btnText": "Find me a Job",
       "bgmedia": "/assets/images/job/banner.jpg"
     }
-  }, 
-
+  },
   "CaseStudies": {
     "Section1": {
       "heading": "Latest Case Studies",
@@ -1508,65 +1476,64 @@
           "caseProfileDesgn": "Senior Consultant"
         }
       ]
-    }, 
+    },
     "Section2": [
-        {
-          "id": 1,
-          "bgmedia": "/assets/images/case-studies/case_card1.jpg",
-          "heading": "Powering efficiencies in a global investment firm with AI and google gemini enterprise ",
-          "caseProfilepic": "/assets/images/case-studies/caseProfile1.jpg",
-          "caseProfileName": "Manish Singh",
-          "caseProfileDesgn": "Senior Consultant",
-          "tag": "Financial Services"
-        },
-        {
-          "id": 2,
-          "bgmedia": "/assets/images/case-studies/case_card2.jpg",
-          "heading": "Modernising environmental compliance for a global resources leader",
-          "caseProfilepic": "/assets/images/case-studies/caseProfile1.jpg",
-          "caseProfileName": "Manish Singh",
-          "caseProfileDesgn": "Senior Consultant",
-          "tag": "U.S. Government"
-        },
-        {
-          "id": 3,
-          "bgmedia": "/assets/images/case-studies/case_card3.jpg",
-          "heading": "Revolutionising engineering knowledge discovery in media with google gemini enterprise",
-          "caseProfilepic": "/assets/images/case-studies/caseProfile1.jpg",
-          "caseProfileName": "Manish Singh",
-          "caseProfileDesgn": "Senior Consultant",
-          "tag": "Communications"
-        },
-        {
-          "id": 4,
-          "bgmedia": "/assets/images/case-studies/case_card1.jpg",
-          "heading": "Powering efficiencies in a global investment firm with AI and google gemini enterprise ",
-          "caseProfilepic": "/assets/images/case-studies/caseProfile1.jpg",
-          "caseProfileName": "Manish Singh",
-          "caseProfileDesgn": "Senior Consultant",
-          "tag": "Financial Services"
-        },
-        {
-          "id": 5,
-          "bgmedia": "/assets/images/case-studies/case_card2.jpg",
-          "heading": "Modernising environmental compliance for a global resources leader",
-          "caseProfilepic": "/assets/images/case-studies/caseProfile1.jpg",
-          "caseProfileName": "Manish Singh",
-          "caseProfileDesgn": "Senior Consultant",
-          "tag": "U.S. Government"
-        },
-        {
-          "id": 6,
-          "bgmedia": "/assets/images/case-studies/case_card3.jpg",
-          "heading": "Revolutionising engineering knowledge discovery in media with google gemini enterprise",
-          "caseProfilepic": "/assets/images/case-studies/caseProfile1.jpg",
-          "caseProfileName": "Manish Singh",
-          "caseProfileDesgn": "Senior Consultant",
-          "tag": "Communications"
-        }
-      ]
+      {
+        "id": 1,
+        "bgmedia": "/assets/images/case-studies/case_card1.jpg",
+        "heading": "Powering efficiencies in a global investment firm with AI and google gemini enterprise ",
+        "caseProfilepic": "/assets/images/case-studies/caseProfile1.jpg",
+        "caseProfileName": "Manish Singh",
+        "caseProfileDesgn": "Senior Consultant",
+        "tag": "Financial Services"
+      },
+      {
+        "id": 2,
+        "bgmedia": "/assets/images/case-studies/case_card2.jpg",
+        "heading": "Modernising environmental compliance for a global resources leader",
+        "caseProfilepic": "/assets/images/case-studies/caseProfile1.jpg",
+        "caseProfileName": "Manish Singh",
+        "caseProfileDesgn": "Senior Consultant",
+        "tag": "U.S. Government"
+      },
+      {
+        "id": 3,
+        "bgmedia": "/assets/images/case-studies/case_card3.jpg",
+        "heading": "Revolutionising engineering knowledge discovery in media with google gemini enterprise",
+        "caseProfilepic": "/assets/images/case-studies/caseProfile1.jpg",
+        "caseProfileName": "Manish Singh",
+        "caseProfileDesgn": "Senior Consultant",
+        "tag": "Communications"
+      },
+      {
+        "id": 4,
+        "bgmedia": "/assets/images/case-studies/case_card1.jpg",
+        "heading": "Powering efficiencies in a global investment firm with AI and google gemini enterprise ",
+        "caseProfilepic": "/assets/images/case-studies/caseProfile1.jpg",
+        "caseProfileName": "Manish Singh",
+        "caseProfileDesgn": "Senior Consultant",
+        "tag": "Financial Services"
+      },
+      {
+        "id": 5,
+        "bgmedia": "/assets/images/case-studies/case_card2.jpg",
+        "heading": "Modernising environmental compliance for a global resources leader",
+        "caseProfilepic": "/assets/images/case-studies/caseProfile1.jpg",
+        "caseProfileName": "Manish Singh",
+        "caseProfileDesgn": "Senior Consultant",
+        "tag": "U.S. Government"
+      },
+      {
+        "id": 6,
+        "bgmedia": "/assets/images/case-studies/case_card3.jpg",
+        "heading": "Revolutionising engineering knowledge discovery in media with google gemini enterprise",
+        "caseProfilepic": "/assets/images/case-studies/caseProfile1.jpg",
+        "caseProfileName": "Manish Singh",
+        "caseProfileDesgn": "Senior Consultant",
+        "tag": "Communications"
+      }
+    ]
   },
-
   "CaseStudyDetails": {
     "Section1": {
       "bgmedia": "/assets/images/case-studies/case_study_banner.jpg",
@@ -1575,7 +1542,7 @@
       "caseProfileName": "Manish Singh",
       "caseProfileDesgn": "Senior Consultant",
       "tag": "Financial Services"
-    }, 
+    },
     "Section2": {
       "heading": "Highlights",
       "CaseHighlights": [
@@ -1596,7 +1563,7 @@
           "highlight": "In her story, Monika sheds light on deep learning in the visual intelligence space and how it has entered the everyday lives of people."
         }
       ]
-    }, 
+    },
     "Section3": {
       "heading": "on this page",
       "navData": [
@@ -1629,7 +1596,7 @@
           "content": "<p>Monika’s team has also devised tools to automate business processes, such as form filling, customer service, invoice processing, and back-office operations. As part of this technology enablement, a robotic process automation system automates screen-based workflows. It utilizes deep vision analysis (visual analysis using deep learning technology) to identify varied field types on a digital screen. Large language models then use this information to generate the navigation workflow to complete the user request.</p> <p>The team has also worked on generative AI to build creative images using diffusion models based on a text prompt. Existing text-to-image generation prompts can generate only one or two personalized elements in an image. In contrast, the developed tool can give inputs for multiple personalized subjects, such as humans, pets, and objects. This novel approach generates multiple customized concepts in the image and can be used for personalized advertisements, marketing, or creative content creation such as comic strips, across digital media.</p> <p>Talking about the future of AI-powered systems, Monika says, “Platforms can be tailored to individual preferences, potentially revolutionizing things like personalized content recommendation and healthcare diagnostics. While responsible development and ethical considerations are needed, systems will become faster and more capable of real-time analyses, benefiting applications like robotics, augmented reality, and real-time surgery assistance.”</p><p>Monika’s work in the world of visual intelligence continues to push the boundaries of technological research. It tells us that the world of AI, fascinating as it is, is fashioned by the mind of a human. Monika Sharma’s is one such.</p>"
         }
       ]
-    }, 
+    },
     "Section4": {
       "heading": "Related Readings",
       "RelatedData": [
@@ -1690,7 +1657,6 @@
       ]
     }
   },
-
   "ServiceListing": {
     "Section1": {
       "bgmedia": "/assets/images/service/banner.jpg",
@@ -1887,8 +1853,7 @@
         ]
       }
     ]
-  }, 
-
+  },
   "ServiceDetails": {
     "Section1": {
       "bgmedia": "/assets/images/service/serviceD-banner.jpg",
@@ -1910,10 +1875,10 @@
           "desc": "Incremental profit identified"
         }
       ]
-    }, 
+    },
     "Section3": {
       "bgmdia": "/assets/images/service/section_img.jpg"
-    }, 
+    },
     "Section4": {
       "heading": "Salesforce Automation Offerings",
       "desc": "Our Salesforce Automation empowers your team with efficient lead management, accurate forecasting, and insightful analytics, accelerating sales performance",
@@ -1987,11 +1952,262 @@
           "title": "Customer Management"
         }
       ]
-    }, 
+    },
     "Section7": {
       "bgmedia": "/assets/video/partner-banner.mp4",
       "bgposter": "/assets/video/partner-banner-poster.png",
       "heading": "Partner With People Who Deliver - Not Just Promise"
+    }
+  },
+  "SiebelServices": {
+    "hero": {
+      "title": "Your Oracle Siebel Transformation Partner",
+      "subtitle": "End-to-End Siebel Modernisation — From Upgrade to Cloud",
+      "description": "Transforming Siebel into a modern, intelligent and cloud ready platform, enabling faster innovation, seamless scalability and zero disruption growth",
+      "tags": [
+        "Siebel Upgrade & Modernisation",
+        "Containerisation & DevOps",
+        "Cloud Migration (OCI / AWS / Azure)",
+        "Managed Support & AMS",
+        "Siebel Open UI & UX",
+        "Integration & API Services"
+      ],
+      "form": {
+        "title": "Talk to a Siebel Expert",
+        "subtitle": "Free 30-min landscape assessment — no obligation",
+        "button": "Get Free Assessment"
+      },
+      "bgSource": "/assets/images/service/hero-bg.jpg"
+    },
+    "stats": [
+      {
+        "id": 1,
+        "value": "20+",
+        "label": "Years of Siebel Expertise"
+      },
+      {
+        "id": 2,
+        "value": "200+",
+        "label": "Siebel Projects Delivered"
+      },
+      {
+        "id": 3,
+        "value": "100%",
+        "label": "Production-Grade Deliveries"
+      }
+    ],
+    "clients": [
+      {
+        "id": 1,
+        "imgSrc": "/assets/images/others/client1.png"
+      },
+      {
+        "id": 2,
+        "imgSrc": "/assets/images/others/client2.png"
+      },
+      {
+        "id": 3,
+        "imgSrc": "/assets/images/others/client3.png"
+      },
+      {
+        "id": 4,
+        "imgSrc": "/assets/images/others/client4.png"
+      },
+      {
+        "id": 5,
+        "imgSrc": "/assets/images/others/client5.png"
+      },
+      {
+        "id": 6,
+        "imgSrc": "/assets/images/others/client6.png"
+      },
+      {
+        "id": 7,
+        "imgSrc": "/assets/images/others/client7.png"
+      }
+    ],
+    "challenges": {
+      "title": "The Reality",
+      "heading": "Is Your Siebel Holding You Back?",
+      "items": [
+        {
+          "id": 1,
+          "title": "Unsupported Version",
+          "description": "No patches or fixes — growing security & compliance risk daily.",
+          "label": "Critical Risk"
+        },
+        {
+          "id": 2,
+          "title": "Infrastructure Costs Spiralling",
+          "description": "Over-provisioned hardware with zero elasticity drains budgets fast.",
+          "label": "Financial Impact"
+        },
+        {
+          "id": 3,
+          "title": "Low User Adoption",
+          "description": "Legacy HI client drives workarounds, dirty data & lost productivity.",
+          "label": "Revenue Impact"
+        },
+        {
+          "id": 4,
+          "title": "Brittle Integrations",
+          "description": "Integrations break on every change — cloud connectivity is fragile.",
+          "label": "Operational Risk"
+        },
+        {
+          "id": 5,
+          "title": "DevOps & Agile Impossible",
+          "description": "Siebel deployments take days — CI/CD pipelines are out of reach.",
+          "label": "Agility Blocker"
+        },
+        {
+          "id": 6,
+          "title": "Siebel Skills Getting Scarce",
+          "description": "One key person exit puts your entire CRM operation at risk.",
+          "label": "People Risk"
+        }
+      ]
+    },
+    "services": {
+      "heading": "Our End-to-End Siebel Consulting Services",
+      "tabs": [
+        {
+          "id": 1,
+          "label": "Upgrade & Modernisation",
+          "items": [
+            "Siebel Version Upgrade",
+            "Siebel Open UI Modernisation",
+            "Mobile CRM Enablement"
+          ]
+        },
+        {
+          "id": 2,
+          "label": "Infrastructure & Cloud",
+          "items": [
+            "Siebel Containerisation",
+            "Cloud Migration (OCI / AWS / Azure)",
+            "DevOps & CI/CD Enablement"
+          ]
+        },
+        {
+          "id": 3,
+          "label": "Integration & Dev",
+          "items": [
+            "Integration & API Services",
+            "Custom Development",
+            "Data Migration & Cleansing"
+          ]
+        },
+        {
+          "id": 4,
+          "label": "Managed Services",
+          "items": [
+            "24/7 Application Support (L1–L3)",
+            "Performance Optimisation",
+            "Patch & Security Management"
+          ]
+        },
+        {
+          "id": 5,
+          "label": "Siebel – Oracle CX",
+          "items": [
+            "Assessment & Roadmap",
+            "Migration Execution",
+            "Coexistence & Parallel Run"
+          ]
+        }
+      ]
+    },
+    "techStack": {
+      "heading": "Our Deep Technical Expertise",
+      "icons": [
+        {
+          "id": 1,
+          "name": "Oracle",
+          "src": "/assets/images/tech/oracle.svg",
+          "bg": "#f80000"
+        },
+        {
+          "id": 2,
+          "name": "Docker",
+          "src": "/assets/images/tech/docker.svg",
+          "bg": "#2496ed"
+        },
+        {
+          "id": 3,
+          "name": "Kubernetes",
+          "src": "/assets/images/tech/kubernetes.svg",
+          "bg": "#326ce5"
+        },
+        {
+          "id": 4,
+          "name": "AWS",
+          "src": "/assets/images/tech/aws.svg",
+          "bg": "#ff9900"
+        },
+        {
+          "id": 5,
+          "name": "Azure",
+          "src": "/assets/images/tech/azure.svg",
+          "bg": "#0078d4"
+        },
+        {
+          "id": 6,
+          "name": "OCI",
+          "src": "/assets/images/tech/oci.svg",
+          "bg": "#c74634"
+        }
+      ]
+    },
+    "whyChooseUs": {
+      "heading": "Why Choose Cubastion for Oracle Siebel",
+      "items": [
+        {
+          "id": 1,
+          "title": "Oracle Gold Partner",
+          "description": "Validated expertise across the Oracle ecosystem."
+        },
+        {
+          "id": 2,
+          "title": "100% Delivery Success",
+          "description": "We don’t believe in failed projects."
+        },
+        {
+          "id": 3,
+          "title": "Zero Lock-In",
+          "description": "Flexible commercial models tailored to your business."
+        },
+        {
+          "id": 4,
+          "title": "Siebel DNA",
+          "description": "Our founders are ex-Oracle Product Engineering veterans."
+        },
+        {
+          "id": 5,
+          "title": "Global Delivery",
+          "description": "Follow the sun support and rapid scalability."
+        },
+        {
+          "id": 6,
+          "title": "Cloud Agnostic",
+          "description": "Partnerships across OCI, AWS, and Azure."
+        }
+      ]
+    },
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "items": [
+        {
+          "id": 1,
+          "question": "Why upgrade Siebel when we can move to a SaaS CRM?",
+          "answer": "For highly customized, complex, or regulated enterprise operations, ripping and replacing Siebel can take years and cost millions with high failure risk. Modernizing Siebel (Upgrades, Open UI, Cloud) delivers 80% of SaaS benefits at 20% of the cost and risk."
+        },
+        {
+          "id": 2,
+          "question": "Can Siebel really run in the public cloud?",
+          "answer": "Yes. We have successfully migrated enterprise Siebel instances to OCI, AWS, and Azure using Containerization and Kubernetes, drastically reducing TCO and enabling auto-scaling."
+        }
+      ]
     }
   }
 }
