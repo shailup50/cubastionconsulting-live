@@ -1,14 +1,13 @@
-export const dynamic = 'force-dynamic';
-import { Metadata } from "next";
+export const dynamic = "force-dynamic";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 const username = process.env.NEXT_PUBLIC_BASIC_AUTH_USER;
 const password = process.env.NEXT_PUBLIC_BASIC_AUTH_PASS;
 const authHeader = "Basic " + btoa(`${username}:${password}`);
-const CANONICAL_BASE = process.env.NEXT_PUBLIC_CANONICAL_URL ?? 'https://localhost:7093';
+const CANONICAL_BASE = process.env.NEXT_PUBLIC_CANONICAL_URL ?? "https://localhost:7093";
 import HomePage from "../../components/frontendcomponents/pages/homepage/index.jsx";
 
-const fetchPagesMeta = async (id: string) => {
+const fetchPagesMeta = async (id) => {
   try {
     const url = `${apiUrl}/pages-meta/${id}`;
     if (url.includes("localhost") || url.includes("127.0.0.1")) {
@@ -17,10 +16,10 @@ const fetchPagesMeta = async (id: string) => {
     const response = await fetch(url, {
       method: "GET",
       headers: {
-        "Authorization": authHeader,
-        "Accept": "application/json",
+        Authorization: authHeader,
+        Accept: "application/json",
       },
-      next: { revalidate: 0 }
+      next: { revalidate: 0 },
     });
     if (!response.ok) return null;
 
@@ -28,12 +27,12 @@ const fetchPagesMeta = async (id: string) => {
     let result = json?.data || json;
     if (Array.isArray(result)) return result[0] || {};
     return result || {};
-  } catch (error: any) {
+  } catch (error) {
     return null;
   }
 };
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata() {
   const id = "1";
   const data = await fetchPagesMeta(id);
   if (!data || Object.keys(data).length === 0) {
@@ -48,9 +47,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: `${CANONICAL_BASE}`,
       title: data?.MetaTitle || "Cubastion",
       description: data?.MetaDescriptions || "",
-      images: [
-        { url: "/OGImage/cubastion.jpg", width: 1200, height: 630, alt: "Cubastion" },
-      ],
+      images: [{ url: "/OGImage/cubastion.jpg", width: 1200, height: 630, alt: "Cubastion" }],
     },
     twitter: {
       card: "summary_large_image",
@@ -59,17 +56,11 @@ export async function generateMetadata(): Promise<Metadata> {
       description: data?.MetaDescriptions || "",
       images: ["/OGImage/cubastion.jpg"],
     },
-    alternates: {
-      canonical: `${CANONICAL_BASE}`,
-    },
-    icons: {
-      icon: "/assets/icon/favicon/favicon-96x96.png",
-    },
+    alternates: { canonical: `${CANONICAL_BASE}` },
+    icons: { icon: "/assets/icon/favicon/favicon-96x96.png" },
   };
 }
 
 export default function Home() {
-  return (
-    <HomePage />
-  );
+  return <HomePage />;
 }
