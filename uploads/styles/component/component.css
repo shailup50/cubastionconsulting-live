@@ -433,6 +433,33 @@
   animation: shine 0.4s linear;
   animation-fill-mode: none;
 }
+
+/* Generic hover shine overlay (reuses `@keyframes shine`) */
+.hover-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-shine::before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: white;
+  box-shadow: 0 0 55px 12px white;
+  transform: skewX(-20deg);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hover-shine:hover::before {
+  animation: shine 0.4s linear;
+  animation-fill-mode: none;
+}
 .card.card-comman .card-img img, .card.card-btn .card-img img, .card.card-case .card-img img {
   transition: 0.5s ease;
   display: block;
