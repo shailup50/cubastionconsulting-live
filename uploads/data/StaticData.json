@@ -7,7 +7,7 @@
         "heading": "Your trusted technology partner to build and sustain enterprise technology",
         "desc": "Cubastion brings technology depth, disciplined execution, global delivery capability, and industry understanding required to deliver high-stakes technology transformation",
         "linkHref": ""
-      },
+      }, 
       {
         "id": 2,
         "title": "Customer Experience",
@@ -1960,7 +1960,8 @@
     }
   },
   "SiebelServices": {
-    "hero": {
+    "Section1": {
+      "logo": "/assets/images/siebel/oracle-logo.png",
       "title": "Your Oracle Siebel Transformation Partner",
       "subtitle": "End-to-End Siebel Modernisation — From Upgrade to Cloud",
       "description": "Transforming Siebel into a modern, intelligent and cloud ready platform, enabling faster innovation, seamless scalability and zero disruption growth",
@@ -1975,222 +1976,405 @@
       "form": {
         "title": "Talk to a Siebel Expert",
         "subtitle": "Free 30-min landscape assessment — no obligation",
+        "serviceOptions": [
+          "Siebel Upgrade & Modernisation",
+          "Cloud Migration",
+          "Containerisation & DevOps",
+          "Managed Support & AMS",
+          "Siebel Open UI & UX",
+          "Integration & API Services"
+        ],
+        "sibelVersions": [
+          "Siebel 8.x",
+          "Siebel 2013",
+          "Siebel 2016",
+          "Siebel 2018",
+          "Siebel 2019",
+          "Siebel 2020",
+          "Siebel 2021+"
+        ],
         "button": "Get Free Assessment"
-      },
-      "bgSource": "/assets/images/service/hero-bg.jpg"
+      }
     },
-    "stats": [
+
+    "Section2": [
       {
-        "id": 1,
-        "value": "20+",
-        "label": "Years of Siebel Expertise"
+        "form": {
+          "type": "header",
+          "title1": "SIEBEL EXPERIENCE",
+          "title": "20 Years. One Focused Mission.",
+          "subtitle": "From our first Siebel implementation to today’s cloud native, containerised deployments, Siebel is not just what we do, it is what we master"
+        }
       },
       {
-        "id": 2,
-        "value": "200+",
-        "label": "Siebel Projects Delivered"
-      },
-      {
-        "id": 3,
-        "value": "100%",
-        "label": "Production-Grade Deliveries"
+        "count": [
+          {
+            "type": "stat",
+            "id": 1,
+            "number": "20+",
+            "label": "Years of Siebel Expertise",
+            "color": "text-[#052559]",
+            "border": "border-[#052559]"
+          },
+          {
+            "type": "stat",
+            "id": 2,
+            "number": "200+",
+            "label": "Siebel Projects Delivered",
+            "color": "text-[#f08e1d]",
+            "border": "border-[#f08e1d]"
+          },
+          {
+            "type": "stat",
+            "id": 3,
+            "number": "100%",
+            "label": "Production-Grade Deliveries",
+            "color": "text-[#052559]",
+            "border": "border-[#052559]"
+          }
+        ]
       }
     ],
-    "clients": [
+
+    "Section3": [
       {
         "id": 1,
-        "imgSrc": "/assets/images/others/client1.png"
+        "imgSrc": "/assets/images/siebel/logo1.png"
       },
       {
         "id": 2,
-        "imgSrc": "/assets/images/others/client2.png"
+        "imgSrc": "/assets/images/siebel/logo2.png"
       },
       {
         "id": 3,
-        "imgSrc": "/assets/images/others/client3.png"
+        "imgSrc": "/assets/images/siebel/logo3.png"
       },
       {
         "id": 4,
-        "imgSrc": "/assets/images/others/client4.png"
+        "imgSrc": "/assets/images/siebel/logo4.png"
       },
       {
         "id": 5,
-        "imgSrc": "/assets/images/others/client5.png"
+        "imgSrc": "/assets/images/siebel/logo5.png"
       },
       {
         "id": 6,
-        "imgSrc": "/assets/images/others/client6.png"
+        "imgSrc": "/assets/images/siebel/logo6.png"
       },
       {
         "id": 7,
-        "imgSrc": "/assets/images/others/client7.png"
+        "imgSrc": "/assets/images/siebel/logo7.png"
       }
     ],
-    "challenges": {
+    "Section4": {
       "title": "The Reality",
       "heading": "Is Your Siebel Holding You Back?",
+      "description": "Without modernisation, your Siebel investment becomes a liability - costing more, delivering less, every single day.",
+      "buttonText": "Let's Solve It",
       "items": [
         {
           "id": 1,
+          "icon": "warning",
           "title": "Unsupported Version",
           "description": "No patches or fixes — growing security & compliance risk daily.",
           "label": "Critical Risk"
         },
         {
           "id": 2,
+          "icon": "cost",
           "title": "Infrastructure Costs Spiralling",
           "description": "Over-provisioned hardware with zero elasticity drains budgets fast.",
           "label": "Financial Impact"
         },
         {
           "id": 3,
+          "icon": "adoption",
           "title": "Low User Adoption",
           "description": "Legacy HI client drives workarounds, dirty data & lost productivity.",
           "label": "Revenue Impact"
         },
         {
           "id": 4,
+          "icon": "integration",
           "title": "Brittle Integrations",
           "description": "Integrations break on every change — cloud connectivity is fragile.",
           "label": "Operational Risk"
         },
         {
           "id": 5,
+          "icon": "agility",
           "title": "DevOps & Agile Impossible",
           "description": "Siebel deployments take days — CI/CD pipelines are out of reach.",
           "label": "Agility Blocker"
         },
         {
           "id": 6,
+          "icon": "people",
           "title": "Siebel Skills Getting Scarce",
           "description": "One key person exit puts your entire CRM operation at risk.",
           "label": "People Risk"
         }
       ]
     },
-    "services": {
-      "heading": "Our End-to-End Siebel Consulting Services",
+    "Section5": {
+      "title": "Our Services",
+      "heading": "Our Siebel Transformation Services",
+      "description": "A comprehensive portfolio organised by transformation stage - engage us exactly where you need.",
       "tabs": [
         {
           "id": 1,
+          "icon": "upgrade",
           "label": "Upgrade & Modernisation",
           "items": [
-            "Siebel Version Upgrade",
-            "Siebel Open UI Modernisation",
-            "Mobile CRM Enablement"
+            {
+              "id": 1,
+              "icon": "upgrade",
+              "title": "Siebel Version Upgrade",
+              "description": "Move securely to supported Siebel releases with lower downtime and lower upgrade risk."
+            },
+            {
+              "id": 2,
+              "icon": "ui",
+              "title": "Siebel Open UI Modernisation",
+              "description": "Refresh dated user journeys with a faster, cleaner Open UI experience built for adoption."
+            },
+            {
+              "id": 3,
+              "icon": "mobile",
+              "title": "Mobile CRM Enablement",
+              "description": "Extend core CRM workflows beyond the desktop so field teams can act anywhere."
+            }
           ]
         },
         {
           "id": 2,
+          "icon": "cloud",
           "label": "Infrastructure & Cloud",
           "items": [
-            "Siebel Containerisation",
-            "Cloud Migration (OCI / AWS / Azure)",
-            "DevOps & CI/CD Enablement"
+            {
+              "id": 1,
+              "icon": "container",
+              "title": "Siebel Containerisation",
+              "description": "Docker + Kubernetes for DevOps agility, elastic scaling, and faster releases."
+            },
+            {
+              "id": 2,
+              "icon": "cloud",
+              "title": "Cloud Migration (OCI / AWS / Azure)",
+              "description": "Architected migration to your preferred cloud - secure, resilient & cost optimised."
+            },
+            {
+              "id": 3,
+              "icon": "devops",
+              "title": "DevOps & CI/CD Enablement",
+              "description": "Automated Siebel pipelines via Jenkins, GitLab, or GitHub Actions."
+            }
           ]
         },
         {
           "id": 3,
+          "icon": "integration",
           "label": "Integration & Dev",
           "items": [
-            "Integration & API Services",
-            "Custom Development",
-            "Data Migration & Cleansing"
+            {
+              "id": 1,
+              "icon": "integration",
+              "title": "Integration & API Services",
+              "description": "Connect Siebel with modern platforms and enterprise systems through resilient APIs."
+            },
+            {
+              "id": 2,
+              "icon": "development",
+              "title": "Custom Development",
+              "description": "Build tailored workflows, business services, and extensions aligned to your operations."
+            },
+            {
+              "id": 3,
+              "icon": "data",
+              "title": "Data Migration & Cleansing",
+              "description": "Prepare, migrate, and improve enterprise CRM data quality without disruption."
+            }
           ]
         },
         {
           "id": 4,
+          "icon": "managed",
           "label": "Managed Services",
           "items": [
-            "24/7 Application Support (L1–L3)",
-            "Performance Optimisation",
-            "Patch & Security Management"
+            {
+              "id": 1,
+              "icon": "support",
+              "title": "24/7 Application Support (L1-L3)",
+              "description": "Round-the-clock coverage to keep critical Siebel operations stable and responsive."
+            },
+            {
+              "id": 2,
+              "icon": "performance",
+              "title": "Performance Optimisation",
+              "description": "Resolve bottlenecks across app, database, and infrastructure layers for better speed."
+            },
+            {
+              "id": 3,
+              "icon": "security",
+              "title": "Patch & Security Management",
+              "description": "Reduce exposure with disciplined patching, hardening, and proactive compliance support."
+            }
           ]
         },
         {
           "id": 5,
+          "icon": "oracle",
           "label": "Siebel – Oracle CX",
           "items": [
-            "Assessment & Roadmap",
-            "Migration Execution",
-            "Coexistence & Parallel Run"
+            {
+              "id": 1,
+              "icon": "roadmap",
+              "title": "Assessment & Roadmap",
+              "description": "Evaluate your current landscape and define the right future-state transition path."
+            },
+            {
+              "id": 2,
+              "icon": "migration",
+              "title": "Migration Execution",
+              "description": "Plan and deliver structured moves from Siebel to Oracle CX with controlled risk."
+            },
+            {
+              "id": 3,
+              "icon": "parallel",
+              "title": "Coexistence & Parallel Run",
+              "description": "Operate hybrid landscapes smoothly while teams, processes, and data transition."
+            }
           ]
         }
       ]
     },
-    "techStack": {
-      "heading": "Our Deep Technical Expertise",
-      "icons": [
+    "Section6": {
+      "title": "Technology",
+      "heading": "Enterprise-Grade Technology Stack",
+      "description": "Modern tools and platforms for robust, scalable Siebel transformation outcomes.",
+      "cards": [
         {
           "id": 1,
-          "name": "Oracle",
-          "src": "/assets/images/tech/oracle.svg",
-          "bg": "#f80000"
+          "icon": "docker_k8s",
+          "title": "Docker & Kubernetes",
+          "description": "Container orchestration for resilient, elastic Siebel deployments."
         },
         {
           "id": 2,
-          "name": "Docker",
-          "src": "/assets/images/tech/docker.svg",
-          "bg": "#2496ed"
+          "icon": "oci",
+          "title": "Oracle OCI",
+          "description": "Native cloud - optimal performance & licensing benefits."
         },
         {
           "id": 3,
-          "name": "Kubernetes",
-          "src": "/assets/images/tech/kubernetes.svg",
-          "bg": "#326ce5"
+          "icon": "aws_azure",
+          "title": "AWS & Azure",
+          "description": "Multi cloud flexibility with proven Siebel deployment patterns."
         },
         {
           "id": 4,
-          "name": "AWS",
-          "src": "/assets/images/tech/aws.svg",
-          "bg": "#ff9900"
+          "icon": "cicd",
+          "title": "CI/CD Pipelines",
+          "description": "GitLab, Jenkins, GitHub Actions - DevOps-ready Siebel."
         },
         {
           "id": 5,
-          "name": "Azure",
-          "src": "/assets/images/tech/azure.svg",
-          "bg": "#0078d4"
+          "icon": "db",
+          "title": "Oracle DB / RAC",
+          "description": "High-availability Oracle databases with Data Guard & RAC."
         },
         {
           "id": 6,
-          "name": "OCI",
-          "src": "/assets/images/tech/oci.svg",
-          "bg": "#c74634"
+          "icon": "oic",
+          "title": "Oracle Integration Cloud",
+          "description": "Seamless Siebel connectivity via OIC pre-built adapters."
+        },
+        {
+          "id": 7,
+          "icon": "analytics",
+          "title": "OBIEE & Analytics",
+          "description": "Embedded BI, real-time dashboards & advanced reporting."
+        },
+        {
+          "id": 8,
+          "icon": "ai",
+          "title": "AI & Automation",
+          "description": "Siebel AI features, intelligent workflows & predictive insights."
         }
       ]
     },
-    "whyChooseUs": {
-      "heading": "Why Choose Cubastion for Oracle Siebel",
+    "Section7": {
+      "title": "Why Cubastion ", 
+      "heading": "Why Global Enterprises Choose Us",
+      "description": "We are not a generalist SI that also does Siebel. Siebel transformation is our singular, deepest expertise.",
       "items": [
         {
           "id": 1,
+          "icon": "partner",
           "title": "Oracle Gold Partner",
-          "description": "Validated expertise across the Oracle ecosystem."
+          "description": "Certified Siebel specialisation & priority Oracle roadmap access."
         },
         {
           "id": 2,
-          "title": "100% Delivery Success",
-          "description": "We don’t believe in failed projects."
+          "icon": "dna",
+          "title": "20 Years of Pure Siebel DNA",
+          "description": "Consultants averaging 10+ years hands-on, every version covered."
         },
         {
           "id": 3,
-          "title": "Zero Lock-In",
-          "description": "Flexible commercial models tailored to your business."
+          "icon": "global",
+          "title": "Truly Global Delivery",
+          "description": "Delivery centres in India, UAE, USA, UK & Australia."
         },
         {
           "id": 4,
-          "title": "Siebel DNA",
-          "description": "Our founders are ex-Oracle Product Engineering veterans."
+          "icon": "security",
+          "title": "Enterprise Security & Compliance",
+          "description": "SOC 2, ISO 27001 & GDPR-ready enterprise-grade protection."
         },
         {
           "id": 5,
-          "title": "Global Delivery",
-          "description": "Follow the sun support and rapid scalability."
+          "icon": "shield",
+          "title": "Zero-Disruption Methodology",
+          "description": "Parallel runs, phased cutovers & automated rollback built in."
         },
         {
           "id": 6,
-          "title": "Cloud Agnostic",
-          "description": "Partnerships across OCI, AWS, and Azure."
+          "icon": "partnership",
+          "title": "Long-Term Partnership",
+          "description": "65%+ of clients stay 4+ years - invested in your Siebel success."
+        }
+      ],
+      "badges": [
+        {
+          "id": 1,
+          "icon": "partner",
+          "label": "Oracle Gold Partner"
+        },
+        {
+          "id": 2,
+          "icon": "security",
+          "label": "SOC 2 Certified"
+        },
+        {
+          "id": 3,
+          "icon": "lock",
+          "label": "ISO 27001"
+        },
+        {
+          "id": 4,
+          "icon": "global",
+          "label": "GDPR Compliant"
+        },
+        {
+          "id": 5,
+          "icon": "check",
+          "label": "CMMI Level 3"
+        },
+        {
+          "id": 6,
+          "icon": "support",
+          "label": "24/7 Global Support"
         }
       ]
     },
