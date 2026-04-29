@@ -54,7 +54,7 @@ export const HeroBanner = () => {
             </ul>
 
             {/* CTA */}
-            <button className="!px-3 !py-1 !bg-[#0c3b88] hover:bg-[#e89b0d] transition-colors duration-300 text-[#ffff] text-[19px] md:text-[20px] font-medium px-10 md:px-12 h-[54px] rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
+            <button className="btn btn-btn !px-3 !py-1 !bg-[#0c3b88] hover:bg-[#e89b0d] transition-colors duration-300 text-[#ffff] text-[19px] md:text-[20px] font-medium px-10 md:px-12 h-[54px] rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
               Get Instant Estimates
             </button>
           </div>

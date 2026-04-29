@@ -9,8 +9,23 @@ import "@/uploads/styles/component/component.css"
 
 export default function ClientsSec({ data, id, classname="" }) {
 
-    if(!data) return null
+    if(!Array.isArray(data) || data.length === 0) return null
     const swiperRef = useRef(null);
+
+    const getLogoSrc = (item) => {
+        const raw = item?.LogoImage1 || item?.LogoImage || item?.logo || "";
+        if (!raw) return "";
+        if (typeof raw === "string" && (raw.startsWith("http://") || raw.startsWith("https://") || raw.startsWith("/"))) {
+            return raw;
+        }
+        return `/uploads/onlineImages/LogoImages/${raw}`;
+    };
+
+    const logoItems = data
+        .map((item) => ({ item, src: getLogoSrc(item) }))
+        .filter(({ src }) => Boolean(src));
+
+    if (logoItems.length === 0) return null;
     return(
         <section>
             <div className={`client_sec sec-pad-all ${classname}`} id={id}>
@@ -41,15 +56,13 @@ export default function ClientsSec({ data, id, classname="" }) {
                         }}
                         onSwiper={(swiper) => (swiperRef.current = swiper)}
                     >
-                        {
-                            data.map(({LogoName, LogoNameURL, LogoImage1}, index) => (
-                                <SwiperSlide key={index}>
-                                    <figure>
-                                        <Image src={`/uploads/onlineImages/LogoImages/${LogoImage1}`} alt="Client Logo" width="150" height="70"></Image>
-                                    </figure>
-                                </SwiperSlide>
-                            ))
-                        }
+                        {logoItems.map(({ item, src }, index) => (
+                            <SwiperSlide key={index}>
+                                <figure>
+                                    <Image src={src} alt={item?.LogoName || "Client Logo"} width="150" height="70" />
+                                </figure>
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                 </div>
             </div>
