@@ -2378,20 +2378,76 @@
         }
       ]
     },
-    "faq": {
+    "Section8": {
+      "title": "CLIENT STORIES",
+      "heading": "What Our Clients Say",
+      "description": "We are not a generalist SI that also does Siebel. Siebel transformation is our singular, deepest expertise.",
+      "items": [
+        {
+          "id": 1,
+          "rating": 5,
+          "quote": "“Cubastion containerised our entire Siebel landscape, reducing our infrastructure footprint by 35% and cutting deployment times from three days to under two hours. Their depth of Siebel knowledge is unmatched.”",
+          "customerName": "VP Technology",
+          "customerTitle": "Global Telecom Operator, APAC"
+        },
+        {
+          "id": 2,
+          "rating": 5,
+          "quote": "“Their team delivered a seamless IP 20 upgrade that enhanced our operational efficiency remarkably - on time, without jeopardised business continuity. It was never compromised.”",
+          "customerName": "Chief Information Officer",
+          "customerTitle": "Leading Insurance Group"
+        },
+        {
+          "id": 3,
+          "rating": 5,
+          "quote": "“Cubastion containerised our entire Siebel landscape, reducing our infrastructure footprint by 35% and cutting deployment times from three days to under two hours. Their depth of Siebel knowledge is unmatched.”",
+          "customerName": "Chief Information Officer",
+          "customerTitle": "Automotive group"
+        } 
+      ]
+    },
+    "Section9": {
       "heading": "Frequently Asked Questions",
       "items": [
         {
           "id": 1,
-          "question": "Why upgrade Siebel when we can move to a SaaS CRM?",
-          "answer": "For highly customized, complex, or regulated enterprise operations, ripping and replacing Siebel can take years and cost millions with high failure risk. Modernizing Siebel (Upgrades, Open UI, Cloud) delivers 80% of SaaS benefits at 20% of the cost and risk."
+          "question": "How long does a typical Siebel upgrade project take?",
+          "answer": "A typical upgrade — say IP 2017 to IP 2023 — takes 4–8 months depending on customisation complexity, integrations, and data volumes. Our accelerators reduce this by up to 30% vs. industry averages. We provide a precise estimate after discovery."
         },
         {
           "id": 2,
-          "question": "Can Siebel really run in the public cloud?",
-          "answer": "Yes. We have successfully migrated enterprise Siebel instances to OCI, AWS, and Azure using Containerization and Kubernetes, drastically reducing TCO and enabling auto-scaling."
+          "question": "Can Siebel be containerised without a version upgrade first?",
+          "answer": "Yes — containerisation using Docker and Kubernetes can be done independently of a version upgrade, starting from Siebel IP 2017. We recommend combining both for maximum benefit, but services are modular and can be delivered independently."
+        },
+        {
+          "id": 3,
+          "question": "Will the transformation disrupt our business operations?",
+          "answer": "Business continuity is our top design principle. We use parallel-run strategies, phased migration, automated rollback plans, and hypercare support during go-live. Our clients' operations continue uninterrupted throughout every programme."
+        },
+        {
+          "id": 4,
+          "question": "Which cloud platforms do you support for Siebel?",
+          "answer": "We support Oracle OCI (recommended for Oracle-native licensing benefits), AWS, Microsoft Azure, and hybrid configurations. Our architects recommend the right platform based on your infrastructure strategy, licensing, cost, and compliance needs."
+        },
+        {
+          "id": 5,
+          "question": "Should we upgrade Siebel or migrate to Oracle CX / Fusion?",
+          "answer": "This depends on business requirements, customisation depth, budget, and long-term CRM strategy. We provide an objective, data-driven assessment of both paths with TCO comparison, risk analysis, and timeline projections — never biased toward one direction."
+        },
+        {
+          "id": 6,
+          "question": "Do you provide post-transformation managed services?",
+          "answer": "Absolutely. We offer comprehensive SLA-backed AMS covering L1–L3 support, 24/7 monitoring, proactive patch management, performance optimisation, and monthly reporting. Many clients engage us as their long-term Siebel AMS partner post-transformation."
         }
       ]
+    },
+    "Section10": {
+      "title": "Start Transformation",
+      "heading": "Start Your Siebel Transformation Today",
+      "description": "Let's transform your Siebel landscape into a modern, intelligent and cloud ready platform, enabling faster innovation, seamless scalability and zero disruption growth",
+      "buttonText": "Get Free Assessment",
+      "secondaryButtonText": "Email Us Directly",
+      "secondaryButtonHref": "/contact-us"
     }
   }
 }

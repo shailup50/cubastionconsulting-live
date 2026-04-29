@@ -37,23 +37,23 @@ export const WhyCubastion = ({ data, id }) => {
           </p>
         </div>
 
-        <div className="mt-8! grid gap-4 sm:mt-10! md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8! grid gap-4 sm:mt-10! grid-cols-2 lg:grid-cols-3">
           {data.items.map((item) => {
             const Icon = iconMap[item.icon] || FaShieldAlt;
             return (
               <article
                 key={item.id}
-                className="md:min-h-[170px] rounded-[16px] border border-[#052559] bg-white p-4! shadow-[0_10px_24px_rgba(17,24,39,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(17,24,39,0.09)] sm:min-h-[190px] sm:rounded-[18px] sm:p-5!"
+                className="md:min-h-[150px] rounded-[16px] border border-[#052559] bg-white p-4! shadow-[0_10px_24px_rgba(17,24,39,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(17,24,39,0.09)] sm:min-h-[190px] sm:rounded-[18px] sm:p-5!"
               >
-                <div className="mb-3! flex items-start gap-3">
+                <div className="mb-1! flex items-start gap-3 justify-center md:justify-start text-center md:text-left">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-[#dfe5f1] text-[#052559] sm:h-10 sm:w-10">
                     <Icon className="text-[16px] sm:text-[18px]" />
                   </div>
-                  <h3 className="text-[20px]! leading-[1.2] text-[#123f52]">
+                  <h3 className="text-[18px]! leading-[1.2] text-[#123f52]">
                     {item.title}
                   </h3>
                 </div>
-                <p className="pl-12! text-[14px]! leading-6 text-[#66727a]">
+                <p className="md:pl-12! text-[14px]! leading-6 text-[#66727a] text-center md:text-left">
                   {item.description}
                 </p>
               </article>
@@ -69,7 +69,7 @@ export const WhyCubastion = ({ data, id }) => {
                 return (
                   <div
                     key={badge.id}
-                    className="inline-flex items-center gap-2 rounded-[8px] border border-[#052559] bg-white px-3! py-2! text-[12px]! text-[#66727a] sm:px-4! sm:text-[13px]!"
+                    className="inline-flex items-center gap-2 rounded-[8px] border border-[#052559] bg-white px-3! py-2! text-[12px]! text-[#052559] sm:px-4! sm:text-[13px]! hover:bg-[#eef8fb]"
                   >
                     <Icon className="text-[13px] text-[#052559] sm:text-[14px]" />
                     <span>{badge.label}</span>
