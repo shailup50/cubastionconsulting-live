@@ -1,8 +1,9 @@
 "use client";
 
+import React from "react";
 import { useEffect, useState } from "react";
 
-const CounterCard = ({ end, suffix = "", title }) => {
+const CounterCard = ({ end, suffix = "", title, color, border }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -12,7 +13,6 @@ const CounterCard = ({ end, suffix = "", title }) => {
 
     const timer = setInterval(() => {
       start += increment;
-
       if (start >= end) {
         setCount(end);
         clearInterval(timer);
@@ -25,15 +25,21 @@ const CounterCard = ({ end, suffix = "", title }) => {
   }, [end]);
 
   return (
-    <div className="hover-shine !bg-[#8eaeb5] !rounded-[28px] !h-[200px] !flex !flex-col !items-center !justify-center !px-6 !transition-transform !duration-300 hover:!scale-[1.03] hover:!shadow-[0_18px_40px_rgba(0,0,0,0.18)] hover:!outline hover:!outline-2 hover:!outline-white/70 hover:!outline-offset-0">
-      <h3 className="!text-white !text-[62px] !leading-none !font-semibold">
+    <div
+      className={`
+      group !bg-[#dfe5f1] !rounded-[22px] !px-6 !py-10
+      !border-t-[5px] ${border} !border-b-0
+      !transition-all !duration-500 !ease-in-out
+      hover:!border-t-transparent hover:!border-b-[5px] hover:${border}
+      hover:!border-t-0 hover:!-translate-y-1
+    `}
+    >
+      <h3 className={`!text-[32px] md:!text-[48px] !font-bold ${color}`}>
         {count}
         {suffix}
       </h3>
 
-      <p className="!text-white !text-[25px] !font-semibold !leading-[1.35] !text-center !mt-5">
-        {title}
-      </p>
+      <p className="!mt-2 !text-[16px] !font-medium !text-black">{title}</p>
     </div>
   );
 };
@@ -50,6 +56,8 @@ export const SiebelExperienceSection = () => {
           Experience
         </>
       ),
+      color: "!text-[#052559]",
+      border: "!border-[#052559]",
     },
     {
       end: 500,
@@ -61,6 +69,8 @@ export const SiebelExperienceSection = () => {
           Delivered
         </>
       ),
+      color: "!text-[#f08e1d]",
+      border: "!border-[#f08e1d]",
     },
     {
       end: 25,
@@ -72,6 +82,8 @@ export const SiebelExperienceSection = () => {
           Delivered
         </>
       ),
+      color: "!text-[#052559]",
+      border: "!border-[#052559]",
     },
     {
       end: 100,
@@ -83,6 +95,8 @@ export const SiebelExperienceSection = () => {
           Deployment
         </>
       ),
+      color: "!text-[#052559]",
+      border: "!border-[#052559]",
     },
   ];
 
@@ -105,13 +119,15 @@ export const SiebelExperienceSection = () => {
         </div>
 
         {/* Cards */}
-        <div className="!grid !grid-cols-1 sm:!grid-cols-2 lg:!grid-cols-4 !gap-8">
+        <div className="!grid !grid-cols-1 sm:!grid-cols-2 lg:!grid-cols-4 !gap-6">
           {stats.map((item, index) => (
             <CounterCard
               key={index}
               end={item.end}
               suffix={item.suffix}
               title={item.title}
+              color={item.color}
+              border={item.border}
             />
           ))}
         </div>
