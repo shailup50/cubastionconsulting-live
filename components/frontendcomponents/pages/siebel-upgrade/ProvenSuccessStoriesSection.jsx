@@ -5,75 +5,21 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const stories = [
-  {
-    title: "Automotive – Dealer Management",
-    versionUpgrade: "15.x → IP 20.x, with updates to 23.x",
-    transformation:
-      "Lift-and-shift Siebel upgrade plus DMS/analytics tech refresh (OBIEE → modern BI)",
-    businessJourneys:
-      "Wholesale & retail sales, customer service, spares, warranty & claims",
-    deployment:
-      "Cloud-native, containerised on public cloud with infrastructure-as-code automation",
-    deliverables: [
-      "Classic cutover with region-wise validation",
-      "7,000+ internal and partner users",
-      "Cloud-native deployment",
-    ],
-  },
-  {
-    title: "Global Telecom Operator",
-    versionUpgrade: "8.x → IP 18.x with 22.x enhancements",
-    transformation:
-      "Full replatform with 200+ downstream integration management and automation",
-    businessJourneys:
-      "Sales operations, customer service, billing, order management, provisioning",
-    deployment: "On-premises with advanced API-first architecture for integration hub",
-    deliverables: [
-      "Zero downtime phased cutover",
-      "2,000+ concurrent users",
-      "Integration automation framework",
-    ],
-  },
-  {
-    title: "Insurance – Compliance Upgrade",
-    versionUpgrade: "9.x → IP 19.x with latest security patches",
-    transformation:
-      "Quick-track upgrade with compliance automation and audit-trail modernization",
-    businessJourneys:
-      "Policy management, claims processing, underwriting, compliance reporting",
-    deployment: "Hybrid cloud with dedicated compliance and security zones",
-    deliverables: [
-      "Compliance-first architecture",
-      "1,200+ user support",
-      "Audit-ready deployment",
-    ],
-  },
-  {
-    title: "Consumer Durables – Field Service CRM",
-    versionUpgrade: "11.x → IP 21.x with mobile-first enhancements",
-    transformation:
-      "Mobile modernization with offline capabilities and real-time sync",
-    businessJourneys:
-      "Field technician management, service scheduling, work orders, spare parts tracking",
-    deployment: "Cloud-native with progressive web app and SAP C4C integration",
-    deliverables: [
-      "Mobile-first PWA deployment",
-      "3,000+ field technicians",
-      "Real-time synchronization",
-    ],
-  },
-];
+export const ProvenSuccessStoriesSection = ({ data, id = "provenSuccessStoriesSection" }) => {
+  const title = data?.title;
+  const subtitle = data?.subtitle;
+  const buttonText = data?.buttonText;
+  const stories = data?.stories ?? [];
+  const labels = data?.labels ?? {};
 
-export const ProvenSuccessStoriesSection = () => {
   return (
-    <section id="provenSuccessStoriesSection" className="!bg-[#dfe5f1] !py-14 md:!py-16">
+    <section id={id} className="!bg-[#dfe5f1] !py-14 md:!py-16">
       <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
         <h2 className="!text-center !text-black !text-[30px] md:!text-[44px] !leading-[1.05] !font-bold">
-          Proven Success Stories
+          {title}
         </h2>
         <p className="!text-center  !text-[18px] md:!text-[25px] !mt-3 !mb-8">
-          Siebel Upgrade Excellence Across Industries
+          {subtitle}
         </p>
 
         <div className="!mx-auto !w-full !max-w-[720px] md:!max-w-[820px] lg:!max-w-[880px]">
@@ -93,7 +39,7 @@ export const ProvenSuccessStoriesSection = () => {
                   <div className="!grid !grid-cols-1 !items-start !gap-y-5 !gap-x-6 md:!grid-cols-2 md:!gap-x-8 md:!gap-y-6">
                     <div className="!order-1 md:!order-1">
                       <h4 className="!mb-1 !text-white/85 !text-[13px] md:!text-[14px] !font-bold !uppercase !tracking-wide">
-                        Version Upgrade
+                        {labels.versionUpgrade}
                       </h4>
                       <p className="!text-white !text-[14px] md:!text-[15px] !leading-[1.5]">
                         {story.versionUpgrade}
@@ -102,7 +48,7 @@ export const ProvenSuccessStoriesSection = () => {
 
                     <div className="!order-3 md:!order-2">
                       <h4 className="!mb-1 !text-white/85 !text-[13px] md:!text-[14px] !font-bold !uppercase !tracking-wide">
-                        Business Journeys
+                        {labels.businessJourneys}
                       </h4>
                       <p className="!text-white !text-[14px] md:!text-[15px] !leading-[1.5]">
                         {story.businessJourneys}
@@ -111,7 +57,7 @@ export const ProvenSuccessStoriesSection = () => {
 
                     <div className="!order-2 md:!order-3">
                       <h4 className="!mb-1 !text-white/85 !text-[13px] md:!text-[14px] !font-bold !uppercase !tracking-wide">
-                        Transformation
+                        {labels.transformation}
                       </h4>
                       <p className="!text-white !text-[14px] md:!text-[15px] !leading-[1.5]">
                         {story.transformation}
@@ -120,7 +66,7 @@ export const ProvenSuccessStoriesSection = () => {
 
                     <div className="!order-4 md:!order-4">
                       <h4 className="!mb-1 !text-white/85 !text-[13px] md:!text-[14px] !font-bold !uppercase !tracking-wide">
-                        Deployment
+                        {labels.deployment}
                       </h4>
                       <p className="!text-white !text-[14px] md:!text-[15px] !leading-[1.5]">{story.deployment}</p>
                     </div>
@@ -128,7 +74,7 @@ export const ProvenSuccessStoriesSection = () => {
 
                   <div className="!mt-4 md:!mt-5 !w-full  ">
                     <h4 className="!mb-2 !text-white/85 !text-[13px] md:!text-[14px] !font-bold !uppercase !tracking-wide">
-                      Key Deliverables
+                      {labels.keyDeliverables}
                     </h4>
                     <div className="!flex !w-full !flex-wrap !gap-1.5 !py-1">
                       {story.deliverables.map((item, i) => (
@@ -152,7 +98,7 @@ export const ProvenSuccessStoriesSection = () => {
             type="button"
             className="btn btn-btn !text-[18px] md:!text-[20px] !font-semibold !rounded-full !px-8 !py-3.5 !shadow-[0_2px_10px_rgba(0,0,0,0.12)]"
           >
-            Download a Case Study
+            {buttonText}
           </button>
         </div>
       </div>

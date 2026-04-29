@@ -2449,5 +2449,356 @@
       "secondaryButtonText": "Email Us Directly",
       "secondaryButtonHref": "/contact-us"
     }
+  },
+  "SiebelUpgrade": {
+    "Section1": {
+      "logoSrc": "/assets/images/siebel-upgrade/oracle-partner.png",
+      "logoAlt": "Oracle Gold Partner",
+      "title": "Get Instant Estimates",
+      "subtitle": "For Fast, De-Risked Siebel Upgrade",
+      "ctaText": "Get Instant Estimates",
+      "imageSrc": "/assets/images/siebel-upgrade/calculator.png.webp",
+      "imageAlt": "Siebel Upgrade Cost Calculator",
+      "points": [
+        "Version-aware",
+        "Fits your custom landscape",
+        "Compare scenarios"
+      ]
+    },
+    "Section2": {
+      "title": "Quick Bites Before You Plan a Siebel Upgrade",
+      "subtitle": "Essential considerations to ensure your upgrade is successful, secure, and future-ready",
+      "optionsHeading": "OPTIONS",
+      "cards": [
+        {
+          "title": "Your Cutover & Rollback Strategy",
+          "subtitle": "How will you transition from the old Siebel environment to the new one?",
+          "icon": "/assets/images/siebel-upgrade/icons/icon1.webp",
+          "content": "This decision defines your risk, downtime, and business disruption during go-live. A clear cutover + rollback plan ensures you can move confidently—and recover quickly if something goes wrong.",
+          "options": [
+            "Big Bang with Rollback – Move everyone at once, with a defined fallback checkpoint if issues appear.",
+            "Big Bang without Rollback – One-time, high-speed switchover with no fallback; fastest but riskiest.",
+            "Phased Cutover – Go live in waves (by region, function, or user group) to reduce impact and learn as you go.",
+            "Parallel Run – Run old and new in parallel until the new version is stable and fully trusted."
+          ]
+        },
+        {
+          "title": "Knowledge Repository of Your Deployment",
+          "subtitle": "How well is your current Siebel deployment documented?",
+          "icon": "/assets/images/siebel-upgrade/icons/icon2.webp",
+          "content": "Upgrades are much smoother when customisations, integrations, and workflows are clearly documented. Poor documentation leads to surprises, rework, and higher risk of breaking critical journeys.",
+          "options": [
+            "Comprehensive – Configs, interfaces, and scripts are fully documented and regularly updated.",
+            "Partial – Key areas are documented, but there are gaps around older or niche customisations.",
+            "Tribal – Most knowledge sits with a few SMEs, making the upgrade dependent on individuals."
+          ]
+        },
+        {
+          "title": "Know the Ripple Effect",
+          "subtitle": "What is the impact of your upgrade on other connected systems",
+          "icon": "/assets/images/siebel-upgrade/icons/icon3.webp",
+          "content": "Siebel upgrades seldom happen in isolation. Every integration, API, and downstream system can be affected, and underestimating this ripple can derail timelines late in the project.",
+          "options": [
+            "Minimal Impact – Siebel is mostly standalone with limited external touchpoints.",
+            "Moderate Impact – Integrated with ERP, BI, or reporting; interfaces need careful testing.",
+            "High Impact – Core enterprise hub linked to billing, APIs, portals, and mobile apps that all need coordinated planning."
+          ]
+        },
+        {
+          "title": "Infrastructure Strategy",
+          "subtitle": "How will your infra evolve with the upgrade?",
+          "icon": "/assets/images/siebel-upgrade/icons/icon4.webp",
+          "content": "Upgrade time is the ideal moment to address scalability, performance, cost, and supportability. The infra decisions you take now will shape your next 5-7 years on Siebel.",
+          "options": [
+            "Retain Current Infra – Keep existing hardware/software if still supported by the target version.",
+            "Refresh (Like-for-Like) – Move to latest OS/DB versions but retain the same basic architecture.",
+            "Re-Platform / Cloud Move – Shift to cloud, VMs, or containers to gain agility and elasticity.",
+            "Hybrid – Combine on-prem and cloud based on criticality, data residency, and budget."
+          ]
+        },
+        {
+          "title": "Ongoing Business Changes",
+          "subtitle": "How will you retrofit in-flight business changes into the upgrade stream?",
+          "icon": "/assets/images/siebel-upgrade/icons/icon5.webp",
+          "content": "Business can't pause for an upgrade. A retrofit strategy ensures BAU changes continue while the upgrade stays controlled, avoiding code conflicts, regressions, and timeline slippage.",
+          "options": [
+            "Critical-Only Retrofit – Only regulatory, statutory, or revenue-critical changes are merged into the upgrade.",
+            "Time-Boxed Retrofit Windows – Group CRs into scheduled merge windows (e.g. every 2 weeks) for controlled testing.",
+            "Dual-Track Dev with Branching – Run BAU and upgrade on separate branches with clear merge rules and ownership."
+          ]
+        },
+        {
+          "title": "Know Why Customers Upgrade",
+          "subtitle": "What is the primary driver for your upgrade?",
+          "icon": "/assets/images/siebel-upgrade/icons/icon6.webp",
+          "content": "Clarity on the business driver aligns stakeholders, sharpens the business case, and helps prioritise scope-whether the focus is compliance, stability, or new capabilities.",
+          "options": [
+            "Version at End of Life – Current Siebel release is out of Oracle support and increasing risk.",
+            "Internal Security Compliance – You must meet stricter security, audit, or InfoSec mandates.",
+            "3rd-Party Upgrade Ripple Effect – OS, DB, or surrounding apps are being upgraded and Siebel must keep pace.",
+            "New Capabilities – You want Open UI, REST APIs, DevOps, or better UX from newer Siebel releases.",
+            "Stuck with a Bug – Recurring issues are only fixable on higher versions, making upgrade the sustainable option."
+          ]
+        }
+      ]
+    },
+    "Section3": {
+      "badgeText": "FREE RESOURCE",
+      "title": "Siebel Upgrade Playbook",
+      "description": "Your step-by-step guide to a successful Siebel upgrade. Plan, execute, and validate with confidence.",
+      "ctaText": "Download Upgrade Playbook",
+      "modalTitle": "Continue to download the Upgrade Playbook",
+      "closeLabel": "Close",
+      "form": {
+        "workEmailLabel": "Work Email",
+        "workEmailPlaceholder": "Work Email*",
+        "roleLabel": "Role / Designation",
+        "rolePlaceholder": "Role / Designation*",
+        "companyLabel": "Company Name",
+        "companyPlaceholder": "Company Name*",
+        "buttonText": "Download Playbook"
+      },
+      "points": [
+        "Pre-upgrade assessment checklist",
+        "Risk mitigation strategies",
+        "Timeline & resource planning",
+        "Post-upgrade validation steps"
+      ]
+    },
+    "Section4": {
+      "title": "Our Siebel Upgrade Experience",
+      "subtitle": "We are not just implementers — we are transformation partners with deep Siebel DNA",
+      "stats": [
+        {
+          "end": 18,
+          "suffix": "+",
+          "title": "Years of Siebel Experience",
+          "color": "!text-[#052559]",
+          "border": "!border-[#052559]"
+        },
+        {
+          "end": 500,
+          "suffix": "+",
+          "title": "Projects Delivered",
+          "color": "!text-[#f08e1d]",
+          "border": "!border-[#f08e1d]"
+        },
+        {
+          "end": 25,
+          "suffix": "+",
+          "title": "Upgrades Delivered",
+          "color": "!text-[#052559]",
+          "border": "!border-[#052559]"
+        },
+        {
+          "end": 100,
+          "suffix": "%",
+          "title": "Successful Deployment",
+          "color": "!text-[#052559]",
+          "border": "!border-[#052559]"
+        }
+      ]
+    },
+    "Section5": {
+      "title": "Our Trusted Clients"
+    },
+    "Section6": {
+      "title": "Version Progression Excellence",
+      "image": "/assets/images/siebel-upgrade/Group_-2.png.webp",
+      "imageAlt": "Siebel version progression graph",
+      "points": [
+        {
+          "icon": "award",
+          "text": "Proven success across every major Siebel release"
+        },
+        {
+          "icon": "link",
+          "text": "Expertise in cross-version upgrades (e.g., 7.7 -> 8.1, 8.1 -> IP15, IP15 -> 23.x)"
+        },
+        {
+          "icon": "cogs",
+          "text": "Familiarity with custom landscapes and complex integrations"
+        }
+      ]
+    },
+    "Section7": {
+      "title": "Go Beyond a Version Upgrade",
+      "subtitle": "Containerize Your Siebel for the Future",
+      "learnMoreLabel": "Learn More",
+      "cards": [
+        {
+          "icon": "circle",
+          "title": "Built on Modern Standards",
+          "detail": "Siebel runs on the same container and cloud patterns your engineering teams use elsewhere - fully aligned with enterprise standards and API-first thinking."
+        },
+        {
+          "icon": "clock",
+          "title": "Decoupled, Resilient Architecture",
+          "detail": "Services are isolated, reducing interdependency risks. Components scale and recover independently, improving stability and uptime."
+        },
+        {
+          "icon": "heartbeat",
+          "title": "Faster, Smarter DevOps",
+          "detail": "Containers plug naturally into CI/CD pipelines, enabling standardized deployments and frequent, reliable releases."
+        },
+        {
+          "icon": "lock",
+          "title": "Secure by Design",
+          "detail": "Container-level security patches and enforced network segmentation make Siebel more secure than traditional monolithic models."
+        },
+        {
+          "icon": "star",
+          "title": "Ready for the Next Wave of Tech",
+          "detail": "Containerization enables service meshes, observability tooling, AI-driven monitoring, and Infrastructure-as-Code."
+        }
+      ],
+      "footerText": "Don&apos;t just upgrade Siebel - <span className=\"!font-bold\">Modernize its core</span> . Containerization gives you a resilient, secure, DevOps-ready platform that keeps pace with the rest of your tech stack."
+    },
+    "Section8": {
+      "title": "Proven Success Stories",
+      "subtitle": "Siebel Upgrade Excellence Across Industries",
+      "buttonText": "Download a Case Study",
+      "labels": {
+        "versionUpgrade": "Version Upgrade",
+        "businessJourneys": "Business Journeys",
+        "transformation": "Transformation",
+        "deployment": "Deployment",
+        "keyDeliverables": "Key Deliverables"
+      },
+      "stories": [
+        {
+          "title": "Automotive – Dealer Management",
+          "versionUpgrade": "15.x → IP 20.x, with updates to 23.x",
+          "transformation": "Lift-and-shift Siebel upgrade plus DMS/analytics tech refresh (OBIEE → modern BI)",
+          "businessJourneys": "Wholesale & retail sales, customer service, spares, warranty & claims",
+          "deployment": "Cloud-native, containerised on public cloud with infrastructure-as-code automation",
+          "deliverables": [
+            "Classic cutover with region-wise validation",
+            "7,000+ internal and partner users",
+            "Cloud-native deployment"
+          ]
+        },
+        {
+          "title": "Global Telecom Operator",
+          "versionUpgrade": "8.x → IP 18.x with 22.x enhancements",
+          "transformation": "Full replatform with 200+ downstream integration management and automation",
+          "businessJourneys": "Sales operations, customer service, billing, order management, provisioning",
+          "deployment": "On-premises with advanced API-first architecture for integration hub",
+          "deliverables": [
+            "Zero downtime phased cutover",
+            "2,000+ concurrent users",
+            "Integration automation framework"
+          ]
+        },
+        {
+          "title": "Insurance – Compliance Upgrade",
+          "versionUpgrade": "9.x → IP 19.x with latest security patches",
+          "transformation": "Quick-track upgrade with compliance automation and audit-trail modernization",
+          "businessJourneys": "Policy management, claims processing, underwriting, compliance reporting",
+          "deployment": "Hybrid cloud with dedicated compliance and security zones",
+          "deliverables": [
+            "Compliance-first architecture",
+            "1,200+ user support",
+            "Audit-ready deployment"
+          ]
+        },
+        {
+          "title": "Consumer Durables – Field Service CRM",
+          "versionUpgrade": "11.x → IP 21.x with mobile-first enhancements",
+          "transformation": "Mobile modernization with offline capabilities and real-time sync",
+          "businessJourneys": "Field technician management, service scheduling, work orders, spare parts tracking",
+          "deployment": "Cloud-native with progressive web app and SAP C4C integration",
+          "deliverables": [
+            "Mobile-first PWA deployment",
+            "3,000+ field technicians",
+            "Real-time synchronization"
+          ]
+        }
+      ]
+    },
+    "Section9": {
+      "title": "Certifications & Compliance",
+      "logos": [
+        {
+          "src": "/assets/images/siebel-upgrade/Certificates/78969BD715F78AD.png.webp",
+          "alt": "Industry certification",
+          "width": 160,
+          "height": 72
+        },
+        {
+          "src": "/assets/images/siebel-upgrade/Certificates/ISO_IEC_27001.png.webp",
+          "alt": "ISO IEC 27001 certified",
+          "width": 140,
+          "height": 72
+        },
+        {
+          "src": "/assets/images/siebel-upgrade/Certificates/CMMI-LEVEL-3.png.webp",
+          "alt": "CMMI Level 3 appraised",
+          "width": 160,
+          "height": 72
+        },
+        {
+          "src": "/assets/images/siebel-upgrade/Certificates/iso-certified.png.webp",
+          "alt": "ISO certified",
+          "width": 140,
+          "height": 72
+        }
+      ],
+      "actions": [
+        {
+          "key": "calculator",
+          "label": "Try the Upgrade Calculator",
+          "href": "/cost-calculator/"
+        },
+        {
+          "key": "consult",
+          "label": "Book a Consultation",
+          "href": "/contact-us"
+        }
+      ]
+    },
+    "Section10": {
+      "title": "Partner With People Who Deliver – Not Just Promise",
+      "actions": [
+        {
+          "label": "Book a Consultation (US)",
+          "href": "https://calendly.com/ruchin-sinha/meeting?month=2025-05"
+        },
+        {
+          "label": "Book a Consultation (APAC & Middle East)",
+          "href": "https://calendly.com/amandeep-singh-cubastion/30min"
+        }
+      ]
+    }
+  },
+  "StartupServices": {
+    "Section1": {
+      "eyebrow": "MVP Development Services for Startups",
+      "titleLine1": "Have a startup idea but",
+      "titleLine2": "no tech co-founder?",
+      "description": "We help experienced founders turn ideas into real products - without needing technical expertise.",
+      "checklist": [
+        {
+          "title": "Validate Before You Build",
+          "detail": "Test real customer demand before investing big"
+        },
+        {
+          "title": "Launch in Weeks, Not Months",
+          "detail": "A clear, working MVP in ~12 weeks"
+        },
+        {
+          "title": "No Tech Hiring Needed",
+          "detail": "Our team acts as your product and tech co-founder"
+        }
+      ],
+      "form": {
+        "title": "Talk to a Tech Co-Founder",
+        "namePlaceholder": "Your Name",
+        "emailPlaceholder": "Your Email",
+        "ideaPlaceholder": "Briefly describe your idea",
+        "buttonText": "Start the Conversation",
+        "disclaimer": "No sales pitch - just clarity on feasibility, rough cost range, and next steps (in plain English)"
+      }
+    }
   }
 }

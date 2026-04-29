@@ -44,77 +44,24 @@ const CounterCard = ({ end, suffix = "", title, color, border }) => {
   );
 };
 
-export const SiebelExperienceSection = () => {
-  const stats = [
-    {
-      end: 18,
-      suffix: "+",
-      title: (
-        <>
-          Years of Siebel
-          <br />
-          Experience
-        </>
-      ),
-      color: "!text-[#052559]",
-      border: "!border-[#052559]",
-    },
-    {
-      end: 500,
-      suffix: "+",
-      title: (
-        <>
-          Projects
-          <br />
-          Delivered
-        </>
-      ),
-      color: "!text-[#f08e1d]",
-      border: "!border-[#f08e1d]",
-    },
-    {
-      end: 25,
-      suffix: "+",
-      title: (
-        <>
-          Upgrades
-          <br />
-          Delivered
-        </>
-      ),
-      color: "!text-[#052559]",
-      border: "!border-[#052559]",
-    },
-    {
-      end: 100,
-      suffix: "%",
-      title: (
-        <>
-          Successful
-          <br />
-          Deployment
-        </>
-      ),
-      color: "!text-[#052559]",
-      border: "!border-[#052559]",
-    },
-  ];
+export const SiebelExperienceSection = ({ data, id = "siebelExperienceSection" }) => {
+  const sectionData = data ?? {};
+  const stats = sectionData.stats ?? [];
 
   return (
     <section
-      id="siebelExperienceSection"
+      id={id}
       className=" !py-20 lg:!py-24"
     >
       <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
       {/* Heading */}
         <div className="!text-center !mb-16">
           <h2 className="!text-[#005260] !text-[34px] md:!text-[44px] !leading-tight !font-bold">
-            Our Siebel Upgrade Experience
+            {sectionData.title}
           </h2>
 
           <p className="!text-[#f39a09] !text-[20px] md:!text-[25px] !mt-5">
-            We are not just implementers — we are transformation partners with
-            deep Siebel DNA
+            {sectionData.subtitle}
           </p>
         </div>
 

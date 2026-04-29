@@ -3,49 +3,30 @@
 import { useState } from "react";
 import { FaRegCircle, FaRegClock, FaHeartbeat, FaLock, FaStar } from "react-icons/fa";
 
-const cards = [
-  {
-    icon: FaRegCircle,
-    title: "Built on Modern Standards",
-    detail:
-      "Siebel runs on the same container and cloud patterns your engineering teams use elsewhere - fully aligned with enterprise standards and API-first thinking.",
-  },
-  {
-    icon: FaRegClock,
-    title: "Decoupled, Resilient Architecture",
-    detail:
-      "Services are isolated, reducing interdependency risks. Components scale and recover independently, improving stability and uptime.",
-  },
-  {
-    icon: FaHeartbeat,
-    title: "Faster, Smarter DevOps",
-    detail: "Containers plug naturally into CI/CD pipelines, enabling standardized deployments and frequent, reliable releases.",
-  },
-  {
-    icon: FaLock,
-    title: "Secure by Design",
-    detail:
-      "Container-level security patches and enforced network segmentation make Siebel more secure than traditional monolithic models.",
-  },
-  {
-    icon: FaStar,
-    title: "Ready for the Next Wave of Tech",
-    detail:
-      "Containerization enables service meshes, observability tooling, AI-driven monitoring, and Infrastructure-as-Code.",
-  },
-];
+const iconMap = {
+  circle: FaRegCircle,
+  clock: FaRegClock,
+  heartbeat: FaHeartbeat,
+  lock: FaLock,
+  star: FaStar,
+};
 
-export const BeyondUpgradeSection = () => {
+export const BeyondUpgradeSection = ({ data, id = "beyondUpgradeSection" }) => {
   const [activeCard, setActiveCard] = useState(null);
+  const title = data?.title;
+  const subtitle = data?.subtitle;
+  const footerText = data?.footerText;
+  const learnMoreLabel = data?.learnMoreLabel;
+  const cards = data?.cards ?? [];
 
   return (
-    <section id="beyondUpgradeSection" className=" !py-14 md:!py-16">
+    <section id={id} className=" !py-14 md:!py-16">
       <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
         <h2 className="!text-center !text-[#01586a] !text-[34px] md:!text-[42px] !leading-[1.05] !font-bold">
-          Go Beyond a Version Upgrade
+          {title}
         </h2>
         <p className="!text-center !text-[#1a5c67] !text-[20px] md:!text-[25px] !mt-3 !mb-10">
-          Containerize Your Siebel for the Future
+          {subtitle}
         </p>
 
         <div className="!grid !grid-cols-1 sm:!grid-cols-2 lg:!grid-cols-5 !gap-4 lg:!gap-5 !items-start">
@@ -67,19 +48,23 @@ export const BeyondUpgradeSection = () => {
                     : "!bg-[#f1972c] !border-transparent"
                 }`}
               >
-                <card.icon
+                {(() => {
+                  const Icon = iconMap[card.icon] ?? FaRegCircle;
+                  return (
+                    <Icon
                   className={`!text-[15px] !transition-colors !duration-300 ${
                     activeCard === index ? "!text-[#0f5965]" : "!text-white"
                   }`}
-                />
+                    />
+                  );
+                })()}
               </span>
 
               <h3 className="!text-[#0d4f59]  !text-[16px] !leading-[1.25] !font-bold !mb-4">
                 {card.title}
               </h3>
 
-              <p className="!text-[#111111] !text-[15px]  !mb-2">Learn More</p>
-
+              <p className="!text-[#111111] !text-[15px]  !mb-2">{learnMoreLabel}</p>
               <p
                 className={`!text-[#1f3f46] !text-[16px]  !leading-[1.5] !overflow-hidden !transition-all !duration-300 ${
                   activeCard === index ? "!max-h-[220px] !opacity-100" : "!max-h-0 !opacity-0"
@@ -92,10 +77,10 @@ export const BeyondUpgradeSection = () => {
         </div>
 
         <div className="!mt-10 !rounded-[12px] !bg-[#cfe0e7] !px-8 !py-7">
-          <p className="!text-center !text-[#1e2730] !text-[22px]  !leading-[1.45]">
-            Don&apos;t just upgrade Siebel - <span className="!font-bold">Modernize its core</span> . Containerization gives you a resilient,
-            secure, DevOps-ready platform that keeps pace with the rest of your tech stack.
-          </p>
+          <p
+            className="!text-center !text-[#1e2730] !text-[22px]  !leading-[1.45]"
+            dangerouslySetInnerHTML={{ __html: footerText }}
+          />
         </div>
       </div>
     </section>

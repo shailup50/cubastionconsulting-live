@@ -3,7 +3,7 @@
 import { useEffect, useId, useState } from "react";
 import { FaBookOpen, FaCheck } from "react-icons/fa";
 
-export const UpgradePlaybook = () => {
+export const UpgradePlaybook = ({ data, id = "upgradePlaybook" }) => {
   const [isOpen, setIsOpen] = useState(false);
   const titleId = useId();
   const emailId = useId();
@@ -26,15 +26,10 @@ export const UpgradePlaybook = () => {
     };
   }, [isOpen]);
 
-  const points = [
-    "Pre-upgrade assessment checklist",
-    "Risk mitigation strategies",
-    "Timeline & resource planning",
-    "Post-upgrade validation steps",
-  ];
+  const points = data?.points ?? [];
 
   return (
-    <section id="upgradePlaybook" className="!bg-[#dfe5f1] !py-12 md:!py-14">
+    <section id={id} className="!bg-[#dfe5f1] !py-12 md:!py-14">
       <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
         <div className="!grid !grid-cols-1 lg:!grid-cols-2 !gap-10 lg:!gap-14 !items-stretch">
           {/* LEFT SIDE */}
@@ -44,20 +39,18 @@ export const UpgradePlaybook = () => {
               <FaBookOpen className="!text-[#083070] !text-[18px] md:!text-[20px]" />
 
               <span className="!text-[#f7a400] !text-[14px] md:!text-[15px] !font-semibold !uppercase !tracking-[0.12em]">
-                FREE RESOURCE
+                {data?.badgeText}
               </span>
             </div>
 
             {/* Heading */}
             <h2 className="!text-black !py-4 !text-[34px] md:!text-[44px] !leading-[1.08] !font-bold !mb-4">
-              Siebel Upgrade Playbook
+              {data?.title}
             </h2>
 
             {/* Description */}
             <p className="!text-black !py-4 !text-[16px] md:!text-[18px] !leading-[1.7] !mb-6 !max-w-[720px]">
-              Your <span className="!font-semibold">step-by-step guide</span> to a successful Siebel upgrade.
-              
-              Plan, execute, and validate with confidence.
+              {data?.description}
             </p>
 
             {/* Bullet Points */}
@@ -83,7 +76,7 @@ export const UpgradePlaybook = () => {
               onClick={() => setIsOpen(true)}
               className="btn btn-btn !text-[14px] md:!text-[15px] !font-medium !px-8 md:!px-10 !py-3.5 md:!py-4 !rounded-full !shadow-[0_2px_10px_rgba(0,0,0,0.12)]"
             >
-              Download Upgrade Playbook
+              {data?.ctaText}
             </button>
           </div>
         </div>
@@ -102,7 +95,7 @@ export const UpgradePlaybook = () => {
           <div className="!relative !w-full !max-w-[450px] !rounded-[18px] !bg-white !shadow-[0_20px_60px_rgba(0,0,0,0.25)] !p-8 md:!p-10 !overflow-hidden">
             <button
               type="button"
-              aria-label="Close"
+              aria-label={data?.closeLabel}
               onClick={() => setIsOpen(false)}
               className="!absolute !right-5 !top-5 md:!right-6 md:!top-6 !h-9 !w-9 md:!h-10 md:!w-10 !rounded-full !bg-black/80 hover:!bg-black !text-white !flex !items-center !justify-center !text-[18px]"
             >
@@ -132,7 +125,7 @@ export const UpgradePlaybook = () => {
               id={titleId}
               className="!text-[#0c1d34] !text-[20px] md:!text-[24px] !font-semibold !text-center !mb-8"
             >
-              Continue to download the Upgrade Playbook
+              {data?.modalTitle}
             </h3>
 
             <form
@@ -143,42 +136,42 @@ export const UpgradePlaybook = () => {
             >
               <div>
                 <label htmlFor={emailId} className="!sr-only">
-                  Work Email
+                  {data?.form?.workEmailLabel}
                 </label>
                 <input
                   id={emailId}
                   name="workEmail"
                   type="email"
                   required
-                  placeholder="Work Email*"
+                  placeholder={data?.form?.workEmailPlaceholder}
                   className="!w-full !h-[54px] !rounded-[8px] !border !border-[#d4dbe6] !px-5 !text-[16px] !text-[#0c1d34] placeholder:!text-[#8fa0b5] focus:!outline-none focus:!border-[#f5b322]"
                 />
               </div>
 
               <div>
                 <label htmlFor={roleId} className="!sr-only">
-                  Role / Designation
+                  {data?.form?.roleLabel}
                 </label>
                 <input
                   id={roleId}
                   name="role"
                   type="text"
                   required
-                  placeholder="Role / Designation*"
+                  placeholder={data?.form?.rolePlaceholder}
                   className="!w-full !h-[54px] !rounded-[8px] !border !border-[#d4dbe6] !px-5 !text-[16px] !text-[#0c1d34] placeholder:!text-[#8fa0b5] focus:!outline-none focus:!border-[#f5b322]"
                 />
               </div>
 
               <div>
                 <label htmlFor={companyId} className="!sr-only">
-                  Company Name
+                  {data?.form?.companyLabel}
                 </label>
                 <input
                   id={companyId}
                   name="company"
                   type="text"
                   required
-                  placeholder="Company Name*"
+                  placeholder={data?.form?.companyPlaceholder}
                   className="!w-full !h-[54px] !rounded-[8px] !border !border-[#d4dbe6] !px-5 !text-[16px] !text-[#0c1d34] placeholder:!text-[#8fa0b5] focus:!outline-none focus:!border-[#f5b322]"
                 />
               </div>
@@ -188,7 +181,7 @@ export const UpgradePlaybook = () => {
                   type="submit"
                   className="!bg-[#083070] hover:!bg-[#e7a616] !transition-colors !duration-300 !text-white !font-semibold !px-12 !py-3.5 !rounded-full !shadow-[0_2px_10px_rgba(0,0,0,0.15)]"
                 >
-                  Download Playbook
+                  {data?.form?.buttonText}
                 </button>
               </div>
             </form>
