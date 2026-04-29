@@ -1,12 +1,15 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const apiUrl =
+  process.env.NEXT_PUBLIC_API_URL || "https://cubastionapi.cyralix.com/api/v1";
+
 export const fetchHomeData = createAsyncThunk(
   "home/fetchHomeData",
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/home-data`,
+        `${apiUrl}/home-data`,
       );
       return data;
     } catch (error) {
@@ -20,7 +23,7 @@ export const fetchIndustryCard = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/service-categories`,
+        `${apiUrl}/service-categories`,
       );
       return data;
     } catch (error) {

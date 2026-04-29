@@ -81,7 +81,7 @@ export const UpgradePlaybook = () => {
             <button
               type="button"
               onClick={() => setIsOpen(true)}
-              className="!bg-[#083070] hover:!bg-[#083070] !transition-colors !duration-300 !text-white !text-[14px] md:!text-[15px] !font-medium !px-8 md:!px-10 !py-3.5 md:!py-4 !rounded-full !shadow-[0_2px_10px_rgba(0,0,0,0.12)]"
+              className="btn btn-btn !text-[14px] md:!text-[15px] !font-medium !px-8 md:!px-10 !py-3.5 md:!py-4 !rounded-full !shadow-[0_2px_10px_rgba(0,0,0,0.12)]"
             >
               Download Upgrade Playbook
             </button>
