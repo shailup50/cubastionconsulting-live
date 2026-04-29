@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import CommanFaqs from '@/components/frontendcomponents/organisms/CommanFaqs';
 import Link from 'next/link';
 
-function Frequently({ data, id }) {
+function Frequently({ data, id, innerGridClassName = "" }) {
   const [activeId, setActiveId] = useState(data?.faqs?.[0]?.id || null);
 
   if (!data) return null;
@@ -13,7 +13,7 @@ function Frequently({ data, id }) {
     <section>
       <div className="faq_sec" id={id}>
         <div className="container">
-          <div className="grid">
+          <div className={`grid ${innerGridClassName}`}>
             <div className="heading">
               <h2>{data.heading}</h2>
               <Link className="btn primary-border" href="">

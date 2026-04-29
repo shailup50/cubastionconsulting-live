@@ -10,24 +10,24 @@ import { TheReality } from './TheReality';
 import { OurServices } from './OurServices';
 import { Technology } from './Technology';
 import { WhyCubastion } from './WhyCubastion';
-
+import { ClientStories } from './ClientStories';
+import { SiebelFaqs } from './SiebelFaqs';
+import { StartTransformation } from './StartTransformation';
 
 export const SiebelServices = () => {
     const { setSections } = useSideNav();
     useEffect(() => {
         setSections([
-            { id: "heroSec", label: "Talk" },
+            { id: "heroSec", label: "Talk Expert" },
             { id: "experience", label: "Siebel Experience" },
             { id: "trustedBy", label: "Our Clients" },
             { id: "theReality", label: "The Reality" },
             { id: "ourServices", label: "Our Services" },
             { id: "technology", label: "Technology" },
             { id: "whyCubastion", label: "Why Cubastion" },
-
-            { id: "visionSec", label: "Our Vision" },
-            { id: "awardsSec", label: "Awards and Recognition" },
-            { id: "journeySec", label: "Our Brand Journey" },
-            { id: "customerSec", label: "Our Customer" },
+            { id: "customerSec", label: "Client Stories" },
+            { id: "siebelFaqs", label: "FAQs" },
+            { id: "startTransformation", label: "Start Transformation" },
         ]);
 
         return () => setSections([]);
@@ -42,6 +42,10 @@ export const SiebelServices = () => {
     const ourServicesData = staticData.SiebelServices.Section5;
     const technologyData = staticData.SiebelServices.Section6;
     const whyCubastionData = staticData.SiebelServices.Section7;
+    const clientStoriesData = staticData.SiebelServices.Section8;
+    const siebelFaqsData = staticData.SiebelServices.Section9;
+    const startTransformationData = staticData.SiebelServices.Section10;
+
 
 
     return (
@@ -54,6 +58,9 @@ export const SiebelServices = () => {
             <OurServices id="ourServices" data={ourServicesData} />
             <Technology id="technology" data={technologyData} />
             <WhyCubastion id="whyCubastion" data={whyCubastionData} />
+            <ClientStories id="customerSec" data={clientStoriesData} />
+            <SiebelFaqs id="siebelFaqs" data={siebelFaqsData} /> 
+            <StartTransformation id="startTransformation" data={startTransformationData} />
         </>
 
     )
