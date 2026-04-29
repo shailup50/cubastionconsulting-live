@@ -5,40 +5,11 @@ import { useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { SiebelOrangeCta } from "./SiebelOrangeCta";
 
-const certificateLogos = [
-  {
-    src: "/assets/images/siebel-upgrade/Certificates/78969BD715F78AD.png.webp",
-    alt: "Industry certification",
-    width: 160,
-    height: 72,
-  },
-  {
-    src: "/assets/images/siebel-upgrade/Certificates/ISO_IEC_27001.png.webp",
-    alt: "ISO IEC 27001 certified",
-    width: 140,
-    height: 72,
-  },
-  {
-    src: "/assets/images/siebel-upgrade/Certificates/CMMI-LEVEL-3.png.webp",
-    alt: "CMMI Level 3 appraised",
-    width: 160,
-    height: 72,
-  },
-  {
-    src: "/assets/images/siebel-upgrade/Certificates/iso-certified.png.webp",
-    alt: "ISO certified",
-    width: 140,
-    height: 72,
-  },
-];
-
-const certificationActions = [
-  { key: "calculator", label: "Try the Upgrade Calculator", href: "/cost-calculator/" },
-  { key: "consult", label: "Book a Consultation", href: "/contact-us" },
-];
-
-export const CertificationsComplianceSection = () => {
+export const CertificationsComplianceSection = ({ data, id = "certificationsComplianceSection" }) => {
   const router = useRouter();
+  const title = data?.title;
+  const certificateLogos = data?.logos ?? [];
+  const certificationActions = data?.actions ?? [];
 
   const goToHref = useCallback(
     (href) => {
@@ -52,10 +23,10 @@ export const CertificationsComplianceSection = () => {
   );
 
   return (
-    <section id="certificationsComplianceSection" className="!py-12 md:!py-16">
+    <section id={id} className="!py-12 md:!py-16">
       <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
         <h2 className="!text-center !text-black !text-[22px] !font-bold !leading-tight !mb-8 md:!mb-10">
-          Certifications & Compliance
+          {title}
         </h2>
 
         <div className="!flex !flex-wrap !items-center !justify-center !gap-6 md:!gap-10 lg:!gap-14 !mb-10 md:!mb-12">
