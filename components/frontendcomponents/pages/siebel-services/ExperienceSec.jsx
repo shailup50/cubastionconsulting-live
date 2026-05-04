@@ -1,5 +1,4 @@
 import React from 'react'
-import { FiClock } from "react-icons/fi";
 
 export const ExperienceSec = ({ data, id }) => {
     // const data = [
@@ -31,7 +30,7 @@ export const ExperienceSec = ({ data, id }) => {
                         {/* Badge */}
                         <div className="flex justify-center mb-6!">
                             <div className="flex items-center  gap-2 bg-[#f5f5f5] border border-[#666] text-[#666] px-4! py-1.5! rounded-full text-xs! font-medium">
-                                <FiClock />
+                                {/* <FiClock /> */}
                                 {data[0].form.title1}
                             </div>
                         </div>
@@ -46,29 +45,31 @@ export const ExperienceSec = ({ data, id }) => {
                             {data[0].form.subtitle}
                         </p>
 
-                        {/* Cards */}
-                        <div className="md:mt-14! mt-12! grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {data[1].count.map((item, i) => (
-                                <div
-                                    key={i}
-                                    className={`
-                group bg-[#dfe5f1] rounded-[22px] px-6 py-10!
-                border-t-[5px] ${item.border} border-b-0
-                transition-all duration-500 ease-in-out
-                hover:border-t-transparent hover:border-b-[5px] hover:${item.border}
-                  hover:border-t-0
-                hover:-translate-y-1
-              `}
-                                >
-                                    <h3 className={`text-[32px]! md:text-[48px]! font-bold ${item.color}`}>
-                                        {item.number}
-                                    </h3>
+                        {/* Stats */}
+                        <div className='max-w-5xl mx-auto! '>
+                            <div className="md:mt-12! mt-10! grid grid-cols-1 bg-white sm:grid-cols-3">
+                                {data[1].count.map((item, i) => (
+                                    <div
+                                        key={i}
+                                        className="grid grid-cols-1 sm:grid-cols-[auto_1fr]"
+                                    >
+                                        <span
+                                            className={`${i === 0 ? "hidden" : "block"} mx-8! h-px bg-[#2f5ea5] sm:mx-0! sm:my-auto! sm:h-8 sm:w-[1.5px]`}
+                                            aria-hidden="true"
+                                        />
 
-                                    <p className="mt-2 text-[16px] font-medium! text-black">
-                                        {item.label}
-                                    </p>
-                                </div>
-                            ))}
+                                        <div className="flex flex-col items-center justify-center gap-2 px-4! py-5! text-center md:flex-row! md:flex-nowrap! sm:gap-5 sm:py-7! lg:px-8!">
+                                            <h3 className="text-[32px]! font-medium leading-none! text-[#B5CAF3]! sm:text-[40px]! md:text-[48px]!">
+                                                {item.number}
+                                            </h3>
+
+                                            <p className="text-[14px]! font-medium!  leading-tight! text-[#666666] sm:text-left md:text-[15px]! ">
+                                                {item.label}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
