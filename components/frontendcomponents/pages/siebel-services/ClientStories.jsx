@@ -35,6 +35,7 @@ export const ClientStories = ({ data, id }) => {
             {data.heading}
           </h2>
         </div>
+        
 
         <div className="mt-10!">
           <div className="relative">
