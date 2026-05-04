@@ -11,11 +11,12 @@ function Frequently({ data, id, innerGridClassName = "" }) {
 
   return (
     <section>
-      <div className="faq_sec" id={id}>
+      <div className="faq_sec !my-4" id={id} >
         <div className="container">
           <div className={`grid ${innerGridClassName}`}>
             <div className="heading">
               <h2>{data.heading}</h2>
+              {data.description && <p>{data.description}</p>}
               <Link className="btn primary-border" href="">
                 Contact Us
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="24" viewBox="0 0 12 24">

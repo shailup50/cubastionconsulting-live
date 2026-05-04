@@ -9,6 +9,7 @@ export const SiebelFaqs = ({ data, id }) => {
 
   const transformed = {
     heading: data.heading,
+    description: data.description,
     faqs: (data.items || []).map((item) => ({
       id: item.id,
       ques: item.question,
