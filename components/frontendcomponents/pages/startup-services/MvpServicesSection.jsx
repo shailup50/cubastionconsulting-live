@@ -43,7 +43,7 @@ export const MvpServicesSection = ({ data, id = "mvpServicesSection" }) => {
                     key={index}
                     className="group !bg-white !rounded-[16px] !p-5 !border !border-transparent !border-b-0 hover:!border-b-[5px] hover:!border-b-[#0F469F] hover:!scale-[1.02] hover:!shadow-md !transition-all !duration-500"
                   >
-                    <div className="!h-10 !w-10 !rounded-[10px] !bg-[#e8f0ff] !flex !items-center !justify-center !mb-3 !transition-all !duration-500 group-hover:!rotate-180 group-hover:!bg-[#0F469F]">
+                    <div className="!h-10 !w-10 !rounded-[10px] !bg-[#e8f0ff] !flex !items-center !justify-center !mb-3 !transition-all !duration-500 group-hover:!rotate-[360deg] group-hover:!bg-[#0F469F]">
                       <Icon className="!text-[#0F469F] group-hover:!text-white !transition-colors !duration-700" />
                     </div>
                     <h4 className="!text-[#1a3a4a] !font-bold !text-[18px]">{item.title}</h4>
@@ -68,9 +68,9 @@ export const MvpServicesSection = ({ data, id = "mvpServicesSection" }) => {
                 {features.map((item, index) => {
                   const Icon = iconMap[item.icon] ?? FaCheckCircle;
                   return (
-                    <li key={index} className="!flex !items-start !gap-3">
-                      <span className="!mt-1 !h-8 !w-8 !rounded-full !bg-[#eef4ff] !flex !items-center !justify-center !shrink-0">
-                        <Icon className="!text-[#0F469F] !text-[14px]" />
+                    <li key={index} className="group !flex !items-start !gap-3">
+                      <span className="!mt-1 !h-8 !w-8 !rounded-full !bg-[#eef4ff] !flex !items-center !justify-center !shrink-0 !transition-all !duration-500 group-hover:!bg-[#0F469F]">
+                        <Icon className="!text-[#0F469F] !text-[14px] !transition-all !duration-500 group-hover:!rotate-[360deg] group-hover:!text-white" />
                       </span>
                       <div>
                         <p className="!text-[#1a3a4a] !font-semibold !text-[15px]">{item.title}</p>
