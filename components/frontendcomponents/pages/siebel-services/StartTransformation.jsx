@@ -15,7 +15,7 @@ export const StartTransformation = ({ data, id }) => {
         <div className="mx-auto  rounded-[18px] border border-[#dfe5f1] bg-white p-6! sm:p-8! md:p-10!">
           <div className="flex flex-col items-center text-center">
             <div className="mb-5! inline-flex items-center gap-2 rounded-full border border-[#052559] bg-white px-3.5! py-1.5! text-[10px]! font-semibold! uppercase tracking-[0.12em] text-[#052559] sm:mb-6! sm:px-4! sm:py-2! sm:text-[11px]!">
-              <FaMicrochip className="text-xs sm:text-sm" />
+              {/* <FaMicrochip className="text-xs sm:text-sm" /> */}
               <span>{data.title}</span>
             </div>
 

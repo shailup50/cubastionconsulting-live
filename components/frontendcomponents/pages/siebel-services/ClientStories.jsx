@@ -27,7 +27,8 @@ export const ClientStories = ({ data, id }) => {
       <div className="container">
         <div className="mx-auto text-center">
           <div className="mb-4! inline-flex items-center gap-2 rounded-full border border-[#052559] bg-white px-3.5! py-1.5! text-[10px]! font-semibold! uppercase tracking-[0.12em] text-[#052559] sm:mb-5! sm:px-4! sm:py-2! sm:text-[11px]!">
-          <span> {data.title}</span>
+            {/* <FaQuoteLeft className="text-xs sm:text-sm" />  */}
+            <span> {data.title}</span>
           </div>
 
           <h2 className=" leading-[1.15] text-[#14546a] ">
