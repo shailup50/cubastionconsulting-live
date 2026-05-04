@@ -58,12 +58,12 @@ export const ExperienceSec = ({ data, id }) => {
                                             aria-hidden="true"
                                         />
 
-                                        <div className="flex flex-col items-center justify-center gap-2 px-2! py-4! text-center md:flex-row! md:flex-nowrap! sm:gap-5 sm:py-7! lg:px-6!">
+                                        <div className="flex flex-col items-center justify-center gap-2 px-4! py-5! text-center md:flex-row! md:flex-nowrap! sm:gap-5 sm:py-7! lg:px-8!">
                                             <h3 className="text-[32px]! font-medium leading-none! text-[#B5CAF3]! sm:text-[40px]! md:text-[48px]!">
                                                 {item.number}
                                             </h3>
 
-                                            <p className="text-[14px]! font-medium! leading-tight! text-[#666666] sm:text-left md:text-[15px]! ">
+                                            <p className="text-[14px]! font-medium!  leading-tight! text-[#666666] sm:text-left md:text-[15px]! ">
                                                 {item.label}
                                             </p>
                                         </div>
