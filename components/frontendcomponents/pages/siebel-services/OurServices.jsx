@@ -109,15 +109,18 @@ export const OurServices = ({ data, id }) => {
                                 return (
                                     <article
                                         key={item.id}
-                                        className="min-h-[170px] rounded-[16px] border border-[#052559] border-t-[4px] border-t-[#052559] bg-white p-4! shadow-[0_10px_24px_rgba(17,24,39,0.05)] sm:min-h-[190px] sm:rounded-[18px] sm:p-5!"
+                                        className="min-h-[160px] rounded-[16px] border border-[#052559] border-t-[4px] border-t-[#052559] bg-white p-4! shadow-[0_10px_24px_rgba(17,24,39,0.05)] sm:min-h-[170px] sm:rounded-[18px] sm:p-5!"
                                     >
-                                        <div className="mb-3! flex h-9 w-9 items-center justify-center rounded-full bg-[#eef8fb] text-[#052559] sm:mb-4! sm:h-10 sm:w-10">
-                                            <Icon className="text-[17px] sm:text-[18px]" />
+                                        <div className='flex flex-nowrap! align-center gap-3'>
+                                            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#eef8fb] text-[#052559] mb-2! sm:h-10 sm:w-10">
+                                                <Icon className="text-[17px] sm:text-[18px]" />
+                                            </div>
+
+                                            <h3 className="text-[18px]! pt-2!  leading-[1.24] text-[#14546a]  ">
+                                                {item.title}
+                                            </h3>
                                         </div>
 
-                                        <h3 className="text-[18px]!   leading-[1.24] text-[#14546a]  ">
-                                            {item.title}
-                                        </h3>
 
                                         <p className="mt-2! text-[14px]! leading-6 text-[#5b6870] sm:mt-4! sm:text-[15px]! sm:leading-7">
                                             {item.description}
