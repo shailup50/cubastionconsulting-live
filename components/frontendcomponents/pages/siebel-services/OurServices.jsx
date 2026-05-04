@@ -47,7 +47,7 @@ export const OurServices = ({ data, id }) => {
             <div className="container">
                 <div className="mx-auto! max-w-[720px] text-center">
                     <div className="mb-4! inline-flex items-center gap-2 rounded-full border border-[#052559] bg-white px-3.5! py-1.5! text-[10px]! font-semibold! uppercase tracking-[0.12em] text-[#052559] sm:mb-5! sm:px-4! sm:py-2! sm:text-[11px]!">
-                        <FiGrid className="text-xs sm:text-sm" />
+                        {/* <FiGrid className="text-xs sm:text-sm" /> */}
                         <span>{data.title}</span>
                     </div>
 
@@ -63,32 +63,32 @@ export const OurServices = ({ data, id }) => {
                 <div className="mt-8! overflow-x-auto pb-2! [scrollbar-color:#cfd8de_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-[3px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#cfd8de] sm:mt-10! ">
                     <div className="mx-auto min-w-max border-b border-[#d9e2e7] pb-0! ">
                         <div className="flex items-center gap-4 sm:gap-5 lg:justify-between position-relative z-0">
-                        {tabs.map((tab, index) => {
-                            const Icon = tabIconMap[tab.icon] || FiSettings;
-                            const isActive = activeIndex === index;
+                            {tabs.map((tab, index) => {
+                                const Icon = tabIconMap[tab.icon] || FiSettings;
+                                const isActive = activeIndex === index;
 
-                            return (
-                                <button
-                                    key={tab.id}
-                                    type="button"
-                                    onClick={() => setActiveIndex(index)}
-                                    className={`relative flex min-h-[46px] shrink-0 items-center justify-center gap-2 px-2! py-3! text-center text-[14px]! md:text-base! font-medium! transition-all duration-300 sm:px-3! sm:text-sm! lg:min-h-[52px] lg:whitespace-nowrap lg:px-2! ${isActive
+                                return (
+                                    <button
+                                        key={tab.id}
+                                        type="button"
+                                        onClick={() => setActiveIndex(index)}
+                                        className={`relative flex min-h-[46px] shrink-0 items-center justify-center gap-2 px-2! py-3! text-center text-[14px]! md:text-base! font-medium! transition-all duration-300 sm:px-3! sm:text-sm! lg:min-h-[52px] lg:whitespace-nowrap lg:px-2! ${isActive
                                             ? "text-[#052559]"
                                             : "text-[#0006] hover:text-[#052559]"
-                                        }`}
-                                >
-                                    {isActive && (
-                                        <motion.span
-                                            layoutId="services-active-tab"
-                                            className="absolute bottom-0 left-0 h-[2px] w-full rounded-full bg-[#f08e1d]"
-                                            transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                                        />
-                                    )}
-                                    <Icon className="relative z-10 shrink-0 text-[15px] sm:text-[16px]" />
-                                    <span className="relative z-10 leading-5">{tab.label}</span>
-                                </button>
-                            );
-                        })}
+                                            }`}
+                                    >
+                                        {isActive && (
+                                            <motion.span
+                                                layoutId="services-active-tab"
+                                                className="absolute bottom-0 left-0 h-[2px] w-full rounded-full bg-[#f08e1d]"
+                                                transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                                            />
+                                        )}
+                                        <Icon className="relative z-10 shrink-0 text-[15px] sm:text-[16px]" />
+                                        <span className="relative z-10 leading-5">{tab.label}</span>
+                                    </button>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
