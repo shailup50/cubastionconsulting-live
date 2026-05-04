@@ -1,11 +1,11 @@
 import React from "react";
 import { BsGlobe2 } from "react-icons/bs";
-import { FaDocker , FaShieldAlt, FaStar, FaUserCheck } from "react-icons/fa";
+import { FaDocker, FaShieldAlt, FaStar, FaUserCheck } from "react-icons/fa";
 import { FiCheckSquare, FiHeadphones, FiLock } from "react-icons/fi";
 import { GiDna2 } from "react-icons/gi";
 
 const iconMap = {
-  partner: FaDocker ,
+  partner: FaDocker,
   dna: GiDna2,
   global: BsGlobe2,
   security: FaShieldAlt,
@@ -24,12 +24,12 @@ export const WhyCubastion = ({ data, id }) => {
       <div className="container">
         <div className="mx-auto! max-w-[880px] text-center">
           <div className="mb-4! inline-flex items-center gap-2 rounded-full border border-[#052559] bg-white px-3.5! py-1.5! text-[10px]! font-semibold! uppercase tracking-[0.12em] text-[#052559] sm:mb-5! sm:px-4! sm:py-2! sm:text-[11px]!">
-            <FaStar className="text-xs sm:text-sm text-[#052559]" />
+            {/* <FaStar className="text-xs sm:text-sm text-[#052559]" /> */}
             <span>{data.title}</span>
           </div>
 
           <h2 className=" leading-[1.15] text-[#14546a]">
-            {data.heading} 
+            {data.heading}
           </h2>
 
           <p className="mx-auto mt-3!  px-2! text-[14px]! leading-6 text-[#5b6870] sm:mt-4! sm:px-0! sm:text-base! sm:leading-7">
