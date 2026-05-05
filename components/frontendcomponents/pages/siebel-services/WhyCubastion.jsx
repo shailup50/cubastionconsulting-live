@@ -63,16 +63,16 @@ export const WhyCubastion = ({ data, id }) => {
 
         {!!data.badges?.length && (
           <div className="mt-8! border-t border-[#cbd8de] pt-6! sm:mt-10! sm:pt-8!">
-            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+            <div className="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 grid-cols-2 flex-wrap items-center justify-center gap-2.5 sm:gap-3">
               {data.badges.map((badge) => {
                 const Icon = iconMap[badge.icon] || FaShieldAlt;
                 return (
                   <div
                     key={badge.id}
-                    className="inline-flex items-center gap-2 rounded-[8px] border border-[#052559] bg-white px-3! py-2! text-[12px]! text-[#052559] sm:px-4! sm:text-[13px]! hover:bg-[#eef8fb]"
+                    className="flex flex-col items-center gap-2 rounded-lg border-none border-[#052559] bg-[#f5f7fa] px-3! py-5! text-[12px]! text-[#052559] sm:px-4! sm:text-[13px]! hover:bg-[#eef8fb] h-full"
                   >
-                    <Icon className="text-[13px] text-[#052559] sm:text-[14px]" />
-                    <span>{badge.label}</span>
+                    <Icon className="bg-[linear-gradient(270deg,#052559_50%,#0f469f_100%)] p-2.5! w-12.5 h-12.5 text-white rounded-full mb-3.75!" />
+                    <span className="font-medium! text-[15px]">{badge.label}</span>
                   </div>
                 );
               })}
