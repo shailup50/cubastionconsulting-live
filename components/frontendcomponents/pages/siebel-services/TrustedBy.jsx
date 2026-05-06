@@ -8,14 +8,14 @@ import { Autoplay } from "swiper/modules";
 import "@/uploads/styles/component/component.css"
 
 
-export const TrustedBy = ({ data, id }) => {
+export const TrustedBy = ({ data, heading = "Trusted by Leading Global Enterprises", id = "trustedBySection" }) => {
 
     if (!data) return null
     const swiperRef = useRef(null);
     return (
         <section id={id}>
             <div className="heading text-center -mb-4!">
-                <h4 className="md:text-2xl! text-xl! ">Trusted by Leading Global Enterprises</h4>
+                <h4 className="md:text-2xl! text-xl! !font-semibold ">{heading}</h4>
             </div>
             <div className={`client_sec sec-pad-all `} >
                 <div className="main_wrapper">

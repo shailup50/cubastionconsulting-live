@@ -5,15 +5,15 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
 
   return (
     <section
-      className="!bg-white"
+      className="md:mt-30! bg-[#dfe5f1] py-10! md:py-16! !bg-white"
       id={id}
     >
-      <div className="container mx-auto max-w-[1360px] px-5 sm:px-6 lg:px-12 py-12 md:py-16 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+      <div className="container mx-auto max-w-[1360px] px-5 sm:px-6 lg:px-12 py-16 md:py-20 lg:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           {/* LEFT CONTENT */}
           <div className="max-w-[600px]">
             {/* Logo */}
-            <div className="mb-[3rem]">
+            <div className="mb-[3.5rem] mt-[2.5rem]">
               <Image
                 src={data?.logoSrc}
                 alt={data?.logoAlt}
@@ -26,17 +26,17 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
             </div>
 
             {/* Heading */}
-            <h1 className="!py-2 text-[#01586a] text-[34px] md:text-[44px] leading-[1.08] font-bold tracking-[-0.02em] mb-5">
+            <h1 className="!py-2 text-[#01586a] text-[34px] md:text-[44px] leading-[1.08] font-bold tracking-[-0.02em] mb-6">
               {data?.title}
             </h1>
 
             {/* Subheading */}
-            <p className="text-[#01586a] !py-2 !pt-0 text-[20px] md:text-[25px] leading-[1.2] font-semibold mb-6">
+            <p className="text-[#01586a] !py-2 !pt-0 text-[20px] md:text-[25px] leading-[1.2] font-semibold mb-7">
               {data?.subtitle}
             </p>
 
             {/* Bullet Points */}
-            <ul className="space-y-3.5 !py-3">
+            <ul className="space-y-3.5 !py-3 !mb-2">
               {points.map((item, index) => (
                 <li key={index} className="flex items-center gap-3.5">
                   <span className="w-5 h-5 rounded-full bg-[#0c3b88] flex items-center justify-center text-white text-[10px] font-bold shrink-0">
