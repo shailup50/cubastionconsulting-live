@@ -18,7 +18,7 @@ export const VersionProgressionSection = ({ data, id = "versionProgressionSectio
   return (
     <section id={id} className="!bg-[#DFE5F1] !py-14 md:!py-16">
       <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
-        <h2 className="!text-center !text-black !text-[34px] md:!text-[40px] !leading-tight !font-bold !mb-10">
+        <h2 className="!text-center !text-black !text-[34px] md:!text-[42px] !leading-tight !font-semibold !mb-10">
           {title}
         </h2>
 

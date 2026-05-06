@@ -18,7 +18,7 @@ export const QuickBites = ({ data, id = "quickBites" }) => {
       <div className="container mx-auto max-w-[1360px] px-5 sm:px-6 lg:px-12">
         {/* Heading */}
         <div className="text-center mb-12 md:mb-14">
-          <h2 className="!py-4 text-[#01586a] text-[30px] md:text-[44px] leading-tight font-bold">
+          <h2 className="!py-4 text-[#01586a] text-[34px] md:text-[42px] leading-tight font-semibold">
             {data?.title}
           </h2>
 

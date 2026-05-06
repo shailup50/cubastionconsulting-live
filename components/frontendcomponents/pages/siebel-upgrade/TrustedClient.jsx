@@ -16,7 +16,7 @@ export const TrustedClient = ({ data, heading = "Trusted by Leading Global Enter
   return (
     <section id={id}>
       <div className="heading text-center -mb-4!">
-        <h4 className="md:text-2xl! text-xl!">{heading}</h4>
+        <h4 className="!text-[34px] md:!text-[42px] !font-semibold">{heading}</h4>
       </div>
       <div className="client_sec sec-pad-all">
         <div className="main_wrapper">
