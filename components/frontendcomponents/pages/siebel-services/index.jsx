@@ -53,7 +53,7 @@ export const SiebelServices = () => {
         <>
             <HeroBanner id="heroSec" data={heroSecData} />
             <ExperienceSec id="experience" data={experienceSecData} />
-            <TrustedBy id="trustedBy" data={trustedByData} />
+            <TrustedBy id="trustedBy" data={trustedByData} heading='Trusted by Leading Global Enterprises'/>
             <TheReality id="theReality" data={theRealityData} />
             <OurServices id="ourServices" data={ourServicesData} />
             <Technology id="technology" data={technologyData} />

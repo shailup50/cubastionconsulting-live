@@ -47,7 +47,7 @@ export const QuickBites = ({ data, id = "quickBites" }) => {
                   className="w-full grid grid-cols-[auto_1fr_auto] items-start gap-4 text-left"
                 >
                   {/* Icon */}
-                  <span className="w-[48px] h-[48px] bg-[#f59d0a] rounded-xl flex items-center justify-center shrink-0">
+                  <span className="w-[48px] h-[48px] bg-[#0c3b88] rounded-xl flex items-center justify-center shrink-0">
                     <Image
                       src={item.icon}
                       alt={item.title}

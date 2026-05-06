@@ -14,6 +14,7 @@ import { ProvenSuccessStoriesSection } from "./ProvenSuccessStoriesSection";
 import { CertificationsComplianceSection } from "./CertificationsComplianceSection";
 import { PartnerDeliverSection } from "./PartnerDeliverSection";
 import staticData from "@/uploads/data/StaticData.json";
+import { TrustedBy } from "../siebel-services/TrustedBy";
 
 export const SiebelUpgrade = () => {
     const dispatch = useDispatch();
@@ -53,7 +54,7 @@ export const SiebelUpgrade = () => {
     const quickBitesData = staticData.SiebelUpgrade.Section2;
     const upgradePlaybookData = staticData.SiebelUpgrade.Section3;
     const experienceData = staticData.SiebelUpgrade.Section4;
-    const trustedClientData = staticData.SiebelUpgrade.Section5;
+    const trustedByData = staticData.SiebelServices.Section3;
     const versionProgressionData = staticData.SiebelUpgrade.Section6;
     const beyondUpgradeData = staticData.SiebelUpgrade.Section7;
     const provenSuccessData = staticData.SiebelUpgrade.Section8;
@@ -67,7 +68,7 @@ export const SiebelUpgrade = () => {
             <QuickBites id="quickBites" data={quickBitesData} />
             <UpgradePlaybook id="upgradePlaybook" data={upgradePlaybookData} />
             <SiebelExperienceSection id="siebelExperienceSection" data={experienceData} />
-            <TrustedClient id="trustedClientSection" data={trustedClientData} logos={logos} />
+            <TrustedBy id="trustedBy" data={trustedByData} heading="Our Trusted Clients" />
             <VersionProgressionSection id="versionProgressionSection" data={versionProgressionData} />
             <BeyondUpgradeSection id="beyondUpgradeSection" data={beyondUpgradeData} />
             <ProvenSuccessStoriesSection id="provenSuccessStoriesSection" data={provenSuccessData} />
