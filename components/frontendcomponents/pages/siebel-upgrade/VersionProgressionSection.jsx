@@ -39,7 +39,7 @@ export const VersionProgressionSection = ({ data, id = "versionProgressionSectio
               {points.map((item, index) => (
                 <div
                   key={index}
-                  className="!rounded-[12px] !border !border-[#e7bf73] !bg-[#f9fbfc] !px-4 !py-3 !flex !items-start !gap-3"
+                  className="!rounded-[12px] !border !border-[#e7bf73] !bg-[#f9fbfc] hover:!bg-[#dfe5f1] !px-4 !py-3 !flex !items-start !gap-3"
                 >
                   <span className="!h-10 !w-10 !rounded-[6px] !bg-[#f5a41f] !flex !items-center !justify-center !shrink-0 !mt-[2px]">
                     {(() => {
