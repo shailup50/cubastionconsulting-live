@@ -60,7 +60,7 @@ export const ClientStories = ({ data, id }) => {
             >
               {items.map((item) => (
                 <SwiperSlide key={item.id}>
-                  <article className="h-full rounded-[20px] border border-[#052559] bg-white p-6! shadow-[0_10px_24px_rgba(17,24,39,0.06)]">
+                  <article className="md:h-[250px] h-[240px] rounded-[20px] border border-[#052559] bg-white p-6! shadow-[0_10px_24px_rgba(17,24,39,0.06)]">
                     <div className="flex gap-2 text-[#f0a126]">
                       {Array.from({ length: 5 }).map((_, idx) => (
                         <FaStar
