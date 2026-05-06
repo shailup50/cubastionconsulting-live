@@ -1,130 +1,106 @@
 "use client";
 
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/pagination";
 
 export const ProvenSuccessStoriesSection = ({ data, id = "provenSuccessStoriesSection" }) => {
+  const [swiperInstance, setSwiperInstance] = useState(null);
   const title = data?.title;
   const subtitle = data?.subtitle;
   const buttonText = data?.buttonText;
   const stories = data?.stories ?? [];
   const labels = data?.labels ?? {};
+  const storyCardConfig = [
+    { label: labels.versionUpgrade, valueKey: "versionUpgrade" },
+    { label: labels.businessJourneys, valueKey: "businessJourneys" },
+    { label: labels.transformation, valueKey: "transformation" },
+    { label: labels.deployment, valueKey: "deployment" },
+  ];
 
   return (
     <section id={id} className="!bg-[#dfe5f1] !py-14 md:!py-16">
       <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
-        <h2 className="!text-center !text-black !text-[30px] md:!text-[44px] !leading-[1.05] !font-bold">
-          {title}
-        </h2>
-        <p className="!text-center  !text-[18px] md:!text-[25px] !mt-3 !mb-8">
-          {subtitle}
-        </p>
-
-        <div className="!mx-auto !w-full !max-w-[720px] md:!max-w-[820px] lg:!max-w-[880px]">
+        <div className="!mx-auto !w-full !max-w-[1120px]">
           <Swiper
-            modules={[Pagination]}
+            onSwiper={setSwiperInstance}
             slidesPerView={1}
-            pagination={{ clickable: true }}
             className="proven-stories-swiper"
           >
             {stories.map((story, index) => (
               <SwiperSlide key={index}>
-                <article className="!rounded-[12px] !bg-[#0c3b88] !shadow-[0_8px_24px_rgba(12,59,136,0.38)] !px-5 !py-6 md:!px-6 md:!py-8">
-                  <h3 className="!py-4 !text-white !text-[18px] md:!text-[20px] !font-semibold !mb-3 !leading-snug">
-                    {story.title}
-                  </h3>
+                <article className="!grid !grid-cols-1 lg:!grid-cols-[450px_1fr] !gap-8 lg:!gap-8 !items-start">
+                  <div>
+                    <h2 className="!text-[#111] !text-[42px] !leading-[1.02] !font-bold !max-w-[350px]">{title}</h2>
+                    <p className="!text-[#666666] !text-[22px] !leading-[1.35] !mt-3">{subtitle}</p>
 
-                  <div className="!grid !grid-cols-1 !items-start !gap-y-5 !gap-x-6 md:!grid-cols-2 md:!gap-x-8 md:!gap-y-6">
-                    <div className="!order-1 md:!order-1">
-                      <h4 className="!mb-1 !text-white/85 !text-[13px] md:!text-[14px] !font-bold !uppercase !tracking-wide">
-                        {labels.versionUpgrade}
-                      </h4>
-                      <p className="!text-white !text-[14px] md:!text-[15px] !leading-[1.5]">
-                        {story.versionUpgrade}
-                      </p>
+                    <div className="!flex !items-center !gap-2 !mt-8">
+                      <button
+                        type="button"
+                        aria-label="Previous story"
+                        onClick={() => swiperInstance?.slidePrev()}
+                        className="!h-8 !w-8 !rounded-[6px] !border !border-[#77c0ab] !text-[#77c0ab] !flex !items-center !justify-center hover:!bg-[#77c0ab] hover:!text-white !transition-colors"
+                      >
+                        ←
+                      </button>
+                      <button
+                        type="button"
+                        aria-label="Next story"
+                        onClick={() => swiperInstance?.slideNext()}
+                        className="!h-8 !w-8 !rounded-[6px] !bg-[#2ec97e] !text-white !flex !items-center !justify-center hover:!bg-[#25b46f] !transition-colors"
+                      >
+                        →
+                      </button>
                     </div>
 
-                    <div className="!order-3 md:!order-2">
-                      <h4 className="!mb-1 !text-white/85 !text-[13px] md:!text-[14px] !font-bold !uppercase !tracking-wide">
-                        {labels.businessJourneys}
-                      </h4>
-                      <p className="!text-white !text-[14px] md:!text-[15px] !leading-[1.5]">
-                        {story.businessJourneys}
-                      </p>
-                    </div>
-
-                    <div className="!order-2 md:!order-3">
-                      <h4 className="!mb-1 !text-white/85 !text-[13px] md:!text-[14px] !font-bold !uppercase !tracking-wide">
-                        {labels.transformation}
-                      </h4>
-                      <p className="!text-white !text-[14px] md:!text-[15px] !leading-[1.5]">
-                        {story.transformation}
-                      </p>
-                    </div>
-
-                    <div className="!order-4 md:!order-4">
-                      <h4 className="!mb-1 !text-white/85 !text-[13px] md:!text-[14px] !font-bold !uppercase !tracking-wide">
-                        {labels.deployment}
-                      </h4>
-                      <p className="!text-white !text-[14px] md:!text-[15px] !leading-[1.5]">{story.deployment}</p>
-                    </div>
                   </div>
 
-                  <div className="!mt-4 md:!mt-5 !w-full  ">
-                    <h4 className="!mb-2 !text-white/85 !text-[13px] md:!text-[14px] !font-bold !uppercase !tracking-wide">
-                      {labels.keyDeliverables}
-                    </h4>
-                    <div className="!flex !w-full !flex-wrap !gap-1.5 !py-1">
-                      {story.deliverables.map((item, i) => (
-                        <span
-                          key={i}
-                          className="!py-2 !px-2 !inline-flex !items-center !rounded-full !border !border-white/45 !bg-white/10 !px-2.5 !py-0.5 !text-white !text-[12px] md:!text-[13px]"
-                        >
-                          {item}
-                        </span>
+                  <div>
+                    <div className="!grid !grid-cols-1 md:!grid-cols-2 !gap-3.5 md:!gap-4 !max-w-[640px]">
+                      {storyCardConfig.map(({ label, valueKey }) => (
+                        <div key={valueKey} className="!rounded-[6px] !bg-[#062b72] !px-3.5 !py-3">
+                          <h4 className="!text-white !text-[16px] !font-semibold !tracking-[0.07em] !uppercase">{label}</h4>
+                          <p className="!text-white !text-[12px] !leading-[1.35] !mt-1.5">{story[valueKey]}</p>
+                        </div>
                       ))}
                     </div>
+
                   </div>
                 </article>
+                    <div className="!mt-5 !grid !grid-cols-1 lg:!grid-cols-[450px_1fr] !items-center !gap-3.5 md:!gap-4">
+                      <div>
+                        <h4 className="!text-[#1d2735] !text-[12px] !font-bold !uppercase !tracking-[0.06em]">
+                          {labels.keyDeliverables}
+                        </h4>
+                      </div>
+
+                      <div className="!flex !w-full !items-center !gap-3 !flex-wrap">
+                        {story.deliverables.map((item, i) => (
+                          <span
+                            key={i}
+                            className="!inline-flex !items-center !rounded-full !bg-[#F0A126] !px-3 !py-2 !text-[10px] !font-medium !text-white"
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="!mt-10 !w-full !flex !justify-center">
+                      <button
+                        type="button"
+                        className="btn btn-btn !h-[30px] !rounded-full   !text-white !text-[12px] !font-semibold !px-7  !shadow-[0_2px_10px_rgba(0,0,0,0.12)]"
+                      >
+                        {buttonText}
+                      </button>
+                    </div>
+
+                   
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-
-        <div className="!flex !justify-center !mt-7">
-          <button
-            type="button"
-            className="btn btn-btn !text-[18px] md:!text-[20px] !font-semibold !rounded-full !px-8 !py-3.5 !shadow-[0_2px_10px_rgba(0,0,0,0.12)]"
-          >
-            {buttonText}
-          </button>
-        </div>
       </div>
-
-      <style jsx global>{`
-        .proven-stories-swiper .swiper-pagination {
-          position: static;
-          margin-top: 12px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 10px;
-        }
-        .proven-stories-swiper .swiper-pagination-bullet {
-          width: 8px;
-          height: 8px;
-          margin: 0 !important;
-          opacity: 1;
-          background: #c8d6db;
-        }
-        .proven-stories-swiper .swiper-pagination-bullet-active {
-          width: 22px;
-          border-radius: 999px;
-          background: #f5a41f;
-        }
-      `}</style>
     </section>
   );
 };

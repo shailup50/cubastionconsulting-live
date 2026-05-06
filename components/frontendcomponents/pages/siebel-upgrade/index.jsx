@@ -34,10 +34,10 @@ export const SiebelUpgrade = () => {
 
     useEffect(() => {
         setSections([
-            { id: "heroSection", label: "Siebel Upgrade" },                                                                                                                                                                         
-            { id: "quickBites", label: "Siebel Upgrade" },                                                                                                                                                                         
-            { id: "upgradePlaybook", label: "Siebel Upgrade" }, 
-            { id: "siebelExperienceSection", label: "Siebel Upgrade" },                                                                                                                                                                         
+            { id: "heroSection", label: "Siebel Upgrade" },
+            { id: "quickBites", label: "Quick Bites" },
+            { id: "upgradePlaybook", label: "Upgrade Playbook" },
+            { id: "siebelExperienceSection", label: "Experience" },
             { id: "trustedClientSection", label: "Our Clients" },
             { id: "versionProgressionSection", label: "Version Progression" },
             { id: "beyondUpgradeSection", label: "Beyond Upgrade" },
