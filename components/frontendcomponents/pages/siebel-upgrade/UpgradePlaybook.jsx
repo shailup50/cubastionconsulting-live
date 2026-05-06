@@ -44,7 +44,7 @@ export const UpgradePlaybook = ({ data, id = "upgradePlaybook" }) => {
             </div>
 
             {/* Heading */}
-            <h2 className="!text-black !py-4 !text-[34px] md:!text-[44px] !leading-[1.08] !font-bold !mb-4">
+            <h2 className="!text-black !py-4 !text-[34px] md:!text-[42px] !leading-[1.08] !font-semibold !mb-4">
               {data?.title}
             </h2>
 

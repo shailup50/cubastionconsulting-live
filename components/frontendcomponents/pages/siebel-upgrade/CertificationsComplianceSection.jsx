@@ -25,7 +25,7 @@ export const CertificationsComplianceSection = ({ data, id = "certificationsComp
   return (
     <section id={id} className="!py-12 md:!py-16">
       <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
-        <h2 className="!text-center !text-black !text-[22px] !font-bold !leading-tight !mb-8 md:!mb-10">
+        <h2 className="!text-center !text-black !text-[34px] md:!text-[42px] !font-semibold !leading-tight !mb-8 md:!mb-10">
           {title}
         </h2>
 

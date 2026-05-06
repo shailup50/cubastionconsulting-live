@@ -22,7 +22,7 @@ export const BeyondUpgradeSection = ({ data, id = "beyondUpgradeSection" }) => {
   return (
     <section id={id} className=" !py-14 md:!py-16">
       <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
-        <h2 className="!text-center !text-black !text-[34px] md:!text-[42px] !leading-[1.05] !font-bold">
+        <h2 className="!text-center !text-black !text-[34px] md:!text-[42px] !leading-[1.05] !font-semibold">
           {title}
         </h2>
         <p className="!text-center  !text-[20px] md:!text-[25px] !mt-3 !mb-10">
@@ -46,7 +46,7 @@ export const BeyondUpgradeSection = ({ data, id = "beyondUpgradeSection" }) => {
                   className={`!h-12 !w-12 !rounded-[10px] !border !flex !items-center !justify-center !shrink-0 !transition-all !duration-300 ${
                     activeCard === index
                       ? "!bg-[#dbe8ed] !border-[#b7ccd5]"
-                      : "!bg-[#f1972c] !border-transparent"
+                      : "!bg-[#0c3b88] !border-transparent"
                   }`}
                 >
                   {(() => {
@@ -61,7 +61,7 @@ export const BeyondUpgradeSection = ({ data, id = "beyondUpgradeSection" }) => {
                   })()}
                 </span>
 
-                <h3 className="!text-[#0D4F59] !text-[16px] !leading-[1.25] !font-bold">
+                <h3 className=" !text-[16px] !leading-[1.25] !font-bold">
                   {card.title}
                 </h3>
               </div>
@@ -78,7 +78,7 @@ export const BeyondUpgradeSection = ({ data, id = "beyondUpgradeSection" }) => {
           ))}
         </div>
 
-        <div className="!mt-10 !rounded-[12px] !bg-[#CFE0E7] !px-8 !py-7">
+        <div className="!mt-10 !rounded-[12px] !bg-[#dfe5f1] !px-8 !py-7">
           <p
             className="!text-center !text-[#1E2730] !text-[22px]  !leading-[1.45]"
             dangerouslySetInnerHTML={{ __html: footerText }}

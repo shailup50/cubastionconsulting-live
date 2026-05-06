@@ -47,11 +47,11 @@ export const SiebelExperienceSection = ({ data, id = "siebelExperienceSection" }
       <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
         <div className="!flex !flex-col lg:!flex-row   !gap-8 lg:!gap-16 !mx-auto !w-full">
           <div className="!max-w-[320px] lg:!max-w-[420px] !text-center lg:!text-left">
-            <h2 className="!text-[#005260] !text-[34px] md:!text-[44px] !leading-[1.05] !font-bold">
+            <h2 className="!text-black !text-[34px] md:!text-[42px] !leading-[1.05] !font-semibold">
               {sectionData.title}
             </h2>
 
-            <p className="!text-[#ef941b] !text-[18px] md:!text-[24px] !leading-[1.18] !font-normal !mt-4">
+            <p className=" !text-[18px] !leading-[1.18] !font-normal !mt-4">
               {String(sectionData.subtitle ?? "").replace(" — ", " ")}
             </p>
           </div>

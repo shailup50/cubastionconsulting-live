@@ -24,7 +24,7 @@ export const PartnerDeliverSection = ({ data, id = "partnerDeliverSection" }) =>
   return (
     <section id={id} className="!bg-[#f4f4f4] !py-12 md:!py-16">
       <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
-        <h2 className="!text-center !text-black !text-[24px]  !font-bold !leading-snug !mb-8 md:!mb-10 !max-w-[920px] !mx-auto">
+        <h2 className="!text-center !text-black !text-[34px] md:!text-[42px] !font-semibold !leading-snug !mb-8 md:!mb-10 !max-w-[920px] !mx-auto">
           {title}
         </h2>
 

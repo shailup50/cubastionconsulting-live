@@ -5,10 +5,10 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
 
   return (
     <section
-      className="md:mt-30! bg-[#dfe5f1] py-10! md:py-16! !bg-white"
+      className="md:mt-30! bg-[#dfe5f1] py-10! md:py-16! "
       id={id}
     >
-      <div className="container mx-auto max-w-[1360px] px-5 sm:px-6 lg:px-12 py-16 md:py-20 lg:py-28">
+      <div className="container mx-auto max-w-[1360px] px-5 sm:px-6 lg:px-12 py-16 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           {/* LEFT CONTENT */}
           <div className="max-w-[600px]">
@@ -26,7 +26,7 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
             </div>
 
             {/* Heading */}
-            <h1 className="!py-2 text-[#01586a] text-[34px] md:text-[44px] leading-[1.08] font-bold tracking-[-0.02em] mb-6">
+            <h1 className="!py-2 text-[#01586a] text-[34px] md:text-[42px] leading-[1.08] font-semibold tracking-[-0.02em] mb-6">
               {data?.title}
             </h1>
 
