@@ -37,7 +37,7 @@ export const BeyondUpgradeSection = ({ data, id = "beyondUpgradeSection" }) => {
               onMouseLeave={() => setActiveCard(null)}
               className={`!w-full !rounded-[16px] !border !px-4 !py-5 !transition-all !duration-300 !ease-out ${
                 activeCard === index
-                  ? "!self-start !border-[#c0d4dc] !bg-[#cfe0e7] !shadow-[0_8px_16px_rgba(0,0,0,0.12)] !h-[350px] !-translate-y-1"
+                  ? "!self-start !border-[#c0d4dc] !bg-[#dfe5f1] !shadow-[0_8px_16px_rgba(0,0,0,0.12)] !h-[350px] !-translate-y-1"
                   : "!self-start !border-[#e7e8ea] !bg-white !shadow-[0_2px_10px_rgba(0,0,0,0.06)] !h-[150px]"
               }`}
             >
@@ -45,7 +45,7 @@ export const BeyondUpgradeSection = ({ data, id = "beyondUpgradeSection" }) => {
                 <span
                   className={`!h-12 !w-12 !rounded-[10px] !border !flex !items-center !justify-center !shrink-0 !transition-all !duration-300 ${
                     activeCard === index
-                      ? "!bg-[#dbe8ed] !border-[#b7ccd5]"
+                      ? "!bg-[#dfe5f1] !border-[#0c3b88]"
                       : "!bg-[#0c3b88] !border-transparent"
                   }`}
                 >
@@ -54,7 +54,7 @@ export const BeyondUpgradeSection = ({ data, id = "beyondUpgradeSection" }) => {
                     return (
                       <Icon
                         className={`!text-[15px] !transition-colors !duration-300 ${
-                          activeCard === index ? "!text-[#0f5965]" : "!text-white"
+                          activeCard === index ? "!text-[#0c3b88]" : "!text-white"
                         }`}
                       />
                     );
