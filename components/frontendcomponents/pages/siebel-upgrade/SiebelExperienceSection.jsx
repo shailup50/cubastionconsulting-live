@@ -26,9 +26,9 @@ const CounterCard = ({ end, suffix = "", title }) => {
 
   return (
     <div
-      className="group !rounded-[12px] !text-white !flex !flex-col !justify-center !shrink-0 !bg-[#072a69] !w-[120px] !h-[120px] md:!h-[150px] md:!w-[150px]  !px-3 md:!px-3.5 !transition-all !duration-300 !ease-out hover:!bg-[#ef941b] hover:!scale-[1.20] hover:!z-[2]"
+      className="!text-center group !rounded-[12px] !text-white !flex !flex-col !justify-center !shrink-0 !bg-[#072a69] !w-[120px] !h-[120px] md:!h-[150px] md:!w-[150px]  !px-3 md:!px-3.5 !transition-all !duration-300 !ease-out hover:!bg-[#ef941b] hover:!scale-[1.20] hover:!z-[2]"
     >
-      <h3 className="!text-white !font-bold !leading-none !text-[24px] md:!text-[30px] !mb-1.5 !transition-all !duration-300 group-hover:!text-[36px] md:group-hover:!text-[36px] group-hover:!mb-2">
+      <h3 className=" !text-white !font-bold !leading-none !text-[24px] md:!text-[30px] !mb-1.5 !transition-all !duration-300 group-hover:!text-[36px] md:group-hover:!text-[36px] group-hover:!mb-2">
         {count}
         {suffix}
       </h3>
@@ -56,7 +56,7 @@ export const SiebelExperienceSection = ({ data, id = "siebelExperienceSection" }
             </p>
           </div>
 
-          <div className="!flex !justify-center !items-center !gap-3 md:!gap-10 !flex-wrap lg:!flex-nowrap !min-h-[180px] !text-white">
+          <div className="!flex !justify-center !items-center !gap-3 md:!gap-5 !flex-wrap lg:!flex-nowrap !min-h-[180px] !text-white">
             {stats.map((item, index) => (
               <CounterCard key={index} end={item.end} suffix={item.suffix} title={item.title} />
             ))}
