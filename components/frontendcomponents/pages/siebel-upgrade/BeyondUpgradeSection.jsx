@@ -22,10 +22,10 @@ export const BeyondUpgradeSection = ({ data, id = "beyondUpgradeSection" }) => {
   return (
     <section id={id} className=" !py-14 md:!py-16">
       <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
-        <h2 className="!text-center !text-[#01586a] !text-[34px] md:!text-[42px] !leading-[1.05] !font-bold">
+        <h2 className="!text-center !text-[#1A5C67] !text-[34px] md:!text-[42px] !leading-[1.05] !font-bold">
           {title}
         </h2>
-        <p className="!text-center !text-[#1a5c67] !text-[20px] md:!text-[25px] !mt-3 !mb-10">
+        <p className="!text-center !text-[#1A5C67] !text-[20px] md:!text-[25px] !mt-3 !mb-10">
           {subtitle}
         </p>
 
@@ -60,7 +60,7 @@ export const BeyondUpgradeSection = ({ data, id = "beyondUpgradeSection" }) => {
                 })()}
               </span>
 
-              <h3 className="!text-[#0d4f59]  !text-[16px] !leading-[1.25] !font-bold !mb-4">
+              <h3 className="!text-[#0D4F59]  !text-[16px] !leading-[1.25] !font-bold !mb-4">
                 {card.title}
               </h3>
 
@@ -76,9 +76,9 @@ export const BeyondUpgradeSection = ({ data, id = "beyondUpgradeSection" }) => {
           ))}
         </div>
 
-        <div className="!mt-10 !rounded-[12px] !bg-[#cfe0e7] !px-8 !py-7">
+        <div className="!mt-10 !rounded-[12px] !bg-[#CFE0E7] !px-8 !py-7">
           <p
-            className="!text-center !text-[#1e2730] !text-[22px]  !leading-[1.45]"
+            className="!text-center !text-[#1E2730] !text-[22px]  !leading-[1.45]"
             dangerouslySetInnerHTML={{ __html: footerText }}
           />
         </div>

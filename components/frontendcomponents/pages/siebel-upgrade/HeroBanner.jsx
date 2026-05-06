@@ -5,13 +5,13 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
 
   return (
     <section
-    
-      className='md:mt-30!' id={id}
+      className="!bg-white"
+      id={id}
     >
-      <div className="container mx-auto max-w-[1360px] px-5 sm:px-6 lg:px-12 py-12 md:py-14 lg:py-16">
+      <div className="container mx-auto max-w-[1360px] px-5 sm:px-6 lg:px-12 py-12 md:py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
           {/* LEFT CONTENT */}
-          <div className="max-w-[560px]">
+          <div className="max-w-[600px]">
             {/* Logo */}
             <div className="mb-[3rem]">
               <Image
@@ -26,23 +26,23 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
             </div>
 
             {/* Heading */}
-            <h1 className="!py-4 text-[#01586a] text-[34px] md:text-[44px] leading-[1.08] font-bold tracking-[-0.02em] mb-6">
+            <h1 className="!py-2 text-[#01586a] text-[34px] md:text-[44px] leading-[1.08] font-bold tracking-[-0.02em] mb-5">
               {data?.title}
             </h1>
 
             {/* Subheading */}
-            <p className="text-[#01586a] !py-4 !pt-0 text-[20px] md:text-[25px] leading-[1] font-semibold mb-7">
+            <p className="text-[#01586a] !py-2 !pt-0 text-[20px] md:text-[25px] leading-[1.2] font-semibold mb-6">
               {data?.subtitle}
             </p>
 
             {/* Bullet Points */}
-            <ul className="space-y-3.5 !py-4">
+            <ul className="space-y-3.5 !py-3">
               {points.map((item, index) => (
                 <li key={index} className="flex items-center gap-3.5">
                   <span className="w-5 h-5 rounded-full bg-[#0c3b88] flex items-center justify-center text-white text-[10px] font-bold shrink-0">
                     ✓
                   </span>
-                  <span className=" text-[16px] md:text-[20px] leading-[1.2] font-medium !py-2">
+                  <span className=" text-[16px] md:text-[20px] leading-[1.2] font-medium !py-1">
                     {item}
                   </span>
                 </li>
@@ -50,7 +50,7 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
             </ul>
 
             {/* CTA */}
-            <button className="btn btn-btn !px-3 !py-1 !bg-[#0c3b88] hover:bg-[#e89b0d] transition-colors duration-300 text-[#ffff] text-[19px] md:text-[20px] font-medium px-10 md:px-12 h-[54px] rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
+            <button className="btn btn-btn !px-3 !py-1 !bg-[#0c3b88] hover:!bg-[#e89b0d] transition-colors duration-300 text-[#ffff] text-[18px] md:text-[20px] font-medium px-10 md:px-12 h-[54px] rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
               {data?.ctaText}
             </button>
           </div>

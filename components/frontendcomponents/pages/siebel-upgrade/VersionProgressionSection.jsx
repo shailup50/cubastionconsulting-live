@@ -16,7 +16,7 @@ export const VersionProgressionSection = ({ data, id = "versionProgressionSectio
   const points = data?.points ?? [];
 
   return (
-    <section id={id} className="!bg-[#dce8ee] !py-14 md:!py-16">
+    <section id={id} className="!bg-[#DCE8EE] !py-14 md:!py-16">
       <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
         <h2 className="!text-center !text-black !text-[34px] md:!text-[40px] !leading-tight !font-bold !mb-10">
           {title}

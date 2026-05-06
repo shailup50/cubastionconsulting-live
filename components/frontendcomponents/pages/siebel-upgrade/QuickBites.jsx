@@ -14,10 +14,10 @@ export const QuickBites = ({ data, id = "quickBites" }) => {
   };
 
   return (
-    <section className="!mt-10 !py-20" id={id}>
-      <div className="container mx-auto max-w-[1520px] px-6">
+    <section className="!mt-4 !py-16 md:!py-20 !bg-white" id={id}>
+      <div className="container mx-auto max-w-[1360px] px-5 sm:px-6 lg:px-12">
         {/* Heading */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-12 md:mb-14">
           <h2 className="!py-4 text-[#01586a] text-[30px] md:text-[44px] leading-tight font-bold">
             {data?.title}
           </h2>
@@ -28,17 +28,17 @@ export const QuickBites = ({ data, id = "quickBites" }) => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 !py-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 !py-2">
           {cards.map((item, index) => {
             const isOpen = openIndex === index;
 
             return (
               <div
                 key={index}
-                className={`bg-white rounded-[22px] transition-all duration-300 ${
+                className={`bg-white rounded-[22px] border border-[#e3ebef] transition-all duration-300 ${
                   isOpen
-                    ? "md:col-span-2 border-2 border-[#f59d0a] !p-7"
-                    : "!p-6 shadow-sm"
+                    ? "md:col-span-2 border-2 border-[#f59d0a] !p-7 shadow-[0_10px_28px_rgba(0,0,0,0.08)]"
+                    : "!p-6 shadow-[0_4px_16px_rgba(0,0,0,0.04)]"
                 }`}
               >
                 {/* Header */}
@@ -59,11 +59,11 @@ export const QuickBites = ({ data, id = "quickBites" }) => {
 
                   {/* Text */}
                   <span>
-                    <h3 className="!pb-2 text-[#0c1d34] !text-[18px] font-medium leading-snug">
+                    <h3 className="!pb-2 text-[#0c1d34] !text-[18px] font-semibold leading-snug">
                       {item.title}
                     </h3>
 
-                    <p className=" text-[#49566d] text-[14px] mt-1 leading-snug !pb-10">
+                    <p className=" text-[#49566d] text-[14px] mt-1 leading-snug !pb-1">
                       {item.subtitle}
                     </p>
                   </span>

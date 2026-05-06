@@ -29,7 +29,7 @@ export const UpgradePlaybook = ({ data, id = "upgradePlaybook" }) => {
   const points = data?.points ?? [];
 
   return (
-    <section id={id} className="!bg-[#dfe5f1] !py-12 md:!py-14">
+    <section id={id} className="!bg-[#DFE5F1] !py-12 md:!py-14">
       <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
         <div className="!grid !grid-cols-1 lg:!grid-cols-2 !gap-10 lg:!gap-14 !items-stretch">
           {/* LEFT SIDE */}
