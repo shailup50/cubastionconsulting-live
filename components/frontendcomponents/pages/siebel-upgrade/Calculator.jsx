@@ -27,11 +27,14 @@ function Calculator({ embedded = false }) {
 
         <div className={embedded ? "!mb-3 md:!mb-4" : "!mb-5 md:!mb-6"}>
           <div className={embedded ? "!flex !flex-row !items-center !justify-start !gap-2 !mb-2" : "!flex !flex-row !items-start !justify-start !gap-2.5 md:!gap-3 !mb-3"}>
-            <div className={embedded ? "!flex-shrink-0 !p-1.5 !bg-gradient-to-br !from-blue-500 !to-blue-600 !rounded-lg !shadow-sm" : "!flex-shrink-0 !p-2 md:!p-2.5 !bg-gradient-to-br !from-blue-500 !to-blue-600 !rounded-2xl !shadow-lg"}>
+            <div
+              className={embedded ? "btn btn-btn !flex-shrink-0 !p-1.5 !rounded-lg !shadow-sm" : "btn btn-btn !flex-shrink-0 !p-2 md:!p-2.5 !rounded-2xl !shadow-lg"}
+              
+            >
               <CalculatorIcon className={embedded ? "w-3.5 h-3.5 text-white" : "w-5 h-5 md:w-6 md:h-6 text-white"} />
             </div>
             <div className="!text-left">
-              <h1 className={embedded ? "!text-[14px] md:!text-[16px] font-bold tracking-tight mb-0.5" : "!text-[20px] md:!text-[24px] lg:!text-[36px] font-bold tracking-tight mb-0.5 md:mb-1"} style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }}>
+              <h1 className={embedded ? "!text-[14px] md:!text-[16px] font-bold tracking-tight mb-0.5" : "!text-[20px] md:!text-[24px] lg:!text-[36px] font-bold tracking-tight mb-0.5 md:mb-1"}>
                 <span className="!text-slate-900">Siebel Upgrade </span>
                 <span className="!text-amber-500">Cost Calculator</span>
               </h1>
@@ -73,11 +76,29 @@ function Calculator({ embedded = false }) {
                   Estimated Cost Range
                 </span>
                 <div className="!flex !items-baseline !gap-3">
-                  <span className="!text-3xl !font-bold !text-blue-600">
+                  <span
+                    className="!text-3xl !font-bold"
+                    style={{
+                      background: "var(--gradient-primary)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                      color: "transparent",
+                    }}
+                  >
                     ₹{Math.round(totalCost * 0.8).toLocaleString()}
                   </span>
                   <span className="!text-2xl !font-semibold !text-slate-400">-</span>
-                  <span className="!text-3xl !font-bold !text-blue-600">
+                  <span
+                    className="!text-3xl !font-bold"
+                    style={{
+                      background: "var(--gradient-primary)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                      color: "transparent",
+                    }}
+                  >
                     ₹{Math.round(totalCost * 1.1).toLocaleString()}
                   </span>
                 </div>

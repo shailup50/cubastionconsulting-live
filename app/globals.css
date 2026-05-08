@@ -8,6 +8,9 @@
   --color-light-orange: #f9f1ea;
   --color-light-teal: #d6f6f7;
   --color-lighter-teal: #effbfc;
+  --color-primary-start: #052559;
+  --color-primary-end: #0f469f;
+  --gradient-primary: linear-gradient(270deg, #052559, #0f469f);
 
   --color-alpha: #666666;
   --color-beta: #f3f3f3;

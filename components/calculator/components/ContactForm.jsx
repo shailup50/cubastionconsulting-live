@@ -183,7 +183,7 @@ export const ContactForm = ({ totalCost, configurationProgress, totalQuestions }
           <div className="!flex !flex-col sm:!flex-row sm:!items-center sm:!justify-between !gap-3 !pt-3 !border-t !border-slate-200">
             {configError && <p className="!text-[12px] !text-red-600 !font-medium">{configError}</p>}
             {!configError && <div className="!hidden sm:!block" />}
-            <button type="submit" disabled={isSubmitting} className={`!w-full sm:!w-auto !px-6 !py-2.5 !text-[14px] !rounded-lg !font-semibold !text-white !transition-all !min-h-[50px] ${isSubmitting ? '!bg-slate-400 !cursor-not-allowed' : '!bg-gradient-to-r !from-blue-600 !to-blue-700 hover:!from-blue-700 hover:!to-blue-800 active:!scale-95 !shadow-md hover:!shadow-lg'}`}>
+            <button type="submit" disabled={isSubmitting} className={`btn  btn-btn !w-full sm:!w-auto !px-6 !py-2.5 !text-[14px] !rounded-lg !font-semibold !text-white !transition-all !min-h-[50px] ${isSubmitting ? '!bg-slate-400 !cursor-not-allowed' : 'btn btn-btn hover:!from-blue-700 hover:!to-blue-800 active:!scale-95 !shadow-md hover:!shadow-lg'}`}>
               {isSubmitting ? 'Submitting...' : 'Get Estimate'}
             </button>
           </div>

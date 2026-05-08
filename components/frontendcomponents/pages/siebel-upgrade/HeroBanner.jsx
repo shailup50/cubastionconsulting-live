@@ -6,7 +6,7 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
 
   return (
     <section
-      className="md:mt-30 !bg-[#dfe5f1] py-10! md:py-16! "
+      className="md:!mt-30 !bg-[#dfe5f1] py-10! md:py-16! "
       id={id}
     >
       <div className="container mx-auto max-w-[1360px] px-5 sm:px-6 lg:px-12 py-16 ">
@@ -67,7 +67,7 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
                 alt={data?.imageAlt}
                 width={760}
                 height={560}
-                className="w-full h-auto rounded-[16px] md:rounded-[20px] object-cover"
+                className="w-full h-auto rounded-[16px] md:rounded-[20px] object-contain"
                 priority
               />
             </div>
