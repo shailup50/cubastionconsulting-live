@@ -9,7 +9,7 @@ export const RadioInput = ({ label, description, options, value, onChange, icon 
       <div className="!flex !flex-col md:!flex-row">
         <div className="md:!w-80 !flex-shrink-0 !bg-slate-50 !p-4 md:!p-4 !flex !flex-col !min-h-[120px] md:!min-h-[150px]">
           <div className="!flex !items-start !gap-2 md:!gap-3">
-            <div className="!flex-shrink-0 !w-10 !h-10 md:!w-15 md:!h-15 !bg-gradient-to-br !from-blue-500 !to-blue-600 !rounded-xl md:!rounded-2xl !flex !items-center !justify-center !shadow-lg">
+            <div className="!flex-shrink-0 !w-10 !h-10 md:!w-15 md:!h-15 btn btn-btn !rounded-xl md:!rounded-2xl !flex !items-center !justify-center !shadow-lg">
               {icon || defaultIcon}
             </div>
             <div>
@@ -38,9 +38,10 @@ export const RadioInput = ({ label, description, options, value, onChange, icon 
                 onClick={() => onChange(option.value)}
                 className={`!text-left !p-3 md:!p-4 !rounded-lg md:!rounded-xl !border-2 !transition-all !min-h-[50px] ${
                   value === option.value
-                    ? '!border-blue-500 !bg-blue-500 !text-white !shadow-md'
+                    ? '!border-transparent !text-white !shadow-md'
                     : '!border-slate-200 !bg-white hover:!border-blue-300 hover:!shadow-sm active:!scale-95'
                 }`}
+                style={value === option.value ? { background: 'var(--gradient-primary)' } : undefined}
               >
                 <div className={`!text-[14px] !font-semibold !mb-0.5 md:!mb-1 ${
                   value === option.value ? '!text-white' : '!text-slate-900'
@@ -48,7 +49,7 @@ export const RadioInput = ({ label, description, options, value, onChange, icon 
                   {option.label}
                 </div>
                 <div className={`!text-[14px] !leading-tight ${
-                  value === option.value ? '!text-blue-50' : '!text-slate-600'
+                  value === option.value ? '!text-white/90' : '!text-slate-600'
                 }`}>
                   {option.description}
                 </div>
