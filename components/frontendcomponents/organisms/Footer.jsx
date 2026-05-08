@@ -274,7 +274,7 @@ export default function Footer() {
                     </div>
                     <div className="lower-footer">
                         <p>© All Rights Reserved – Cubastion Inc.
-                            <a href="https://www.prettifycreative.com/" target="_blank">Develop by :<img src="/assets/icon/prettify.svg" alt="Prettify Logo" /></a>
+                            {/* <a href="https://www.prettifycreative.com/" target="_blank">Develop by :<img src="/assets/icon/prettify.svg" alt="Prettify Logo" /></a> */}
                         </p>
                         <div className="links">
                             <Link href="/">Privacy Policy</Link>

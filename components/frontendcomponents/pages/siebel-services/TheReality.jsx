@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FiAlertTriangle } from "react-icons/fi";
@@ -37,10 +38,10 @@ export const TheReality = ({ data, id }) => {
                             {data.description}
                         </p>
 
-                        <button className="btn mt-7! inline-flex items-center gap-2 rounded-xl px-6! py-3.5! text-sm! font-bold! shadow-md">
+                        <Link href="#startTransformation" className="btn mt-7! inline-flex items-center gap-2 rounded-xl px-6! py-3.5! text-sm! font-bold! shadow-md">
                             <FaArrowRightLong className="text-base" />
                             {data.buttonText}
-                        </button>
+                        </Link>
                     </div>
 
                     <div className="grid gap-5 grid-cols-2 xl:grid-cols-3">

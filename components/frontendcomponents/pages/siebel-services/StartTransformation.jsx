@@ -29,7 +29,7 @@ export const StartTransformation = ({ data, id }) => {
 
             <div className="mt-7! flex w-full flex-col items-center justify-center gap-3 sm:mt-10! sm:flex-row">
               <Link
-                href="/siebel-upgrade"
+                href="https://calendly.com/amandeep-singh-cubastion/30min?month=2026-03" target="_blank"
                 className="flex items-center btn gap-2 rounded-xl bg-[#f08e1d]  text-sm! font-bold! text-[#052559] shadow-sm transition-colors hover:bg-[#e67f12]"
               >
                 <FiCalendar className="text-[18px]" />
@@ -37,7 +37,7 @@ export const StartTransformation = ({ data, id }) => {
               </Link>
 
               <Link
-                href={data.secondaryButtonHref || "/contact-us"}
+                href={data.secondaryButtonHref}
                 className="flex items-center gap-2 btn primary-border rounded-xl border-2 border-[#052559] bg-transparent  text-sm! font-bold! text-[#052559] transition-colors hover:bg-[#052559] hover:text-white"
               >
                 <FiMail className="text-[18px]" />

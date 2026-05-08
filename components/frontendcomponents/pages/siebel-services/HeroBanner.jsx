@@ -94,7 +94,7 @@ export const HeroBanner = ({ data, id }) => {
                                     >
                                         <MdWindow className="text-base" />
                                         Explore Services
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
 
