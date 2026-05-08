@@ -86,7 +86,7 @@ export const HeroBanner = ({ data, id }) => {
                                         <FaCalendarAlt className="text-base" />
                                         Book a Free Consultation
                                     </Link>
-                                    
+
                                     <button
                                         type="button"
                                         onClick={handleExploreServices}
@@ -94,7 +94,7 @@ export const HeroBanner = ({ data, id }) => {
                                     >
                                         <MdWindow className="text-base" />
                                         Explore Services
-                                    </Link>
+                                    </button>
                                 </div>
                             </div>
 
