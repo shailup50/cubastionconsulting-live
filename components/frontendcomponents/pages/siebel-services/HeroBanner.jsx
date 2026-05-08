@@ -27,6 +27,13 @@ export const HeroBanner = ({ data, id }) => {
         console.log("Form submitted:", form);
     };
 
+    const handleExploreServices = () => {
+        const ourServicesSection = document.getElementById("ourServices");
+        if (ourServicesSection) {
+            ourServicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
+
     return (
         <>
             <section className='md:mt-30! bg-[#dfe5f1] py-10! md:py-16!' id={id}>
@@ -70,11 +77,21 @@ export const HeroBanner = ({ data, id }) => {
 
                                 {/* CTA Buttons */}
                                 <div className="flex flex-wrap gap-4 mt-12!">
-                                    <Link href="https://calendly.com/amandeep-singh-cubastion/30min" target='_blank' className="flex items-center gap-2 btn  font-bold text-sm px-6 py-3 rounded-md transition-colors duration-200 shadow-md">
+                                    <Link
+                                        href="https://calendly.com/amandeep-singh-cubastion/30min?month=2026-05"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 btn  font-bold text-sm px-6 py-3 rounded-md transition-colors duration-200 shadow-md"
+                                    >
                                         <FaCalendarAlt className="text-base" />
                                         Book a Free Consultation
                                     </Link>
-                                    <Link href="#ourServices" className="flex items-center gap-2 border-2 btn primary-border font-bold text-sm px-6 py-3 rounded-md transition-colors duration-200">
+                                    
+                                    <button
+                                        type="button"
+                                        onClick={handleExploreServices}
+                                        className="flex items-center gap-2 border-2 btn primary-border font-bold text-sm px-6 py-3 rounded-md transition-colors duration-200"
+                                    >
                                         <MdWindow className="text-base" />
                                         Explore Services
                                     </Link>
