@@ -140,7 +140,7 @@ export default function AnimationButterfly({ id }) {
     geometry.setAttribute("velocity", new THREE.BufferAttribute(velocities, 3));
 
     const material = new THREE.PointsMaterial({
-      color: 0x275b70,
+      color: 0x052559,
       size: 0.28,
       transparent: true,
       opacity: 0.98,

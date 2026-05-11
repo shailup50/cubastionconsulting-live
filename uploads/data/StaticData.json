@@ -782,7 +782,7 @@
       "ImpactCard": [
         {
           "id": "1",
-          "value": "410+",
+          "value": "250+",
           "valueName": "Retail Clients Served",
           "valueDetail": "Consistent delivery and trusted long-term client relationships."
         },
@@ -794,13 +794,13 @@
         },
         {
           "id": "3",
-          "value": "19+",
+          "value": "20+",
           "valueName": "Years of Experience",
           "valueDetail": "Nearly two decades of reliable technology execution."
         },
         {
           "id": "4",
-          "value": "97%",
+          "value": "90%",
           "valueName": "Client Retention Rate",
           "valueDetail": "Consistent delivery and trusted long-term client relationships."
         }

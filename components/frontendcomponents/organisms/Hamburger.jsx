@@ -4,7 +4,13 @@ import { useState } from "react";
 import { useModalStore } from "@/zustand/modalStore";
 
 import { useGetHeaderDataQuery } from "@/store/frontendSlice/frontendAPISlice";
+import staticData from "../../../uploads/data/StaticData.json";
 
+const siebelServices = [
+    { dataKey: "SiebelServices", ServiceName: "Siebel Services", ServiceNameURL: "siebel-services" },
+    { dataKey: "SiebelUpgrade", ServiceName: "Siebel Upgrade", ServiceNameURL: "siebel-upgrade" },
+    { dataKey: "StartupServices", ServiceName: "Startup Services", ServiceNameURL: "startup-services" },
+].filter((item) => Boolean(staticData?.[item.dataKey]));
 
 export default function Hamburger() {
     const isHamOpen = useModalStore((state) => state.isHamOpen);
@@ -63,6 +69,20 @@ export default function Hamburger() {
                                                 {headerData?.data?.service?.map((item, index) => (
                                                     <li key={index} className="subsubcat-li" onClick={closeHam}>
                                                         <Link href={`/services`}>{item.ServiceName}</Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </li>
+                                )}
+                                {siebelServices.length > 0 && (
+                                    <li className={`hasSubDropdown ${activeSubDropdown === 'siebel-services' ? 'active' : ''}`} onClick={toggleSubDropdown('siebel-services')}>
+                                        <p>Siebel Services <span className="icon"></span></p>
+                                        <div className="sub-dropdown-menu">
+                                            <ul>
+                                                {siebelServices.map((item, index) => (
+                                                    <li key={index} className="subsubcat-li" onClick={closeHam}>
+                                                        <Link href={`/${item.ServiceNameURL}`}>{item.ServiceName}</Link>
                                                     </li>
                                                 ))}
                                             </ul>
