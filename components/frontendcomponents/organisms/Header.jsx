@@ -7,6 +7,13 @@ import { usePathname } from "next/navigation";
 import { useModalStore } from "@/zustand/modalStore";
 import "../../../uploads/styles/header/header.css"
 import { useGetHeaderDataQuery } from "@/store/frontendSlice/frontendAPISlice";
+import staticData from "../../../uploads/data/StaticData.json";
+
+const siebelServices = [
+    { dataKey: "SiebelServices", ServiceName: "Siebel Services", ServiceNameURL: "siebel-services" },
+    { dataKey: "SiebelUpgrade", ServiceName: "Siebel Upgrade", ServiceNameURL: "siebel-upgrade" },
+    { dataKey: "StartupServices", ServiceName: "Startup Services", ServiceNameURL: "startup-services" },
+].filter((item) => Boolean(staticData?.[item.dataKey]));
 
 export default function Header() {
     // const pathname = usePathname()
@@ -71,6 +78,18 @@ export default function Header() {
                                                             {headerData?.data?.service?.map((item, index) => (
                                                                 <li key={index} className="subsubcat-li">
                                                                     <Link href={`/services`}>{item.ServiceName}</Link>
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li className={`subcat-li ${activeSubcat === "Siebel" ? "active" : ""}`} onMouseEnter={() => setActiveSubcat("Siebel")}>
+                                                    <p>Siebel Services</p>
+                                                    <div className="col-sub-menu">
+                                                        <ul className="subsubcat-ul">
+                                                            {siebelServices.map((item, index) => (
+                                                                <li key={index} className="subsubcat-li">
+                                                                    <Link href={`/${item.ServiceNameURL}`}>{item.ServiceName}</Link>
                                                                 </li>
                                                             ))}
                                                         </ul>

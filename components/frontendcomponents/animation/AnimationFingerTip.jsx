@@ -31,8 +31,8 @@ export default function AnimationFingerTip({ id }) {
       // Match Animation1 framing so model sits a bit right
       camera.position.x = -25;
     }
-    if(id === "homeFingerTip") {
-      if (window.innerWidth > 769) { 
+    if (id === "homeFingerTip") {
+      if (window.innerWidth > 769) {
         camera.position.z = 100;
         camera.position.x = -30;
         camera.position.y = 0;
@@ -173,7 +173,7 @@ export default function AnimationFingerTip({ id }) {
     geometry.setAttribute("velocity", new THREE.BufferAttribute(velocities, 3));
 
     const material = new THREE.PointsMaterial({
-      color: 0x275b70,
+      color: 0x052559,
       size: 0.55,
       transparent: true,
       opacity: 0.9,

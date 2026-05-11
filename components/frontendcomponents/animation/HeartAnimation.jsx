@@ -28,8 +28,8 @@ export default function HeartAnimation({ id }) {
       camera.position.z = 80;
       camera.position.x = -25;
     }
-    if(id === "homeHeart") {
-      if (window.innerWidth > 769) { 
+    if (id === "homeHeart") {
+      if (window.innerWidth > 769) {
         camera.position.z = 100;
         camera.position.x = -30;
       }
@@ -150,7 +150,7 @@ export default function HeartAnimation({ id }) {
     geometry.setAttribute("velocity", new THREE.BufferAttribute(velocities, 3));
 
     const material = new THREE.PointsMaterial({
-      color: 0x275b70,
+      color: 0x052559,
       size: 0.61,
       transparent: true,
       opacity: 1.0,
