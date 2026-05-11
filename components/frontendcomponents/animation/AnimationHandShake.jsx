@@ -31,7 +31,7 @@ export default function AnimationHandShake({ id }) {
     if (id === "homeHandShake") {
       if (window.innerWidth > 769) {
         camera.position.z = 120;
-        camera.position.x = -30;
+        camera.position.x = -45;
         camera.position.y = 0;
       }
     }
