@@ -140,7 +140,7 @@ export default function AnimationButterfly({ id }) {
     geometry.setAttribute("velocity", new THREE.BufferAttribute(velocities, 3));
 
     const material = new THREE.PointsMaterial({
-      color: 0x275b70,
+      color: 0x052559,
       size: 0.28,
       transparent: true,
       opacity: 0.98,
@@ -233,13 +233,14 @@ export default function AnimationButterfly({ id }) {
         targetW / baseBounds.sizeX,
         targetH / baseBounds.sizeY,
       );
+      const shapeScale = fitScale * 1.3;
 
-      particleSystem.scale.setScalar(fitScale);
+      particleSystem.scale.setScalar(shapeScale);
 
       particleSystem.position.set(
-        -baseBounds.centerX * fitScale + rightShift,
-        -baseBounds.centerY * fitScale + upShift,
-        -baseBounds.centerZ * fitScale,
+        -baseBounds.centerX * shapeScale + rightShift,
+        -baseBounds.centerY * shapeScale + upShift,
+        -baseBounds.centerZ * shapeScale,
       );
     };
 
