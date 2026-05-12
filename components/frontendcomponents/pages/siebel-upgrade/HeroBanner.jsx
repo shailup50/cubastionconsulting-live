@@ -1,15 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const HeroBanner = ({ data, id = "heroSection" }) => {
   const points = data?.points ?? [];
 
   return (
     <section
-      className="md:mt-30! bg-[#dfe5f1] py-10! md:py-16! "
+      className="md:!mt-30 !bg-[#dfe5f1] py-10! md:py-16! "
       id={id}
     >
       <div className="container mx-auto max-w-[1360px] px-5 sm:px-6 lg:px-12 py-16 ">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-10 lg:gap-12 items-center">
           {/* LEFT CONTENT */}
           <div className="max-w-[600px]">
             {/* Logo */}
@@ -50,9 +51,12 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
             </ul>
 
             {/* CTA */}
-            <button className="btn btn-btn !px-3 !py-1 !bg-[#0c3b88] hover:!bg-[#e89b0d] transition-colors duration-300 text-[#ffff] text-[18px] md:text-[20px] font-medium px-10 md:px-12 h-[54px] rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
+            <Link
+              href="/cost-calculator"
+              className="btn btn-btn !inline-flex !items-center !justify-center !px-3 !py-1 !bg-[#0c3b88] hover:!bg-[#e89b0d] transition-colors duration-300 text-[#ffff] text-[18px] md:text-[20px] font-medium px-10 md:px-12 h-[54px] rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
+            >
               {data?.ctaText}
-            </button>
+            </Link>
           </div>
 
           {/* RIGHT SIDE IMAGE */}
@@ -63,7 +67,7 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
                 alt={data?.imageAlt}
                 width={760}
                 height={560}
-                className="w-full h-auto rounded-[16px] md:rounded-[20px] object-cover"
+                className="w-full h-auto rounded-[16px] md:rounded-[20px] object-contain"
                 priority
               />
             </div>

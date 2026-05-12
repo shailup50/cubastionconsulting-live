@@ -7,11 +7,11 @@ import AnimationFingerTip from "../../animation/AnimationFingerTip";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation'; 
+import 'swiper/css/navigation';
 import SwiperButton from "../../atoms/SwiperButton";
 
-export default function HeroSection({ data, id }){
-    if(!data) return null;
+export default function HeroSection({ data, id }) {
+    if (!data) return null;
     const intervalRef = useRef(null);
     const [activeHero, setActiveHero] = useState(1)
     const [isMobile, setIsMobile] = useState(false);
@@ -29,7 +29,7 @@ export default function HeroSection({ data, id }){
 
     const startInterval = useCallback(() => {
         if (intervalRef.current) clearInterval(intervalRef.current);
-        
+
         intervalRef.current = setInterval(() => {
             setActiveHero((prevActive) => {
                 const currentIndex = data.findIndex(item => item.id === prevActive);
@@ -51,9 +51,9 @@ export default function HeroSection({ data, id }){
     }, [data, isMobile, startInterval]);
 
     const renderHeroCol = (item) => (
-        <div 
-            className={`hero_col ${!isMobile && activeHero === item.id ? "active" : ""}`} 
-            key={item.id} 
+        <div
+            className={`hero_col ${!isMobile && activeHero === item.id ? "active" : ""}`}
+            key={item.id}
             onClick={() => handleHeroClick(item.id)}
         >
             <figure>
@@ -86,7 +86,7 @@ export default function HeroSection({ data, id }){
         </div>
     );
 
-    return(
+    return (
         <section>
             <div className="hero_sec" id={id}>
                 <div className="container">

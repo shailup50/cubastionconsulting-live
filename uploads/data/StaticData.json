@@ -7,7 +7,7 @@
         "heading": "Your trusted technology partner to build and sustain enterprise technology",
         "desc": "Cubastion brings technology depth, disciplined execution, global delivery capability, and industry understanding required to deliver high-stakes technology transformation",
         "linkHref": ""
-      }, 
+      },
       {
         "id": 2,
         "title": "Customer Experience",
@@ -782,7 +782,7 @@
       "ImpactCard": [
         {
           "id": "1",
-          "value": "410+",
+          "value": "250+",
           "valueName": "Retail Clients Served",
           "valueDetail": "Consistent delivery and trusted long-term client relationships."
         },
@@ -794,13 +794,13 @@
         },
         {
           "id": "3",
-          "value": "19+",
+          "value": "20+",
           "valueName": "Years of Experience",
           "valueDetail": "Nearly two decades of reliable technology execution."
         },
         {
           "id": "4",
-          "value": "97%",
+          "value": "90%",
           "valueName": "Client Retention Rate",
           "valueDetail": "Consistent delivery and trusted long-term client relationships."
         }
@@ -2304,7 +2304,7 @@
       ]
     },
     "Section7": {
-      "title": "Why Cubastion ", 
+      "title": "Why Cubastion ",
       "heading": "Why Global Enterprises Choose Us",
       "description": "We are not a generalist SI that also does Siebel. Siebel transformation is our singular, deepest expertise.",
       "items": [
@@ -2403,7 +2403,7 @@
           "quote": "“Cubastion containerised our entire Siebel landscape, reducing our infrastructure footprint by 35% and cutting deployment times from three days to under two hours. Their depth of Siebel knowledge is unmatched.”",
           "customerName": "Chief Information Officer",
           "customerTitle": "Automotive group"
-        } 
+        }
       ]
     },
     "Section9": {
@@ -2442,12 +2442,12 @@
       ]
     },
     "Section10": {
-      "title": "Start Transformation",
-      "heading": "Start Your Siebel Transformation Today",
-      "description": "Let's transform your Siebel landscape into a modern, intelligent and cloud ready platform, enabling faster innovation, seamless scalability and zero disruption growth",
-      "buttonText": "Get Free Assessment",
+      "title": "Start Your Transformation",
+      "heading": "Ready to Modernise Your Siebel?",
+      "description": "Book a free, no-obligation 30-minute consultation and walk away with clarity on your transformation options.",
+      "buttonText": "Book a Free Consultation",
       "secondaryButtonText": "Email Us Directly",
-      "secondaryButtonHref": "/contact-us"
+      "secondaryButtonHref": "mailto:solutions@cubastion.com"
     }
   },
   "SiebelUpgrade": {
@@ -2804,36 +2804,143 @@
       "title": "Trusted by startups and Fortune 500 companies",
       "note": "We work with Fortune 500 companies - and we give founders the same care and attention.",
       "logos": [
-        { "src": "/assets/images/startup-services/clients/clients-1.png", "alt": "Client 1", "widthRem": 20 },
-        { "src": "/assets/images/startup-services/clients/clients-2.png", "alt": "Client 2", "widthRem": 8 },
-        { "src": "/assets/images/startup-services/clients/clients-3.png", "alt": "Client 3", "widthRem": 15 },
-        { "src": "/assets/images/startup-services/clients/clients-4.png", "alt": "Client 4", "widthRem": 20 },
-        { "src": "/assets/images/startup-services/clients/clients-5.png", "alt": "Client 5", "widthRem": 8 },
-        { "src": "/assets/images/startup-services/clients/clients-6.png", "alt": "Client 6", "widthRem": 10 },
-        { "src": "/assets/images/startup-services/clients/clients-7.png", "alt": "Client 7", "widthRem": 15 },
-        { "src": "/assets/images/startup-services/clients/clients-8.png", "alt": "Client 8", "widthRem": 5 },
-        { "src": "/assets/images/startup-services/clients/clients-9.png", "alt": "Client 9", "widthRem": 5 },
-        { "src": "/assets/images/startup-services/clients/clients-10.png", "alt": "Client 10", "widthRem": 10 },
-        { "src": "/assets/images/startup-services/clients/clients-11.png", "alt": "Client 11", "widthRem": 5 },
-        { "src": "/assets/images/startup-services/clients/clients-12.png", "alt": "Client 12", "widthRem": 15 },
-        { "src": "/assets/images/startup-services/clients/clients-13.png", "alt": "Client 13", "widthRem": 15 },
-        { "src": "/assets/images/startup-services/clients/clients-14.png", "alt": "Client 14", "widthRem": 15 },
-        { "src": "/assets/images/startup-services/clients/clients-15.png", "alt": "Client 15", "widthRem": 20 },
-        { "src": "/assets/images/startup-services/clients/clients-16.png", "alt": "Client 16", "widthRem": 5 },
-        { "src": "/assets/images/startup-services/clients/clients-17.png", "alt": "Client 17", "widthRem": 2 },
-        { "src": "/assets/images/startup-services/clients/clients-18.png", "alt": "Client 18", "widthRem": 4 },
-        { "src": "/assets/images/startup-services/clients/clients-19.png", "alt": "Client 19", "widthRem": 5 },
-        { "src": "/assets/images/startup-services/clients/clients-20.png", "alt": "Client 20", "widthRem": 10 },
-        { "src": "/assets/images/startup-services/clients/clients-21.png", "alt": "Client 21", "widthRem": 15 },
-        { "src": "/assets/images/startup-services/clients/clients-22.png", "alt": "Client 22", "widthRem": 15 },
-        { "src": "/assets/images/startup-services/clients/clients-23.png", "alt": "Client 23", "widthRem": 15 }
+        {
+          "src": "/assets/images/startup-services/clients/clients-1.png",
+          "alt": "Client 1",
+          "widthRem": 20
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-2.png",
+          "alt": "Client 2",
+          "widthRem": 8
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-3.png",
+          "alt": "Client 3",
+          "widthRem": 15
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-4.png",
+          "alt": "Client 4",
+          "widthRem": 20
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-5.png",
+          "alt": "Client 5",
+          "widthRem": 8
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-6.png",
+          "alt": "Client 6",
+          "widthRem": 10
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-7.png",
+          "alt": "Client 7",
+          "widthRem": 15
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-8.png",
+          "alt": "Client 8",
+          "widthRem": 5
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-9.png",
+          "alt": "Client 9",
+          "widthRem": 5
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-10.png",
+          "alt": "Client 10",
+          "widthRem": 10
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-11.png",
+          "alt": "Client 11",
+          "widthRem": 5
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-12.png",
+          "alt": "Client 12",
+          "widthRem": 15
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-13.png",
+          "alt": "Client 13",
+          "widthRem": 15
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-14.png",
+          "alt": "Client 14",
+          "widthRem": 15
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-15.png",
+          "alt": "Client 15",
+          "widthRem": 20
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-16.png",
+          "alt": "Client 16",
+          "widthRem": 5
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-17.png",
+          "alt": "Client 17",
+          "widthRem": 2
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-18.png",
+          "alt": "Client 18",
+          "widthRem": 4
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-19.png",
+          "alt": "Client 19",
+          "widthRem": 5
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-20.png",
+          "alt": "Client 20",
+          "widthRem": 10
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-21.png",
+          "alt": "Client 21",
+          "widthRem": 15
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-22.png",
+          "alt": "Client 22",
+          "widthRem": 15
+        },
+        {
+          "src": "/assets/images/startup-services/clients/clients-23.png",
+          "alt": "Client 23",
+          "widthRem": 15
+        }
       ]
     },
     "Section3": {
       "stats": [
-        { "end": 18, "suffix": "+", "title": "Years Experience", "isCenter": false },
-        { "end": 100, "suffix": "%", "title": "Production-Grade Deliveries", "isCenter": true },
-        { "end": 650, "suffix": "+", "title": "Projects Delivered", "isCenter": false }
+        {
+          "end": 18,
+          "suffix": "+",
+          "title": "Years Experience",
+          "isCenter": false
+        },
+        {
+          "end": 100,
+          "suffix": "%",
+          "title": "Production-Grade Deliveries",
+          "isCenter": true
+        },
+        {
+          "end": 650,
+          "suffix": "+",
+          "title": "Projects Delivered",
+          "isCenter": false
+        }
       ]
     },
     "Section4": {
@@ -2841,13 +2948,41 @@
       "subtitle": "From idea validation to full-scale rollout, we provide everything you need to launch with confidence",
       "tagline": "Designed for founders who don't want to manage engineers.",
       "benefits": [
-        { "icon": "bullhorn", "title": "Strategic Roadmap", "description": "Validate your idea with data before investing big." },
-        { "icon": "columns", "title": "Clickable Prototypes", "description": "Test user flows with real customers in 2 weeks." },
-        { "icon": "desktop", "title": "Pilot MVPs", "description": "Launch lean versions to attract early adopters and investors." },
-        { "icon": "users", "title": "Dedicated Startup Pod", "description": "A handpicked team that works only on your MVP." },
-        { "icon": "shield", "title": "Idea-to-Launch Delivery", "description": "From design to deployment, we manage the entire MVP lifecycle, saving you time and overhead." },
-        { "icon": "check", "title": "Reliability and Scale Testing", "description": "Rigorous testing ensures reliability, security, and investor-ready quality." },
-        { "icon": "code", "title": "Scale-Up Engineering", "description": "Seamlessly transition from MVP to a fully scalable product when demand is proven." }
+        {
+          "icon": "bullhorn",
+          "title": "Strategic Roadmap",
+          "description": "Validate your idea with data before investing big."
+        },
+        {
+          "icon": "columns",
+          "title": "Clickable Prototypes",
+          "description": "Test user flows with real customers in 2 weeks."
+        },
+        {
+          "icon": "desktop",
+          "title": "Pilot MVPs",
+          "description": "Launch lean versions to attract early adopters and investors."
+        },
+        {
+          "icon": "users",
+          "title": "Dedicated Startup Pod",
+          "description": "A handpicked team that works only on your MVP."
+        },
+        {
+          "icon": "shield",
+          "title": "Idea-to-Launch Delivery",
+          "description": "From design to deployment, we manage the entire MVP lifecycle, saving you time and overhead."
+        },
+        {
+          "icon": "check",
+          "title": "Reliability and Scale Testing",
+          "description": "Rigorous testing ensures reliability, security, and investor-ready quality."
+        },
+        {
+          "icon": "code",
+          "title": "Scale-Up Engineering",
+          "description": "Seamlessly transition from MVP to a fully scalable product when demand is proven."
+        }
       ],
       "actionCard": {
         "title": "Build Smart. Launch Fast. Scale Confidently.",
@@ -2857,11 +2992,31 @@
       },
       "featuresTitle": "WHAT SETS US APART",
       "features": [
-        { "icon": "award", "title": "Elite Engineering Talent", "description": "Work with rigorously vetted engineers delivering world-class quality." },
-        { "icon": "graph", "title": "Proven Track Record", "description": "Decades of experience supporting startups and global enterprises alike." },
-        { "icon": "diagram", "title": "End-to-End Ownership", "description": "From strategy to launch, we take full responsibility for delivery." },
-        { "icon": "collaboration", "title": "Always-On Collaboration", "description": "Seamless teamwork across time zones for faster execution." },
-        { "icon": "lock", "title": "Enterprise-Grade Security", "description": "Your data is protected with globally recognized security standards." }
+        {
+          "icon": "award",
+          "title": "Elite Engineering Talent",
+          "description": "Work with rigorously vetted engineers delivering world-class quality."
+        },
+        {
+          "icon": "graph",
+          "title": "Proven Track Record",
+          "description": "Decades of experience supporting startups and global enterprises alike."
+        },
+        {
+          "icon": "diagram",
+          "title": "End-to-End Ownership",
+          "description": "From strategy to launch, we take full responsibility for delivery."
+        },
+        {
+          "icon": "collaboration",
+          "title": "Always-On Collaboration",
+          "description": "Seamless teamwork across time zones for faster execution."
+        },
+        {
+          "icon": "lock",
+          "title": "Enterprise-Grade Security",
+          "description": "Your data is protected with globally recognized security standards."
+        }
       ]
     },
     "Section5": {
@@ -2873,119 +3028,332 @@
           "id": "product-interfaces",
           "label": "Product Interfaces",
           "logos": [
-            { "src": "/assets/images/startup-services/technologies/product-interfaces/react.webp", "alt": "React" },
-            { "src": "/assets/images/startup-services/technologies/product-interfaces/Next-js.webp", "alt": "Next.js" },
-            { "src": "/assets/images/startup-services/technologies/product-interfaces/angular-1.webp", "alt": "AngularJS" },
-            { "src": "/assets/images/startup-services/technologies/product-interfaces/vue.webp", "alt": "Vue.js" },
-            { "src": "/assets/images/startup-services/technologies/product-interfaces/fig.webp", "alt": "Figma" },
-            { "src": "/assets/images/startup-services/technologies/product-interfaces/kot.webp", "alt": "Kotlin" },
-            { "src": "/assets/images/startup-services/technologies/product-interfaces/swift.webp", "alt": "Swift" },
-            { "src": "/assets/images/startup-services/technologies/product-interfaces/react-nat.webp", "alt": "React Native" },
-            { "src": "/assets/images/startup-services/technologies/product-interfaces/flut.webp", "alt": "Flutter" },
-            { "src": "/assets/images/startup-services/technologies/product-interfaces/dart.webp", "alt": "Dart" }
+            {
+              "src": "/assets/images/startup-services/technologies/product-interfaces/react.webp",
+              "alt": "React"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/product-interfaces/Next-js.webp",
+              "alt": "Next.js"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/product-interfaces/angular-1.webp",
+              "alt": "AngularJS"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/product-interfaces/vue.webp",
+              "alt": "Vue.js"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/product-interfaces/fig.webp",
+              "alt": "Figma"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/product-interfaces/kot.webp",
+              "alt": "Kotlin"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/product-interfaces/swift.webp",
+              "alt": "Swift"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/product-interfaces/react-nat.webp",
+              "alt": "React Native"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/product-interfaces/flut.webp",
+              "alt": "Flutter"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/product-interfaces/dart.webp",
+              "alt": "Dart"
+            }
           ]
         },
         {
           "id": "core-app-apis",
           "label": "Core Application & APIs",
           "logos": [
-            { "src": "/assets/images/startup-services/technologies/core-application/spring.webp", "alt": "Spring" },
-            { "src": "/assets/images/startup-services/technologies/core-application/node.webp", "alt": "Node.js" },
-            { "src": "/assets/images/startup-services/technologies/core-application/java.webp", "alt": "Java" },
-            { "src": "/assets/images/startup-services/technologies/core-application/Graph.webp", "alt": "GraphQL" },
-            { "src": "/assets/images/startup-services/technologies/core-application/Laravel.webp", "alt": "Laravel" },
-            { "src": "/assets/images/startup-services/technologies/core-application/Express.webp", "alt": "Express.js" },
-            { "src": "/assets/images/startup-services/technologies/core-application/fastapi.webp", "alt": "FastAPI" }
+            {
+              "src": "/assets/images/startup-services/technologies/core-application/spring.webp",
+              "alt": "Spring"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/core-application/node.webp",
+              "alt": "Node.js"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/core-application/java.webp",
+              "alt": "Java"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/core-application/Graph.webp",
+              "alt": "GraphQL"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/core-application/Laravel.webp",
+              "alt": "Laravel"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/core-application/Express.webp",
+              "alt": "Express.js"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/core-application/fastapi.webp",
+              "alt": "FastAPI"
+            }
           ]
         },
         {
           "id": "ai-intelligent",
           "label": "AI & Intelligent Features",
           "logos": [
-            { "src": "/assets/images/startup-services/technologies/ai-and-intelligent/Streamlit.webp", "alt": "Streamlit" },
-            { "src": "/assets/images/startup-services/technologies/ai-and-intelligent/langchain.webp", "alt": "LangChain" },
-            { "src": "/assets/images/startup-services/technologies/ai-and-intelligent/langgraph.webp", "alt": "LangGraph" },
-            { "src": "/assets/images/startup-services/technologies/ai-and-intelligent/neo4j.webp", "alt": "Neo4j" },
-            { "src": "/assets/images/startup-services/technologies/ai-and-intelligent/allegro.webp", "alt": "Allegro" },
-            { "src": "/assets/images/startup-services/technologies/ai-and-intelligent/milvus.webp", "alt": "Milvus" },
-            { "src": "/assets/images/startup-services/technologies/ai-and-intelligent/pinecone.webp", "alt": "Pinecone" }
+            {
+              "src": "/assets/images/startup-services/technologies/ai-and-intelligent/Streamlit.webp",
+              "alt": "Streamlit"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/ai-and-intelligent/langchain.webp",
+              "alt": "LangChain"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/ai-and-intelligent/langgraph.webp",
+              "alt": "LangGraph"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/ai-and-intelligent/neo4j.webp",
+              "alt": "Neo4j"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/ai-and-intelligent/allegro.webp",
+              "alt": "Allegro"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/ai-and-intelligent/milvus.webp",
+              "alt": "Milvus"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/ai-and-intelligent/pinecone.webp",
+              "alt": "Pinecone"
+            }
           ]
         },
         {
           "id": "data-insights",
           "label": "Data & Insights",
           "logos": [
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/mysql.webp", "alt": "MySQL" },
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/postre.webp", "alt": "PostgreSQL" },
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/oracle.webp", "alt": "Oracle DB" },
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/mongo.webp", "alt": "MongoDB" },
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/elastic.webp", "alt": "Elastic" },
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/dynamo.webp", "alt": "DynamoDB" },
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/redis.webp", "alt": "Redis" },
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/casand.webp", "alt": "Cassandra" },
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/Hadoop.webp", "alt": "Hadoop" },
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/snow-1.webp", "alt": "Snowflake" },
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/elk.webp", "alt": "ELK" },
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/kaf.webp", "alt": "Kafka" },
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/spark.webp", "alt": "Apache Spark" },
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/InfluxDB.webp", "alt": "InfluxDB" },
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/data-f.webp", "alt": "Data Fabric" },
-            { "src": "/assets/images/startup-services/technologies/data-and-insights/datab.webp", "alt": "Database" }
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/mysql.webp",
+              "alt": "MySQL"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/postre.webp",
+              "alt": "PostgreSQL"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/oracle.webp",
+              "alt": "Oracle DB"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/mongo.webp",
+              "alt": "MongoDB"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/elastic.webp",
+              "alt": "Elastic"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/dynamo.webp",
+              "alt": "DynamoDB"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/redis.webp",
+              "alt": "Redis"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/casand.webp",
+              "alt": "Cassandra"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/Hadoop.webp",
+              "alt": "Hadoop"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/snow-1.webp",
+              "alt": "Snowflake"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/elk.webp",
+              "alt": "ELK"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/kaf.webp",
+              "alt": "Kafka"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/spark.webp",
+              "alt": "Apache Spark"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/InfluxDB.webp",
+              "alt": "InfluxDB"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/data-f.webp",
+              "alt": "Data Fabric"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/data-and-insights/datab.webp",
+              "alt": "Database"
+            }
           ]
         },
         {
           "id": "quality-reliability",
           "label": "Quality & Reliability",
           "logos": [
-            { "src": "/assets/images/startup-services/technologies/quality/ele.webp", "alt": "Selenium" },
-            { "src": "/assets/images/startup-services/technologies/quality/play.webp", "alt": "Playwright" },
-            { "src": "/assets/images/startup-services/technologies/quality/ApacheJMeter.webp", "alt": "JMeter" },
-            { "src": "/assets/images/startup-services/technologies/quality/appi.webp", "alt": "Appium" },
-            { "src": "/assets/images/startup-services/technologies/quality/cypress.webp", "alt": "Cypress" },
-            { "src": "/assets/images/startup-services/technologies/quality/post.webp", "alt": "Postman" },
-            { "src": "/assets/images/startup-services/technologies/quality/cucum.webp", "alt": "Cucumber-JVM" },
-            { "src": "/assets/images/startup-services/technologies/quality/browse.webp", "alt": "BrowserStack" },
-            { "src": "/assets/images/startup-services/technologies/quality/load.webp", "alt": "LoadRunner" },
-            { "src": "/assets/images/startup-services/technologies/quality/burp.webp", "alt": "Burp Suite" },
-            { "src": "/assets/images/startup-services/technologies/quality/lamda.webp", "alt": "LambdaTest" },
-            { "src": "/assets/images/startup-services/technologies/quality/webd.webp", "alt": "WebdriverIO" }
+            {
+              "src": "/assets/images/startup-services/technologies/quality/ele.webp",
+              "alt": "Selenium"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/quality/play.webp",
+              "alt": "Playwright"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/quality/ApacheJMeter.webp",
+              "alt": "JMeter"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/quality/appi.webp",
+              "alt": "Appium"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/quality/cypress.webp",
+              "alt": "Cypress"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/quality/post.webp",
+              "alt": "Postman"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/quality/cucum.webp",
+              "alt": "Cucumber-JVM"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/quality/browse.webp",
+              "alt": "BrowserStack"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/quality/load.webp",
+              "alt": "LoadRunner"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/quality/burp.webp",
+              "alt": "Burp Suite"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/quality/lamda.webp",
+              "alt": "LambdaTest"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/quality/webd.webp",
+              "alt": "WebdriverIO"
+            }
           ]
         },
         {
           "id": "infra-scale",
           "label": "Infrastructure & Scale",
           "logos": [
-            { "src": "/assets/images/startup-services/technologies/infrastructure/aws.webp", "alt": "AWS" },
-            { "src": "/assets/images/startup-services/technologies/infrastructure/azur.webp", "alt": "Azure" },
-            { "src": "/assets/images/startup-services/technologies/infrastructure/gcp.webp", "alt": "Google Cloud" },
-            { "src": "/assets/images/startup-services/technologies/infrastructure/ci-cd.webp", "alt": "CI/CD" },
-            { "src": "/assets/images/startup-services/technologies/infrastructure/jenk.webp", "alt": "Jenkins" },
-            { "src": "/assets/images/startup-services/technologies/infrastructure/kubr.webp", "alt": "Kubernetes" },
-            { "src": "/assets/images/startup-services/technologies/infrastructure/dockr.webp", "alt": "Docker" },
-            { "src": "/assets/images/startup-services/technologies/infrastructure/terra.webp", "alt": "Terraform" }
+            {
+              "src": "/assets/images/startup-services/technologies/infrastructure/aws.webp",
+              "alt": "AWS"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/infrastructure/azur.webp",
+              "alt": "Azure"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/infrastructure/gcp.webp",
+              "alt": "Google Cloud"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/infrastructure/ci-cd.webp",
+              "alt": "CI/CD"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/infrastructure/jenk.webp",
+              "alt": "Jenkins"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/infrastructure/kubr.webp",
+              "alt": "Kubernetes"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/infrastructure/dockr.webp",
+              "alt": "Docker"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/infrastructure/terra.webp",
+              "alt": "Terraform"
+            }
           ]
         },
         {
           "id": "integration-connectivity",
           "label": "Integration & Connectivity",
           "logos": [
-            { "src": "/assets/images/startup-services/technologies/integration/Kong.webp", "alt": "Kong" },
-            { "src": "/assets/images/startup-services/technologies/integration/wso2.webp", "alt": "WSO2" },
-            { "src": "/assets/images/startup-services/technologies/integration/Keycloak.webp", "alt": "Keycloak" },
-            { "src": "/assets/images/startup-services/technologies/integration/Nginx.webp", "alt": "Nginx" },
-            { "src": "/assets/images/startup-services/technologies/integration/apigee.webp", "alt": "Apigee" }
+            {
+              "src": "/assets/images/startup-services/technologies/integration/Kong.webp",
+              "alt": "Kong"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/integration/wso2.webp",
+              "alt": "WSO2"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/integration/Keycloak.webp",
+              "alt": "Keycloak"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/integration/Nginx.webp",
+              "alt": "Nginx"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/integration/apigee.webp",
+              "alt": "Apigee"
+            }
           ]
         },
         {
           "id": "web3-beyond",
           "label": "Web3 & Beyond",
           "logos": [
-            { "src": "/assets/images/startup-services/technologies/web3/ethereum.webp", "alt": "Ethereum" },
-            { "src": "/assets/images/startup-services/technologies/web3/solana.webp", "alt": "Solana" },
-            { "src": "/assets/images/startup-services/technologies/web3/metamask.webp", "alt": "MetaMask" },
-            { "src": "/assets/images/startup-services/technologies/web3/coinbase.webp", "alt": "Coinbase" },
-            { "src": "/assets/images/startup-services/technologies/web3/fireworks.webp", "alt": "Fireworks" },
-            { "src": "/assets/images/startup-services/technologies/web3/ccopper.webp", "alt": "cCopper" }
+            {
+              "src": "/assets/images/startup-services/technologies/web3/ethereum.webp",
+              "alt": "Ethereum"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/web3/solana.webp",
+              "alt": "Solana"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/web3/metamask.webp",
+              "alt": "MetaMask"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/web3/coinbase.webp",
+              "alt": "Coinbase"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/web3/fireworks.webp",
+              "alt": "Fireworks"
+            },
+            {
+              "src": "/assets/images/startup-services/technologies/web3/ccopper.webp",
+              "alt": "cCopper"
+            }
           ]
         }
       ]
@@ -2994,16 +3362,46 @@
       "title": "Ideas we've helped bring to life",
       "subtitle": "Partnering with businesses in diverse sectors to unlock new avenues for growth and innovation.",
       "items": [
-        { "title": "Healthcare", "image": "/assets/images/startup-services/Section-6-ideas/inds-01.webp" },
-        { "title": "Travel & Tourism", "image": "/assets/images/startup-services/Section-6-ideas/inds-02.webp" },
-        { "title": "Fintech", "image": "/assets/images/startup-services/Section-6-ideas/inds-03.webp" },
-        { "title": "BFSI", "image": "/assets/images/startup-services/Section-6-ideas/inds-04.webp" },
-        { "title": "Automotive", "image": "/assets/images/startup-services/Section-6-ideas/inds-05.webp" },
-        { "title": "Education & eLearning", "image": "/assets/images/startup-services/Section-6-ideas/education.webp" },
-        { "title": "Retail & eCommerce", "image": "/assets/images/startup-services/Section-6-ideas/ecommerce.webp" },
-        { "title": "Logistics & Transportation", "image": "/assets/images/startup-services/Section-6-ideas/logistics.webp" },
-        { "title": "Media & Entertainment", "image": "/assets/images/startup-services/Section-6-ideas/media.webp" },
-        { "title": "Banking & Fintech", "image": "/assets/images/startup-services/Section-6-ideas/banking.webp" }
+        {
+          "title": "Healthcare",
+          "image": "/assets/images/startup-services/Section-6-ideas/inds-01.webp"
+        },
+        {
+          "title": "Travel & Tourism",
+          "image": "/assets/images/startup-services/Section-6-ideas/inds-02.webp"
+        },
+        {
+          "title": "Fintech",
+          "image": "/assets/images/startup-services/Section-6-ideas/inds-03.webp"
+        },
+        {
+          "title": "BFSI",
+          "image": "/assets/images/startup-services/Section-6-ideas/inds-04.webp"
+        },
+        {
+          "title": "Automotive",
+          "image": "/assets/images/startup-services/Section-6-ideas/inds-05.webp"
+        },
+        {
+          "title": "Education & eLearning",
+          "image": "/assets/images/startup-services/Section-6-ideas/education.webp"
+        },
+        {
+          "title": "Retail & eCommerce",
+          "image": "/assets/images/startup-services/Section-6-ideas/ecommerce.webp"
+        },
+        {
+          "title": "Logistics & Transportation",
+          "image": "/assets/images/startup-services/Section-6-ideas/logistics.webp"
+        },
+        {
+          "title": "Media & Entertainment",
+          "image": "/assets/images/startup-services/Section-6-ideas/media.webp"
+        },
+        {
+          "title": "Banking & Fintech",
+          "image": "/assets/images/startup-services/Section-6-ideas/banking.webp"
+        }
       ]
     },
     "Section7": {
@@ -3037,20 +3435,56 @@
     "Section9": {
       "title": "Awards & Certifications",
       "items": [
-        { "src": "/assets/images/startup-services/awards-certification/award-01.png", "alt": "Award 1", "widthRem": 9 },
-        { "src": "/assets/images/startup-services/awards-certification/award-02.png", "alt": "Award 2", "widthRem": 5 },
-        { "src": "/assets/images/startup-services/awards-certification/award-03.png", "alt": "Award 3", "widthRem": 20 },
-        { "src": "/assets/images/startup-services/awards-certification/award-04.png", "alt": "Award 4", "widthRem": 9 },
-        { "src": "/assets/images/startup-services/awards-certification/award-05.png", "alt": "Award 5", "widthRem": 8 },
-        { "src": "/assets/images/startup-services/awards-certification/award-06.png", "alt": "Award 6", "widthRem": 20 },
-        { "src": "/assets/images/startup-services/awards-certification/award-07.png", "alt": "Award 7", "widthRem": 9 },
-        { "src": "/assets/images/startup-services/awards-certification/award-08.png", "alt": "Award 8", "widthRem": 9 },
-        { "src": "/assets/images/startup-services/awards-certification/award-09.png", "alt": "Award 9", "widthRem": 9 }
+        {
+          "src": "/assets/images/startup-services/awards-certification/award-01.png",
+          "alt": "Award 1",
+          "widthRem": 9
+        },
+        {
+          "src": "/assets/images/startup-services/awards-certification/award-02.png",
+          "alt": "Award 2",
+          "widthRem": 5
+        },
+        {
+          "src": "/assets/images/startup-services/awards-certification/award-03.png",
+          "alt": "Award 3",
+          "widthRem": 20
+        },
+        {
+          "src": "/assets/images/startup-services/awards-certification/award-04.png",
+          "alt": "Award 4",
+          "widthRem": 9
+        },
+        {
+          "src": "/assets/images/startup-services/awards-certification/award-05.png",
+          "alt": "Award 5",
+          "widthRem": 8
+        },
+        {
+          "src": "/assets/images/startup-services/awards-certification/award-06.png",
+          "alt": "Award 6",
+          "widthRem": 20
+        },
+        {
+          "src": "/assets/images/startup-services/awards-certification/award-07.png",
+          "alt": "Award 7",
+          "widthRem": 9
+        },
+        {
+          "src": "/assets/images/startup-services/awards-certification/award-08.png",
+          "alt": "Award 8",
+          "widthRem": 9
+        },
+        {
+          "src": "/assets/images/startup-services/awards-certification/award-09.png",
+          "alt": "Award 9",
+          "widthRem": 9
+        }
       ]
     },
     "Section10": {
       "heading": "Still have questions?",
-      "description":"Get answers to the most common questions about MVP product development.",
+      "description": "Get answers to the most common questions about MVP product development.",
       "items": [
         {
           "id": 1,

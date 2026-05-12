@@ -28,10 +28,10 @@ export default function AnimationHandShake({ id }) {
       // Match Animation1 framing so model sits a bit right
       camera.position.x = -35;
     }
-    if(id === "homeHandShake") {
-      if (window.innerWidth > 769) { 
+    if (id === "homeHandShake") {
+      if (window.innerWidth > 769) {
         camera.position.z = 120;
-        camera.position.x = -30;
+        camera.position.x = -45;
         camera.position.y = 0;
       }
     }
@@ -174,7 +174,7 @@ export default function AnimationHandShake({ id }) {
     geometry.setAttribute("velocity", new THREE.BufferAttribute(velocities, 3));
 
     const material = new THREE.PointsMaterial({
-      color: 0x275b70,
+      color: 0x052559,
       size: 0.55,
       transparent: true,
       opacity: 0.9,

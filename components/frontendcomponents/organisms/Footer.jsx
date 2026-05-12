@@ -75,10 +75,12 @@ export default function Footer() {
                                     <input
                                         type="email"
                                         id="newsEmail"
-                                        className="form-control"
+                                        className="form-control px-4! w-[75%]!"
                                         value={email}
                                         onChange={handleEmailChange}
                                         disabled={contactLoading}
+                                    // placeholder="Enter your email"
+
                                     />
                                     <label htmlFor="newsEmail">Enter your email</label>
                                     <button

@@ -17,7 +17,7 @@ export default function HighlightsSec({ id }) {
             <div className="high_col">
               <figure></figure>
               <figcaption>
-                <h5 className="count">19+ Years</h5>
+                <h5 className="count">20+ Years</h5>
                 <p>Of collaboration with our longest-standing clients</p>
               </figcaption>
             </div>
@@ -46,7 +46,7 @@ export default function HighlightsSec({ id }) {
             <div className="high_col">
               <figure></figure>
               <figcaption>
-                <h5 className="count">500Mn+</h5>
+                <h5 className="count">2000+</h5>
                 <p>Customer touchpoints enabled</p>
               </figcaption>
             </div>
