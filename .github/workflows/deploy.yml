@@ -34,7 +34,6 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          passphrase: ${{ secrets.SSH_PASSPHRASE }}
           source: "deploy.zip"
           target: "/home/cubastionconsult/cubtest/cubastionconsulting-testing/cubastionconsulting-live"
 
@@ -44,7 +43,6 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
             # Go to the project directory
             cd /home/cubastionconsult/cubtest/cubastionconsulting-testing/cubastionconsulting-live
