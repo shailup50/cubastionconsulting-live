@@ -1,15 +1,17 @@
 import Button from "../../atoms/Button";
 import AnimationButterfly from "../../animation/AnimationButterfly";
+import RockAnimation from "../../animation/RockAnimation";
 
-export default function AboutSec({ data, id }){
+export default function AboutSec({ data, id }) {
     if (!data) return null
-    return(
+    return (
         <section>
             <div className="about_sec sec-pad" id={id}>
                 <div className="container">
                     <div className="about_wrapper">
                         <figure>
                             <AnimationButterfly />
+                            {/* <RockAnimation /> */}
                         </figure>
                         <figcaption>
                             <div className="heading">

@@ -2166,4 +2166,41 @@
   }
 }
 
+@media (max-width: 1400px) {
+  .hero_sec .hero_wrapper .hero_col figure.handshake_figure canvas {
+    transform: translateX(-2%) scale(1.12);
+    transform-origin: center;
+  }
+}
+
+@media (max-width: 1170px) {
+  .hero_sec .hero_wrapper .hero_col figure.handshake_figure canvas {
+    transform: translateX(-2%) scale(1.08);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1260px) {
+  .hero_sec .hero_wrapper .hero_col figure.handshake_figure canvas {
+    transform: translateX(clamp(20px, calc(286.95px - 21.19vw), 70px)) scale(1.02);
+  }
+}
+
+@media (max-width: 991px) {
+  .hero_sec .hero_wrapper .hero_col figure.handshake_figure canvas {
+    transform: translateX(-10%) scale(1.06);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero_sec .hero_wrapper .hero_col figure.handshake_figure canvas {
+    transform: translateX(-8%) scale(1.04);
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .hero_sec .hero_wrapper .hero_col figure.handshake_figure canvas {
+    transform: translateX(-12%) scale(1.02);
+  }
+}
+
 /*# sourceMappingURL=home.css.map */

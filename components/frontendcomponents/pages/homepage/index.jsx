@@ -74,6 +74,7 @@ export default function Homepage() {
       {/* <AwardsSec classname="home_awards" id="awardSec" data={awardlogos} heading="Awards and Recognition" /> */}
       <ExpertInsights id="expertSec" data={blogs} heading="Our Expert Insights" />
       <MapSec id="mapSec" />
+
       {/* done */}
     </main>
   );
