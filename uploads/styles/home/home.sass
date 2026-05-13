@@ -1074,3 +1074,27 @@
                             width: 100%
                             max-width: 100%
                             margin-right: 20%
+
+.hero_sec
+    .hero_wrapper
+        .hero_col
+            figure.handshake_figure
+                @media (max-width: 1400px)
+                    canvas
+                        transform: translateX(-2%) scale(1.12)
+                        transform-origin: center
+                @include media(1170)
+                    canvas
+                        transform: translateX(-2%) scale(1.08)
+                @media (min-width: 1024px) and (max-width: 1260px)
+                    canvas
+                        transform: translateX(clamp(20px, calc(286.95px - 21.19vw), 70px)) scale(1.02)
+                @include media(991)
+                    canvas
+                        transform: translateX(-10%) scale(1.06)
+                @include media(768)
+                    canvas
+                        transform: translateX(-8%) scale(1.04)
+                @include media(540)
+                    canvas
+                        transform: translateX(-12%) scale(1.02)

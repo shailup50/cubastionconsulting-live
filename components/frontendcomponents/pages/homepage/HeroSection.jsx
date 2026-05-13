@@ -56,7 +56,7 @@ export default function HeroSection({ data, id }) {
             key={item.id}
             onClick={() => handleHeroClick(item.id)}
         >
-            <figure>
+            <figure className={item.id === 2 ? "handshake_figure" : ""}>
                 {item.id === 1 ? (
                     <HeartAnimation id={"homeHeart"} />
                 ) : item.id === 2 ? (
