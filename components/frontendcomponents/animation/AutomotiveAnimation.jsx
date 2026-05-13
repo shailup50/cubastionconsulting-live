@@ -3,7 +3,30 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-export default function AutomotiveAnimation({ id }) {
+const createCircleTexture = () => {
+    const canvas = document.createElement("canvas");
+    const size = 64;
+    canvas.width = size;
+    canvas.height = size;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return null;
+
+    ctx.beginPath();
+    ctx.arc(size / 2, size / 2, size / 2 - 2, 0, Math.PI * 2);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+
+    return new THREE.CanvasTexture(canvas);
+};
+
+export default function AutomotiveAnimation({
+    id,
+    strayCount = 430,
+    straySpreadX = 185,
+    straySpreadY = 120,
+    straySpreadZ = 55,
+}) {
     const containerRef = useRef(null);
 
     useEffect(() => {
@@ -119,11 +142,11 @@ export default function AutomotiveAnimation({ id }) {
         const r4 = transformRectPoint(5.5, 72.8);
         addPolygon([r1, r2, r3, r4]);
 
-        for (let i = 0; i < 150; i++) {
+        for (let i = 0; i < strayCount; i++) {
             points.push({
-                baseX: (Math.random() - 0.5) * 120,
-                baseY: (Math.random() - 0.5) * 80,
-                baseZ: (Math.random() - 0.5) * 40,
+                baseX: (Math.random() - 0.5) * straySpreadX,
+                baseY: (Math.random() - 0.5) * straySpreadY,
+                baseZ: (Math.random() - 0.5) * straySpreadZ,
                 isStray: true,
             });
         }
@@ -147,11 +170,13 @@ export default function AutomotiveAnimation({ id }) {
         geometry.setAttribute("basePosition", new THREE.BufferAttribute(basePositions, 3));
         geometry.setAttribute("velocity", new THREE.BufferAttribute(velocities, 3));
 
+        const dotTexture = createCircleTexture();
         const material = new THREE.PointsMaterial({
             color: 0x052559,
-            size: 0.55,
+            size: 0.7,
+            map: dotTexture,
             transparent: true,
-            opacity: 0.9,
+            opacity: 0.96,
         });
 
         const particleSystem = new THREE.Points(geometry, material);
@@ -191,7 +216,7 @@ export default function AutomotiveAnimation({ id }) {
                             const pos = geometry.attributes.position;
 
                             for (let i = 0; i < pos.count; i++) {
-                                const isStray = i >= pos.count - 150;
+                                const isStray = i >= pos.count - strayCount;
 
                                 if (!isStray) {
                                     pos.setXYZ(
@@ -311,12 +336,13 @@ export default function AutomotiveAnimation({ id }) {
             renderer.dispose();
             geometry.dispose();
             material.dispose();
+            dotTexture?.dispose();
 
             if (renderer.domElement.parentNode === container) {
                 container.removeChild(renderer.domElement);
             }
         };
-    }, []);
+    }, [strayCount, straySpreadX, straySpreadY, straySpreadZ]);
 
     return (
         <div
