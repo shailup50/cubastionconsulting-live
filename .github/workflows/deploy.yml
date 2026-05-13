@@ -25,42 +25,36 @@ jobs:
         run: npm run build
 
       - name: Zip Files for Transfer
-        # Zips everything but excludes node_modules and .git to keep the file small
         run: zip -r deploy.zip . -x "node_modules/*" -x ".git/*"
 
-      - name: Copy Zip to VPS
-        uses: appleboy/scp-action@master
+      - name: Setup SSH Connection
+        uses: webfactory/ssh-agent@v0.9.0
         with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "deploy.zip"
-          target: "/home/cubastionconsult/cubtest/cubastionconsulting-testing/cubastionconsulting-live"
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: SSH into VPS, Unzip, and Restart PM2
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            # Go to the project directory
+      - name: Add Server to Known Hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Copy Zip to VPS (Native SCP)
+        run: scp deploy.zip ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/home/cubastionconsult/cubtest/cubastionconsulting-testing/cubastionconsulting-live/
+
+      - name: SSH into VPS and Restart PM2 (Native SSH)
+        run: |
+          ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} << 'EOF'
             cd /home/cubastionconsult/cubtest/cubastionconsulting-testing/cubastionconsulting-live
-
-            # Unzip the new build (overwrite existing files)
+            
             unzip -o deploy.zip
             rm deploy.zip
-
-            # Install production dependencies only (low CPU usage)
+            
             npm install --production
-
-            # Start PM2 if it doesn't exist, or restart it if it does
-            pm2 describe cubastion-test > /dev/null
-            if [ $? -eq 0 ]; then
+            
+            if pm2 describe cubastion-test > /dev/null; then
                 pm2 restart cubastion-test
             else
                 pm2 start npm --name "cubastion-test" -- start -- -p 3005
             fi
-
-            # Save PM2 state so it auto-restarts on server reboots
+            
             pm2 save
+          EOF
