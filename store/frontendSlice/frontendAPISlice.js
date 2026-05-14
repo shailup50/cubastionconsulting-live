@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://cubastionapi.cyralix.com/api/v1";
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 export const frontendAPISlice = createApi({
   reducerPath: "frontendApi",
@@ -32,4 +32,10 @@ export const frontendAPISlice = createApi({
   }),
 });
 
-export const { useGetHeaderDataQuery, useContactUsMutation, useGetServiceCategoriesQuery, useGetAllCareersQuery, useGetCareerByUrlQuery } = frontendAPISlice;
+export const {
+  useGetHeaderDataQuery,
+  useContactUsMutation,
+  useGetServiceCategoriesQuery,
+  useGetAllCareersQuery,
+  useGetCareerByUrlQuery,
+} = frontendAPISlice;
