@@ -4,7 +4,8 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 const username = process.env.NEXT_PUBLIC_BASIC_AUTH_USER;
 const password = process.env.NEXT_PUBLIC_BASIC_AUTH_PASS;
 const authHeader = "Basic " + btoa(`${username}:${password}`);
-const CANONICAL_BASE = process.env.NEXT_PUBLIC_CANONICAL_URL ?? "https://localhost:7093";
+const CANONICAL_BASE =
+  process.env.NEXT_PUBLIC_CANONICAL_URL ?? "https://localhost:7093";
 
 import CareerPage from "../../../components/frontendcomponents/pages/career";
 
@@ -46,7 +47,14 @@ export async function generateMetadata() {
       url: `${CANONICAL_BASE}/career`,
       title: data?.MetaTitle || "Careers",
       description: data?.MetaDescriptions || "",
-      images: [{ url: "/OGImage/cubastion.jpg", width: 1200, height: 630, alt: "Careers" }],
+      images: [
+        {
+          url: "/OGImage/cubastion.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Careers",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",

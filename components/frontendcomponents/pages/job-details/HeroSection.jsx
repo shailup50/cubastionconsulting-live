@@ -1,22 +1,26 @@
 import Image from "next/image";
 
 export default function HeroSection({ data }) {
-    if (!data) return null;
-    console.log(' the data', data)
-    return (
-        <section>
-            <div className="banner job_banner">
-                <div className="bg">
-                    <Image src={data.bgmedia} width={1280} height={768} alt="Banner Image" />
-                    <div className="banner-wrapper">
-                        <div className="container">
-                            <div className="heading">
-                                <h1>{data.heading}</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  if (!data) return null;
+  return (
+    <section>
+      <div className="banner job_banner">
+        <div className="bg">
+          <Image
+            src={data.bgmedia}
+            width={1280}
+            height={768}
+            alt="Banner Image"
+          />
+          <div className="banner-wrapper">
+            <div className="container">
+              <div className="heading">
+                <h1>{data.heading}</h1>
+              </div>
             </div>
-        </section>
-    )
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
