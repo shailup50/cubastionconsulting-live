@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20" # (Change to 20 if your project uses Node 20)
+          node-version: "20"
 
       - name: Install Dependencies
         run: npm install
@@ -43,7 +43,7 @@ jobs:
           ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
 
       - name: Copy Zip to VPS (Native SCP)
-        run: scp deploy.zip ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/home/cubastionconsult/cubtest/cubastionconsulting-testing/cubastionconsulting-live/
+        run: scp deploy.zip ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/home/cubastionconsult/cubtest/cubastionconsulting-live/
 
       - name: SSH into VPS and Restart PM2 (Native SSH)
         run: |
