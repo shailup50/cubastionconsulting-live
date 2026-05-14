@@ -69,7 +69,5 @@ export async function generateMetadata() {
 }
 
 export default async function Careers() {
-  console.log(apiUrl, "apiUrl");
-  console.log(process.env.DB_HOST, "abc");
   return <CareerPage />;
 }

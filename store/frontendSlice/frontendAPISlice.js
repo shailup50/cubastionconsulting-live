@@ -1,8 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-console.log(apiUrl, "apiUrl");
-console.log(process.env.DB_HOST, "abc");
 
 export const frontendAPISlice = createApi({
   reducerPath: "frontendApi",
