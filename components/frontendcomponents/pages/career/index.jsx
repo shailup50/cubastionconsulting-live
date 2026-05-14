@@ -16,6 +16,7 @@ import { useGetAllCareersQuery } from "@/store/frontendSlice/frontendAPISlice";
 export default function CareerPage() {
   const { setSections } = useSideNav();
   const { data: careersApiResponse, isLoading } = useGetAllCareersQuery();
+  console.log(careersApiResponse, "careersApiResponse");
   const activeCareers = (careersApiResponse?.data || []).filter(
     (career) => Number(career.ActiveStatus) === 1,
   );
