@@ -23,6 +23,11 @@ jobs:
 
       - name: Build Next.js App
         run: npm run build
+        env:
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+          NEXT_PUBLIC_BASIC_AUTH_USER: ${{ secrets.NEXT_PUBLIC_BASIC_AUTH_USER }}
+          NEXT_PUBLIC_BASIC_AUTH_PASS: ${{ secrets.NEXT_PUBLIC_BASIC_AUTH_PASS }}
+          NEXT_PUBLIC_IMAGE_DOMAIN: ${{ secrets.NEXT_PUBLIC_IMAGE_DOMAIN }}
 
       - name: Zip Files for Transfer
         run: zip -r deploy.zip . -x "node_modules/*" -x ".git/*"
