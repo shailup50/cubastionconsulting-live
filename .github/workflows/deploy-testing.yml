@@ -3,7 +3,7 @@ name: Deploy Next.js to GoDaddy
 on:
   push:
     branches:
-      - main
+      - lakshay # (Change this to lakshay if you want to deploy on pushes to that branch)
 
 jobs:
   build-and-deploy:
@@ -48,18 +48,17 @@ jobs:
       - name: SSH into VPS and Restart PM2 (Native SSH)
         run: |
           ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} << 'EOF'
-            cd /home/cubastionconsult/cubtest/cubastionconsulting-live
+            cd /home/cubastionconsult/cubtest/cubastionconsulting-testing/cubastionconsulting-live
             
             unzip -o deploy.zip
             rm deploy.zip
             
             npm install --production
             
-            # Use RELOAD for zero-downtime deployments
-            if pm2 describe cubastion-staging > /dev/null; then
-                pm2 reload cubastion-staging
+            if pm2 describe cubastion-test > /dev/null; then
+                pm2 restart cubastion-test
             else
-                pm2 start npm --name "cubastion-staging" -- start -- -p 3001
+                pm2 start npm --name "cubastion-test" -- start -- -p 3005
             fi
             
             pm2 save
