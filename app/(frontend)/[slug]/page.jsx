@@ -1,37 +1,15 @@
 import IndustryDetailsPage from "@/components/frontendcomponents/pages/industry-details";
+import {
+  fetchHomeDataServer,
+  fetchIndustryByUrlServer,
+} from "@/lib/server/frontend-data";
 
 const CANONICAL_BASE = process.env.NEXT_PUBLIC_CANONICAL_URL ?? "https://cubastionapi.cyralix.com";
-
-async function fetchIndustryData(slug) {
-  try {
-    const res = await fetch(`https://cubastionapi.cyralix.com/api/v1/industries/url/${slug}`, {
-      next: { revalidate: 3600 },
-    });
-    if (!res.ok) return null;
-    const data = await res.json();
-    return data?.status ? data.data : null;
-  } catch (err) {
-    return null;
-  }
-}
-
-async function fetchHomeData() {
-  try {
-    const res = await fetch("https://cubastionapi.cyralix.com/api/v1/home-data", {
-      next: { revalidate: 3600 },
-    });
-    if (!res.ok) return null;
-    const data = await res.json();
-    return data?.status ? data.data : null;
-  } catch (err) {
-    return null;
-  }
-}
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   try {
-    const data = await fetchIndustryData(slug);
+    const data = await fetchIndustryByUrlServer(slug);
     if (!data) {
       return { title: "Industry Details", description: "" };
     }
@@ -76,14 +54,17 @@ export async function generateMetadata({ params }) {
         icon: "/assets/icon/favicon/favicon-96x96.png",
       },
     };
-  } catch (err) {
+  } catch {
     return { title: "Industry Details" };
   }
 }
 
 const page = async ({ params }) => {
   const { slug } = await params;
-  const [industryData, homeData] = await Promise.all([fetchIndustryData(slug), fetchHomeData()]);
+  const [industryData, homeData] = await Promise.all([
+    fetchIndustryByUrlServer(slug),
+    fetchHomeDataServer(),
+  ]);
   return <IndustryDetailsPage slug={slug} initialData={industryData} homeData={homeData} />;
 };
 

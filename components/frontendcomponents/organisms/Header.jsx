@@ -6,7 +6,7 @@ import Button from "../atoms/Button";
 import { usePathname } from "next/navigation";
 import { useModalStore } from "@/zustand/modalStore";
 import "../../../uploads/styles/header/header.css"
-import { useGetHeaderDataQuery } from "@/store/frontendSlice/frontendAPISlice";
+import { useHeaderData } from "@/context/HeaderDataContext";
 import staticData from "../../../uploads/data/StaticData.json";
 
 const siebelServices = [
@@ -20,7 +20,7 @@ export default function Header() {
     const [headerFixed, setHeaderFixed] = useState(false);
     const [activeSubcat, setActiveSubcat] = useState("industries");
     const openHam = useModalStore((state) => state.openHam);
-    const { data: headerData } = useGetHeaderDataQuery();
+    const { headerPayload: headerData } = useHeaderData();
     // const aboutUsPage = pathname.startsWith('/about-us')
     // const contactUsPage = pathname.startsWith('/contact-us')
     // const JobDetailsPage = pathname.startsWith('/job-details')

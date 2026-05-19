@@ -18,20 +18,17 @@ import { ClientStories } from "../siebel-services/ClientStories";
 import staticData from "@/uploads/data/StaticData.json";
 
 
-export const StartupServices = () => {
+export const StartupServices = ({ initialHomeData = null }) => {
     const dispatch = useDispatch();
     const { setSections } = useSideNav();
-
-    const getHomeData = async () => {
-        try {
-            await dispatch(fetchHomeData()).unwrap();
-        } catch (error) {
-        }
-    };
+    const { homeData: reduxHomeData } = useSelector((state) => state.home);
+    const homeData = initialHomeData || reduxHomeData;
 
     useEffect(() => {
-        getHomeData();
-    }, []);
+        if (!initialHomeData) {
+            dispatch(fetchHomeData());
+        }
+    }, [dispatch, initialHomeData]);
 
     useEffect(() => {
         setSections([

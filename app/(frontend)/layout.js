@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 import MainTemplate from "@/components/frontendcomponents/template/MainTemplate";
 import ReduxProvider from "@/store/ReduxProvider";
+import { HeaderDataProvider } from "@/context/HeaderDataContext";
+import { fetchHeaderDataServer } from "@/lib/server/frontend-data";
 import "./global.css";
 
 const inter = Inter({
@@ -10,12 +12,16 @@ const inter = Inter({
   display: "swap",
 });
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const headerData = await fetchHeaderDataServer();
+
   return (
     <html lang="en">
       <body className={`${inter.variable}`} cz-shortcut-listen="true">
         <ReduxProvider>
-          <MainTemplate>{children}</MainTemplate>
+          <HeaderDataProvider value={headerData}>
+            <MainTemplate>{children}</MainTemplate>
+          </HeaderDataProvider>
         </ReduxProvider>
       </body>
     </html>

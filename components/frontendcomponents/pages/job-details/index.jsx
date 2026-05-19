@@ -9,11 +9,14 @@ import "@/uploads/styles/job/job.css"
 
 import { useGetCareerByUrlQuery, useGetAllCareersQuery } from "@/store/frontendSlice/frontendAPISlice"
 
-export default function JobDetailsPage({ slug, initialData }) {
+export default function JobDetailsPage({ slug, initialData, initialCareersResponse = null }) {
     const { data: jobResponse, isLoading } = useGetCareerByUrlQuery(slug, {
-        skip: !!initialData,
+        skip: !!initialData || !slug,
     });
-    const { data: careersApiResponse } = useGetAllCareersQuery();
+    const { data: clientCareersResponse } = useGetAllCareersQuery(undefined, {
+        skip: Boolean(initialCareersResponse),
+    });
+    const careersApiResponse = initialCareersResponse ?? clientCareersResponse;
 
     const jobData = initialData || jobResponse?.data?.[0] || jobResponse?.data || jobResponse;
 

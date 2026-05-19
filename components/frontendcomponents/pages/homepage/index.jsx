@@ -17,23 +17,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchHomeData } from "@/store/frontendSlice/homeSlice";
 import Loading from "@/app/loading";
 
-export default function Homepage() {
+export default function Homepage({ initialHomeData = null, initialServiceCategories = null }) {
   const dispatch = useDispatch();
-  const { homeData, loading, error } = useSelector((state) => state.home);
+  const { homeData: reduxHomeData, loading } = useSelector((state) => state.home);
+  const homeData = initialHomeData || reduxHomeData;
   const { logos = [], blogs = [], testimonials = [], industries = [], awardlogos = [] } = homeData || {};
 
-
-
-  const getHomeData = async () => {
-    try {
-      await dispatch(fetchHomeData()).unwrap();
-    } catch (error) {
-    }
-  };
-
   useEffect(() => {
-    getHomeData();
-  }, []);
+    if (!initialHomeData) {
+      dispatch(fetchHomeData());
+    }
+  }, [dispatch, initialHomeData]);
 
   const { setSections } = useSideNav();
   useEffect(() => {
@@ -63,11 +57,15 @@ export default function Homepage() {
 
   return (
     <main>
-      {loading && <Loading />}
+      {loading && !initialHomeData && <Loading />}
       <HeroSection id="heroSec" data={heroSecData} />
       <AboutSec id="aboutSec" data={aboutSecData} />
       <ClientsSec id="clientSec" data={logos} />
-      <ServicesSec id="serviceSec" data={servicesData} />
+      <ServicesSec
+        id="serviceSec"
+        data={servicesData}
+        initialServiceCategories={initialServiceCategories}
+      />
       <IndustriesSec id="industriesSec" data={industries} heading="Industries We Drive Growth In" />
       <CustomerSec id="customerSec" data={testimonials} heading="Our Customer Success Stories" />
       <HighlightsSec id="highlightSec" data={HighlightsSecData} awardlogos={awardlogos} />

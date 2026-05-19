@@ -68,6 +68,9 @@ export async function generateMetadata() {
   };
 }
 
+import { fetchCareersServer } from "@/lib/server/frontend-data";
+
 export default async function Careers() {
-  return <CareerPage />;
+  const careersResponse = await fetchCareersServer();
+  return <CareerPage initialCareersResponse={careersResponse} />;
 }

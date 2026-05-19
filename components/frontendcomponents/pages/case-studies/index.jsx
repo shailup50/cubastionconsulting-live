@@ -12,30 +12,29 @@ import { usePathname } from "next/navigation";
 import { fetchBlogData } from "@/store/frontendSlice/blogSlice";
 import Loading from "@/app/loading";
 
-export default function CaseStudiesPage() {
+export default function CaseStudiesPage({
+  variant,
+  initialCaseData = null,
+  initialBlogData = null,
+}) {
   const dispatch = useDispatch();
   const pathName = usePathname();
-  const { caseData = [], loading, error } = useSelector((state) => state.case);
-  const {
-    blogData = [],
-    blogLoading,
-    blogError,
-  } = useSelector((state) => state.blog);
+  const isBlogs = variant === "blogs" || pathName === "/blogs";
+  const { caseData: reduxCaseData = [], loading: caseLoading } = useSelector((state) => state.case);
+  const { blogData: reduxBlogData = [], blogLoading } = useSelector((state) => state.blog);
 
-  const getCaseData = async () => {
-    try {
-      if (pathName === "/blogs") {
-        await dispatch(fetchBlogData()).unwrap();
-      } else {
-        await dispatch(fetchCaseData()).unwrap();
-      }
-    } catch (error) {
-    }
-  };
+  const caseData = initialCaseData ?? reduxCaseData;
+  const blogData = initialBlogData ?? reduxBlogData;
+  const listData = isBlogs ? blogData : caseData;
+  const loading = isBlogs ? blogLoading : caseLoading;
 
   useEffect(() => {
-    getCaseData();
-  }, []);
+    if (isBlogs) {
+      if (!initialBlogData) dispatch(fetchBlogData());
+    } else if (!initialCaseData) {
+      dispatch(fetchCaseData());
+    }
+  }, [dispatch, isBlogs, initialCaseData, initialBlogData]);
 
   const { setSections } = useSideNav();
   useEffect(() => {
@@ -50,17 +49,15 @@ export default function CaseStudiesPage() {
   const CaseResultsData = staticData.CaseStudies.Section2;
 
 
+  const showLoading = isBlogs
+    ? blogLoading && !initialBlogData
+    : caseLoading && !initialCaseData;
+
   return (
     <main>
-      {(loading || blogLoading) && <Loading />}
-      <CaseHeroSec
-        data={pathName === "/blogs" ? blogData : caseData}
-        id="caseStudies"
-      />
-      <CaseResults
-        data={pathName === "/blogs" ? blogData : caseData}
-        id="cases"
-      />
+      {showLoading && <Loading />}
+      <CaseHeroSec data={listData} id="caseStudies" />
+      <CaseResults data={listData} id="cases" />
     </main>
   );
 }

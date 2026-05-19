@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useModalStore } from "@/zustand/modalStore";
 
-import { useGetHeaderDataQuery } from "@/store/frontendSlice/frontendAPISlice";
+import { useHeaderData } from "@/context/HeaderDataContext";
 import staticData from "../../../uploads/data/StaticData.json";
 
 const siebelServices = [
@@ -17,7 +17,7 @@ export default function Hamburger() {
     const closeHam = useModalStore((state) => state.closeHam);
     const [activeDropdown, setActiveDropdown] = useState(null);
     const [activeSubDropdown, setActiveSubDropdown] = useState(null);
-    const { data: headerData } = useGetHeaderDataQuery();
+    const { headerPayload: headerData } = useHeaderData();
 
     const toggleDropdown = (dropdownName) => (e) => {
         e.stopPropagation();

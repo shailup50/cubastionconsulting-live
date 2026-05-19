@@ -6,7 +6,9 @@
     "dev": "node server.mjs",
     "build": "node scripts/next-without-turbo.mjs build",
     "start": "node scripts/next-without-turbo.mjs start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docs:spec": "node -e \"import { getOpenApiSpec } from './lib/swagger/spec.js'; console.log(JSON.stringify(getOpenApiSpec(), null, 2));\"",
+    "postinstall": "node scripts/copy-swagger-assets.mjs"
   },
   "dependencies": {
     "@fancyapps/ui": "^6.1.13",
@@ -34,6 +36,8 @@
     "react-select": "^5.10.1",
     "sass": "^1.97.3",
     "suneditor-react": "^3.6.1",
+    "swagger-ui-dist": "^5.32.6",
+    "swagger-ui-react": "^5.32.6",
     "swiper": "^12.1.2",
     "three": "^0.183.2",
     "zustand": "^5.0.11"

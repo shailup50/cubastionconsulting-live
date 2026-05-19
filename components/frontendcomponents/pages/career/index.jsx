@@ -13,9 +13,12 @@ import "@/uploads/styles/career/career.css";
 import EngineeringSec from "./EngineeringSec";
 import { useGetAllCareersQuery } from "@/store/frontendSlice/frontendAPISlice";
 
-export default function CareerPage() {
+export default function CareerPage({ initialCareersResponse = null }) {
   const { setSections } = useSideNav();
-  const { data: careersApiResponse, isLoading } = useGetAllCareersQuery();
+  const { data: clientCareersResponse, isLoading } = useGetAllCareersQuery(undefined, {
+    skip: Boolean(initialCareersResponse),
+  });
+  const careersApiResponse = initialCareersResponse ?? clientCareersResponse;
   const activeCareers = (careersApiResponse?.data || []).filter(
     (career) => Number(career.ActiveStatus) === 1,
   );

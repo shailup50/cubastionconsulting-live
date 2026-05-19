@@ -1,27 +1,17 @@
 import JobDetailsPage from "@/components/frontendcomponents/pages/job-details/index.jsx";
+import {
+  fetchCareerByUrlServer,
+  fetchCareersServer,
+} from "@/lib/server/frontend-data";
 
 const CANONICAL_BASE = process.env.NEXT_PUBLIC_CANONICAL_URL ?? "https://cubastion.com";
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://cubastionapi.cyralix.com/api/v1";
 const IMAGE_BASE_URL =
   process.env.NEXT_PUBLIC_IMAGE_URL || "https://cubastionapi.cyralix.com/uploads/onlineImages/CareerImages";
-
-async function fetchCareerData(slug) {
-  try {
-    const res = await fetch(`${BASE_URL}/careers/url/${slug}`, {
-      next: { revalidate: 3600 },
-    });
-    if (!res.ok) return null;
-    const data = await res.json();
-    return data?.status ? (Array.isArray(data.data) ? data.data[0] : data.data) : null;
-  } catch (err) {
-    return null;
-  }
-}
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   try {
-    const data = await fetchCareerData(slug);
+    const data = await fetchCareerByUrlServer(slug);
     if (!data) {
       return { title: "Career Details | Cubastion", description: "" };
     }
@@ -61,7 +51,10 @@ export async function generateMetadata({ params }) {
 
 export default async function CareerDetailPage({ params }) {
   const { slug } = await params;
-  const careerData = await fetchCareerData(slug);
+  const [careerData, careersResponse] = await Promise.all([
+    fetchCareerByUrlServer(slug),
+    fetchCareersServer(),
+  ]);
   if (!careerData) {
     return (
       <div className="sec-pad-all">
@@ -70,5 +63,11 @@ export default async function CareerDetailPage({ params }) {
     );
   }
 
-  return <JobDetailsPage slug={slug} initialData={careerData} />;
+  return (
+    <JobDetailsPage
+      slug={slug}
+      initialData={careerData}
+      initialCareersResponse={careersResponse}
+    />
+  );
 }

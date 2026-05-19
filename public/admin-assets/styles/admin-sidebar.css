@@ -1,0 +1,123 @@
+/* Admin sidebar: scrollable nav without layout breakage */
+aside.admin-sidebar {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+aside.admin-sidebar .aside-wrap {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+aside.admin-sidebar .aside-wrap .aside-col {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  /* -webkit-overflow-scrolling: unset; */
+}
+
+aside.admin-sidebar .aside-wrap .aside-col:first-child {
+  margin-bottom: 0;
+}
+
+aside.admin-sidebar .Header_nav_Active > li > .nav-item-wrap > a,
+aside.admin-sidebar .Header_nav_Active > li > a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+aside.admin-sidebar .Header_nav_Active > li .aside-dropdown.open {
+  position: static;
+  opacity: 1;
+  transform: none;
+  left: auto;
+  top: auto;
+  width: 100%;
+  min-width: 0;
+  margin-top: 4px;
+  padding: 4px 0 8px 28px;
+  background: transparent;
+  box-shadow: none;
+}
+
+aside.admin-sidebar .Header_nav_Active > li .aside-dropdown.open::before {
+  display: none;
+}
+
+aside.admin-sidebar .Header_nav_Active > li .aside-dropdown.open li a {
+  color: var(--general-c);
+  height: 36px;
+  line-height: 36px;
+  padding: 0 8px;
+}
+
+aside.admin-sidebar .Header_nav_Active > li .aside-dropdown.open li a:hover,
+aside.admin-sidebar .Header_nav_Active > li .aside-dropdown.open li a.active {
+  background: var(--primary-g);
+  color: var(--general-c);
+}
+
+/* API docs: fit main content area beside fixed sidebar */
+main.api-docs-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+main.api-docs-main .main-wrap.api-docs-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.api-docs-page .page-title-row {
+  flex-shrink: 0;
+  margin-bottom: 16px;
+}
+
+.api-docs-page .page-title-row h1 {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.api-docs-page .page-title-row p {
+  color: #5f6b7a;
+  margin: 0;
+}
+
+.api-docs-page .api-docs-panel {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #fff;
+  border: 1px solid #d9e1ec;
+  border-radius: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.api-docs-page .api-docs-panel .swagger-ui {
+  padding: 0 12px 24px;
+}
+
+/* Prevent swagger top bar from sitting under sidebar */
+.api-docs-page .api-docs-panel .swagger-ui .information-container,
+.api-docs-page .api-docs-panel .swagger-ui .scheme-container {
+  max-width: 100%;
+}

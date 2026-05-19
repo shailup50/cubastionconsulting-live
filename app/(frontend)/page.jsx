@@ -1,40 +1,16 @@
 export const dynamic = "force-dynamic";
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-const username = process.env.NEXT_PUBLIC_BASIC_AUTH_USER;
-const password = process.env.NEXT_PUBLIC_BASIC_AUTH_PASS;
-const authHeader = "Basic " + btoa(`${username}:${password}`);
-const CANONICAL_BASE = process.env.NEXT_PUBLIC_CANONICAL_URL ?? "https://localhost:7093";
 import HomePage from "../../components/frontendcomponents/pages/homepage/index.jsx";
+import {
+  fetchHomeDataServer,
+  fetchPagesMetaServer,
+  fetchServiceCategoriesServer,
+} from "@/lib/server/frontend-data";
 
-const fetchPagesMeta = async (id) => {
-  try {
-    const url = `${apiUrl}/pages-meta/${id}`;
-    if (url.includes("localhost") || url.includes("127.0.0.1")) {
-      process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-    }
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        Authorization: authHeader,
-        Accept: "application/json",
-      },
-      next: { revalidate: 0 },
-    });
-    if (!response.ok) return null;
-
-    const json = await response.json();
-    let result = json?.data || json;
-    if (Array.isArray(result)) return result[0] || {};
-    return result || {};
-  } catch (error) {
-    return null;
-  }
-};
+const CANONICAL_BASE = process.env.NEXT_PUBLIC_CANONICAL_URL ?? "https://localhost:7093";
 
 export async function generateMetadata() {
-  const id = "1";
-  const data = await fetchPagesMeta(id);
+  const data = await fetchPagesMetaServer("1");
   if (!data || Object.keys(data).length === 0) {
     return { title: "Cubastion", description: "" };
   }
@@ -61,6 +37,16 @@ export async function generateMetadata() {
   };
 }
 
-export default function Home() {
-  return <HomePage />;
+export default async function Home() {
+  const [homeData, serviceCategories] = await Promise.all([
+    fetchHomeDataServer(),
+    fetchServiceCategoriesServer(),
+  ]);
+
+  return (
+    <HomePage
+      initialHomeData={homeData}
+      initialServiceCategories={serviceCategories}
+    />
+  );
 }

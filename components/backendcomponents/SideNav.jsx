@@ -8,32 +8,29 @@ import { useLogoutMutation } from "../../store/backendSlice/authAPISlice";
 import { useDispatch, useSelector } from "react-redux";
 import { clearAdminUser } from "../../store/backendSlice/adminAuthReducer";
 
-const username = process.env.NEXT_PUBLIC_BASIC_AUTH_USER;
-const password = process.env.NEXT_PUBLIC_BASIC_AUTH_PASS;
-const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-const authHeader = "Basic " + btoa(`${username}:${password}`);
+const ADMIN_MENU_ITEMS = AdminStaticData?.Menu?.items ?? [];
 
 export default function SideNav() {
   const [logout] = useLogoutMutation();
   const dispatch = useDispatch();
   const adminUserFromStore = useSelector((state) => state.adminAuth?.adminUser);
+  const adminUserId = adminUserFromStore?.loginID ?? null;
   const [openIndex, setOpenIndex] = useState(null);
   const pathname = usePathname();
   const [allowedMenu, setAllowedMenu] = useState([]);
   const router = useRouter();
 
-  const Menu = AdminStaticData?.Menu?.items || [];
-
   useEffect(() => {
     const userStr = typeof window !== 'undefined' ? localStorage.getItem('user') : null;
     const storedUser = userStr ? JSON.parse(userStr) : null;
     const user = adminUserFromStore || storedUser;
-    if (user && Menu.length > 0) {
-      setAllowedMenu(Menu);
+
+    if (user && ADMIN_MENU_ITEMS.length > 0) {
+      setAllowedMenu(ADMIN_MENU_ITEMS);
     } else {
       setAllowedMenu([]);
     }
-  }, [router, pathname, adminUserFromStore]);
+  }, [pathname, adminUserId]);
 
   const handleLogout = async () => {
     try {
@@ -47,7 +44,7 @@ export default function SideNav() {
   };
 
   return (
-    <aside className="">
+    <aside className="admin-sidebar">
       <div className="aside-wrap">
         <div className="aside-col">
           <ul className="Header_nav_Active">
@@ -62,28 +59,30 @@ export default function SideNav() {
                   pathname === item.addurl ||
                   subUrls.includes(pathname);
                 const isDropdownOpen = openIndex === index;
+                const hasSubmenu = subItems.length > 0;
 
                 return (
-                  <li
-                    key={index}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      setOpenIndex(openIndex === index ? null : index);
-                    }}
-                  >
+                  <li key={item.PageID ?? index}>
                     <div
-                      className={`nav-item-wrap ${subItems.length > 0 ? "hasDropdown" : ""}`}
+                      className={`nav-item-wrap ${hasSubmenu ? "hasDropdown" : ""}`}
                     >
-                      <Link href={item.url} className={isActive ? "active" : ""}>
+                      <Link
+                        href={hasSubmenu && item.url === "#" ? "#" : item.url}
+                        className={isActive ? "active" : ""}
+                        onClick={(e) => {
+                          if (!hasSubmenu) return;
+                          e.preventDefault();
+                          setOpenIndex(isDropdownOpen ? null : index);
+                        }}
+                      >
                         {parse(item.icon)} {item.title}
                       </Link>
                     </div>
 
-                    {subItems.length > 0 && (
+                    {hasSubmenu && (
                       <ul className={`aside-dropdown ${isDropdownOpen ? "open" : ""}`}>
                         {subItems.map((subItem, subIndex) => (
-                          <li key={subIndex}>
+                          <li key={subItem.PageID ?? subIndex}>
                             <Link
                               href={subItem.url}
                               className={pathname === subItem.url ? "active" : ""}
@@ -99,10 +98,13 @@ export default function SideNav() {
                 );
               })}
             <li>
-              <a onClick={() => {
-                const confirmed = confirm("Are you sure you want to log out?");
-                if (confirmed) handleLogout();
-              }} style={{ cursor: "pointer" }}>
+              <a
+                onClick={() => {
+                  const confirmed = confirm("Are you sure you want to log out?");
+                  if (confirmed) handleLogout();
+                }}
+                style={{ cursor: "pointer" }}
+              >
                 <svg xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' className='iconify iconify--hugeicons' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24' data-icon='hugeicons:logout-04'><path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M7.023 5.5a9 9 0 1 0 9.953 0M12 2v8' color='currentColor'></path></svg>
                 Log Out
               </a>
@@ -113,9 +115,3 @@ export default function SideNav() {
     </aside>
   );
 }
-
-
-
-
-
-

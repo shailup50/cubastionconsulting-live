@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import Head from "next/head";
 import "../../globals.css";
 import "../../../public/admin-assets/styles/style.css";
+import "../../../public/admin-assets/styles/admin-sidebar.css";
 import MainHeaderFooter from "@/components/backendcomponents/MainHeaderFooter";
 import NextTopLoader from "nextjs-toploader";
 import Loader from "@/app/loading";
