@@ -4,6 +4,7 @@ import React, { useEffect } from 'react'
 import { useSideNav } from "@/context/SideNavContext";
 import { HeroBanner } from './HeroBanner'
 import staticData from "@/uploads/data/StaticData.json";
+import { mapTrustedPartnersForDisplay } from "@/lib/trusted-partners";
 import { ExperienceSec } from './ExperienceSec';
 import { TrustedBy } from './TrustedBy';
 import { TheReality } from './TheReality';
@@ -14,7 +15,7 @@ import { ClientStories } from './ClientStories';
 import { SiebelFaqs } from './SiebelFaqs';
 import { StartTransformation } from './StartTransformation';
 
-export const SiebelServices = () => {
+export const SiebelServices = ({ initialTrustedPartners = null }) => {
     const { setSections } = useSideNav();
     useEffect(() => {
         setSections([
@@ -37,7 +38,10 @@ export const SiebelServices = () => {
 
     const heroSecData = staticData.SiebelServices.Section1;
     const experienceSecData = staticData.SiebelServices.Section2;
-    const trustedByData = staticData.SiebelServices.Section3;
+    const trustedByData = mapTrustedPartnersForDisplay(
+        initialTrustedPartners,
+        staticData.SiebelServices.Section3,
+    );
     const theRealityData = staticData.SiebelServices.Section4;
     const ourServicesData = staticData.SiebelServices.Section5;
     const technologyData = staticData.SiebelServices.Section6;

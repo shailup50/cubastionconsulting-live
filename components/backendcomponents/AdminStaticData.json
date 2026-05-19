@@ -45,9 +45,25 @@
                 "PageID": 65,
                 "title": "Manage Logo",
                 "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='currentColor' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5-7l-3 3.72L9 13l-3 4h12l-4-4z'/></svg>",
-                "url": "/cubastion-admin/manage-logo",
-                "addurl": "/cubastion-admin/add-logo",
-                "Show": "1"
+                "url": "#",
+                "addurl": "",
+                "Show": "1",
+                "MoreItem": [
+                    {
+                        "PageID": 651,
+                        "title": "Logos",
+                        "url": "/cubastion-admin/manage-logo",
+                        "addurl": "/cubastion-admin/add-logo",
+                        "Show": "1"
+                    },
+                    {
+                        "PageID": 652,
+                        "title": "Trusted Partners",
+                        "url": "/cubastion-admin/manage-trusted-partners",
+                        "addurl": "/cubastion-admin/add-trusted-partner",
+                        "Show": "1"
+                    }
+                ]
             },
             {
                 "PageID": 105,

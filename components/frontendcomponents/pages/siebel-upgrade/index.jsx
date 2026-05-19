@@ -15,8 +15,9 @@ import { CertificationsComplianceSection } from "./CertificationsComplianceSecti
 import { PartnerDeliverSection } from "./PartnerDeliverSection";
 import staticData from "@/uploads/data/StaticData.json";
 import { TrustedBy } from "../siebel-services/TrustedBy";
+import { mapTrustedPartnersForDisplay } from "@/lib/trusted-partners";
 
-export const SiebelUpgrade = ({ initialHomeData = null }) => {
+export const SiebelUpgrade = ({ initialHomeData = null, initialTrustedPartners = null }) => {
     const dispatch = useDispatch();
     const { homeData: reduxHomeData } = useSelector((state) => state.home);
     const homeData = initialHomeData || reduxHomeData;
@@ -50,7 +51,10 @@ export const SiebelUpgrade = ({ initialHomeData = null }) => {
     const quickBitesData = staticData.SiebelUpgrade.Section2;
     const upgradePlaybookData = staticData.SiebelUpgrade.Section3;
     const experienceData = staticData.SiebelUpgrade.Section4;
-    const trustedByData = staticData.SiebelServices.Section3;
+    const trustedByData = mapTrustedPartnersForDisplay(
+        initialTrustedPartners,
+        staticData.SiebelServices.Section3,
+    );
     const versionProgressionData = staticData.SiebelUpgrade.Section6;
     const beyondUpgradeData = staticData.SiebelUpgrade.Section7;
     const provenSuccessData = staticData.SiebelUpgrade.Section8;

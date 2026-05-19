@@ -32,6 +32,17 @@ export default function SideNav() {
     }
   }, [pathname, adminUserId]);
 
+  useEffect(() => {
+    const visibleItems = ADMIN_MENU_ITEMS.filter((item) => item.Show === "1");
+    visibleItems.forEach((item, index) => {
+      const subItems = item.MoreItem?.filter((sub) => sub.Show === "1") || [];
+      const subUrls = subItems.flatMap((sub) => [sub.url, sub.addurl]).filter(Boolean);
+      if (subUrls.includes(pathname)) {
+        setOpenIndex(index);
+      }
+    });
+  }, [pathname]);
+
   const handleLogout = async () => {
     try {
       await logout().unwrap();
