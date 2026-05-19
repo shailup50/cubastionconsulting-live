@@ -17,6 +17,19 @@ export default function Login() {
 
   const [login, { isLoading }] = useLoginMutation();
 
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    const loginTimestamp = localStorage.getItem("loginTimestamp");
+    const oneDayMs = 24 * 60 * 60 * 1000;
+    const sessionValid =
+      user &&
+      loginTimestamp &&
+      Date.now() - parseInt(loginTimestamp, 10) <= oneDayMs;
+    if (sessionValid) {
+      router.replace("/cubastion-admin/dashboard");
+    }
+  }, [router]);
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);

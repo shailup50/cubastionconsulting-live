@@ -1,65 +1,65 @@
-name: Deploy Next.js to GoDaddy
+# name: Deploy Next.js to GoDaddy
 
-on:
-  push:
-    branches:
-      - lakshay # (Change this to lakshay if you want to deploy on pushes to that branch)
+# on:
+#   push:
+#     branches:
+#       - lakshay # (Change this to lakshay if you want to deploy on pushes to that branch)
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+#     steps:
+#       - name: Checkout Code
+#         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20" # (Change to 20 if your project uses Node 20)
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: "20" # (Change to 20 if your project uses Node 20)
 
-      - name: Install Dependencies
-        run: npm install
+#       - name: Install Dependencies
+#         run: npm install
 
-      - name: Build Next.js App
-        run: npm run build
-        env:
-          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-          NEXT_PUBLIC_BASIC_AUTH_USER: ${{ secrets.NEXT_PUBLIC_BASIC_AUTH_USER }}
-          NEXT_PUBLIC_BASIC_AUTH_PASS: ${{ secrets.NEXT_PUBLIC_BASIC_AUTH_PASS }}
-          NEXT_PUBLIC_IMAGE_DOMAIN: ${{ secrets.NEXT_PUBLIC_IMAGE_DOMAIN }}
+#       - name: Build Next.js App
+#         run: npm run build
+#         env:
+#           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+#           NEXT_PUBLIC_BASIC_AUTH_USER: ${{ secrets.NEXT_PUBLIC_BASIC_AUTH_USER }}
+#           NEXT_PUBLIC_BASIC_AUTH_PASS: ${{ secrets.NEXT_PUBLIC_BASIC_AUTH_PASS }}
+#           NEXT_PUBLIC_IMAGE_DOMAIN: ${{ secrets.NEXT_PUBLIC_IMAGE_DOMAIN }}
 
-      - name: Zip Files for Transfer
-        run: zip -r deploy.zip . -x "node_modules/*" -x ".git/*"
+#       - name: Zip Files for Transfer
+#         run: zip -r deploy.zip . -x "node_modules/*" -x ".git/*"
 
-      - name: Setup SSH Connection
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+#       - name: Setup SSH Connection
+#         uses: webfactory/ssh-agent@v0.9.0
+#         with:
+#           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Add Server to Known Hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+#       - name: Add Server to Known Hosts
+#         run: |
+#           mkdir -p ~/.ssh
+#           ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Copy Zip to VPS (Native SCP)
-        run: scp deploy.zip ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/home/cubastionconsult/cubtest/cubastionconsulting-testing/cubastionconsulting-live/
+#       - name: Copy Zip to VPS (Native SCP)
+#         run: scp deploy.zip ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/home/cubastionconsult/cubtest/cubastionconsulting-testing/cubastionconsulting-live/
 
-      - name: SSH into VPS and Restart PM2 (Native SSH)
-        run: |
-          ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} << 'EOF'
-            cd /home/cubastionconsult/cubtest/cubastionconsulting-testing/cubastionconsulting-live
-            
-            unzip -o deploy.zip
-            rm deploy.zip
-            
-            npm install --production
-            
-            if pm2 describe cubastion-test > /dev/null; then
-                pm2 restart cubastion-test
-            else
-                pm2 start npm --name "cubastion-test" -- start -- -p 3005
-            fi
-            
-            pm2 save
-          EOF
+#       - name: SSH into VPS and Restart PM2 (Native SSH)
+#         run: |
+#           ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} << 'EOF'
+#             cd /home/cubastionconsult/cubtest/cubastionconsulting-testing/cubastionconsulting-live
+
+#             unzip -o deploy.zip
+#             rm deploy.zip
+
+#             npm install --production
+
+#             if pm2 describe cubastion-test > /dev/null; then
+#                 pm2 restart cubastion-test
+#             else
+#                 pm2 start npm --name "cubastion-test" -- start -- -p 3005
+#             fi
+
+#             pm2 save
+#           EOF
