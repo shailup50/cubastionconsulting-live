@@ -16,22 +16,18 @@ import { PartnerDeliverSection } from "./PartnerDeliverSection";
 import staticData from "@/uploads/data/StaticData.json";
 import { TrustedBy } from "../siebel-services/TrustedBy";
 
-export const SiebelUpgrade = () => {
+export const SiebelUpgrade = ({ initialHomeData = null }) => {
     const dispatch = useDispatch();
-    const { homeData } = useSelector((state) => state.home);
+    const { homeData: reduxHomeData } = useSelector((state) => state.home);
+    const homeData = initialHomeData || reduxHomeData;
     const { logos = [] } = homeData || {};
     const { setSections } = useSideNav();
 
-    const getHomeData = async () => {
-        try {
-            await dispatch(fetchHomeData()).unwrap();
-        } catch (error) {
-        }
-    };
-
     useEffect(() => {
-        getHomeData();
-    }, []);
+        if (!initialHomeData) {
+            dispatch(fetchHomeData());
+        }
+    }, [dispatch, initialHomeData]);
 
     useEffect(() => {
         setSections([

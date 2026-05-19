@@ -61,6 +61,9 @@ export async function generateMetadata() {
   };
 }
 
+import { fetchCaseStudiesServer } from "@/lib/server/frontend-data";
+
 export default async function CaseStudies() {
-  return <CaseStudiesPage />;
+  const caseData = await fetchCaseStudiesServer();
+  return <CaseStudiesPage variant="case-studies" initialCaseData={caseData} />;
 }

@@ -5,11 +5,11 @@ import ClientSec from "./ClientSec"
 import ServiceTabbing from "./ServiceTabbing"
 import ContactFormSec from "../contact-us/ContactFormSec"
 import "@/uploads/styles/service/service.css"
-import { useGetHeaderDataQuery } from "@/store/frontendSlice/frontendAPISlice"
+import { useHeaderData } from "@/context/HeaderDataContext"
 import Loading from "@/app/loading"
 
 export default function ServiceListingPage() {
-    const { data: apiData, isLoading } = useGetHeaderDataQuery();
+    const { headerPayload: apiData, isLoading } = useHeaderData();
 
     const heroData = staticData.ServiceListing.Section1;
 

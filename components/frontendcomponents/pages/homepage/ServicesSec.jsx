@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import SwiperButton from "../../atoms/SwiperButton";
 import { useGetServiceCategoriesQuery } from "@/store/frontendSlice/frontendAPISlice";
 
-export default function ServicesSec({ data, id }) {
+export default function ServicesSec({ data, id, initialServiceCategories = null }) {
   if (!data) return null;
 
   const [openCol, setOpenCol] = useState("1");
@@ -16,7 +16,10 @@ export default function ServicesSec({ data, id }) {
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [isMobile, setIsMobile] = useState(false);
 
-  const { data: serviceCategoriesData } = useGetServiceCategoriesQuery();
+  const { data: clientServiceCategories } = useGetServiceCategoriesQuery(undefined, {
+    skip: Boolean(initialServiceCategories),
+  });
+  const serviceCategoriesData = initialServiceCategories ?? clientServiceCategories;
 
   // ── 1. Build filter questions ─────────────────────────────────────────────
   const filterDataToUse = useMemo(() => {

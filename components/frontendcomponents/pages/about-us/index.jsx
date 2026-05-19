@@ -17,33 +17,19 @@ import { fetchHomeData } from "@/store/frontendSlice/homeSlice";
 import { fetchAboutData } from "@/store/frontendSlice/aboutSlice";
 import Loading from "@/app/loading";
 
-export default function AboutUsPage() {
+export default function AboutUsPage({ initialHomeData = null, initialAboutData = null }) {
   const dispatch = useDispatch();
-  const { homeData, loading, error } = useSelector((state) => state.home);
-  const { aboutData, aboutLoading, aboutError } = useSelector(
-    (state) => state.about,
-  );
+  const { homeData: reduxHomeData, loading } = useSelector((state) => state.home);
+  const { aboutData: reduxAboutData, aboutLoading } = useSelector((state) => state.about);
+  const homeData = initialHomeData || reduxHomeData;
+  const aboutData = initialAboutData || reduxAboutData;
   const { logos = [], blogs = [], testimonials = [], awardlogos = [] } = homeData || {};
   const { teams = [], milestones = [] } = aboutData || {};
 
-  const getHomeData = async () => {
-    try {
-      await dispatch(fetchHomeData()).unwrap();
-    } catch (error) {
-    }
-  };
-
-  const getAboutData = async () => {
-    try {
-      await dispatch(fetchAboutData()).unwrap();
-    } catch (error) {
-    }
-  };
-
   useEffect(() => {
-    getHomeData();
-    getAboutData();
-  }, []);
+    if (!initialHomeData) dispatch(fetchHomeData());
+    if (!initialAboutData) dispatch(fetchAboutData());
+  }, [dispatch, initialHomeData, initialAboutData]);
 
   const { setSections } = useSideNav();
   useEffect(() => {
@@ -70,7 +56,7 @@ export default function AboutUsPage() {
 
   return (
     <main>
-      {(loading || aboutLoading) && <Loading />}
+      {((loading && !initialHomeData) || (aboutLoading && !initialAboutData)) && <Loading />}
       <HeroSection id="heroSec" data={heroSecData} />
       <HighlightsSec id="highlightSec" />
       <ClientSec id="clientSec" data={logos} />

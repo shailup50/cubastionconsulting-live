@@ -61,6 +61,16 @@ export async function generateMetadata() {
   };
 }
 
+import {
+  fetchAboutUsDataServer,
+  fetchHomeDataServer,
+} from "@/lib/server/frontend-data";
+
 export default async function AboutUs() {
-  return <AboutUsPage />;
+  const [homeData, aboutData] = await Promise.all([
+    fetchHomeDataServer(),
+    fetchAboutUsDataServer(),
+  ]);
+
+  return <AboutUsPage initialHomeData={homeData} initialAboutData={aboutData} />;
 }

@@ -4,18 +4,22 @@ import Input from "../../atoms/Input";
 import Textarea from "../../atoms/Textarea";
 import Select from "../../atoms/Select";
 import Button from "../../atoms/Button";
-import {
-  createContactData,
-  fetchIndustries,
-} from "@/store/frontendSlice/contactSlice";
+import { createContactData, fetchIndustries } from "@/store/frontendSlice/contactSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useHeaderData } from "@/context/HeaderDataContext";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 import Loading from "@/app/loading";
 
 export default function ContactFormSec({ id }) {
   const dispatch = useDispatch();
-  const { industriesList = [], loading } = useSelector((state) => state.contact);
+  const { headerPayload } = useHeaderData();
+  const { industriesList: reduxIndustries = [], loading: industriesLoading } = useSelector(
+    (state) => state.contact,
+  );
+  const industriesList =
+    headerPayload?.data?.industries ?? reduxIndustries ?? [];
+  const loading = !headerPayload && industriesLoading;
   const router = useRouter();
 
 
@@ -108,8 +112,10 @@ export default function ContactFormSec({ id }) {
   };
 
   useEffect(() => {
-    dispatch(fetchIndustries());
-  }, []);
+    if (!headerPayload) {
+      dispatch(fetchIndustries());
+    }
+  }, [dispatch, headerPayload]);
 
   return (
     <section>
