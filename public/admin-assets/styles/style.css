@@ -16713,7 +16713,7 @@ main .main-wrap {
 }
 
 main {
-  overflow: scroll;
+  overflow: auto;
 }
 main .sc-fbQrwq,
 main .sc-jaXbil,

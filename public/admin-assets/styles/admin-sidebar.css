@@ -19,12 +19,8 @@ aside.admin-sidebar .aside-wrap .aside-col {
   min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  /* Firefox */
-  scrollbar-width: none;
-
-  /* IE and Edge */
-  -ms-overflow-style: none;
-  /* -webkit-overflow-scrolling: unset; */
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
 
 aside.admin-sidebar .aside-wrap .aside-col:first-child {
@@ -38,22 +34,41 @@ aside.admin-sidebar .Header_nav_Active > li > a {
   text-overflow: ellipsis;
 }
 
-aside.admin-sidebar .Header_nav_Active > li .aside-dropdown.open {
-  position: static;
-  opacity: 1;
-  transform: none;
-  left: auto;
-  top: auto;
-  width: 100%;
-  min-width: 0;
-  margin-top: 4px;
-  padding: 4px 0 8px 28px;
-  background: transparent;
-  box-shadow: none;
+/* Accordion sub-menus — disable legacy flyout hover (translate -50% off-screen) */
+aside.admin-sidebar .aside-wrap .aside-col .Header_nav_Active li .aside-dropdown {
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin-top: 0;
+  padding: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  pointer-events: auto;
 }
 
-aside.admin-sidebar .Header_nav_Active > li .aside-dropdown.open::before {
+aside.admin-sidebar .aside-wrap .aside-col .Header_nav_Active li:hover .aside-dropdown {
+  opacity: 1 !important;
+  transform: none !important;
+  left: auto !important;
+}
+
+aside.admin-sidebar .aside-wrap .aside-col .Header_nav_Active li .aside-dropdown::before {
+  display: none !important;
+}
+
+aside.admin-sidebar .Header_nav_Active > li .aside-dropdown:not(.open) {
   display: none;
+}
+
+aside.admin-sidebar .Header_nav_Active > li .aside-dropdown.open {
+  display: block;
+  margin-top: 4px;
+  padding: 4px 0 8px 28px;
 }
 
 aside.admin-sidebar .Header_nav_Active > li .aside-dropdown.open li a {
@@ -67,6 +82,40 @@ aside.admin-sidebar .Header_nav_Active > li .aside-dropdown.open li a:hover,
 aside.admin-sidebar .Header_nav_Active > li .aside-dropdown.open li a.active {
   background: var(--primary-g);
   color: var(--general-c);
+}
+
+/*
+ * Main content beside fixed sidebar (keep margin-left: auto).
+ * Form pages use Tailwind .container on <main>, which adds mx-auto and collapses width — override here.
+ */
+body:has(aside.admin-sidebar) main {
+  margin-left: auto;
+  margin-right: 0;
+  width: calc(100% - var(--aside));
+  max-width: none;
+  box-sizing: border-box;
+}
+
+body:has(aside.admin-sidebar) main.container,
+body:has(aside.admin-sidebar) main.add_update.container,
+body:has(aside.admin-sidebar) main.add_update {
+  margin-left: auto;
+  margin-right: 0;
+  width: calc(100% - var(--aside));
+  max-width: none;
+}
+
+body:has(aside.admin-sidebar) main.add_update .form-box,
+body:has(aside.admin-sidebar) main.add_update.container .form-box {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+body:has(aside.admin-sidebar) main .main-wrap {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* API docs: fit main content area beside fixed sidebar */
@@ -116,8 +165,16 @@ main.api-docs-main .main-wrap.api-docs-page {
   padding: 0 12px 24px;
 }
 
-/* Prevent swagger top bar from sitting under sidebar */
 .api-docs-page .api-docs-panel .swagger-ui .information-container,
 .api-docs-page .api-docs-panel .swagger-ui .scheme-container {
   max-width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+  body:has(aside.admin-sidebar) main,
+  body:has(aside.admin-sidebar) main.container,
+  body:has(aside.admin-sidebar) main.add_update.container {
+    margin-left: 0;
+    width: 100%;
+  }
 }
