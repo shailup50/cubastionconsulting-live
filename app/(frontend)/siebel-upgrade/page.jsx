@@ -1,7 +1,15 @@
 import { SiebelUpgrade } from "@/components/frontendcomponents/pages/siebel-upgrade";
-import { fetchHomeDataServer } from "@/lib/server/frontend-data";
+import { fetchHomeDataServer, fetchTrustedPartnersServer } from "@/lib/server/frontend-data";
 
 export default async function SiebelUpgradePage() {
-  const homeData = await fetchHomeDataServer();
-  return <SiebelUpgrade initialHomeData={homeData} />;
+  const [homeData, trustedPartners] = await Promise.all([
+    fetchHomeDataServer(),
+    fetchTrustedPartnersServer(),
+  ]);
+  return (
+    <SiebelUpgrade
+      initialHomeData={homeData}
+      initialTrustedPartners={trustedPartners}
+    />
+  );
 }

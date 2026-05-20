@@ -4,7 +4,7 @@ import { query, queryOne, update, remove } from '@/lib/db';
 export async function GET(req, { params }) {
   try {
     const { id } = await params;
-    const logo = await queryOne('SELECT * FROM mst_logodata WHERE LogoID = ?', [id]);
+    const logo = await queryOne('SELECT * FROM mst_logodata WHERE LogoID = ? AND ActiveStatus IN (0, 1)', [id]);
     if (!logo) return NextResponse.json({ status: false, message: 'Logo not found' }, { status: 404 });
     return NextResponse.json({ status: true, data: logo });
   } catch (error) {
@@ -15,9 +15,12 @@ export async function GET(req, { params }) {
 export async function PUT(req, { params }) {
   try {
     const { id } = await params;
-    const logo = await queryOne('SELECT * FROM mst_logodata WHERE LogoID = ?', [id]);
+    const logo = await queryOne('SELECT * FROM mst_logodata WHERE LogoID = ? AND ActiveStatus IN (0, 1)', [id]);
     if (!logo) return NextResponse.json({ status: false, message: 'Logo not found' }, { status: 404 });
     const body = await req.json();
+    if (body.ActiveStatus !== undefined && Number(body.ActiveStatus) === 2) {
+      return NextResponse.json({ status: false, message: 'Use /api/v1/trusted-partners for trusted partner logos' }, { status: 422 });
+    }
     if (body.LogoNameURL) {
       const existing = await query('SELECT LogoID FROM mst_logodata WHERE LogoNameURL = ? AND LogoID != ?', [body.LogoNameURL, id]);
       if (existing.length) return NextResponse.json({ status: false, message: 'This logo URL already exists' }, { status: 422 });
@@ -36,7 +39,7 @@ export async function PUT(req, { params }) {
 export async function DELETE(req, { params }) {
   try {
     const { id } = await params;
-    const logo = await queryOne('SELECT * FROM mst_logodata WHERE LogoID = ?', [id]);
+    const logo = await queryOne('SELECT * FROM mst_logodata WHERE LogoID = ? AND ActiveStatus IN (0, 1)', [id]);
     if (!logo) return NextResponse.json({ status: false, message: 'Logo not found' }, { status: 404 });
     await remove('mst_logodata', 'LogoID = ?', [id]);
     return NextResponse.json({ status: true, message: 'Logo deleted successfully' });

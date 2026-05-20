@@ -7,6 +7,7 @@ import { categoryAPISlice } from "./backendSlice/categoryAPISlice";
 import { pageAPISlice } from "./backendSlice/pageAPISlice";
 import { industryAPISlice } from "./backendSlice/industryAPISlice";
 import { logoAPISlice } from "./backendSlice/logoAPISlice";
+import { trustedPartnerAPISlice } from "./backendSlice/trustedPartnerAPISlice";
 import { testimonialAPISlice } from "./backendSlice/testimonialAPISlice";
 import { teamAPISlice } from "./backendSlice/teamAPISlice";
 import { authorAPISlice } from "./backendSlice/authorAPISlice";
@@ -33,6 +34,7 @@ export const store = configureStore({
     [pageAPISlice.reducerPath]: pageAPISlice.reducer,
     [industryAPISlice.reducerPath]: industryAPISlice.reducer,
     [logoAPISlice.reducerPath]: logoAPISlice.reducer,
+    [trustedPartnerAPISlice.reducerPath]: trustedPartnerAPISlice.reducer,
     [testimonialAPISlice.reducerPath]: testimonialAPISlice.reducer,
     [teamAPISlice.reducerPath]: teamAPISlice.reducer,
     [authorAPISlice.reducerPath]: authorAPISlice.reducer,
@@ -59,6 +61,7 @@ export const store = configureStore({
       .concat(pageAPISlice.middleware)
       .concat(industryAPISlice.middleware)
       .concat(logoAPISlice.middleware)
+      .concat(trustedPartnerAPISlice.middleware)
       .concat(testimonialAPISlice.middleware)
       .concat(teamAPISlice.middleware)
       .concat(authorAPISlice.middleware)

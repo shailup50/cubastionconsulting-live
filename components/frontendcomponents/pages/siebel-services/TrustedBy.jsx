@@ -47,9 +47,9 @@ export const TrustedBy = ({ data, heading = "Trusted by Leading Global Enterpris
                     >
                         {
                             data.map((logo, index) => (
-                                <SwiperSlide key={index}>
+                                <SwiperSlide key={logo.id ?? index}>
                                     <figure>
-                                        <Image src={logo.imgSrc} alt="Client Logo" width="150" height="70"></Image>
+                                        <Image src={logo.imgSrc} alt={logo.alt || "Client Logo"} width="150" height="70"></Image>
                                     </figure>
                                 </SwiperSlide>
                             ))

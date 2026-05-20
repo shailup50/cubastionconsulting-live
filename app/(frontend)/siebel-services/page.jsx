@@ -1,21 +1,7 @@
-import React from 'react'
-const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-const username = process.env.NEXT_PUBLIC_BASIC_AUTH_USER;
-const password = process.env.NEXT_PUBLIC_BASIC_AUTH_PASS;
-const authHeader = "Basic " + btoa(`${username}:${password}`);
-const CANONICAL_BASE = process.env.NEXT_PUBLIC_CANONICAL_URL ?? "https://localhost:7093";
+import { SiebelServices } from "@/components/frontendcomponents/pages/siebel-services";
+import { fetchTrustedPartnersServer } from "@/lib/server/frontend-data";
 
-import { SiebelServices } from '@/components/frontendcomponents/pages/siebel-services'
-
-
-function page() {
-    return (
-        <>
-
-            <SiebelServices />
-
-        </>
-    )
+export default async function SiebelServicesPage() {
+  const trustedPartners = await fetchTrustedPartnersServer();
+  return <SiebelServices initialTrustedPartners={trustedPartners} />;
 }
-
-export default page
