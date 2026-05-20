@@ -208,6 +208,42 @@
   }
 }
 
+/* Matches home hero `.heading` reveal (`uploads/styles/home/home.css` show-content timing); adapted for normal flow layout */
+@keyframes hero-show-content {
+  0% {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-show-content {
+  opacity: 0;
+  animation: 240ms cubic-bezier(0.4, 0.2, 0.4, 1) 500ms forwards hero-show-content;
+}
+
+/* Same timing as `.animate-hero-show-content`; fixed slide distance so tall pages don't move by 30% of full document height */
+@keyframes hero-show-content-page {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-show-content-page {
+  opacity: 0;
+  animation: 240ms cubic-bezier(0.4, 0.2, 0.4, 1) 500ms forwards hero-show-content-page;
+}
+
 @media (min-width: 1024px) {
   .lg\:w-3\/10 {
     width: 30% !important;

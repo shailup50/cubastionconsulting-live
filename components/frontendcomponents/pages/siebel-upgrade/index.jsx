@@ -1,13 +1,12 @@
 "use client";
 import React, { useEffect } from "react";
 import { useSideNav } from "@/context/SideNavContext";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchHomeData } from "@/store/frontendSlice/homeSlice";
 import { HeroBanner } from "./HeroBanner";
 import { QuickBites } from "./QuickBites";
 import { UpgradePlaybook } from "./UpgradePlaybook";
 import { SiebelExperienceSection } from "./SiebelExperienceSection";
-import { TrustedClient } from "./TrustedClient";
 import { VersionProgressionSection } from "./VersionProgressionSection";
 import { BeyondUpgradeSection } from "./BeyondUpgradeSection";
 import { ProvenSuccessStoriesSection } from "./ProvenSuccessStoriesSection";
@@ -19,9 +18,7 @@ import { mapTrustedPartnersForDisplay } from "@/lib/trusted-partners";
 
 export const SiebelUpgrade = ({ initialHomeData = null, initialTrustedPartners = null }) => {
     const dispatch = useDispatch();
-    const { homeData: reduxHomeData } = useSelector((state) => state.home);
-    const homeData = initialHomeData || reduxHomeData;
-    const { logos = [] } = homeData || {};
+
     const { setSections } = useSideNav();
 
     useEffect(() => {
@@ -62,8 +59,7 @@ export const SiebelUpgrade = ({ initialHomeData = null, initialTrustedPartners =
     const partnerDeliverData = staticData.SiebelUpgrade.Section10;
 
     return (
-        <>
-
+        <main>
             <HeroBanner id="heroSection" data={heroSectionData} />
             <QuickBites id="quickBites" data={quickBitesData} />
             <UpgradePlaybook id="upgradePlaybook" data={upgradePlaybookData} />
@@ -74,7 +70,6 @@ export const SiebelUpgrade = ({ initialHomeData = null, initialTrustedPartners =
             <ProvenSuccessStoriesSection id="provenSuccessStoriesSection" data={provenSuccessData} />
             <CertificationsComplianceSection id="certificationsComplianceSection" data={certificationsData} />
             <PartnerDeliverSection id="partnerDeliverSection" data={partnerDeliverData} />
-
-        </>
+        </main>
     )
 }

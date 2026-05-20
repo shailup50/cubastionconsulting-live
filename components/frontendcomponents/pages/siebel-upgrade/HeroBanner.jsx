@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { fadeUp, staggerParent } from "./siebelUpgradeMotion";
 
 export const HeroBanner = ({ data, id = "heroSection" }) => {
   const points = data?.points ?? [];
@@ -10,11 +14,15 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
       id={id}
     >
       <div className="container mx-auto max-w-[1360px] px-5 sm:px-6 lg:px-12 py-16 ">
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-10 lg:gap-12 items-center">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-10 lg:gap-12 items-center"
+          variants={staggerParent}
+          initial="hidden"
+          animate="visible"
+        >
           {/* LEFT CONTENT */}
-          <div className="max-w-[600px]">
-            {/* Logo */}
-            <div className="mb-[3.5rem] mt-[2.5rem]">
+          <motion.div className="max-w-[600px]" variants={staggerParent}>
+            <motion.div className="mb-[3.5rem] mt-[2.5rem]" variants={fadeUp}>
               <Image
                 src={data?.logoSrc}
                 alt={data?.logoAlt}
@@ -24,43 +32,51 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
                 style={{ width: "200px", height: "50px", objectFit: "cover" }}
                 priority
               />
-            </div>
+            </motion.div>
 
-            {/* Heading */}
-            <h1 className="!py-2 text-[#01586a] text-[34px] md:text-[42px] leading-[1.08] font-semibold tracking-[-0.02em] mb-6">
+            <motion.h1
+              className="!py-2 text-[#01586a] text-[34px] md:text-[42px] leading-[1.08] font-semibold tracking-[-0.02em] mb-6"
+              variants={fadeUp}
+            >
               {data?.title}
-            </h1>
+            </motion.h1>
 
-            {/* Subheading */}
-            <p className="text-[#01586a] !py-2 !pt-0 text-[20px] md:text-[25px] leading-[1.2] font-semibold mb-7">
+            <motion.p
+              className="text-[#01586a] !py-2 !pt-0 text-[20px] md:text-[25px] leading-[1.2] font-semibold mb-7"
+              variants={fadeUp}
+            >
               {data?.subtitle}
-            </p>
+            </motion.p>
 
-            {/* Bullet Points */}
-            <ul className="space-y-3.5 !py-3 !mb-2">
+            <motion.ul className="space-y-3.5 !py-3 !mb-2" variants={staggerParent}>
               {points.map((item, index) => (
-                <li key={index} className="flex items-center gap-3.5">
+                <motion.li
+                  key={index}
+                  className="flex items-center gap-3.5"
+                  variants={fadeUp}
+                >
                   <span className="w-5 h-5 rounded-full bg-[#0c3b88] flex items-center justify-center text-white text-[10px] font-bold shrink-0">
                     ✓
                   </span>
                   <span className=" text-[16px] md:text-[20px] leading-[1.2] font-medium !py-1">
                     {item}
                   </span>
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
 
-            {/* CTA */}
-            <Link
-              href="/cost-calculator"
-              className="btn btn-btn !inline-flex !items-center !justify-center !px-3 !py-1 !bg-[#0c3b88] hover:!bg-[#e89b0d] transition-colors duration-300 text-[#ffff] text-[18px] md:text-[20px] font-medium px-10 md:px-12 h-[54px] rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
-            >
-              {data?.ctaText}
-            </Link>
-          </div>
+            <motion.div variants={fadeUp}>
+              <Link
+                href="/cost-calculator"
+                className="btn btn-btn !inline-flex !items-center !justify-center !px-3 !py-1 !bg-[#0c3b88] hover:!bg-[#e89b0d] transition-colors duration-300 text-[#ffff] text-[18px] md:text-[20px] font-medium px-10 md:px-12 h-[54px] rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
+              >
+                {data?.ctaText}
+              </Link>
+            </motion.div>
+          </motion.div>
 
           {/* RIGHT SIDE IMAGE */}
-          <div className="flex justify-center lg:justify-end">
+          <motion.div className="flex justify-center lg:justify-end" variants={fadeUp}>
             <div className="bg-[#f2f3f5] rounded-[20px] md:rounded-[22px] shadow-[0_10px_28px_rgba(0,0,0,0.1)] p-3 md:p-4 max-w-[760px]">
               <Image
                 src={data?.imageSrc}
@@ -71,8 +87,8 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
                 priority
               />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
