@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { FaRegCircle, FaRegClock, FaHeartbeat, FaLock, FaStar } from "react-icons/fa";
+import { fadeUp, revealViewport, staggerParent, cardLift } from "./siebelUpgradeMotion";
 
 const iconMap = {
   circle: FaRegCircle,
@@ -21,18 +23,29 @@ export const BeyondUpgradeSection = ({ data, id = "beyondUpgradeSection" }) => {
 
   return (
     <section id={id} className=" !py-14 md:!py-16">
-      <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
-        <h2 className="!text-center !text-black !text-[34px] md:!text-[42px] !leading-[1.05] !font-semibold">
+      <motion.div
+        className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12"
+        variants={staggerParent}
+        initial="hidden"
+        whileInView="visible"
+        viewport={revealViewport}
+      >
+        <motion.h2
+          className="!text-center !text-black !text-[34px] md:!text-[42px] !leading-[1.05] !font-semibold"
+          variants={fadeUp}
+        >
           {title}
-        </h2>
-        <p className="!text-center  !text-[20px] md:!text-[25px] !mt-3 !mb-10">
-          {subtitle}
-        </p>
+        </motion.h2>
 
-        <div className="!grid !grid-cols-1 sm:!grid-cols-2 lg:!grid-cols-5 !gap-4 lg:!gap-5 !items-start">
+        <motion.p className="!text-center  !text-[20px] md:!text-[25px] !mt-3 !mb-10" variants={fadeUp}>
+          {subtitle}
+        </motion.p>
+
+        <motion.div className="!grid !grid-cols-1 sm:!grid-cols-2 lg:!grid-cols-5 !gap-4 lg:!gap-5 !items-start" variants={staggerParent}>
           {cards.map((card, index) => (
-            <article
+            <motion.article
               key={index}
+              variants={cardLift}
               onMouseEnter={() => setActiveCard(index)}
               onMouseLeave={() => setActiveCard(null)}
               className={`!w-full !rounded-[16px] !border !px-4 !py-5 !transition-all !duration-300 !ease-out ${
@@ -61,9 +74,7 @@ export const BeyondUpgradeSection = ({ data, id = "beyondUpgradeSection" }) => {
                   })()}
                 </span>
 
-                <h3 className=" !text-[16px] !leading-[1.25] !font-bold">
-                  {card.title}
-                </h3>
+                <h3 className=" !text-[16px] !leading-[1.25] !font-bold">{card.title}</h3>
               </div>
 
               <p className="!text-[#111111] !text-[15px]  !mb-2">{learnMoreLabel}</p>
@@ -74,17 +85,20 @@ export const BeyondUpgradeSection = ({ data, id = "beyondUpgradeSection" }) => {
               >
                 {card.detail}
               </p>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="!mt-10 !rounded-[12px] !bg-[#dfe5f1] !px-8 !py-7">
+        <motion.div
+          className="!mt-10 !rounded-[12px] !bg-[#dfe5f1] !px-8 !py-7"
+          variants={fadeUp}
+        >
           <p
             className="!text-center !text-[#1E2730] !text-[22px]  !leading-[1.45]"
             dangerouslySetInnerHTML={{ __html: footerText }}
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
