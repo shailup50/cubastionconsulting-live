@@ -3,7 +3,10 @@
 import React, { useState } from "react";
 import { FaTrophy } from "react-icons/fa";
 
-export const StartupContactSection = ({ data, id = "startupContactSection" }) => {
+export const StartupContactSection = ({
+  data,
+  id = "startupContactSection",
+}) => {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -31,12 +34,19 @@ export const StartupContactSection = ({ data, id = "startupContactSection" }) =>
 
             <div className="!mt-8 !space-y-4">
               {points.map((point, index) => (
-                <div key={index} className="!bg-white !rounded-xl !p-4 !border !border-[#dbe6ef]">
+                <div
+                  key={index}
+                  className="!bg-white !rounded-xl !p-4 !border !border-[#dbe6ef]"
+                >
                   <div className="!flex !items-start !gap-3">
                     <FaTrophy className="!text-[#14546a] !text-[22px] md:!text-[24px] !mt-1 !shrink-0" />
                     <div>
-                      <p className="!text-[16px] !font-semibold !text-[#1a3a4a]">{point.title}</p>
-                      <p className="!text-[14px] !text-[#667085] !mt-1">{point.detail}</p>
+                      <p className="!text-[16px] !font-semibold !text-[#1a3a4a]">
+                        {point.title}
+                      </p>
+                      <p className="!text-[14px] !text-[#667085] !mt-1">
+                        {point.detail}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -66,7 +76,7 @@ export const StartupContactSection = ({ data, id = "startupContactSection" }) =>
                 value={form.name}
                 onChange={handleChange}
                 placeholder={data?.form?.namePlaceholder}
-                className="!w-full !border !border-gray-200 !rounded-lg !px-4 !py-3 !text-sm !text-gray-700 placeholder:!text-gray-400 !focus:outline-none !focus:border-[#052559] !transition"
+                className="!w-full !border !border-gray-200 !rounded-lg !px-4 !py-3 !text-sm !text-gray-700 placeholder:!text-gray-400 !focus:outline-none !focus:border-primary-start !transition"
               />
 
               <input
@@ -75,7 +85,7 @@ export const StartupContactSection = ({ data, id = "startupContactSection" }) =>
                 value={form.email}
                 onChange={handleChange}
                 placeholder={data?.form?.emailPlaceholder}
-                className="!w-full !border !border-gray-200 !rounded-lg !px-4 !py-3 !text-sm !text-gray-700 placeholder:!text-gray-400 !focus:outline-none !focus:border-[#052559] !transition"
+                className="!w-full !border !border-gray-200 !rounded-lg !px-4 !py-3 !text-sm !text-gray-700 placeholder:!text-gray-400 !focus:outline-none !focus:border-primary-start !transition"
               />
 
               <textarea
@@ -84,7 +94,7 @@ export const StartupContactSection = ({ data, id = "startupContactSection" }) =>
                 value={form.idea}
                 onChange={handleChange}
                 placeholder={data?.form?.ideaPlaceholder}
-                className="!w-full !border !border-gray-200 !rounded-lg !px-4 !py-3 !text-sm !text-gray-700 placeholder:!text-gray-400 !focus:outline-none !focus:border-[#052559] !transition !resize-none"
+                className="!w-full !border !border-gray-200 !rounded-lg !px-4 !py-3 !text-sm !text-gray-700 placeholder:!text-gray-400 !focus:outline-none !focus:border-primary-start !transition !resize-none"
               />
 
               <button className="btn !w-full !font-bold !text-sm !py-3 !rounded-full !h-12">

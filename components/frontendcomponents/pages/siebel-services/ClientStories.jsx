@@ -11,7 +11,6 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { Navigation, Pagination } from "swiper/modules";
 import { FaQuoteLeft } from "react-icons/fa";
 
-
 export const ClientStories = ({ data, id }) => {
   if (!data?.items?.length) return null;
 
@@ -26,16 +25,13 @@ export const ClientStories = ({ data, id }) => {
     <section id={id} className="bg-[#f5f7fa] py-10! md:py-16!">
       <div className="container">
         <div className="mx-auto text-center">
-          <div className="mb-4! inline-flex items-center gap-2 rounded-full border border-[#052559] bg-white px-3.5! py-1.5! text-[10px]! font-semibold! uppercase tracking-[0.12em] text-[#052559] sm:mb-5! sm:px-4! sm:py-2! sm:text-[11px]!">
+          <div className="mb-4! inline-flex items-center gap-2 rounded-full border border-primary-start bg-white px-3.5! py-1.5! text-[10px]! font-semibold! uppercase tracking-[0.12em] text-[#052559] sm:mb-5! sm:px-4! sm:py-2! sm:text-[11px]!">
             {/* <FaQuoteLeft className="text-xs sm:text-sm" />  */}
             <span> {data.title}</span>
           </div>
 
-          <h2 className=" leading-[1.15] text-[#14546a] ">
-            {data.heading}
-          </h2>
+          <h2 className=" leading-[1.15] text-[#14546a] ">{data.heading}</h2>
         </div>
-        
 
         <div className="mt-10!">
           <div className="relative">
@@ -43,14 +39,19 @@ export const ClientStories = ({ data, id }) => {
               loop={true}
               speed={900}
               spaceBetween={18}
-              modules={[showControls && Navigation, showControls && Pagination].filter(Boolean)}
+              modules={[
+                showControls && Navigation,
+                showControls && Pagination,
+              ].filter(Boolean)}
               navigation={
                 showControls
                   ? { prevEl: `.${prevClass}`, nextEl: `.${nextClass}` }
                   : false
               }
               pagination={
-                showControls ? { el: `.${paginationClass}`, clickable: true } : false
+                showControls
+                  ? { el: `.${paginationClass}`, clickable: true }
+                  : false
               }
               breakpoints={{
                 0: { slidesPerView: 1 },
@@ -60,7 +61,7 @@ export const ClientStories = ({ data, id }) => {
             >
               {items.map((item) => (
                 <SwiperSlide key={item.id}>
-                  <article className="md:h-[250px] h-[240px] rounded-[20px] border border-[#052559] bg-white p-6! shadow-[0_10px_24px_rgba(17,24,39,0.06)]">
+                  <article className="md:h-[250px] h-[240px] rounded-[20px] border border-primary-start bg-white p-6! shadow-[0_10px_24px_rgba(17,24,39,0.06)]">
                     <div className="flex gap-2 text-[#f0a126]">
                       {Array.from({ length: 5 }).map((_, idx) => (
                         <FaStar
@@ -127,7 +128,9 @@ export const ClientStories = ({ data, id }) => {
                   background: #052559 !important;
                 }
               `}</style>
-              <div className={`${paginationClass} mt-6! flex items-center justify-center`}></div>
+              <div
+                className={`${paginationClass} mt-6! flex items-center justify-center`}
+              ></div>
             </>
           )}
         </div>

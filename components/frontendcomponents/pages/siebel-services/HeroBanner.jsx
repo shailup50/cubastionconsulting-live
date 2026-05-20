@@ -21,7 +21,7 @@ export const HeroBanner = ({ data, id }) => {
   };
 
   const handleSubmit = () => {
-    // console.log("Form submitted:", form);
+    console.log("Form submitted:", form);
   };
 
   const handleExploreServices = () => {
@@ -117,14 +117,14 @@ export const HeroBanner = ({ data, id }) => {
                       placeholder="First Name"
                       value={form.firstName}
                       onChange={handleChange}
-                      className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-[#052559] transition"
+                      className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition"
                     />
                     <input
                       name="lastName"
                       placeholder="Last Name"
                       value={form.lastName}
                       onChange={handleChange}
-                      className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-[#052559] transition"
+                      className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition"
                     />
                   </div>
 
@@ -135,7 +135,7 @@ export const HeroBanner = ({ data, id }) => {
                     placeholder="Work Email"
                     value={form.email}
                     onChange={handleChange}
-                    className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-[#052559] transition"
+                    className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition"
                   />
 
                   {/* Company Name */}
@@ -144,7 +144,7 @@ export const HeroBanner = ({ data, id }) => {
                     placeholder="Company Name"
                     value={form.company}
                     onChange={handleChange}
-                    className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-[#052559] transition"
+                    className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition"
                   />
 
                   {/* Service of Interest */}
@@ -152,7 +152,7 @@ export const HeroBanner = ({ data, id }) => {
                     name="service"
                     value={form.service}
                     onChange={handleChange}
-                    className="block! rounded-lg! px-4! py-2! border border-gray-200 text-sm! text-gray-400 focus:outline-none focus:ring-0 font-normal! focus:border-[#052559] transition bg-white"
+                    className="block! rounded-lg! px-4! py-2! border border-gray-200 text-sm! text-gray-400 focus:outline-none focus:ring-0 font-normal! focus:border-primary-start transition bg-white"
                   >
                     <option value="" disabled>
                       Service of Interest
@@ -169,7 +169,7 @@ export const HeroBanner = ({ data, id }) => {
                     name="version"
                     value={form.version}
                     onChange={handleChange}
-                    className="block! rounded-lg! px-4! py-2! border border-gray-200 text-sm! text-gray-400 focus:outline-none focus:ring-0 font-normal! focus:border-[#052559] transition  bg-white"
+                    className="block! rounded-lg! px-4! py-2! border border-gray-200 text-sm! text-gray-400 focus:outline-none focus:ring-0 font-normal! focus:border-primary-start transition  bg-white"
                   >
                     <option value="" disabled>
                       Current Siebel Version
