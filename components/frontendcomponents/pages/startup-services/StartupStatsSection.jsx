@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { fadeUp, revealViewport, staggerParent } from "@/components/frontendcomponents/pages/siebel-upgrade/siebelUpgradeMotion";
 
 const StatCard = ({ end, suffix = "", title, isCenter }) => {
   const [count, setCount] = useState(0);
@@ -36,9 +38,7 @@ const StatCard = ({ end, suffix = "", title, isCenter }) => {
         {count}
         {suffix}
       </h3>
-      <p className={`!mt-3 !text-[16px] !font-semibold ${isCenter ? "!text-white" : "!text-black"}`}>
-        {title}
-      </p>
+      <p className={`!mt-3 !text-[16px] !font-semibold ${isCenter ? "!text-white" : "!text-black"}`}>{title}</p>
     </div>
   );
 };
@@ -48,19 +48,19 @@ export const StartupStatsSection = ({ data, id = "startupStatsSection" }) => {
 
   return (
     <section id={id} className="!bg-[#e9ecec] !py-8 md:!py-12">
-      <div className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12">
-        <div className="!grid !grid-cols-1 md:!grid-cols-3 !gap-4 md:!gap-5">
-          {stats.map((item, index) => (
-            <StatCard
-              key={index}
-              end={item.end}
-              suffix={item.suffix}
-              title={item.title}
-              isCenter={item.isCenter}
-            />
-          ))}
-        </div>
-      </div>
+      <motion.div
+        className="!container !mx-auto !max-w-[1360px] !px-5 sm:!px-6 lg:!px-12 !grid !grid-cols-1 md:!grid-cols-3 !gap-4 md:!gap-5"
+        variants={staggerParent}
+        initial="hidden"
+        whileInView="visible"
+        viewport={revealViewport}
+      >
+        {stats.map((item, index) => (
+          <motion.div key={index} variants={fadeUp}>
+            <StatCard end={item.end} suffix={item.suffix} title={item.title} isCenter={item.isCenter} />
+          </motion.div>
+        ))}
+      </motion.div>
     </section>
   );
 };

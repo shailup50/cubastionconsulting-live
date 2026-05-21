@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { useSideNav } from "@/context/SideNavContext";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchHomeData } from "@/store/frontendSlice/homeSlice";
 import { HeroBanner } from "./HeroBanner";
 import { TrustedClientsSlider } from "./TrustedClientsSlider";
@@ -17,12 +17,9 @@ import { SiebelFaqs } from "../siebel-services/SiebelFaqs";
 import { ClientStories } from "../siebel-services/ClientStories";
 import staticData from "@/uploads/data/StaticData.json";
 
-
 export const StartupServices = ({ initialHomeData = null }) => {
     const dispatch = useDispatch();
     const { setSections } = useSideNav();
-    const { homeData: reduxHomeData } = useSelector((state) => state.home);
-    const homeData = initialHomeData || reduxHomeData;
 
     useEffect(() => {
         if (!initialHomeData) {
@@ -63,8 +60,7 @@ export const StartupServices = ({ initialHomeData = null }) => {
     const startupContactData = staticData.StartupServices.Section12;
 
     return (
-        <>
-
+        <main>
             <HeroBanner id="heroSection" data={heroSectionData} />
             <TrustedClientsSlider id="trustedClientsSection" data={trustedClientsData} />
             <StartupStatsSection id="startupStatsSection" data={startupStatsData} />
@@ -74,11 +70,9 @@ export const StartupServices = ({ initialHomeData = null }) => {
             <WhyFoundersChooseSection id="whyFoundersSection" data={whyFoundersData} />
             <StartupSecuritySection id="startupSecuritySection" data={startupSecurityData} />
             <StartupAwardsSection id="startupAwardsSection" data={startupAwardsData} />
-            <SiebelFaqs id="startupFaqSection" data={startupFaqData} />
-            <ClientStories id="startupTestimonialsSection" data={startupTestimonialsData} />
+            <SiebelFaqs id="startupFaqSection" data={startupFaqData} animateReveal />
+            <ClientStories id="startupTestimonialsSection" data={startupTestimonialsData} animateReveal />
             <StartupContactSection id="startupContactSection" data={startupContactData} />
-          
-
-        </>
-    )
-}
+        </main>
+    );
+};

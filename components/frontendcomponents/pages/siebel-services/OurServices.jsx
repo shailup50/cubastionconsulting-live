@@ -2,6 +2,22 @@
 
 import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
+import { easeOutSoft, fadeUp, revealViewport, staggerParent, cardLift } from "@/components/frontendcomponents/pages/siebel-upgrade/siebelUpgradeMotion";
+
+const tabContentParent = {
+    hidden: { opacity: 0, y: 18 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.28,
+            ease: easeOutSoft,
+            staggerChildren: 0.09,
+            delayChildren: 0.06,
+        },
+    },
+    exit: { opacity: 0, y: -18, transition: { duration: 0.2 } },
+};
 import { FiBox, FiGrid, FiLayers, FiMonitor, FiSettings, FiUploadCloud } from "react-icons/fi";
 import { HiOutlineCloud, HiOutlineServerStack } from "react-icons/hi2";
 import { LuArrowUp, LuCable, LuDatabase, LuGauge, LuHeadphones, LuShieldCheck, LuSmartphone } from "react-icons/lu";
@@ -44,23 +60,37 @@ export const OurServices = ({ data, id }) => {
 
     return (
         <section className=" py-10! md:py-16!" id={id}>
-            <div className="container">
-                <div className="mx-auto! max-w-[720px] text-center">
-                    <div className="mb-4! inline-flex items-center gap-2 rounded-full border border-[#052559] bg-white px-3.5! py-1.5! text-[10px]! font-semibold! uppercase tracking-[0.12em] text-[#052559] sm:mb-5! sm:px-4! sm:py-2! sm:text-[11px]!">
-                        {/* <FiGrid className="text-xs sm:text-sm" /> */}
+            <motion.div
+                className="container"
+                variants={staggerParent}
+                initial="hidden"
+                whileInView="visible"
+                viewport={revealViewport}
+            >
+                <motion.div className="mx-auto! max-w-[720px] text-center" variants={staggerParent}>
+                    <motion.div
+                        className="mb-4! inline-flex items-center gap-2 rounded-full border border-[#052559] bg-white px-3.5! py-1.5! text-[10px]! font-semibold! uppercase tracking-[0.12em] text-[#052559] sm:mb-5! sm:px-4! sm:py-2! sm:text-[11px]!"
+                        variants={fadeUp}
+                    >
                         <span>{data.title}</span>
-                    </div>
+                    </motion.div>
 
-                    <h2 className=" leading-[1.15] text-[#14546a]">
+                    <motion.h2 className=" leading-[1.15] text-[#14546a]" variants={fadeUp}>
                         {data.heading}
-                    </h2>
+                    </motion.h2>
 
-                    <p className="mx-auto mt-3! max-w-[620px] px-2! text-[14px]! leading-6 text-[#5b6870] sm:mt-4! sm:px-0! sm:text-base! sm:leading-7">
+                    <motion.p
+                        className="mx-auto mt-3! max-w-[620px] px-2! text-[14px]! leading-6 text-[#5b6870] sm:mt-4! sm:px-0! sm:text-base! sm:leading-7"
+                        variants={fadeUp}
+                    >
                         {data.description}
-                    </p>
-                </div>
+                    </motion.p>
+                </motion.div>
 
-                <div className="mt-8! overflow-x-auto pb-2! [scrollbar-color:#cfd8de_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-[3px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#cfd8de] sm:mt-10! ">
+                <motion.div
+                    className="mt-8! overflow-x-auto pb-2! [scrollbar-color:#cfd8de_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-[3px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#cfd8de] sm:mt-10! "
+                    variants={fadeUp}
+                >
                     <div className="mx-auto min-w-max border-b border-[#d9e2e7] pb-0! ">
                         <div className="flex items-center gap-4 sm:gap-5 lg:justify-between position-relative z-0">
                             {tabs.map((tab, index) => {
@@ -91,24 +121,25 @@ export const OurServices = ({ data, id }) => {
                             })}
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 <div className="mt-6!">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={activeTab.id}
-                            initial={{ opacity: 0, y: 18 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -18 }}
-                            transition={{ duration: 0.28, ease: "easeOut" }}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            variants={tabContentParent}
                             className="grid gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-3"
                         >
                             {activeTab.items.map((item) => {
                                 const Icon = cardIconMap[item.icon] || FiSettings;
 
                                 return (
-                                    <article
+                                    <motion.article
                                         key={item.id}
+                                        variants={cardLift}
                                         className="min-h-[160px] rounded-[16px] border border-[#052559] border-t-[4px] border-t-[#052559] bg-white p-4! shadow-[0_10px_24px_rgba(17,24,39,0.05)] sm:min-h-[170px] sm:rounded-[18px] sm:p-5!"
                                     >
                                         <div className='flex flex-nowrap! align-center gap-3'>
@@ -125,13 +156,13 @@ export const OurServices = ({ data, id }) => {
                                         <p className="mt-2! text-[14px]! leading-6 text-[#5b6870] sm:mt-4! sm:text-[15px]! sm:leading-7">
                                             {item.description}
                                         </p>
-                                    </article>
+                                    </motion.article>
                                 );
                             })}
                         </motion.div>
                     </AnimatePresence>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 };
