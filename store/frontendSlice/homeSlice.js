@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const apiUrl =
-  process.env.NEXT_PUBLIC_API_URL || "https://cubastionapi.cyralix.com/api/v1";
+  process.env.NEXT_PUBLIC_API_URL || "https://cubastionconsulting.com/api/v1";
 
 export const fetchHomeData = createAsyncThunk(
   "home/fetchHomeData",
