@@ -27,6 +27,13 @@ export const frontendAPISlice = createApi({
         body: data,
       }),
     }),
+    submitTechCoFounder: builder.mutation({
+      query: (data) => ({
+        url: "/contact-tech-co-founder",
+        method: "POST",
+        body: data,
+      }),
+    }),
     getServiceCategories: builder.query({
       query: () => "/service-categories",
     }),
@@ -43,6 +50,7 @@ export const {
   useGetHeaderDataQuery,
   useContactUsMutation,
   useSubmitSiebelExpertMutation,
+  useSubmitTechCoFounderMutation,
   useGetServiceCategoriesQuery,
   useGetAllCareersQuery,
   useGetCareerByUrlQuery,

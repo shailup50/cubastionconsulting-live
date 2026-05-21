@@ -146,10 +146,9 @@
                     {
                         "PageID": 673,
                         "title": "Contact Tech Co-Founder",
-                        "url": "#",
+                        "url": "/cubastion-admin/manage-tech-co-founder-leads",
                         "addurl": "",
-                        "Show": "1",
-                        "disabled": "1"
+                        "Show": "1"
                     }
                 ]
             },
