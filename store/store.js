@@ -14,6 +14,7 @@ import { authorAPISlice } from "./backendSlice/authorAPISlice";
 import { milestoneAPISlice } from "./backendSlice/milestoneAPISlice";
 import { portfolioAPISlice } from "./backendSlice/portfolioAPISlice";
 import { contactUsAPISlice } from "./backendSlice/contactUsAPISlice";
+import { siebelExpertAPISlice } from "./backendSlice/siebelExpertAPISlice";
 import { serviceAPISlice } from "./backendSlice/serviceAPISlice";
 import { careerAPISlice } from "./backendSlice/careerAPISlice";
 import adminAuthReducer from "./backendSlice/adminAuthReducer";
@@ -41,6 +42,7 @@ export const store = configureStore({
     [milestoneAPISlice.reducerPath]: milestoneAPISlice.reducer,
     [portfolioAPISlice.reducerPath]: portfolioAPISlice.reducer,
     [contactUsAPISlice.reducerPath]: contactUsAPISlice.reducer,
+    [siebelExpertAPISlice.reducerPath]: siebelExpertAPISlice.reducer,
     [serviceAPISlice.reducerPath]: serviceAPISlice.reducer,
     [careerAPISlice.reducerPath]: careerAPISlice.reducer,
     adminAuth: adminAuthReducer,
@@ -68,6 +70,7 @@ export const store = configureStore({
       .concat(milestoneAPISlice.middleware)
       .concat(portfolioAPISlice.middleware)
       .concat(contactUsAPISlice.middleware)
+      .concat(siebelExpertAPISlice.middleware)
       .concat(serviceAPISlice.middleware)
       .concat(careerAPISlice.middleware)
       .concat(frontendAPISlice.middleware),

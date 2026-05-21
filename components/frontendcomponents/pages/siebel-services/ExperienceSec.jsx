@@ -6,7 +6,7 @@ export const ExperienceSec = ({ data, id }) => {
   //         number: "20+",
   //         text: "Years of Siebel Expertise",
   //         color: "text-[#052559]",
-  //         border: "border-[#052559]",
+  //         border: "border-primary-start",
   //     },
   //     {
   //         number: "200+",
@@ -18,7 +18,7 @@ export const ExperienceSec = ({ data, id }) => {
   //         number: "100%",
   //         text: "Production-Grade Deliveries",
   //         color: "text-[#052559]",
-  //         border: "border-[#052559]",
+  //         border: "border-primary-start",
   //     },
   // ];
   return (

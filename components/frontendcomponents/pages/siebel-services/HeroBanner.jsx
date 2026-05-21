@@ -5,8 +5,11 @@ import { MdWindow } from "react-icons/md";
 import { FaPaperPlane } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import toast from "react-hot-toast";
+import { useSubmitSiebelExpertMutation } from "@/store/frontendSlice/frontendAPISlice";
 
 export const HeroBanner = ({ data, id }) => {
+  const [submitSiebelExpert, { isLoading }] = useSubmitSiebelExpertMutation();
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -15,13 +18,65 @@ export const HeroBanner = ({ data, id }) => {
     service: "",
     version: "",
   });
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors((prev) => {
+        const next = { ...prev };
+        delete next[name];
+        return next;
+      });
+    }
   };
 
-  const handleSubmit = () => {
-    // console.log("Form submitted:", form);
+  const validate = () => {
+    const next = {};
+    if (!form.firstName.trim()) next.firstName = "First name is required";
+    if (!form.email.trim()) {
+      next.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+      next.email = "Please enter a valid email";
+    }
+    if (!form.service) next.service = "Please select a service";
+    if (!form.version) next.version = "Please select your Siebel version";
+    setErrors(next);
+    return Object.keys(next).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    try {
+      const res = await submitSiebelExpert({
+        firstName: form.firstName.trim(),
+        lastName: form.lastName.trim() || undefined,
+        email: form.email.trim(),
+        company: form.company.trim() || undefined,
+        service: form.service,
+        version: form.version,
+      }).unwrap();
+
+      if (res.status) {
+        toast.success(res.message || "Thank you! We will be in touch shortly.");
+        setForm({
+          firstName: "",
+          lastName: "",
+          email: "",
+          company: "",
+          service: "",
+          version: "",
+        });
+        setErrors({});
+      } else {
+        toast.error(res.message || "Submission failed. Please try again.");
+      }
+    } catch (err) {
+      toast.error(err?.data?.message || "Something went wrong. Please try again.");
+    }
   };
 
   const handleExploreServices = () => {
@@ -109,34 +164,40 @@ export const HeroBanner = ({ data, id }) => {
                   {data.form.subtitle}
                 </p>
 
-                <div className="flex flex-col gap-4">
+                <form className="flex flex-col gap-4" onSubmit={handleSubmit} noValidate>
                   {/* First + Last Name */}
                   <div className="grid grid-cols-2 gap-3">
-                    <input
-                      name="firstName"
-                      placeholder="First Name"
-                      value={form.firstName}
-                      onChange={handleChange}
-                      className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-[#052559] transition"
-                    />
+                    <div>
+                      <input
+                        name="firstName"
+                        placeholder="First Name *"
+                        value={form.firstName}
+                        onChange={handleChange}
+                        className={`border rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition w-full ${errors.firstName ? "border-red-500" : "border-gray-200"}`}
+                      />
+                      {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
+                    </div>
                     <input
                       name="lastName"
                       placeholder="Last Name"
                       value={form.lastName}
                       onChange={handleChange}
-                      className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-[#052559] transition"
+                      className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition"
                     />
                   </div>
 
                   {/* Work Email */}
-                  <input
-                    name="email"
-                    type="email"
-                    placeholder="Work Email"
-                    value={form.email}
-                    onChange={handleChange}
-                    className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-[#052559] transition"
-                  />
+                  <div>
+                    <input
+                      name="email"
+                      type="email"
+                      placeholder="Work Email *"
+                      value={form.email}
+                      onChange={handleChange}
+                      className={`border rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition w-full ${errors.email ? "border-red-500" : "border-gray-200"}`}
+                    />
+                    {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                  </div>
 
                   {/* Company Name */}
                   <input
@@ -144,15 +205,16 @@ export const HeroBanner = ({ data, id }) => {
                     placeholder="Company Name"
                     value={form.company}
                     onChange={handleChange}
-                    className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-[#052559] transition"
+                    className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition"
                   />
 
                   {/* Service of Interest */}
+                  <div>
                   <select
                     name="service"
                     value={form.service}
                     onChange={handleChange}
-                    className="block! rounded-lg! px-4! py-2! border border-gray-200 text-sm! text-gray-400 focus:outline-none focus:ring-0 font-normal! focus:border-[#052559] transition bg-white"
+                    className={`block! rounded-lg! px-4! py-2! border text-sm! focus:outline-none focus:ring-0 font-normal! focus:border-primary-start transition bg-white w-full ${errors.service ? "border-red-500 text-gray-700" : "border-gray-200 text-gray-400"}`}
                   >
                     <option value="" disabled>
                       Service of Interest
@@ -163,13 +225,16 @@ export const HeroBanner = ({ data, id }) => {
                       </option>
                     ))}
                   </select>
+                  {errors.service && <p className="text-red-500 text-xs mt-1">{errors.service}</p>}
+                  </div>
 
                   {/* Current Siebel Version */}
+                  <div>
                   <select
                     name="version"
                     value={form.version}
                     onChange={handleChange}
-                    className="block! rounded-lg! px-4! py-2! border border-gray-200 text-sm! text-gray-400 focus:outline-none focus:ring-0 font-normal! focus:border-[#052559] transition  bg-white"
+                    className={`block! rounded-lg! px-4! py-2! border text-sm! focus:outline-none focus:ring-0 font-normal! focus:border-primary-start transition bg-white w-full ${errors.version ? "border-red-500 text-gray-700" : "border-gray-200 text-gray-400"}`}
                   >
                     <option value="" disabled>
                       Current Siebel Version
@@ -180,16 +245,19 @@ export const HeroBanner = ({ data, id }) => {
                       </option>
                     ))}
                   </select>
+                  {errors.version && <p className="text-red-500 text-xs mt-1">{errors.version}</p>}
+                  </div>
 
                   {/* Submit */}
                   <button
-                    onClick={handleSubmit}
-                    className="btn font-bold text-sm py-3.5 rounded-lg! transition-colors duration-200 flex items-center justify-center gap-2 shadow-md mt-4! h-12!"
+                    type="submit"
+                    disabled={isLoading}
+                    className="btn font-bold text-sm py-3.5 rounded-lg! transition-colors duration-200 flex items-center justify-center gap-2 shadow-md mt-4! h-12! disabled:opacity-60"
                   >
                     <FaPaperPlane className="text-base" />
-                    {data.form.button}
+                    {isLoading ? "Submitting..." : data.form.button}
                   </button>
-                </div>
+                </form>
               </div>
             </div>
           </div>

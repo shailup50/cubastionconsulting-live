@@ -92,17 +92,33 @@ export default function SideNav() {
 
                     {hasSubmenu && (
                       <ul className={`aside-dropdown ${isDropdownOpen ? "open" : ""}`}>
-                        {subItems.map((subItem, subIndex) => (
-                          <li key={subItem.PageID ?? subIndex}>
-                            <Link
-                              href={subItem.url}
-                              className={pathname === subItem.url ? "active" : ""}
-                            >
-                              {subItem.icon && parse(subItem.icon)}
-                              {subItem.title}
-                            </Link>
-                          </li>
-                        ))}
+                        {subItems.map((subItem, subIndex) => {
+                          const isDisabled =
+                            subItem.disabled === "1" ||
+                            (subItem.url === "#" && subItem.disabled === "1");
+                          return (
+                            <li key={subItem.PageID ?? subIndex}>
+                              {isDisabled ? (
+                                <span
+                                  className="aside-dropdown-disabled"
+                                  style={{ opacity: 0.55, cursor: "default", display: "block", padding: "inherit" }}
+                                  title="Coming soon"
+                                >
+                                  {subItem.icon && parse(subItem.icon)}
+                                  {subItem.title}
+                                </span>
+                              ) : (
+                                <Link
+                                  href={subItem.url}
+                                  className={pathname === subItem.url ? "active" : ""}
+                                >
+                                  {subItem.icon && parse(subItem.icon)}
+                                  {subItem.title}
+                                </Link>
+                              )}
+                            </li>
+                          );
+                        })}
                       </ul>
                     )}
                   </li>

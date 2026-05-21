@@ -20,6 +20,13 @@ export const frontendAPISlice = createApi({
         body: data,
       }),
     }),
+    submitSiebelExpert: builder.mutation({
+      query: (data) => ({
+        url: "/contact-siebel-expert",
+        method: "POST",
+        body: data,
+      }),
+    }),
     getServiceCategories: builder.query({
       query: () => "/service-categories",
     }),
@@ -35,6 +42,7 @@ export const frontendAPISlice = createApi({
 export const {
   useGetHeaderDataQuery,
   useContactUsMutation,
+  useSubmitSiebelExpertMutation,
   useGetServiceCategoriesQuery,
   useGetAllCareersQuery,
   useGetCareerByUrlQuery,
