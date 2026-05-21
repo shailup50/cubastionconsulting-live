@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
 import { FaCalendarAlt } from "react-icons/fa";
 import { MdWindow } from "react-icons/md";
@@ -7,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import toast from "react-hot-toast";
 import { useSubmitSiebelExpertMutation } from "@/store/frontendSlice/frontendAPISlice";
+import { fadeUp, staggerParent } from "@/components/frontendcomponents/pages/siebel-upgrade/siebelUpgradeMotion";
 
 export const HeroBanner = ({ data, id }) => {
   const [submitSiebelExpert, { isLoading }] = useSubmitSiebelExpertMutation();
@@ -86,136 +90,136 @@ export const HeroBanner = ({ data, id }) => {
     }
   };
 
+  const inputClass = (field) =>
+    `border rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition w-full ${
+      errors[field] ? "border-red-500" : "border-gray-200"
+    }`;
+
+  const selectClass = (field) =>
+    `block! rounded-lg! px-4! py-2! border text-sm! focus:outline-none focus:ring-0 font-normal! focus:border-primary-start transition bg-white w-full ${
+      errors[field] ? "border-red-500 text-gray-700" : "border-gray-200 text-gray-400"
+    }`;
+
   return (
-    <>
-      <section className="md:mt-30! bg-[#dfe5f1] py-10! md:py-16!" id={id}>
-        <div className="container">
-          <div className=" flex items-center ">
-            <div className="max-w-7xl mx-auto w-full flex md:flex-nowrap! flex-wrap gap-12 lg:gap-16">
-              {/* Left Column */}
-              <div className="flex flex-col md:w-3/5 w-full">
-                {/* Oracle Gold Partner Badge */}
-                <div className="flex items-center gap-2 w-fit mb-4!">
-                  <Image
-                    className="h-10!"
-                    src={data.logo}
-                    width={100}
-                    height={100}
-                    alt="logo"
-                  />
-                </div>
+    <section className="md:mt-30! bg-[#dfe5f1] py-10! md:py-16!" id={id}>
+      <div className="container">
+        <motion.div
+          className="flex items-center"
+          variants={staggerParent}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="max-w-7xl mx-auto w-full flex md:flex-nowrap! flex-wrap gap-12 lg:gap-16">
+            <motion.div className="flex flex-col md:w-3/5 w-full" variants={staggerParent}>
+              <motion.div className="flex items-center gap-2 w-fit mb-4!" variants={fadeUp}>
+                <Image className="h-10!" src={data.logo} width={100} height={100} alt="logo" />
+              </motion.div>
 
-                <div className="w-full md:w-2/3">
-                  <h1 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-extrabold text-[#1a3a4a] leading-tight">
-                    {data.title}
-                  </h1>
-                </div>
+              <motion.div className="w-full md:w-2/3" variants={fadeUp}>
+                <h1 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-extrabold text-[#1a3a4a] leading-tight">
+                  {data.title}
+                </h1>
+              </motion.div>
 
-                <h6 className="text-[17px] md:text-lg! font-bold text-black mt-3! mb-5!">
-                  {data.subtitle}
-                </h6>
+              <motion.h6
+                className="text-[17px] md:text-lg! font-bold text-black mt-3! mb-5!"
+                variants={fadeUp}
+              >
+                {data.subtitle}
+              </motion.h6>
 
-                <p className="text-[#666] text-base leading-relaxed max-w-2xl md:mb-8! mb-5!">
-                  {data.description}
-                </p>
+              <motion.p
+                className="text-[#666] text-base leading-relaxed max-w-2xl md:mb-8! mb-5!"
+                variants={fadeUp}
+              >
+                {data.description}
+              </motion.p>
 
-                {/* Service Tags */}
-                <div className="flex flex-wrap gap-3">
-                  {data.tags.map((service) => (
-                    <span
-                      key={service}
-                      className="flex items-center gap-2 border border-[#666] text-[#666] text-sm! font-normal! rounded-full px-4! py-1.5! bg-white/60 backdrop-blur-sm"
-                    >
-                      <FaCheckCircle className="text-base shrink-0" />
-                      {service}
-                    </span>
-                  ))}
-                </div>
-
-                {/* CTA Buttons */}
-                <div className="flex flex-wrap gap-4 mt-12!">
-                  <Link
-                    href="https://calendly.com/amandeep-singh-cubastion/30min?month=2026-05"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 btn  font-bold text-sm px-6 py-3 rounded-md transition-colors duration-200 shadow-md"
+              <motion.div className="flex flex-wrap gap-3" variants={staggerParent}>
+                {data.tags.map((service) => (
+                  <motion.span
+                    key={service}
+                    variants={fadeUp}
+                    className="flex items-center gap-2 border border-[#666] text-[#666] text-sm! font-normal! rounded-full px-4! py-1.5! bg-white/60 backdrop-blur-sm"
                   >
-                    <FaCalendarAlt className="text-base" />
-                    Book a Free Consultation
-                  </Link>
+                    <FaCheckCircle className="text-base shrink-0" />
+                    {service}
+                  </motion.span>
+                ))}
+              </motion.div>
 
-                  <button
-                    type="button"
-                    onClick={handleExploreServices}
-                    className="flex items-center gap-2 border-2 btn primary-border font-bold text-sm px-6 py-3 rounded-md transition-colors duration-200"
-                  >
-                    <MdWindow className="text-base" />
-                    Explore Services
-                  </button>
-                </div>
-              </div>
+              <motion.div className="flex flex-wrap gap-4 mt-12!" variants={fadeUp}>
+                <Link
+                  href="https://calendly.com/amandeep-singh-cubastion/30min?month=2026-05"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 btn  font-bold text-sm px-6 py-3 rounded-md transition-colors duration-200 shadow-md"
+                >
+                  <FaCalendarAlt className="text-base" />
+                  Book a Free Consultation
+                </Link>
 
-              {/* Right Column — Form Card */}
-              <div className="bg-white rounded-2xl shadow-xl p-5! md:p-8! w-full md:w-2/5 lg:ml-auto">
-                <h2 className="text-xl! md:text-2xl! font-extrabold text-[#1a3a4a] mb-1!">
-                  {data.form.title}
-                </h2>
-                <p className="text-sm text-gray-500 mb-6! font-medium!">
-                  {data.form.subtitle}
-                </p>
+                <button
+                  type="button"
+                  onClick={handleExploreServices}
+                  className="flex items-center gap-2 border-2 btn primary-border font-bold text-sm px-6 py-3 rounded-md transition-colors duration-200"
+                >
+                  <MdWindow className="text-base" />
+                  Explore Services
+                </button>
+              </motion.div>
+            </motion.div>
 
-                <form className="flex flex-col gap-4" onSubmit={handleSubmit} noValidate>
-                  {/* First + Last Name */}
-                  <div className="grid grid-cols-2 gap-3">
-                    <div>
-                      <input
-                        name="firstName"
-                        placeholder="First Name *"
-                        value={form.firstName}
-                        onChange={handleChange}
-                        className={`border rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition w-full ${errors.firstName ? "border-red-500" : "border-gray-200"}`}
-                      />
-                      {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
-                    </div>
-                    <input
-                      name="lastName"
-                      placeholder="Last Name"
-                      value={form.lastName}
-                      onChange={handleChange}
-                      className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition"
-                    />
-                  </div>
+            <motion.div
+              className="bg-white rounded-2xl shadow-xl p-5! md:p-8! w-full md:w-2/5 lg:ml-auto"
+              variants={fadeUp}
+            >
+              <h2 className="text-xl! md:text-2xl! font-extrabold text-[#1a3a4a] mb-1!">{data.form.title}</h2>
+              <p className="text-sm text-gray-500 mb-6! font-medium!">{data.form.subtitle}</p>
 
-                  {/* Work Email */}
+              <form className="flex flex-col gap-4" onSubmit={handleSubmit} noValidate>
+                <div className="grid grid-cols-2 gap-3">
                   <div>
                     <input
-                      name="email"
-                      type="email"
-                      placeholder="Work Email *"
-                      value={form.email}
+                      name="firstName"
+                      placeholder="First Name *"
+                      value={form.firstName}
                       onChange={handleChange}
-                      className={`border rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition w-full ${errors.email ? "border-red-500" : "border-gray-200"}`}
+                      className={inputClass("firstName")}
                     />
-                    {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                    {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
                   </div>
-
-                  {/* Company Name */}
                   <input
-                    name="company"
-                    placeholder="Company Name"
-                    value={form.company}
+                    name="lastName"
+                    placeholder="Last Name"
+                    value={form.lastName}
                     onChange={handleChange}
-                    className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition"
+                    className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition w-full"
                   />
+                </div>
 
-                  {/* Service of Interest */}
-                  <div>
-                  <select
-                    name="service"
-                    value={form.service}
+                <div>
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="Work Email *"
+                    value={form.email}
                     onChange={handleChange}
-                    className={`block! rounded-lg! px-4! py-2! border text-sm! focus:outline-none focus:ring-0 font-normal! focus:border-primary-start transition bg-white w-full ${errors.service ? "border-red-500 text-gray-700" : "border-gray-200 text-gray-400"}`}
-                  >
+                    className={inputClass("email")}
+                  />
+                  {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                </div>
+
+                <input
+                  name="company"
+                  placeholder="Company Name"
+                  value={form.company}
+                  onChange={handleChange}
+                  className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition w-full"
+                />
+
+                <div>
+                  <select name="service" value={form.service} onChange={handleChange} className={selectClass("service")}>
                     <option value="" disabled>
                       Service of Interest
                     </option>
@@ -226,16 +230,10 @@ export const HeroBanner = ({ data, id }) => {
                     ))}
                   </select>
                   {errors.service && <p className="text-red-500 text-xs mt-1">{errors.service}</p>}
-                  </div>
+                </div>
 
-                  {/* Current Siebel Version */}
-                  <div>
-                  <select
-                    name="version"
-                    value={form.version}
-                    onChange={handleChange}
-                    className={`block! rounded-lg! px-4! py-2! border text-sm! focus:outline-none focus:ring-0 font-normal! focus:border-primary-start transition bg-white w-full ${errors.version ? "border-red-500 text-gray-700" : "border-gray-200 text-gray-400"}`}
-                  >
+                <div>
+                  <select name="version" value={form.version} onChange={handleChange} className={selectClass("version")}>
                     <option value="" disabled>
                       Current Siebel Version
                     </option>
@@ -246,23 +244,21 @@ export const HeroBanner = ({ data, id }) => {
                     ))}
                   </select>
                   {errors.version && <p className="text-red-500 text-xs mt-1">{errors.version}</p>}
-                  </div>
+                </div>
 
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    disabled={isLoading}
-                    className="btn font-bold text-sm py-3.5 rounded-lg! transition-colors duration-200 flex items-center justify-center gap-2 shadow-md mt-4! h-12! disabled:opacity-60"
-                  >
-                    <FaPaperPlane className="text-base" />
-                    {isLoading ? "Submitting..." : data.form.button}
-                  </button>
-                </form>
-              </div>
-            </div>
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="btn font-bold text-sm py-3.5 rounded-lg! transition-colors duration-200 flex items-center justify-center gap-2 shadow-md mt-4! h-12! disabled:opacity-60"
+                >
+                  <FaPaperPlane className="text-base" />
+                  {isLoading ? "Submitting..." : data.form.button}
+                </button>
+              </form>
+            </motion.div>
           </div>
-        </div>
-      </section>
-    </>
+        </motion.div>
+      </div>
+    </section>
   );
 };

@@ -1,23 +1,37 @@
-"use client"
-import { useRef } from "react"
+"use client";
+import { useRef } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
-import "@/uploads/styles/component/component.css"
-
+import "@/uploads/styles/component/component.css";
+import { fadeUp, revealViewport } from "@/components/frontendcomponents/pages/siebel-upgrade/siebelUpgradeMotion";
 
 export const TrustedBy = ({ data, heading = "Trusted by Leading Global Enterprises", id = "trustedBySection" }) => {
-
-    if (!data) return null
+    if (!data) return null;
     const swiperRef = useRef(null);
+
     return (
         <section id={id}>
-            <div className="heading text-center -mb-4!">
+            <motion.div
+                className="heading text-center -mb-4!"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={revealViewport}
+            >
                 <h4 className="md:text-2xl! text-xl! !font-semibold ">{heading}</h4>
-            </div>
-            <div className={`client_sec sec-pad-all `} >
+            </motion.div>
+            <motion.div
+                className={`client_sec sec-pad-all `}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={revealViewport}
+                transition={{ delay: 0.1 }}
+            >
                 <div className="main_wrapper">
                     <Swiper
                         className="client_slider"
@@ -45,19 +59,16 @@ export const TrustedBy = ({ data, heading = "Trusted by Leading Global Enterpris
                         }}
                         onSwiper={(swiper) => (swiperRef.current = swiper)}
                     >
-                        {
-                            data.map((logo, index) => (
-                                <SwiperSlide key={logo.id ?? index}>
-                                    <figure>
-                                        <Image src={logo.imgSrc} alt={logo.alt || "Client Logo"} width="150" height="70"></Image>
-                                    </figure>
-                                </SwiperSlide>
-                            ))
-                        }
+                        {data.map((logo, index) => (
+                            <SwiperSlide key={logo.id ?? index}>
+                                <figure>
+                                    <Image src={logo.imgSrc} alt={logo.alt || "Client Logo"} width="150" height="70" />
+                                </figure>
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                 </div>
-            </div>
+            </motion.div>
         </section>
-    )
-
-}
+    );
+};

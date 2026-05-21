@@ -1,19 +1,19 @@
 "use client";
 
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 import { useSideNav } from "@/context/SideNavContext";
-import { HeroBanner } from './HeroBanner'
+import { HeroBanner } from "./HeroBanner";
 import staticData from "@/uploads/data/StaticData.json";
 import { mapTrustedPartnersForDisplay } from "@/lib/trusted-partners";
-import { ExperienceSec } from './ExperienceSec';
-import { TrustedBy } from './TrustedBy';
-import { TheReality } from './TheReality';
-import { OurServices } from './OurServices';
-import { Technology } from './Technology';
-import { WhyCubastion } from './WhyCubastion';
-import { ClientStories } from './ClientStories';
-import { SiebelFaqs } from './SiebelFaqs';
-import { StartTransformation } from './StartTransformation';
+import { ExperienceSec } from "./ExperienceSec";
+import { TrustedBy } from "./TrustedBy";
+import { TheReality } from "./TheReality";
+import { OurServices } from "./OurServices";
+import { Technology } from "./Technology";
+import { WhyCubastion } from "./WhyCubastion";
+import { ClientStories } from "./ClientStories";
+import { SiebelFaqs } from "./SiebelFaqs";
+import { StartTransformation } from "./StartTransformation";
 
 export const SiebelServices = ({ initialTrustedPartners = null }) => {
     const { setSections } = useSideNav();
@@ -32,9 +32,7 @@ export const SiebelServices = ({ initialTrustedPartners = null }) => {
         ]);
 
         return () => setSections([]);
-    }, []);
-
-
+    }, [setSections]);
 
     const heroSecData = staticData.SiebelServices.Section1;
     const experienceSecData = staticData.SiebelServices.Section2;
@@ -50,22 +48,18 @@ export const SiebelServices = ({ initialTrustedPartners = null }) => {
     const siebelFaqsData = staticData.SiebelServices.Section9;
     const startTransformationData = staticData.SiebelServices.Section10;
 
-
-
     return (
-
-        <>
+        <main>
             <HeroBanner id="heroSec" data={heroSecData} />
             <ExperienceSec id="experience" data={experienceSecData} />
-            <TrustedBy id="trustedBy" data={trustedByData} heading='Trusted by Leading Global Enterprises'/>
+            <TrustedBy id="trustedBy" data={trustedByData} heading="Trusted by Leading Global Enterprises" />
             <TheReality id="theReality" data={theRealityData} />
             <OurServices id="ourServices" data={ourServicesData} />
             <Technology id="technology" data={technologyData} />
             <WhyCubastion id="whyCubastion" data={whyCubastionData} />
-            <ClientStories id="customerSec" data={clientStoriesData} />
-            <SiebelFaqs id="siebelFaqs" data={siebelFaqsData} /> 
+            <ClientStories id="customerSec" data={clientStoriesData} animateReveal />
+            <SiebelFaqs id="siebelFaqs" data={siebelFaqsData} animateReveal />
             <StartTransformation id="startTransformation" data={startTransformationData} />
-        </>
-
-    )
-}
+        </main>
+    );
+};

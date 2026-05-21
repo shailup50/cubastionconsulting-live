@@ -4,7 +4,7 @@ import React from "react";
 import Frequently from "../industry-details/Frequently";
 import "@/uploads/styles/industry-detail/industry-detail.css";
 
-export const SiebelFaqs = ({ data, id }) => {
+export const SiebelFaqs = ({ data, id, animateReveal = false }) => {
   if (!data) return null;
 
   const transformed = {
@@ -17,9 +17,5 @@ export const SiebelFaqs = ({ data, id }) => {
     })),
   };
 
-  return(
-    <main>
-       <Frequently data={transformed} id={id} />
-    </main>
-  );
+  return <Frequently data={transformed} id={id} animateReveal={animateReveal} />;
 };
