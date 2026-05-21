@@ -2014,7 +2014,7 @@
             "number": "20+",
             "label": "Years of Siebel Expertise",
             "color": "text-[#052559]",
-            "border": "border-[#052559]"
+            "border": "border-primary-start"
           },
           {
             "type": "stat",
@@ -2030,7 +2030,7 @@
             "number": "100%",
             "label": "Production-Grade Deliveries",
             "color": "text-[#052559]",
-            "border": "border-[#052559]"
+            "border": "border-primary-start"
           }
         ]
       }
@@ -2574,7 +2574,7 @@
           "suffix": "+",
           "title": "Years of Siebel Experience",
           "color": "!text-[#052559]",
-          "border": "!border-[#052559]"
+          "border": "!border-primary-start"
         },
         {
           "end": 500,
@@ -2588,14 +2588,14 @@
           "suffix": "+",
           "title": "Upgrades Delivered",
           "color": "!text-[#052559]",
-          "border": "!border-[#052559]"
+          "border": "!border-primary-start"
         },
         {
           "end": 100,
           "suffix": "%",
           "title": "Successful Deployment",
           "color": "!text-[#052559]",
-          "border": "!border-[#052559]"
+          "border": "!border-primary-start"
         }
       ]
     },

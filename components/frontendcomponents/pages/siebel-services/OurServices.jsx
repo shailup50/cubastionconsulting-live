@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { easeOutSoft, fadeUp, revealViewport, staggerParent, cardLift } from "@/components/frontendcomponents/pages/siebel-upgrade/siebelUpgradeMotion";
 
@@ -20,43 +20,54 @@ const tabContentParent = {
 };
 import { FiBox, FiGrid, FiLayers, FiMonitor, FiSettings, FiUploadCloud } from "react-icons/fi";
 import { HiOutlineCloud, HiOutlineServerStack } from "react-icons/hi2";
-import { LuArrowUp, LuCable, LuDatabase, LuGauge, LuHeadphones, LuShieldCheck, LuSmartphone } from "react-icons/lu";
+import {
+  LuArrowUp,
+  LuCable,
+  LuDatabase,
+  LuGauge,
+  LuHeadphones,
+  LuShieldCheck,
+  LuSmartphone,
+} from "react-icons/lu";
 import { PiBracketsCurlyBold } from "react-icons/pi";
 import { TbArrowsTransferUp, TbTopologyStar3 } from "react-icons/tb";
 
 const tabIconMap = {
-    upgrade: LuArrowUp,
-    cloud: HiOutlineCloud,
-    integration: LuCable,
-    managed: LuHeadphones,
-    oracle: TbArrowsTransferUp,
+  upgrade: LuArrowUp,
+  cloud: HiOutlineCloud,
+  integration: LuCable,
+  managed: LuHeadphones,
+  oracle: TbArrowsTransferUp,
 };
 
 const cardIconMap = {
-    upgrade: LuArrowUp,
-    ui: FiMonitor,
-    mobile: LuSmartphone,
-    container: FiBox,
-    cloud: HiOutlineServerStack,
-    devops: TbTopologyStar3,
-    integration: LuCable,
-    development: PiBracketsCurlyBold,
-    data: LuDatabase,
-    support: LuHeadphones,
-    performance: LuGauge,
-    security: LuShieldCheck,
-    roadmap: FiGrid,
-    migration: FiUploadCloud,
-    parallel: FiLayers,
+  upgrade: LuArrowUp,
+  ui: FiMonitor,
+  mobile: LuSmartphone,
+  container: FiBox,
+  cloud: HiOutlineServerStack,
+  devops: TbTopologyStar3,
+  integration: LuCable,
+  development: PiBracketsCurlyBold,
+  data: LuDatabase,
+  support: LuHeadphones,
+  performance: LuGauge,
+  security: LuShieldCheck,
+  roadmap: FiGrid,
+  migration: FiUploadCloud,
+  parallel: FiLayers,
 };
 
 export const OurServices = ({ data, id }) => {
-    const tabs = data?.tabs || [];
-    const [activeIndex, setActiveIndex] = useState(0);
+  const tabs = data?.tabs || [];
+  const [activeIndex, setActiveIndex] = useState(0);
 
-    const activeTab = useMemo(() => tabs[activeIndex] || tabs[0], [tabs, activeIndex]);
+  const activeTab = useMemo(
+    () => tabs[activeIndex] || tabs[0],
+    [tabs, activeIndex],
+  );
 
-    if (!data || !tabs.length) return null;
+  if (!data || !tabs.length) return null;
 
     return (
         <section className=" py-10! md:py-16!" id={id}>

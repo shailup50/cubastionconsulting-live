@@ -61,7 +61,9 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
                   <FaCheckSquare className="!mt-1 !text-[#1a3a4a] !shrink-0" />
                   <span>
                     {item.title}{" "}
-                    <span className="!font-normal !text-[#666]">- {item.detail}</span>
+                    <span className="!font-normal !text-[#666]">
+                      - {item.detail}
+                    </span>
                   </span>
                 </motion.p>
               ))}
@@ -80,7 +82,7 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
                   value={form.name}
                   onChange={handleChange}
                   placeholder={data?.form?.namePlaceholder}
-                  className="!w-full !border !border-gray-200 !rounded-lg !px-4 !py-3 !text-sm !text-gray-700 placeholder:!text-gray-400 !focus:outline-none !focus:border-[#052559] !transition"
+                  className="!w-full !border !border-gray-200 !rounded-lg !px-4 !py-3 !text-sm !text-gray-700 placeholder:!text-gray-400 !focus:outline-none !focus:border-primary-start !transition"
                 />
 
                 <input
@@ -89,7 +91,7 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
                   value={form.email}
                   onChange={handleChange}
                   placeholder={data?.form?.emailPlaceholder}
-                  className="!w-full !border !border-gray-200 !rounded-lg !px-4 !py-3 !text-sm !text-gray-700 placeholder:!text-gray-400 !focus:outline-none !focus:border-[#052559] !transition"
+                  className="!w-full !border !border-gray-200 !rounded-lg !px-4 !py-3 !text-sm !text-gray-700 placeholder:!text-gray-400 !focus:outline-none !focus:border-primary-start !transition"
                 />
 
                 <textarea
@@ -98,7 +100,7 @@ export const HeroBanner = ({ data, id = "heroSection" }) => {
                   value={form.idea}
                   onChange={handleChange}
                   placeholder={data?.form?.ideaPlaceholder}
-                  className="!w-full !border !border-gray-200 !rounded-lg !px-4 !py-3 !text-sm !text-gray-700 placeholder:!text-gray-400 !focus:outline-none !focus:border-[#052559] !transition !resize-none"
+                  className="!w-full !border !border-gray-200 !rounded-lg !px-4 !py-3 !text-sm !text-gray-700 placeholder:!text-gray-400 !focus:outline-none !focus:border-primary-start !transition !resize-none"
                 />
 
                 <button className="btn !w-full !font-bold !text-sm !py-3 !rounded-full !h-12">

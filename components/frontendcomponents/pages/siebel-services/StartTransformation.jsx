@@ -25,7 +25,7 @@ export const StartTransformation = ({ data, id }) => {
         >
           <div className="flex flex-col items-center text-center">
             <motion.div
-              className="mb-5! inline-flex items-center gap-2 rounded-full border border-[#052559] bg-white px-3.5! py-1.5! text-[10px]! font-semibold! uppercase tracking-[0.12em] text-[#052559] sm:mb-6! sm:px-4! sm:py-2! sm:text-[11px]!"
+              className="mb-5! inline-flex items-center gap-2 rounded-full border border-primary-start bg-white px-3.5! py-1.5! text-[10px]! font-semibold! uppercase tracking-[0.12em] text-[#052559] sm:mb-6! sm:px-4! sm:py-2! sm:text-[11px]!"
               variants={fadeUp}
             >
               <span>{data.title}</span>
@@ -57,7 +57,7 @@ export const StartTransformation = ({ data, id }) => {
 
               <Link
                 href={data.secondaryButtonHref}
-                className="flex items-center gap-2 btn primary-border rounded-xl border-2 border-[#052559] bg-transparent  text-sm! font-bold! text-[#052559] transition-colors hover:bg-[#052559] hover:text-white"
+                className="flex items-center gap-2 btn primary-border rounded-xl border-2 border-primary-start bg-transparent  text-sm! font-bold! text-[#052559] transition-colors hover:bg-[#052559] hover:text-white"
               >
                 <FiMail className="text-[18px]" />
                 {data.secondaryButtonText || "Email Us Directly"}

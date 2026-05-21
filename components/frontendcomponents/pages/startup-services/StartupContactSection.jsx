@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 import { FaTrophy } from "react-icons/fa";
 import { fadeUp, revealViewport, staggerParent, cardLift } from "@/components/frontendcomponents/pages/siebel-upgrade/siebelUpgradeMotion";
 
-export const StartupContactSection = ({ data, id = "startupContactSection" }) => {
+export const StartupContactSection = ({
+  data,
+  id = "startupContactSection",
+}) => {
   const [form, setForm] = useState({
     name: "",
     email: "",

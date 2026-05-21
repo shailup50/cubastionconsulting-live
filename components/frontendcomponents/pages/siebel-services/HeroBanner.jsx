@@ -8,9 +8,12 @@ import { MdWindow } from "react-icons/md";
 import { FaPaperPlane } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import toast from "react-hot-toast";
+import { useSubmitSiebelExpertMutation } from "@/store/frontendSlice/frontendAPISlice";
 import { fadeUp, staggerParent } from "@/components/frontendcomponents/pages/siebel-upgrade/siebelUpgradeMotion";
 
 export const HeroBanner = ({ data, id }) => {
+  const [submitSiebelExpert, { isLoading }] = useSubmitSiebelExpertMutation();
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -19,13 +22,65 @@ export const HeroBanner = ({ data, id }) => {
     service: "",
     version: "",
   });
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors((prev) => {
+        const next = { ...prev };
+        delete next[name];
+        return next;
+      });
+    }
   };
 
-  const handleSubmit = () => {
-    // console.log("Form submitted:", form);
+  const validate = () => {
+    const next = {};
+    if (!form.firstName.trim()) next.firstName = "First name is required";
+    if (!form.email.trim()) {
+      next.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+      next.email = "Please enter a valid email";
+    }
+    if (!form.service) next.service = "Please select a service";
+    if (!form.version) next.version = "Please select your Siebel version";
+    setErrors(next);
+    return Object.keys(next).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    try {
+      const res = await submitSiebelExpert({
+        firstName: form.firstName.trim(),
+        lastName: form.lastName.trim() || undefined,
+        email: form.email.trim(),
+        company: form.company.trim() || undefined,
+        service: form.service,
+        version: form.version,
+      }).unwrap();
+
+      if (res.status) {
+        toast.success(res.message || "Thank you! We will be in touch shortly.");
+        setForm({
+          firstName: "",
+          lastName: "",
+          email: "",
+          company: "",
+          service: "",
+          version: "",
+        });
+        setErrors({});
+      } else {
+        toast.error(res.message || "Submission failed. Please try again.");
+      }
+    } catch (err) {
+      toast.error(err?.data?.message || "Something went wrong. Please try again.");
+    }
   };
 
   const handleExploreServices = () => {
@@ -34,6 +89,16 @@ export const HeroBanner = ({ data, id }) => {
       ourServicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+
+  const inputClass = (field) =>
+    `border rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition w-full ${
+      errors[field] ? "border-red-500" : "border-gray-200"
+    }`;
+
+  const selectClass = (field) =>
+    `block! rounded-lg! px-4! py-2! border text-sm! focus:outline-none focus:ring-0 font-normal! focus:border-primary-start transition bg-white w-full ${
+      errors[field] ? "border-red-500 text-gray-700" : "border-gray-200 text-gray-400"
+    }`;
 
   return (
     <section className="md:mt-30! bg-[#dfe5f1] py-10! md:py-16!" id={id}>
@@ -112,82 +177,84 @@ export const HeroBanner = ({ data, id }) => {
               <h2 className="text-xl! md:text-2xl! font-extrabold text-[#1a3a4a] mb-1!">{data.form.title}</h2>
               <p className="text-sm text-gray-500 mb-6! font-medium!">{data.form.subtitle}</p>
 
-              <div className="flex flex-col gap-4">
+              <form className="flex flex-col gap-4" onSubmit={handleSubmit} noValidate>
                 <div className="grid grid-cols-2 gap-3">
-                  <input
-                    name="firstName"
-                    placeholder="First Name"
-                    value={form.firstName}
-                    onChange={handleChange}
-                    className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-[#052559] transition"
-                  />
+                  <div>
+                    <input
+                      name="firstName"
+                      placeholder="First Name *"
+                      value={form.firstName}
+                      onChange={handleChange}
+                      className={inputClass("firstName")}
+                    />
+                    {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
+                  </div>
                   <input
                     name="lastName"
                     placeholder="Last Name"
                     value={form.lastName}
                     onChange={handleChange}
-                    className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-[#052559] transition"
+                    className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition w-full"
                   />
                 </div>
 
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Work Email"
-                  value={form.email}
-                  onChange={handleChange}
-                  className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-[#052559] transition"
-                />
+                <div>
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="Work Email *"
+                    value={form.email}
+                    onChange={handleChange}
+                    className={inputClass("email")}
+                  />
+                  {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                </div>
 
                 <input
                   name="company"
                   placeholder="Company Name"
                   value={form.company}
                   onChange={handleChange}
-                  className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-[#052559] transition"
+                  className="border border-gray-200 rounded-lg! px-4! py-2! text-sm! text-gray-700 placeholder-gray-400 font-normal! focus:outline-none focus:border-primary-start transition w-full"
                 />
 
-                <select
-                  name="service"
-                  value={form.service}
-                  onChange={handleChange}
-                  className="block! rounded-lg! px-4! py-2! border border-gray-200 text-sm! text-gray-400 focus:outline-none focus:ring-0 font-normal! focus:border-[#052559] transition bg-white"
-                >
-                  <option value="" disabled>
-                    Service of Interest
-                  </option>
-                  {data.form.serviceOptions.map((s) => (
-                    <option key={s} value={s} className="text-gray-700">
-                      {s}
+                <div>
+                  <select name="service" value={form.service} onChange={handleChange} className={selectClass("service")}>
+                    <option value="" disabled>
+                      Service of Interest
                     </option>
-                  ))}
-                </select>
+                    {data.form.serviceOptions.map((s) => (
+                      <option key={s} value={s} className="text-gray-700">
+                        {s}
+                      </option>
+                    ))}
+                  </select>
+                  {errors.service && <p className="text-red-500 text-xs mt-1">{errors.service}</p>}
+                </div>
 
-                <select
-                  name="version"
-                  value={form.version}
-                  onChange={handleChange}
-                  className="block! rounded-lg! px-4! py-2! border border-gray-200 text-sm! text-gray-400 focus:outline-none focus:ring-0 font-normal! focus:border-[#052559] transition  bg-white"
-                >
-                  <option value="" disabled>
-                    Current Siebel Version
-                  </option>
-                  {data.form.sibelVersions.map((v) => (
-                    <option key={v} value={v} className="text-gray-700">
-                      {v}
+                <div>
+                  <select name="version" value={form.version} onChange={handleChange} className={selectClass("version")}>
+                    <option value="" disabled>
+                      Current Siebel Version
                     </option>
-                  ))}
-                </select>
+                    {data.form.sibelVersions.map((v) => (
+                      <option key={v} value={v} className="text-gray-700">
+                        {v}
+                      </option>
+                    ))}
+                  </select>
+                  {errors.version && <p className="text-red-500 text-xs mt-1">{errors.version}</p>}
+                </div>
 
                 <button
-                  type="button"
-                  onClick={handleSubmit}
-                  className="btn font-bold text-sm py-3.5 rounded-lg! transition-colors duration-200 flex items-center justify-center gap-2 shadow-md mt-4! h-12!"
+                  type="submit"
+                  disabled={isLoading}
+                  className="btn font-bold text-sm py-3.5 rounded-lg! transition-colors duration-200 flex items-center justify-center gap-2 shadow-md mt-4! h-12! disabled:opacity-60"
                 >
                   <FaPaperPlane className="text-base" />
-                  {data.form.button}
+                  {isLoading ? "Submitting..." : data.form.button}
                 </button>
-              </div>
+              </form>
             </motion.div>
           </div>
         </motion.div>
