@@ -12,7 +12,7 @@ export async function GET(request) {
     );
   }
 
-  const spec = getOpenApiSpec();
+  const spec = getOpenApiSpec(request);
   return NextResponse.json(spec, {
     headers: {
       "Cache-Control": "no-store",

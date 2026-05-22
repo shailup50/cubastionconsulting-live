@@ -45,9 +45,25 @@ export default function ApiDocsSwagger() {
 
       const token = localStorage.getItem("token");
 
+      const specUrl = `${window.location.origin}/api/docs/openapi.json`;
+      const specResponse = await fetch(specUrl, {
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+      });
+      if (!specResponse.ok) {
+        throw new Error(`Failed to load OpenAPI spec (${specResponse.status})`);
+      }
+      const spec = await specResponse.json();
+      // Ensure Try-it-out always targets the same origin/scheme as this page (prevents mixed-content).
+      spec.servers = [
+        {
+          url: window.location.origin,
+          description: "Current host",
+        },
+      ];
+
       SwaggerUIBundle({
         domNode: containerRef.current,
-        url: `${window.location.origin}/api/docs/openapi.json`,
+        spec,
         docExpansion: "list",
         defaultModelsExpandDepth: 1,
         persistAuthorization: true,
