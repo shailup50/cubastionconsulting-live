@@ -7,7 +7,7 @@
     "build": "node scripts/next-without-turbo.mjs build",
     "start": "node scripts/next-without-turbo.mjs start",
     "lint": "next lint",
-    "docs:spec": "node -e \"import { getOpenApiSpec } from './lib/swagger/spec.js'; console.log(JSON.stringify(getOpenApiSpec(), null, 2));\"",
+    "docs:spec": "node --import tsx -e \"import { getOpenApiSpec } from './lib/swagger/spec.ts'; console.log(JSON.stringify(getOpenApiSpec(), null, 2));\"",
     "postinstall": "node scripts/copy-swagger-assets.mjs"
   },
   "dependencies": {
@@ -57,6 +57,7 @@
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.2.4",
+    "tsx": "^4.22.4",
     "typescript": "^5"
   }
 }
